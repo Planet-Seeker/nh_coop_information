@@ -434,7 +434,7 @@
       setStatus("데이터를 준비 중입니다. 잠시 후 다시 방문해 주세요.", true);
       return;
     }
-    if (INDEX.updated) $("updated").textContent = `데이터 갱신: ${INDEX.updated} (KST)`;
+    if (INDEX.updated) $("updated").textContent = ` · 갱신일자 ${INDEX.updated}`;
     renderSummary();
     route();
   })();

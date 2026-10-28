@@ -156,3 +156,10 @@ tr.on td { background: var(--acc-soft); }
 
 .foot { margin-top: 36px; font-size: 12px; color: var(--sub); }
 .foot p { margin: 2px 0; }
+.foot .note { margin-bottom: 14px; }
+.credits { border-top: 1px solid var(--line); padding-top: 12px; }
+.credits-h { font-weight: 600; color: var(--ink); }
+.credits dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 0; margin: 4px 0 0; }
+.credits dt { color: var(--sub); }
+.credits dt::after { content: " :"; white-space: pre; margin-right: 6px; }
+.credits dd { margin: 0; }
