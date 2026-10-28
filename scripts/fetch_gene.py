@@ -92,15 +92,27 @@ def notice(msg: str) -> None:
 def probe(key: str) -> None:
     """기준년월 없이 조회해 실제 보유 데이터의 범위와 구성을 확인한다."""
     from collections import Counter
-    first = call(key, pageNo=1, numOfRows=ROWS)
+    T = "농협_일반현황_임직원현황"
+    combos = [
+        {}, {"title": T}, {"basYm": "201112"}, {"title": T, "basYm": "201112"},
+        {"basYm": "202312"}, {"title": T, "basYm": "202312"}, {"basYm": "202412"},
+    ]
+    for c in combos:
+        try:
+            r = call(key, pageNo=1, numOfRows=1, **c)
+            it = r["items"][0] if r["items"] else {}
+            notice(f"{c or '조건없음'} → totalCount={r['total']} {json.dumps(it, ensure_ascii=False)[:200]}")
+        except ApiError as e:
+            notice(f"{c or '조건없음'} → {e}")
+        time.sleep(0.3)
+    first = call(key, pageNo=1, numOfRows=ROWS, title=T)
     total = first["total"]
-    notice(f"기준년월 미지정 totalCount={total}")
     if not total:
         return
     pages = -(-total // ROWS)
     samples = list(first["items"])
     if pages > 1:
-        samples += call(key, pageNo=pages, numOfRows=ROWS)["items"]
+        samples += call(key, pageNo=pages, numOfRows=ROWS, title=T)["items"]
     yms = Counter(str(i.get("basYm")) for i in samples)
     titles = Counter(str(i.get("title")) for i in samples)
     notice(f"첫/마지막 페이지 기준년월 범위 {min(yms)} ~ {max(yms)} / 표본 월 {sorted(yms)[-12:]}")
