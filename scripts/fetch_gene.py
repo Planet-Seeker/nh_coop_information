@@ -94,9 +94,17 @@ def months_back(n: int):
             y, m = y - 1, 12
 
 
+COOP_TABLE = "임직원"       # 조합별 자료가 담긴 표(title에 포함된 글자)
+SUMMARY_TABLE = "회원조합수"  # 전국 합계 요약표
+
+
+def coop_total(r: dict) -> int:
+    return sum(t["total"] for t in r["tables"] if COOP_TABLE in t["title"])
+
+
 def find_latest(key: str) -> str:
     for ym in months_back(LOOKBACK_MONTHS):
-        if call(key, basYm=ym, pageNo=1, numOfRows=1)["total"] > 0:
+        if coop_total(call(key, basYm=ym, pageNo=1, numOfRows=1)) > 0:
             return ym
         time.sleep(0.2)
     raise ApiError(f"최근 {LOOKBACK_MONTHS}개월 안에 데이터가 있는 기준년월을 찾지 못했습니다.")
@@ -124,11 +132,11 @@ def probe(key: str) -> None:
 def fetch_month(key: str, ym: str) -> list:
     first = call(key, basYm=ym, pageNo=1, numOfRows=ROWS)
     items = list(first["items"])
-    pages = min(-(-first["total"] // ROWS), MAX_PAGES)
+    pages = min(-(-max(coop_total(first), 1) // ROWS), MAX_PAGES)
     for p in range(2, pages + 1):
         time.sleep(0.3)
         items += call(key, basYm=ym, pageNo=p, numOfRows=ROWS)["items"]
-    print(f"[{ym}] totalCount={first['total']} 수집={len(items)}건 ({pages}회 호출)")
+    print(f"[{ym}] 조합별 totalCount={coop_total(first)} 수집={len(items)}건 ({pages}회 호출)")
     return items
 
 
@@ -140,25 +148,43 @@ def to_num(v):
         return None
 
 
+def pick(it: dict, suffix: str):
+    """필드명 접미사로 값 찾기 (표마다 xcsmCnt / nhUnnCnt 처럼 이름이 달라서)"""
+    for k, v in it.items():
+        if k.endswith(suffix) and not (suffix == "Dcd" and k.endswith("DcdNm")):
+            return v
+    return None
+
+
 def build(ym: str, items: list) -> dict:
-    """조합(금융회사코드)별로 묶어 용량을 줄인다."""
-    coops = {}
+    """조합(금융회사코드)별로 묶어 용량을 줄인다. 전국 요약표는 summary로 분리."""
+    coops, summary, seen = {}, [], set()
     for it in items:
+        sig = json.dumps(it, sort_keys=True, ensure_ascii=False)
+        if sig in seen:
+            continue
+        seen.add(sig)
+        title = str(it.get("title") or "")
+        row = {
+            "t": title,
+            "k": str(pick(it, "Dcd") or ""),
+            "d": str(pick(it, "DcdNm") or "").strip(),
+            "n": to_num(pick(it, "Cnt")),
+        }
+        if SUMMARY_TABLE in title:
+            summary.append(row)
+            continue
         cd = str(it.get("fncoCd") or "").strip()
         nm = str(it.get("fncoNm") or "").strip()
         if not cd and not nm:
             continue
         c = coops.setdefault(cd or nm, {"cd": cd, "nm": nm, "crno": str(it.get("crno") or ""), "rows": []})
-        c["rows"].append({
-            "t": str(it.get("title") or ""),
-            "k": str(it.get("xcsmDcd") or ""),
-            "d": str(it.get("xcsmDcdNm") or "").strip(),
-            "n": to_num(it.get("xcsmCnt")),
-        })
+        c["rows"].append(row)
     lst = sorted(coops.values(), key=lambda c: c["nm"])
     for c in lst:
         c["rows"].sort(key=lambda r: (r["t"], r["k"]))
-    return {"basYm": ym, "count": len(lst), "coops": lst}
+    summary.sort(key=lambda r: r["k"])
+    return {"basYm": ym, "count": len(lst), "summary": summary, "coops": lst}
 
 
 def write_json(path: Path, obj) -> None:

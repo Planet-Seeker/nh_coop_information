@@ -38,7 +38,21 @@
       for (const c of data.coops) c._k = norm(c.nm);
       cache.set(ym, data);
     }
-    return cache.get(ym);
+    const data = cache.get(ym);
+    renderSummary(data);
+    return data;
+  }
+
+  // 전국 회원조합 수 요약
+  function renderSummary(data) {
+    const box = $("summary");
+    const s = (data.summary || []).filter((r) => r.n != null);
+    if (!s.length) { box.hidden = true; return; }
+    box.replaceChildren(
+      el("span", { class: "sum-label" }, `전국 회원조합 (${fmtYm(data.basYm)})`),
+      ...s.map((r) => el("span", { class: "chip" }, `${r.d || r.k} `, el("b", {}, fmtNum(r.n))))
+    );
+    box.hidden = false;
   }
 
   // 검색어 일치 부분 강조 (DOM 노드로 구성)
@@ -74,12 +88,9 @@
         el("thead", {}, el("tr", {}, el("th", {}, "구분"), el("th", { class: "num" }, "인원")))
       );
       const body = el("tbody");
-      let sum = 0, numeric = 0;
       for (const r of rows) {
-        if (typeof r.n === "number") { sum += r.n; numeric++; }
         body.append(el("tr", {}, el("td", {}, r.d || r.k || "-"), el("td", { class: "num" }, fmtNum(r.n))));
       }
-      if (numeric > 1) body.append(el("tr", { class: "sum" }, el("th", {}, "합계"), el("td", { class: "num" }, fmtNum(sum))));
       tb.append(body);
       card.append(el("section", { class: "sec" }, el("h3", {}, prettyTitle(t)), tb));
     }
