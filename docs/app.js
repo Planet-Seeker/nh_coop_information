@@ -660,6 +660,12 @@
     else search({ push: false });
   }
 
+  // 검색창 안내문: 좁은 화면에서는 짧게(긴 문장이 잘리지 않도록)
+  const LONG_PH = qEl.getAttribute("placeholder"), SHORT_PH = "조합명 검색 (예: 순천농협)";
+  const narrowMQ = window.matchMedia("(max-width: 640px)");
+  const setPH = () => qEl.setAttribute("placeholder", narrowMQ.matches ? SHORT_PH : LONG_PH);
+  setPH(); narrowMQ.addEventListener("change", setPH);
+
   let timer;
   qEl.addEventListener("input", () => {
     clearTimeout(timer);

@@ -9,14 +9,12 @@
 <title>농협 경영정보 검색</title>
 <link rel="stylesheet" href="fonts/pretendard-gov/pretendardvariable-gov-dynamic-subset.css">
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
-<link rel="stylesheet" href="style.css?v=20261028u">
+<link rel="stylesheet" href="style.css?v=20261028v">
 </head>
 <body>
 <main class="wrap">
   <header class="top">
-    <p class="eyebrow">금융통계 · 농업협동조합</p>
     <h1><a href="./" class="home">농협 경영정보 검색</a></h1>
-    <p class="lead">조합명을 검색하면 임직원·조합원 현황, 재무상태표, 손익, 건전성·수익성·유동성 지표를 연도별 추이와 함께 보여줍니다.</p>
   </header>
 
   <form id="f" class="search" role="search" autocomplete="off">
@@ -24,7 +22,7 @@
       <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
     </a>
     <label class="sr" for="q">조합명</label>
-    <input id="q" name="q" type="search" placeholder="조합명 입력 (예: 청주, 오창농협)" maxlength="30" autofocus>
+    <input id="q" name="q" type="search" placeholder="조합명(예: 순천농협)을 검색하면 각종 지표를 연도별 추이와 함께 보여줍니다." maxlength="30" autofocus>
   </form>
 
   <p id="status" class="status" aria-live="polite">데이터를 불러오는 중…</p>
@@ -47,6 +45,6 @@
 </main>
 <script src="vendor/leaflet/leaflet.js"></script>
 <script src="config.js"></script>
-<script src="app.js?v=20261028u"></script>
+<script src="app.js?v=20261028v"></script>
 </body>
 </html>
