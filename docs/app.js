@@ -659,7 +659,7 @@
       return;
     }
     if (INDEX.updated) $("updated").textContent = INDEX.updated;
-    renderSummary();
+    // 전국 회원조합수 요약 줄은 표시하지 않음(2026-10-28 결정). 데이터(index.json summary)는 비교 기능용으로 보관.
     route();
   })();
 })();
