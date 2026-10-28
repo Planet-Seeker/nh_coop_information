@@ -20,15 +20,12 @@
     { id: "fund", label: "자금조달·운용", tables: [[T.FU, "주요 자금조달 및 운용"]] },
     { id: "kmi", label: "경영지표", tables: [[T.Q, "여신건전성"], [T.P, "수익성"], [T.L, "유동성"]] },
   ];
+  // 핵심 수치(2열×2행). 오른쪽 3열째는 추후 별도 기능 자리로 비워 둠
   const KPIS = [
     { label: "자산총계", t: T.AS, c: "A" },
     { label: "예수부채", t: T.LE, c: "A1" },
-    { label: "대출채권", t: T.AS, c: "A3" },
-    { label: "당기순이익", t: T.PL, c: "A", note: "6월은 상반기 누적" },
     { label: "고정이하여신비율", t: T.Q, c: "C", note: "낮을수록 건전" },
     { label: "예대율", t: T.L, c: "C" },
-    { label: "유동성비율", t: T.L, c: "B" },
-    { label: "조합원", t: T.G, c: "B" },
   ];
   const MAX_LIST = 50;
 
@@ -38,7 +35,7 @@
   let INDEX = null, CODES = {}, LIST = [];
   const coopCache = new Map();
   const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[0], range: "5y" };
-  const WINDOW = 10;                                         // 최근 5년 = 반기 10개
+  const RANGES = [["3y", "최근 3년", 6], ["5y", "최근 5년", 10], ["10y", "최근 10년", 20], ["all", "전체", Infinity]];  // 반기 개수
   const MISSING = "자료누락";
 
   // ── 유틸 ───────────────────────────────────────────────────
@@ -219,7 +216,7 @@
       sel);
 
     // 핵심 수치 (누르면 추이 그래프 전환)
-    const kpis = el("div", { class: "kpis" }, KPIS.map((k) => {
+    const kpis = el("div", { class: "kpis" }, el("div", { class: "kpi-slot", "aria-hidden": "true" }), KPIS.map((k) => {
       const kind = kindOf(k.t, k.c);
       const v = valueOf(coop, ym, k.t, k.c);
       const active = view.metric.t === k.t && view.metric.c === k.c;
@@ -242,7 +239,8 @@
     // 기본: 선택한 기준년월을 오른쪽 끝으로 하는 5년(반기 10개). '전체 기간'이면 보유 자료 전체.
     const asc = months.slice().reverse();
     const end = asc.indexOf(view.ym);
-    const shown = view.range === "all" ? asc : asc.slice(Math.max(0, end - WINDOW + 1), end + 1);
+    const win = (RANGES.find((r) => r[0] === view.range) || RANGES[1])[2];
+    const shown = asc.slice(Math.max(0, end - win + 1), end + 1);
     const pts = shown.map((ym) => ({ ym, v: valueOf(coop, ym, m.t, m.c) }));  // 오래된 → 최신
     const valid = pts.filter((p) => p.v != null);
     const selIdx = pts.findIndex((p) => p.ym === view.ym);
@@ -253,7 +251,7 @@
       el("div", { class: "trend-h" },
         el("h3", {}, `${label} 추이`),
         el("span", { class: "unit" }, `${unitLabel(kind) ? `단위: ${unitLabel(kind)} · ` : ""}${pts.length ? `${ymLabel(pts[0].ym)}~${ymLabel(pts[pts.length - 1].ym)}` : ""}`),
-        el("div", { class: "segs", role: "group", "aria-label": "기간" }, rangeBtn("5y", "최근 5년"), rangeBtn("all", "전체 기간"))));
+        el("div", { class: "segs", role: "group", "aria-label": "기간" }, RANGES.map(([id, text]) => rangeBtn(id, text)))));
     if (valid.length < 2) {
       box.append(el("p", { class: "muted" }, valid.length ? "추이를 그릴 자료가 부족합니다." : `${MISSING}: 이 항목은 이 조합의 자료가 없습니다.`));
       return box;
