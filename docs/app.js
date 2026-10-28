@@ -125,10 +125,13 @@
 
   // 지역 4구분을 두 줄 문장으로: "충남 천안시 위치" / "충남지역본부 천안시지부 소속"(직할이면 "충남지역본부 직할")
   // meta.csv 값 우선, 없으면 소속구역(광역)만 금융회사코드로 추정(한 지역으로 정해지는 경우만)
+  // meta.csv '추정' 열: 추정으로 채운 열 이름(;로 구분). 화면에는 "(추정)"으로 표시
+  const estOf = (cd, col) => ((META.get(cd) || {})["추정"] || "").split(";").map((x) => x.trim()).includes(col);
+  const typeText = (c) => `${c.type}${estOf(c.cd, "유형") ? "(추정)" : ""}`;
   function affOf(cd) {
     const m = META.get(cd) || {};
     const c = BYCD.get(cd);
-    let aff1 = m["소속구역_광역"] || "", est = false;
+    let aff1 = m["소속구역_광역"] || "", est = estOf(cd, "소속구역_광역") || estOf(cd, "소속구역_기초");
     if (!aff1 && c && c.rc !== "17" && !c.region.includes("·") && c.region !== "기타") { aff1 = c.region; est = true; }
     return { aff1, aff2: m["소속구역_기초"] || "", est };
   }
@@ -138,10 +141,10 @@
     const { aff1, aff2, est } = affOf(cd);
     const loc = [adm1, adm2].filter(Boolean).join(" ");
     let aff = "";
-    if (aff1 && aff2 === "직할") aff = `${aff1}지역본부 직할`;
+    if (aff2 === "직할") aff = aff1 ? `${aff1}지역본부 직할` : "지역본부 직할";
     else if (aff1 || aff2) aff = `${[aff1 && `${aff1}지역본부`, aff2 && `${aff2}지부`].filter(Boolean).join(" ")} 소속`;
     return [
-      { text: loc ? `${loc} 위치` : "위치 미지정", miss: !loc },
+      { text: loc ? `${loc} 위치` : "위치 미지정", miss: !loc, est: estOf(cd, "행정구역_광역") || estOf(cd, "행정구역_기초") },
       { text: aff || "소속 미지정", miss: !aff, est },
     ];
   }
@@ -154,7 +157,8 @@
     let st = m["상태"] || "";
     if (!STATES.includes(st)) st = c && c.ym < INDEX.latest ? "공시중단" : "운영";
     const succ = normCd(m["승계조합코드"]);
-    return { st, succ: BYCD.has(succ) && succ !== cd ? succ : "", est: /자동 추정|^정황:/.test(m["비고"] || ""),   // 확인(기사 근거)이면 추정 표시 없음
+    return { st, succ: BYCD.has(succ) && succ !== cd ? succ : "", est: estOf(cd, "상태") || estOf(cd, "승계조합코드") || /자동 추정|^정황:/.test(m["비고"] || ""),   // 원자료가 아니면 추정
+      prevEst: estOf(cd, "이전명칭"),
       prev: (m["이전명칭"] || "").split(/[;；]/).map((x) => x.trim()).filter(Boolean) };
   }
   const hiddenOld = (cd) => { const s = stOf(cd); return s.st === "코드변경" && !!s.succ; };   // 새 코드 조합에 이어 붙여 보여 줌
@@ -368,12 +372,12 @@
     const aliasText = (h) => {
       if (h.k.includes(nq)) return "";
       const a = stOf(h.cd).prev.find((x) => norm(x).includes(nq));
-      return a ? ` · 옛 이름 ${a}` : "";
+      return a ? ` · 옛 이름 ${a}${stOf(h.cd).prevEst ? "(추정)" : ""}` : "";
     };
     const item = (h) => el("li", {}, el("button", { type: "button", class: "hit" + (gone(h) ? " gone" : ""), onclick: () => openCoop(h.cd) },
       el("span", { class: "hit-nm" }, highlight(h.nm, q)),
       el("span", { class: "hit-meta" },
-        `${(affOf(h.cd).aff1 || h.region)} · ${h.type}${tag(h)}${aliasText(h)}${gone(h) ? goneText(h) : ""}`),
+        `${(() => { const a = affOf(h.cd); return a.aff1 ? `${a.aff1}${a.est ? "(추정)" : ""}` : h.rc === "17" ? h.region : `${h.region}(추정)`; })()} · ${typeText(h)}${tag(h)}${aliasText(h)}${gone(h) ? goneText(h) : ""}`),
       el("span", { class: "hit-go", "aria-hidden": "true" }, "›")));
     const shown = hits.slice(0, MAX_LIST);
     const liveHits = shown.filter((h) => !gone(h)), goneHits = shown.filter(gone);
@@ -399,21 +403,21 @@
     if (s.st !== "운영" && c) {
       const end = `${ymLabel(c.ym)} 이후 공시 없음`;
       if (s.st === "합병" && s.succ) lines.push([end, " · ", link(s.succ), `에 합병${s.est ? "(추정)" : ""}`]);
-      else if (s.st === "코드변경" && s.succ) lines.push(["같은 조합의 이후 자료: ", link(s.succ)]);
+      else if (s.st === "코드변경" && s.succ) lines.push(["같은 조합의 이후 자료: ", link(s.succ), s.est ? "(추정)" : ""]);
       else {                                                // 공시중단: 비고에 확인된 사유가 있으면 그 내용
         const why = /^(확인|정황): (.+?) \(https?:/.exec((META.get(cd) || {})["비고"] || "");
-        lines.push([`${end} · ${why ? why[2] : "사유 미확인"}`]);
+        lines.push([`${end} · ${why ? why[2] + (s.est ? "(추정)" : "") : "사유 미확인"}`]);
       }
     }
     const preds = PRED.get(cd) || [];
     const merged = preds.filter((p) => stOf(p).st === "합병");
     const moved = preds.filter((p) => stOf(p).st === "코드변경");
-    if (merged.length) lines.push(["합병 이력: ", ...merged.flatMap((p, i) => [i ? ", " : "", link(p), ` (${BYCD.get(p).ym.slice(0, 4)}년까지)`])]);
+    if (merged.length) lines.push(["합병 이력: ", ...merged.flatMap((p, i) => [i ? ", " : "", link(p), ` (${BYCD.get(p).ym.slice(0, 4)}년까지${stOf(p).est ? ", 추정" : ""})`])]);
     if (moved.length) {
       const last = moved.map((p) => BYCD.get(p).ym).sort().pop();
-      lines.push([`${ymLabel(last)}까지는 금융회사코드 변경 전 자료를 이어 붙였습니다`]);
+      lines.push([`${ymLabel(last)}까지는 금융회사코드 변경 전 자료를 이어 붙였습니다${moved.some((p) => stOf(p).est) ? "(추정)" : ""}`]);
     }
-    if (s.prev.length) lines.push([`옛 이름: ${s.prev.join(", ")}`]);
+    if (s.prev.length) lines.push([`옛 이름: ${s.prev.join(", ")}${s.prevEst ? "(추정)" : ""}`]);
     return lines.length ? el("div", { class: "hist" }, lines.map((l) => el("p", {}, ...l))) : null;
   }
 
@@ -523,10 +527,10 @@
       el("h2", { class: "d-name" }, coop.nm),
       el("p", { class: "meta" }, (() => {                  // 금융회사코드·법인등록번호는 화면에 표시하지 않음(데이터에는 보관)
         const c = LIST.find((x) => x.cd === coop.cd);
-        return c ? `${c.region} · ${c.type}` : "";
+        return c ? `${c.region}${c.rc === "17" ? "" : "(추정)"} · ${typeText(c)}` : "";
       })()),
       el("div", { class: "rgn-text" }, regionLines(coop.cd).map((r) =>   // 1행: 행정구역(위치), 2행: 소속구역
-        el("p", { class: r.miss ? "miss" : "" }, r.text, r.est ? el("span", { class: "rgn-n" }, " (코드 추정)") : null))),
+        el("p", { class: r.miss ? "miss" : "" }, r.text, r.est ? el("span", { class: "rgn-n" }, " (추정)") : null))),
       historyLines(coop),
     ];
     // 핵심 수치 (누르면 추이 그래프 전환)

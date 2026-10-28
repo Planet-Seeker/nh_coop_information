@@ -28,7 +28,7 @@ from pathlib import Path
 DATA = Path(__file__).resolve().parent.parent / "docs" / "data"
 META = DATA / "meta" / "coop_meta.csv"
 COLS = ["금융회사코드", "조합명(참고)", "유형", "상태", "승계조합코드", "이전명칭",
-        "행정구역_광역", "행정구역_기초", "소속구역_광역", "소속구역_기초", "주소", "위도", "경도", "비고"]
+        "행정구역_광역", "행정구역_기초", "소속구역_광역", "소속구역_기초", "주소", "위도", "경도", "비고", "추정"]   # 추정: 추정으로 채운 열 이름(;로 구분). 확인하면 지움
 CODE_COLS = {"금융회사코드", "승계조합코드"}
 AUTO = "자동 추정(확인 필요)"
 
@@ -99,6 +99,7 @@ def main() -> int:
             if succ and not r["승계조합코드"]:
                 r["승계조합코드"] = succ
             if st != "운영":
+                r["추정"] = ";".join(dict.fromkeys([x for x in r.get("추정", "").split(";") if x] + ["상태"] + (["승계조합코드"] if r["승계조합코드"] else [])))
                 r["비고"] = f"{r['비고']} {AUTO}".strip() if AUTO not in r["비고"] else r["비고"]
                 guessed += 1
 

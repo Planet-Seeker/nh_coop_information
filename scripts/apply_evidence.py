@@ -28,6 +28,9 @@ for r in rows:
     if e.get("prev") and not r["이전명칭"]:
         r["이전명칭"] = e["prev"]
     r["비고"] = f'{e["grade"]}: {e["note"]} ({e["src"]})'
+    if "추정" in r:                              # 웹 근거도 원자료가 아니므로 추정
+        est = [x for x in r["추정"].split(";") if x] + [c for c in ("상태", "승계조합코드", "이전명칭") if code(r[c])]
+        r["추정"] = ";".join(dict.fromkeys(est))
     n += 1
 out = io.StringIO()
 w = csv.writer(out, lineterminator="\r\n")
