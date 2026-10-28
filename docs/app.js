@@ -412,10 +412,9 @@
       back,
       el("div", { class: "d-title" },
         el("h2", {}, coop.nm),
-        el("p", { class: "meta" }, (() => {                // 금융회사코드는 내부 식별자로만 쓰고 화면에 표시하지 않음
+        el("p", { class: "meta" }, (() => {                // 금융회사코드·법인등록번호는 화면에 표시하지 않음(데이터에는 보관)
           const c = LIST.find((x) => x.cd === coop.cd);
-          const crno = coop.crno && !/^0{6}/.test(coop.crno) ? `법인등록번호 ${coop.crno}` : "";   // 0으로 채운 값은 원자료의 빈값
-          return [c ? `${c.region} · ${c.type}` : "", crno].filter(Boolean).join(" · ");
+          return c ? `${c.region} · ${c.type}` : "";
         })()),
         isYearEnd(ym) ? null : el("p", { class: "partial-note" }, `${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준입니다(연말 자료 공개 전).`)));
 
