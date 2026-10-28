@@ -59,11 +59,30 @@ def call(key: str, **params) -> dict:
     if head.get("resultCode") != "00":
         raise ApiError(f"API 오류 {head.get('resultCode')}: {head.get('resultMsg')}")
     body = js["response"].get("body", {}) or {}
-    items = (body.get("items") or {})
-    items = items.get("item", []) if isinstance(items, dict) else []
-    if isinstance(items, dict):
-        items = [items]
-    return {"total": int(body.get("totalCount") or 0), "items": items}
+
+    def unpack(block):
+        its = block.get("items") or {}
+        its = its.get("item", []) if isinstance(its, dict) else []
+        return [its] if isinstance(its, dict) else list(its)
+
+    # 실제 응답은 body.tableList[] 에 표(title)별로 나뉘어 온다. 명세식 단일 구조도 함께 지원.
+    blocks = body.get("tableList")
+    if isinstance(blocks, dict):
+        blocks = [blocks]
+    if not blocks:
+        blocks = [body]
+    tables = []
+    for b in blocks:
+        t = str(b.get("title") or "")
+        its = unpack(b)
+        for i in its:
+            i.setdefault("title", t)
+        tables.append({"title": t, "total": int(b.get("totalCount") or 0), "items": its})
+    return {
+        "tables": tables,
+        "total": max((t["total"] for t in tables), default=0),   # 페이지 수 계산용(표마다 같은 pageNo가 적용됨)
+        "items": [i for t in tables for i in t["items"]],
+    }
 
 
 def months_back(n: int):
@@ -90,39 +109,16 @@ def notice(msg: str) -> None:
 
 
 def probe(key: str) -> None:
-    """기준년월 없이 조회해 실제 보유 데이터의 범위와 구성을 확인한다."""
-    from collections import Counter
-    T = "농협_일반현황_임직원현황"
-    for rt in ("json", "xml"):
-        url = API + "?" + urllib.parse.urlencode({"serviceKey": key, "resultType": rt, "pageNo": 1, "numOfRows": 2})
-        with urllib.request.urlopen(url, timeout=30) as r:
-            raw = r.read().decode("utf-8", "replace")
-        notice(f"원문({rt}): " + re.sub(r"\s+", " ", raw).replace(key, "***")[:700])
-    combos = [
-        {}, {"title": T}, {"basYm": "201112"}, {"title": T, "basYm": "201112"},
-        {"basYm": "202312"}, {"title": T, "basYm": "202312"}, {"basYm": "202412"},
-    ]
-    for c in combos:
-        try:
-            r = call(key, pageNo=1, numOfRows=1, **c)
-            it = r["items"][0] if r["items"] else {}
-            notice(f"{c or '조건없음'} → totalCount={r['total']} {json.dumps(it, ensure_ascii=False)[:200]}")
-        except ApiError as e:
-            notice(f"{c or '조건없음'} → {e}")
+    """보유 표(title) 구성, 항목 필드, 기준년월별 건수를 확인한다."""
+    r = call(key, pageNo=1, numOfRows=3)
+    for t in r["tables"]:
+        keys = sorted({k for i in t["items"] for k in i})
+        sample = json.dumps(t["items"][0], ensure_ascii=False)[:160] if t["items"] else ""
+        notice(f"[표] {t['title']} total={t['total']} 필드={keys} 예={sample}")
+    for ym in ("202606", "202603", "202512", "202509", "202506", "202412"):
+        r = call(key, pageNo=1, numOfRows=1, basYm=ym)
+        notice(f"basYm={ym}: " + ", ".join(f"{t['title']}={t['total']}" for t in r["tables"]))
         time.sleep(0.3)
-    first = call(key, pageNo=1, numOfRows=ROWS, title=T)
-    total = first["total"]
-    if not total:
-        return
-    pages = -(-total // ROWS)
-    samples = list(first["items"])
-    if pages > 1:
-        samples += call(key, pageNo=pages, numOfRows=ROWS, title=T)["items"]
-    yms = Counter(str(i.get("basYm")) for i in samples)
-    titles = Counter(str(i.get("title")) for i in samples)
-    notice(f"첫/마지막 페이지 기준년월 범위 {min(yms)} ~ {max(yms)} / 표본 월 {sorted(yms)[-12:]}")
-    notice("표본 title: " + ", ".join(f"{t}({n})" for t, n in titles.most_common(10)))
-    notice("첫 항목: " + json.dumps(first["items"][0], ensure_ascii=False)[:400])
 
 
 def fetch_month(key: str, ym: str) -> list:
