@@ -20,12 +20,16 @@
     { id: "fund", label: "자금조달·운용", tables: [[T.FU, "주요 자금조달 및 운용"]] },
     { id: "kmi", label: "경영지표", tables: [[T.Q, "여신건전성"], [T.P, "수익성"], [T.L, "유동성"]] },
   ];
-  // 핵심 수치(2열×2행). 오른쪽 3열째는 추후 별도 기능 자리로 비워 둠
+  // 핵심 수치: 화면 왼쪽 절반에 3열로 배치. 오른쪽 절반은 추후 별도 기능 자리로 비워 둠
   const KPIS = [
     { label: "자산총계", t: T.AS, c: "A" },
     { label: "예수부채", t: T.LE, c: "A1" },
+    { label: "대출채권", t: T.AS, c: "A3" },
+    { label: "당기순이익", t: T.PL, c: "A", note: "6월은 상반기 누적" },
     { label: "고정이하여신비율", t: T.Q, c: "C", note: "낮을수록 건전" },
     { label: "예대율", t: T.L, c: "C" },
+    { label: "유동성비율", t: T.L, c: "B" },
+    { label: "조합원", t: T.G, c: "B" },
   ];
   const MAX_LIST = 50;
 
@@ -34,7 +38,7 @@
   const qEl = $("q"), statusEl = $("status"), resEl = $("results"), detEl = $("detail");
   let INDEX = null, CODES = {}, LIST = [];
   const coopCache = new Map();
-  const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[0], range: "5y" };
+  const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[0], range: "5y", trendView: "chart" };
   const RANGES = [["3y", "최근 3년", 6], ["5y", "최근 5년", 10], ["10y", "최근 10년", 20], ["all", "전체", Infinity]];  // 반기 개수
   const MISSING = "자료누락";
 
@@ -216,7 +220,7 @@
       sel);
 
     // 핵심 수치 (누르면 추이 그래프 전환)
-    const kpis = el("div", { class: "kpis" }, el("div", { class: "kpi-slot", "aria-hidden": "true" }), KPIS.map((k) => {
+    const kpis = el("div", { class: "kpis" }, KPIS.map((k) => {
       const kind = kindOf(k.t, k.c);
       const v = valueOf(coop, ym, k.t, k.c);
       const active = view.metric.t === k.t && view.metric.c === k.c;
@@ -227,7 +231,8 @@
         k.note ? el("span", { class: "kpi-n" }, k.note) : null);
     }));
 
-    detEl.replaceChildren(head, kpis, renderTrend(), renderTabs());
+    const kpiRow = el("div", { class: "kpi-row" }, kpis, el("div", { class: "kpi-slot", "aria-hidden": "true" }));
+    detEl.replaceChildren(head, kpiRow, renderTrend(), renderTabs());
   }
 
   // ── 추이 그래프 ─────────────────────────────────────────────
@@ -247,11 +252,23 @@
 
     const rangeBtn = (id, text) => el("button", { type: "button", class: "seg" + (view.range === id ? " on" : ""), "aria-pressed": view.range === id ? "true" : "false",
       onclick: () => { view.range = id; renderDetail(); } }, text);
+    const viewTab = (id, text) => el("button", { type: "button", role: "tab", class: "vtab" + (view.trendView === id ? " on" : ""), "aria-selected": view.trendView === id ? "true" : "false",
+      onclick: () => { view.trendView = id; renderDetail(); } }, text);
     const box = el("section", { class: "trend" },
       el("div", { class: "trend-h" },
+        el("div", { class: "vtabs", role: "tablist", "aria-label": "보기 방식" }, viewTab("chart", "그래프"), viewTab("table", "표")),
+        el("div", { class: "segs", role: "group", "aria-label": "기간" }, RANGES.map(([id, text]) => rangeBtn(id, text)))),
+      el("div", { class: "trend-t" },
         el("h3", {}, `${label} 추이`),
-        el("span", { class: "unit" }, `${unitLabel(kind) ? `단위: ${unitLabel(kind)} · ` : ""}${pts.length ? `${ymLabel(pts[0].ym)}~${ymLabel(pts[pts.length - 1].ym)}` : ""}`),
-        el("div", { class: "segs", role: "group", "aria-label": "기간" }, RANGES.map(([id, text]) => rangeBtn(id, text)))));
+        el("span", { class: "unit" }, `${unitLabel(kind) ? `단위: ${unitLabel(kind)} · ` : ""}${pts.length ? `${ymLabel(pts[0].ym)}~${ymLabel(pts[pts.length - 1].ym)}` : ""}`)));
+
+    if (view.trendView === "table") {                       // 표 보기: 같은 기간을 최신순 표로
+      box.append(el("div", { class: "tbl-scroll trend-tbl" }, el("table", {},
+        el("thead", {}, el("tr", {}, el("th", {}, "기준년월"), el("th", { class: "num" }, colHead(kind)))),
+        el("tbody", {}, pts.slice().reverse().map((p) => el("tr", { class: p.ym === view.ym ? "on" : "" },
+          el("td", {}, ymLabel(p.ym)), el("td", { class: "num" + (p.v == null ? " miss" : p.v < 0 ? " neg" : "") }, fmt(p.v, kind))))))));
+      return box;
+    }
     if (valid.length < 2) {
       box.append(el("p", { class: "muted" }, valid.length ? "추이를 그릴 자료가 부족합니다." : `${MISSING}: 이 항목은 이 조합의 자료가 없습니다.`));
       return box;
@@ -357,12 +374,6 @@
     });
     box.append(wrap);
 
-    box.append(el("details", { class: "tbl-view" },
-      el("summary", {}, "표로 보기"),
-      el("table", {},
-        el("thead", {}, el("tr", {}, el("th", {}, "기준년월"), el("th", { class: "num" }, colHead(kind)))),
-        el("tbody", {}, pts.slice().reverse().map((p) => el("tr", { class: p.ym === view.ym ? "on" : "" },
-          el("td", {}, ymLabel(p.ym)), el("td", { class: "num" + (p.v == null ? " miss" : "") }, fmt(p.v, kind))))))));
     return box;
   }
 
