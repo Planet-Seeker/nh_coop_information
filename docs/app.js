@@ -32,11 +32,31 @@
     { label: "고정이하여신비율", t: T.Q, c: "C", note: "낮을수록 건전" },
   ];
   const MAX_LIST = 50;
+  const SOURCE = { id: "fsc_agcoop", label: "금융위원회 농협 금융통계" };   // 자료 출처 구분(추후 다른 API 추가 대비)
+
+  // ── 금융회사코드 기반 분류 ─────────────────────────────────
+  // 개별 조합: 0010027 + 권역 2자리 + 일련번호(13자리). 'nnnnnnnS' 형태는 시도·전국 합계(집계값).
+  const REGION = { 10: "서울", 12: "부산", 13: "인천", 15: "대구", 2: "경기", 3: "강원", 40: "충북", 41: "충북", 42: "충북",
+    45: "대전·충남", 46: "대전·충남", 47: "대전·충남", 48: "대전·충남", 5: "전북", 6: "광주·전남", 7: "경북", 8: "경남·울산", 9: "제주" };
+  function classify(cd, nm) {
+    if (/^0010027\d{6}$/.test(cd)) {
+      const rc = cd.slice(7, 9);
+      const livestock = rc === "17" || /축산|축협|낙협|양돈|양계/.test(nm);
+      const item = !livestock && /원예|인삼|과수|채소|화훼|특작|버섯|감귤|양봉|약초|엽연초|단감|사과|배농협|포도|고추|딸기|참외/.test(nm);
+      return { kind: "coop", rc, region: rc === "17" ? "권역 미지정" : (REGION[rc] || REGION[rc[0]] || "기타"),
+        type: livestock ? "축협" : item ? "품목조합" : "지역농협" };
+    }
+    const m = /^농협\((.+)\)$/.exec(nm);
+    if (/S$/.test(cd) && m) return { kind: "sido", sido: m[1] };
+    if (/S$/.test(cd)) return { kind: "nation" };
+    return { kind: "other" };
+  }
 
   // ── 상태 ───────────────────────────────────────────────────
   const $ = (id) => document.getElementById(id);
   const qEl = $("q"), statusEl = $("status"), resEl = $("results"), detEl = $("detail");
   let INDEX = null, CODES = {}, LIST = [];
+  const AGG = { nation: null, sido: new Map() };            // 집계값(시도 합계·전국 합계) — 검색 목록에서 분리, 비교 기능용
   const coopCache = new Map();
   const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[1], range: "5y" };
   const RANGES = [["3y", "최근 3년", 3], ["5y", "최근 5년", 5], ["10y", "최근 10년", 10], ["all", "전체", Infinity]];  // 연도 개수
@@ -171,7 +191,7 @@
     if (push) setURL({ q });
     if (!q) {
       resEl.replaceChildren();
-      setStatus(`전국 ${NF0.format(LIST.length)}개 조합 · ${ymLabel(INDEX.months[INDEX.months.length - 1])}~${ymLabel(INDEX.latest)} 자료. 조합명을 입력하세요.`);
+      setStatus(`전국 ${NF0.format(LIST.length)}개 조합(시도·전국 합계 제외) · ${ymLabel(INDEX.months[INDEX.months.length - 1])}~${ymLabel(INDEX.latest)} 자료. 조합명을 입력하세요.`);
       return;
     }
     const nq = norm(q);
@@ -193,7 +213,7 @@
       el("li", {}, el("button", { type: "button", class: "hit", onclick: () => openCoop(h.cd) },
         el("span", { class: "hit-nm" }, highlight(h.nm, q)),
         el("span", { class: "hit-meta" },
-          dupes.get(h.nm) > 1 ? `금융회사코드 ${h.cd}` : `최신 ${ymShort(h.ym)}`),
+          `${h.region} · ${h.type}`, dupes.get(h.nm) > 1 ? ` · ${h.cd}` : ""),
         el("span", { class: "hit-go", "aria-hidden": "true" }, "›"))))));
   }
 
@@ -241,7 +261,8 @@
       back,
       el("div", { class: "d-title" },
         el("h2", {}, coop.nm),
-        el("p", { class: "meta" }, `금융회사코드 ${coop.cd}`, coop.crno ? ` · 법인등록번호 ${coop.crno}` : ""),
+        el("p", { class: "meta" }, (() => { const c = LIST.find((x) => x.cd === coop.cd); return c ? `${c.region} · ${c.type} · ` : ""; })(),
+          `금융회사코드 ${coop.cd}`, coop.crno && !/^0{6}/.test(coop.crno) ? ` · 법인등록번호 ${coop.crno}` : ""),   // 0으로 채운 값은 원자료의 빈값
         isYearEnd(ym) ? null : el("p", { class: "partial-note" }, `${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준입니다(연말 자료 공개 전).`)),
       sel);
 
@@ -506,7 +527,12 @@
     try {
       const [idx, codes, list] = await Promise.all([getJSON("data/index.json"), getJSON("data/codes.json"), getJSON("data/coops.json")]);
       INDEX = idx; CODES = codes;
-      LIST = list.list.map(([cd, nm, ym]) => ({ cd, nm, ym, k: norm(nm) }));
+      for (const [cd, nm, ym] of list.list) {
+        const c = { cd, nm, ym, k: norm(nm), ...classify(cd, nm) };
+        if (c.kind === "coop") LIST.push(c);
+        else if (c.kind === "sido") AGG.sido.set(c.sido, c);
+        else if (c.kind === "nation") AGG.nation = c;
+      }
       if (!INDEX.months || !INDEX.months.length) throw new Error("empty");
     } catch {
       setStatus("데이터를 준비 중입니다. 잠시 후 다시 방문해 주세요.", true);
