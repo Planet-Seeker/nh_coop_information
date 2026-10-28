@@ -28,8 +28,8 @@
     { label: "예수부채", t: T.LE, c: "A1" },
     { label: "대출채권", t: T.AS, c: "A3" },
     { label: "예대율", t: T.L, c: "C" },
-    { label: "당기순이익", t: T.PL, c: "A", note: "6월은 상반기 누적" },
-    { label: "고정이하여신비율", t: T.Q, c: "C", note: "낮을수록 건전" },
+    { label: "당기순이익", t: T.PL, c: "A" },
+    { label: "고정이하여신비율", t: T.Q, c: "C" },
   ];
   const MAX_LIST = 50;
   const SOURCE = { id: "fsc_agcoop", label: "금융위원회 농협 금융통계" };   // 자료 출처 구분(추후 다른 API 추가 대비)
@@ -207,13 +207,21 @@
     setStatus(hits.length > MAX_LIST
       ? `${NF0.format(hits.length)}곳 중 ${MAX_LIST}곳만 표시합니다. 조합명을 더 구체적으로 입력해 보세요.`
       : `${hits.length}곳 검색됨 · 조합을 선택하세요`);
-    const dupes = new Map();
-    for (const h of hits) dupes.set(h.nm, (dupes.get(h.nm) || 0) + 1);
+    // 같은 이름·같은 권역 조합 구분(금융회사코드는 보이지 않음): 자료가 끊긴 곳은 마지막 연도, 나머지는 번호
+    const same = new Map();
+    for (const h of LIST) { const k = `${h.nm}|${h.region}`; same.set(k, [...(same.get(k) || []), h]); }
+    const tag = (h) => {
+      const g = same.get(`${h.nm}|${h.region}`);
+      if (g.length < 2) return "";
+      if (h.ym < INDEX.latest) return ` · ~${h.ym.slice(0, 4)}년`;
+      const live = g.filter((x) => x.ym >= INDEX.latest).sort((a, b) => (a.cd < b.cd ? -1 : 1));
+      return live.length > 1 ? ` · 동명 조합 ${"①②③④"[live.indexOf(h)]}` : "";
+    };
     resEl.replaceChildren(el("ul", { class: "hits" }, ...hits.slice(0, MAX_LIST).map((h) =>
       el("li", {}, el("button", { type: "button", class: "hit", onclick: () => openCoop(h.cd) },
         el("span", { class: "hit-nm" }, highlight(h.nm, q)),
         el("span", { class: "hit-meta" },
-          `${h.region} · ${h.type}`, dupes.get(h.nm) > 1 ? ` · ${h.cd}` : ""),
+          `${h.region} · ${h.type}${tag(h)}`),
         el("span", { class: "hit-go", "aria-hidden": "true" }, "›"))))));
   }
 
@@ -261,10 +269,12 @@
       back,
       el("div", { class: "d-title" },
         el("h2", {}, coop.nm),
-        el("p", { class: "meta" }, (() => { const c = LIST.find((x) => x.cd === coop.cd); return c ? `${c.region} · ${c.type} · ` : ""; })(),
-          `금융회사코드 ${coop.cd}`, coop.crno && !/^0{6}/.test(coop.crno) ? ` · 법인등록번호 ${coop.crno}` : ""),   // 0으로 채운 값은 원자료의 빈값
-        isYearEnd(ym) ? null : el("p", { class: "partial-note" }, `${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준입니다(연말 자료 공개 전).`)),
-      sel);
+        el("p", { class: "meta" }, (() => {                // 금융회사코드는 내부 식별자로만 쓰고 화면에 표시하지 않음
+          const c = LIST.find((x) => x.cd === coop.cd);
+          const crno = coop.crno && !/^0{6}/.test(coop.crno) ? `법인등록번호 ${coop.crno}` : "";   // 0으로 채운 값은 원자료의 빈값
+          return [c ? `${c.region} · ${c.type}` : "", crno].filter(Boolean).join(" · ");
+        })()),
+        isYearEnd(ym) ? null : el("p", { class: "partial-note" }, `${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준입니다(연말 자료 공개 전).`)));
 
     // 핵심 수치 (누르면 추이 그래프 전환)
     const kpis = el("div", { class: "kpis" }, KPIS.map((k) => {
@@ -275,11 +285,12 @@
         title: `${k.label} 추이 보기`, onclick: () => { view.metric = k; renderDetail(); } },
         el("span", { class: "kpi-l" }, k.label),
         el("span", { class: "kpi-v" + (v == null ? " miss" : v < 0 ? " neg" : "") }, fmt(v, kind, true)),
-        k.note ? el("span", { class: "kpi-n" }, k.note) : null);
+        null);
     }));
 
     const kpiRow = el("div", { class: "kpi-row" },
-      el("section", { class: "kpi-box", "aria-labelledby": "kpi-h" }, el("h3", { id: "kpi-h", class: "kpi-h" }, "주요 지표"), kpis),
+      el("section", { class: "kpi-box", "aria-labelledby": "kpi-h" },
+        el("div", { class: "kpi-hd" }, sel, el("h3", { id: "kpi-h", class: "kpi-h" }, "주요 지표")), kpis),
       el("div", { class: "kpi-slot", "aria-hidden": "true" }));
     detEl.replaceChildren(head, kpiRow, renderTrend(), renderTabs());
   }

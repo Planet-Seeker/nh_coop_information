@@ -92,7 +92,9 @@ h1 .home { color: inherit; text-decoration: none; }
 .kpi-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; margin-bottom: 14px; }
 .kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .kpi-box { min-width: 0; }
-.kpi-h { margin: 0 0 8px; font-size: 15px; font-weight: 650; }
+.kpi-hd { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; }
+.kpi-hd select { font: inherit; font-size: 14px; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 6px 10px; }
+.kpi-h { margin: 0; font-size: 15px; font-weight: 650; }
 .kpi-slot { min-height: 100%; }   /* 오른쪽 절반: 추후 기능 자리(비워 둠) */
 .kpi {
   min-width: 0;
