@@ -36,13 +36,19 @@
   // 개별 조합: 0010027 + 권역 2자리 + 일련번호(13자리). 'nnnnnnnS' 형태는 시도·전국 합계(집계값).
   const REGION = { 10: "서울", 12: "부산", 13: "인천", 15: "대구", 2: "경기", 3: "강원", 40: "충북", 41: "충북", 42: "충북",
     45: "대전·충남", 46: "대전·충남", 47: "대전·충남", 48: "대전·충남", 5: "전북", 6: "광주·전남", 7: "경북", 8: "경남·울산", 9: "제주" };
+  // 유형 4구분: 지역농협 · 지역축협 · 품목농협 · 품목축협
+  // 코드 17 = 축산계. 그중 낙농·우유·양돈·양계·양봉 등 축종 이름이면 품목축협, 나머지(○○축산농협·○○축협) 지역축협.
+  // 그 밖에는 원예·인삼·과수 등 품목 이름이면 품목농협, 나머지 지역농협.
+  const LIVE_ITEM = /낙농|우유|양돈|양계|양봉|양토|양록|한우|육우|치즈|오리|사슴|흑염소/;
+  const CROP_ITEM = /원예|인삼|과수|채소|화훼|특작|버섯|감귤|약초|엽연초|단감|사과|(?<!월)배농협|포도|고추|딸기|참외|녹차|키위|복숭아|매실|유자|더덕/;
+  function coopType(rc, nm) {
+    if (rc === "17") return LIVE_ITEM.test(nm) && !/축산농협$|축협$/.test(nm) ? "품목축협" : "지역축협";
+    return CROP_ITEM.test(nm) ? "품목농협" : "지역농협";
+  }
   function classify(cd, nm) {
     if (/^0010027\d{6}$/.test(cd)) {
       const rc = cd.slice(7, 9);
-      const livestock = rc === "17" || /축산|축협|낙협|양돈|양계/.test(nm);
-      const item = !livestock && /원예|인삼|과수|채소|화훼|특작|버섯|감귤|양봉|약초|엽연초|단감|사과|배농협|포도|고추|딸기|참외/.test(nm);
-      return { kind: "coop", rc, region: rc === "17" ? "권역 미지정" : (REGION[rc] || REGION[rc[0]] || "기타"),
-        type: livestock ? "축협" : item ? "품목조합" : "지역농협" };
+      return { kind: "coop", rc, region: rc === "17" ? "권역 미지정" : (REGION[rc] || REGION[rc[0]] || "기타"), type: coopType(rc, nm) };
     }
     const m = /^농협\((.+)\)$/.exec(nm);
     if (/S$/.test(cd) && m) return { kind: "sido", sido: m[1] };
@@ -641,6 +647,8 @@
       } catch { /* 무시 */ }
       for (const [cd, nm, ym] of list.list) {
         const c = { cd, nm, ym, k: norm(nm), ...classify(cd, nm) };
+        const mt = (META.get(cd) || {})["유형"];               // meta.csv 유형이 있으면 그 값을 우선
+        if (c.kind === "coop" && ["지역농협", "지역축협", "품목농협", "품목축협"].includes(mt)) c.type = mt;
         if (c.kind === "coop") { LIST.push(c); BYCD.set(cd, c); }
         else if (c.kind === "sido") AGG.sido.set(c.sido, c);
         else if (c.kind === "nation") AGG.nation = c;
