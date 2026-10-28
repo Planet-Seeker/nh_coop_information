@@ -69,7 +69,8 @@
     return d;
   }
 
-  // 순위: 전국 / 소속구역(광역) 내 / 소속구역(기초) 내. 값이 없는 조합은 제외. 동점은 같은 순위.
+  // 순위: 전국 / 소속구역(광역) 내 / 행정구역(기초) 내. 값이 없는 조합은 제외. 동점은 같은 순위.
+  // 기초는 소속구역이 아닌 행정구역 기준(소속구역 '직할'은 지역 단위가 아니라 직할끼리만 묶이는 문제)
   function ranksOf(cd, ym, label) {
     const d = METRICS.get(ym);
     if (!d || NO_RANK.has(label)) return null;
@@ -78,13 +79,15 @@
     if (i < 0 || mine == null) return null;
     const low = LOW_FIRST.has(label);
     const me = affOf(cd);
-    const out = [["전국", 0, 0], [me.aff1 ? (me.est ? `${me.aff1}(추정)` : me.aff1) : "", 0, 0], [me.aff2 ? (me.aff2 === "직할" ? "직할" : `${me.aff2}지부`) : "", 0, 0]];
+    const adm = (k) => { const m = META.get(k) || {}; return m["행정구역_광역"] && m["행정구역_기초"] ? `${m["행정구역_광역"]} ${m["행정구역_기초"]}` : ""; };
+    const myAdm = adm(cd);
+    const out = [["전국", 0, 0], [me.aff1 ? (me.est ? `${me.aff1}(추정)` : me.aff1) : "", 0, 0], [myAdm ? myAdm.split(" ")[1] : "", 0, 0]];
     for (const [k, vals] of Object.entries(d.rows)) {
       const v = vals[i];
       if (v == null) continue;
       const better = low ? v < mine : v > mine;
       const a = affOf(k);
-      const groups = [true, me.aff1 && a.aff1 === me.aff1, me.aff2 && a.aff1 === me.aff1 && a.aff2 === me.aff2];
+      const groups = [true, me.aff1 && a.aff1 === me.aff1, myAdm && adm(k) === myAdm];
       groups.forEach((g, j) => { if (g) { out[j][2]++; if (better) out[j][1]++; } });
     }
     return out.map(([name, b, n]) => (name ? { name, rank: b + 1, n } : { name: "", rank: 0, n: 0 }));
@@ -336,7 +339,7 @@
     if (!r) return el("span", { class: "rk" }, el("span", { class: "rk-row miss" }, "순위 없음"));
     return el("span", { class: "rk" }, r.map((x, j) => el("span", { class: "rk-row" + (x.name ? "" : " miss") },
       x.name ? [el("span", { class: "rk-g" }, x.name), el("span", { class: "rk-n" }, `${NF0.format(x.rank)}위`, el("small", {}, ` / ${NF0.format(x.n)}`))]
-        : (j === 1 ? "소속 광역 미지정" : "소속 기초 미지정"))));
+        : (j === 1 ? "소속 광역 미지정" : "행정 기초 미지정"))));
   }
 
   function detailURL() {
