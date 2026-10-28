@@ -154,7 +154,7 @@
     let st = m["상태"] || "";
     if (!STATES.includes(st)) st = c && c.ym < INDEX.latest ? "공시중단" : "운영";
     const succ = normCd(m["승계조합코드"]);
-    return { st, succ: BYCD.has(succ) && succ !== cd ? succ : "", est: /자동 추정/.test(m["비고"] || ""),
+    return { st, succ: BYCD.has(succ) && succ !== cd ? succ : "", est: /자동 추정|^정황:/.test(m["비고"] || ""),   // 확인(기사 근거)이면 추정 표시 없음
       prev: (m["이전명칭"] || "").split(/[;；]/).map((x) => x.trim()).filter(Boolean) };
   }
   const hiddenOld = (cd) => { const s = stOf(cd); return s.st === "코드변경" && !!s.succ; };   // 새 코드 조합에 이어 붙여 보여 줌

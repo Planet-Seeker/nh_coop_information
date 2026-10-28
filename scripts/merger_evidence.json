@@ -1,0 +1,19 @@
+{
+  "_설명": "합병·코드변경 웹 교차검증 기록. grade: 확인(기사에 합병 상대 명시, 공시 종료 시점과 맞음) / 정황(합병 추진 기사·지점명 등 간접 근거) / 미확인. scripts/apply_evidence.py로 meta.csv에 반영",
+  "0010027721060": {"grade": "확인", "succ": "0010027721015", "note": "경주농협·천북농협 자율합병 합의(2021.7)", "src": "https://kbmaeil.com/article/202107250312328"},
+  "0010027243030": {"grade": "확인", "succ": "0010027243041", "note": "길상·불은·양도·화도농협 신설합병(2014)", "src": "https://www.nongupin.co.kr/news/articleView.html?idxno=37217"},
+  "0010027243063": {"grade": "확인", "succ": "0010027243041", "note": "길상·불은·양도·화도농협 신설합병(2014)", "src": "https://www.nongupin.co.kr/news/articleView.html?idxno=37217"},
+  "0010027243052": {"grade": "확인", "succ": "0010027243041", "prev": "화도농협", "note": "길상·불은·양도·화도농협 신설합병(2014)", "src": "https://www.nongupin.co.kr/news/articleView.html?idxno=37217"},
+  "0010027311085": {"grade": "확인", "succ": "0010027311029", "note": "영월 서남농협·주천농협 통합 한반도농협(2015.3)", "src": "https://www.kwnews.co.kr/article/201502251755088"},
+  "0010027753072": {"grade": "확인", "succ": "0010027753083", "note": "법전농협·춘양농협 합병설명회(2014.8)", "src": "https://www.etoday.co.kr/news/view/1049879"},
+  "0010027715050": {"grade": "확인", "succ": "0010027715049", "note": "영해농협·북영덕농협 합병(2022). 두 코드 중 어느 쪽이 옛 영해농협인지 미확인", "src": "https://www.imaeil.com/page/view/2022082916143797559"},
+  "0010027737047": {"grade": "확인", "succ": "0010027737025", "note": "구성농협·농소농협 합병 → 남김천농협", "src": "https://www.kyongbuk.co.kr/news/articleView.html?idxno=2119240"},
+  "0010027333083": {"grade": "정황", "succ": "0010027333049", "note": "주문진·연곡농협 합병 의결(2014.8). 현재 주문진농협 이름이 없어 북강릉농협으로 추정", "src": "https://www.kwnews.co.kr/article/201408271675996"},
+  "0010027173160": {"grade": "정황", "succ": "0010027173380", "note": "옥천·영동축협 통폐합 수순(2013.12), 보은옥천영동축협 존재", "src": "https://www.hankookilbo.com/news/article/201312171133656016"},
+  "0010027207102": {"grade": "정황", "succ": "0010027207098", "note": "화성 6개 농협 합병 추진(2014.8), 서화성농협 매송지점 존재", "src": "https://www.nongupin.co.kr/news/articleView.html?idxno=37204"},
+  "0010027243111": {"grade": "정황", "succ": "0010027243085", "note": "강화 북부권역(강서·교동·삼도) 합병 추진(2014.8), 서강화농협 존재", "src": "https://www.nongupin.co.kr/news/articleView.html?idxno=37204"},
+  "0010027243096": {"grade": "정황", "succ": "0010027243085", "note": "강화 북부권역(강서·교동·삼도) 합병 추진(2014.8), 서강화농협 존재", "src": "https://www.nongupin.co.kr/news/articleView.html?idxno=37204"},
+  "0010027405032": {"grade": "정황", "succ": "0010027405054", "note": "옥천 대청·청산농협 합병 재추진(2024.8, 2025.3 등기 목표)", "src": "https://www.dynews.co.kr/news/articleView.html?idxno=765950"},
+  "0010027653082": {"grade": "정황", "succ": "", "note": "신안 안좌·장산농협 합병 권고(2014.8), 승계 조합 미확인", "src": "https://www.nongupin.co.kr/news/articleView.html?idxno=37204"},
+  "0010027653118": {"grade": "정황", "succ": "", "note": "신안 안좌·장산농협 합병 권고(2014.8), 승계 조합 미확인", "src": "https://www.nongupin.co.kr/news/articleView.html?idxno=37204"}
+}
