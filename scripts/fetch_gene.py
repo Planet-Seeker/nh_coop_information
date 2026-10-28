@@ -119,7 +119,7 @@ def notice(msg: str) -> None:
 
 def probe(key: str) -> None:
     """각 오퍼레이션의 표(title) 구성, 필드, 기준년월별 건수를 확인한다."""
-    for op in ("getAgriCoopFinaInfo", "getAgriCoopKeyManaIndi"):
+    for op in os.environ.get("PROBE_OPS", "getAgriCoopFinaInfo,getAgriCoopKeyManaIndi").split(","):
         try:
             r = call(key, op, pageNo=1, numOfRows=3)
         except ApiError as e:

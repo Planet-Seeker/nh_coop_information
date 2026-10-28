@@ -13,6 +13,10 @@ on:
         description: "진단 모드(데이터 범위만 확인, 저장 안 함)"
         type: boolean
         default: false
+      probe_ops:
+        description: "진단할 오퍼레이션(쉼표 구분)"
+        required: false
+        default: "getAgriCoopFinaInfo,getAgriCoopKeyManaIndi"
 
 permissions:
   contents: write
@@ -37,6 +41,7 @@ jobs:
           SERVICE_KEY: ${{ secrets.SERVICE_KEY }}
           BAS_YM: ${{ github.event.inputs.bas_ym }}
           PROBE: ${{ github.event.inputs.probe }}
+          PROBE_OPS: ${{ github.event.inputs.probe_ops || 'getAgriCoopFinaInfo,getAgriCoopKeyManaIndi' }}
         run: python scripts/fetch_gene.py
 
       - name: 변경분 커밋
