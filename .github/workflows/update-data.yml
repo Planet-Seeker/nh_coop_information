@@ -8,7 +8,7 @@ on:
       max_new:
         description: "이번에 새로 받을 기준년월 수(반기)"
         required: false
-        default: "10"
+        default: "40"
       bas_ym:
         description: "특정 기준년월만 다시 받기(YYYY06/YYYY12). 보통은 비워 둠"
         required: false
@@ -28,7 +28,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v5
 
@@ -40,6 +40,7 @@ jobs:
         env:
           SERVICE_KEY: ${{ secrets.SERVICE_KEY }}
           MAX_NEW: ${{ github.event.inputs.max_new || '4' }}
+          MAX_MINUTES: "300"   # 이 시간이 지나면 새 반기를 시작하지 않고 저장 후 종료(작업 제한 350분)
           BAS_YM: ${{ github.event.inputs.bas_ym }}
           PROBE: ${{ github.event.inputs.probe }}
         run: python scripts/collect.py

@@ -37,7 +37,8 @@
   const qEl = $("q"), statusEl = $("status"), resEl = $("results"), detEl = $("detail");
   let INDEX = null, CODES = {}, LIST = [];
   const coopCache = new Map();
-  const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[0] };
+  const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[0], range: "5y" };
+  const WINDOW = 10;                                         // 최근 5년 = 반기 10개
   const MISSING = "자료누락";
 
   // ── 유틸 ───────────────────────────────────────────────────
@@ -238,14 +239,21 @@
     const m = view.metric;
     const kind = kindOf(m.t, m.c);
     const label = m.label || codeName(m.t, m.c).replace(/_/g, " › ");
-    const pts = months.slice().reverse().map((ym) => ({ ym, v: valueOf(coop, ym, m.t, m.c) }));  // 오래된 → 최신
+    // 기본: 선택한 기준년월을 오른쪽 끝으로 하는 5년(반기 10개). '전체 기간'이면 보유 자료 전체.
+    const asc = months.slice().reverse();
+    const end = asc.indexOf(view.ym);
+    const shown = view.range === "all" ? asc : asc.slice(Math.max(0, end - WINDOW + 1), end + 1);
+    const pts = shown.map((ym) => ({ ym, v: valueOf(coop, ym, m.t, m.c) }));  // 오래된 → 최신
     const valid = pts.filter((p) => p.v != null);
     const selIdx = pts.findIndex((p) => p.ym === view.ym);
 
+    const rangeBtn = (id, text) => el("button", { type: "button", class: "seg" + (view.range === id ? " on" : ""), "aria-pressed": view.range === id ? "true" : "false",
+      onclick: () => { view.range = id; renderDetail(); } }, text);
     const box = el("section", { class: "trend" },
       el("div", { class: "trend-h" },
         el("h3", {}, `${label} 추이`),
-        el("span", { class: "unit" }, `${unitLabel(kind) ? `단위: ${unitLabel(kind)} · ` : ""}강조 표시: ${ymLabel(view.ym)}`)));
+        el("span", { class: "unit" }, `${unitLabel(kind) ? `단위: ${unitLabel(kind)} · ` : ""}${pts.length ? `${ymLabel(pts[0].ym)}~${ymLabel(pts[pts.length - 1].ym)}` : ""}`),
+        el("div", { class: "segs", role: "group", "aria-label": "기간" }, rangeBtn("5y", "최근 5년"), rangeBtn("all", "전체 기간"))));
     if (valid.length < 2) {
       box.append(el("p", { class: "muted" }, valid.length ? "추이를 그릴 자료가 부족합니다." : `${MISSING}: 이 항목은 이 조합의 자료가 없습니다.`));
       return box;
@@ -273,7 +281,10 @@
 
     // 선택한 기준년월 강조 띠
     const step = (W - ml - mr) / Math.max(1, pts.length - 1);
-    if (selIdx >= 0) svg.append(svgEl("rect", { x: x(selIdx) - Math.min(step, 40) / 2, y: mt, width: Math.min(step, 40), height: H - mt - mb, class: "sel-band" }));
+    if (selIdx >= 0) {
+      const bw = Math.min(step, 40), bx0 = Math.max(ml, x(selIdx) - bw / 2), bx1 = Math.min(W - mr, x(selIdx) + bw / 2);
+      svg.append(svgEl("rect", { x: bx0, y: mt, width: Math.max(0, bx1 - bx0), height: H - mt - mb, class: "sel-band" }));
+    }
 
     for (const t of ticks) {
       svg.append(svgEl("line", { x1: ml, x2: W - mr, y1: y(t), y2: y(t), class: t === 0 ? "axis0" : "grid" }));
@@ -281,8 +292,9 @@
       tx.textContent = tickFmt(t, kind);
       svg.append(tx);
     }
+    const every = Math.max(1, Math.ceil(pts.length / (narrow ? 5 : 10)));   // X축 날짜는 화면 폭에 맞게 솎아 냄(선택 월은 항상)
     pts.forEach((p, i) => {
-      const keep = i === selIdx || !(narrow && pts.length > 6 && (pts.length - 1 - i) % 2);   // 좁은 화면은 하나 걸러(선택 월·최신은 항상)
+      const keep = i === selIdx || ((pts.length - 1 - i) % every === 0 && Math.abs(i - selIdx) >= every / 2);
       if (!keep) return;
       const tx = svgEl("text", { x: x(i), y: H - 8, class: "tick" + (i === selIdx ? " sel" : ""), "text-anchor": "middle" });
       tx.textContent = ymShort(p.ym);
@@ -310,7 +322,7 @@
     svg.append(cross);
     const dots = pts.map((p, i) => {
       if (p.v == null) return null;
-      const c = svgEl("circle", { cx: x(i), cy: y(disp(p.v)), r: i === selIdx ? 6 : 4, class: "dot" + (i === selIdx ? " sel" : "") });
+      const c = svgEl("circle", { cx: x(i), cy: y(disp(p.v)), r: i === selIdx ? 6 : pts.length > 20 ? 3 : 4, class: "dot" + (i === selIdx ? " sel" : "") });
       svg.append(c);
       return c;
     });
@@ -366,6 +378,7 @@
     return out;
   }
   function tickFmt(v, kind) {
+    if (v === 0) return "0";
     if (kind === "pct") return `${+v.toFixed(2)}%`;
     if (kind === "won") return Math.abs(v) >= 10000 ? `${+(v / 10000).toFixed(2)}조` : `${NF0.format(v)}억`;
     return NF0.format(v);

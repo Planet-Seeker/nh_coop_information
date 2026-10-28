@@ -2,7 +2,7 @@
 """
 금융위원회_금융통계농업협동조합정보 수집기
   - 일반현황(getAgriCoopGeneInfo), 재무현황(getAgriCoopFinaInfo), 주요경영지표(getAgriCoopKeyManaIndi)
-  - 최근 KEEP_PERIODS개 반기(6월·12월)를 유지. 이미 받은 기준년월은 다시 받지 않는다(이어받기).
+  - EARLIEST 이후 모든 반기(6월·12월)를 보관. 이미 받은 기준년월은 다시 받지 않는다(이어받기).
   - 결과는 docs/data/ 에 정적 JSON으로 저장
       index.json        기준년월 목록, 전국 요약, 갱신시각
       coops.json        검색용 조합 목록 [[코드, 이름, 최신 기준년월], ...]
@@ -32,7 +32,8 @@ OPS = {
     "fina": "getAgriCoopFinaInfo",
     "kmi": "getAgriCoopKeyManaIndi",
 }
-KEEP_PERIODS = 10          # 최근 5년 = 반기 10개
+EARLIEST = os.environ.get("EARLIEST", "201106")   # 원자료가 시작되는 무렵(그 이전은 조회하지 않음)
+TIME_BUDGET_MIN = float(os.environ.get("MAX_MINUTES", "0") or 0)   # 0이면 제한 없음
 ROWS = 1000
 MAX_PAGES = 300
 SUMMARY_TABLE = "회원조합수"
@@ -165,10 +166,10 @@ def write_json(path: Path, obj) -> None:
 
 
 # ── 기준년월 ───────────────────────────────────────────────────────────
-def half_years_back(n: int, start: str):
+def half_years_back(n: int, start: str, until: str = "000000"):
     y, m = int(start[:4]), int(start[4:])
     out = []
-    while len(out) < n:
+    while len(out) < n and f"{y:04d}{m:02d}" >= until:
         if m in (6, 12):
             out.append(f"{y:04d}{m:02d}")
         m -= 1
@@ -250,9 +251,9 @@ def main() -> int:
         empty = set(index.get("empty", []))          # 데이터가 없던 기준년월(재시도 안 함)
 
         latest = find_latest(key)
-        target = half_years_back(KEEP_PERIODS, latest)          # 최신순
+        target = half_years_back(10 ** 4, latest, EARLIEST)     # 최신순, EARLIEST까지 전부
         todo = [only] if only else [m for m in target if m not in done and m not in empty][:max_new]
-        log(f"최신 기준년월 {latest}, 유지 대상 {target[-1]}~{target[0]}, 이번 수집 {todo or '없음'}")
+        log(f"최신 기준년월 {latest}, 수집 대상 {target[-1]}~{target[0]}, 이번 수집 {todo or '없음'}")
 
         coop_dir = OUT / "coop"
 
@@ -269,7 +270,11 @@ def main() -> int:
             write_json(OUT / "index.json", new_index)
             return months
 
+        started = time.time()
         for ym in todo:
+            if TIME_BUDGET_MIN and (time.time() - started) / 60 > TIME_BUDGET_MIN:
+                log(f"실행 시간 한도({TIME_BUDGET_MIN:.0f}분)에 도달해 여기서 멈춥니다. 다음 실행에서 이어 받습니다.", "notice")
+                break
             per_coop, names, summary = collect_month(key, ym, codes)
             if not per_coop:
                 log(f"[{ym}] 데이터가 없어 건너뜁니다.", "warning")
@@ -291,27 +296,7 @@ def main() -> int:
             save_meta(True)          # 기준년월마다 저장 → 중간에 실패해도 받은 데까지는 유지
             log(f"[{ym}] 저장: 조합 {len(per_coop):,}곳")
 
-        # 유지 기간 밖 기준년월 정리
-        keep = set(target) | ({only} if only else set())
-        drop = done - keep
-        if drop:
-            for path in coop_dir.glob("*.json"):
-                doc = read_json(path, None)
-                if not doc:
-                    continue
-                for ym in drop:
-                    doc["d"].pop(ym, None)
-                if doc["d"]:
-                    write_json(path, doc)
-                else:
-                    path.unlink()
-                    coop_list.pop(doc.get("cd"), None)
-            for ym in drop:
-                summaries.pop(ym, None)
-            done -= drop
-            log(f"유지 기간이 지난 기준년월 삭제: {sorted(drop)}")
-
-        months = save_meta(bool(todo) or bool(drop))
+        months = save_meta(bool(todo))
 
         remain = [m for m in target if m not in done and m not in empty]
         log(f"완료: 보유 {len(months)}개 반기, 조합 {len(coop_list):,}곳" + (f", 남은 기준년월 {remain}" if remain else ""),

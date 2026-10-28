@@ -102,6 +102,10 @@ h1 .home { color: inherit; text-decoration: none; }
 .trend-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
 .trend-h h3 { margin: 0; font-size: 15px; }
 .unit { font-size: 12px; color: var(--muted); }
+.segs { margin-left: auto; display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg { background: none; border: 0; padding: 4px 10px; font-size: 12px; color: var(--sub); cursor: pointer; }
+.seg + .seg { border-left: 1px solid var(--line); }
+.seg.on { background: var(--acc-soft); color: var(--ink); font-weight: 600; }
 .chart-wrap { position: relative; margin-top: 6px; }
 .chart { display: block; width: 100%; height: auto; overflow: visible; }
 .chart .grid { stroke: var(--grid); stroke-width: 1; }
