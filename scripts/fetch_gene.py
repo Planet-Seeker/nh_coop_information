@@ -46,13 +46,14 @@ def call(key: str, **params) -> dict:
             last = e
             time.sleep(2 * (attempt + 1))
     else:
-        raise ApiError(f"API 서버 연결 실패: {type(last).__name__}")
+        detail = str(last).replace(key, "***")[:150]
+        raise ApiError(f"API 서버 연결 실패: {type(last).__name__} - {detail}")
 
     try:
         js = json.loads(raw)
     except json.JSONDecodeError:
         m = re.search(r"<(?:returnAuthMsg|resultMsg|errMsg)>([^<]+)<", raw)
-        raise ApiError("API 오류: " + (m.group(1) if m else raw[:200]))
+        raise ApiError("API 오류: " + (m.group(1) if m else raw[:200].replace(key, "***")))
 
     head = js.get("response", {}).get("header", {})
     if head.get("resultCode") != "00":
@@ -145,6 +146,8 @@ def main() -> int:
         data = build(ym, fetch_month(key, ym))
     except ApiError as e:
         print(str(e), file=sys.stderr)
+        if os.environ.get("GITHUB_ACTIONS"):
+            print(f"::error title=API 수집 실패::{e}")  # Actions 요약(Annotations)에 표시
         return 1
 
     if data["count"] == 0:
