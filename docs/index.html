@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="전국 농업협동조합(농협)의 일반현황을 조합명으로 검색합니다. 금융위원회 공공데이터 기반.">
+<title>농협 일반현황 검색</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <p class="eyebrow">금융통계 · 농업협동조합</p>
+    <h1>농협 일반현황 검색</h1>
+    <p class="lead">조합명 일부를 입력하면 해당 농협의 임직원 현황 등 일반현황을 보여줍니다.</p>
+  </header>
+
+  <form id="f" class="search" role="search" autocomplete="off">
+    <label class="sr" for="q">조합명</label>
+    <input id="q" name="q" type="search" placeholder="예: 청주, 오창농협" maxlength="30" autofocus>
+    <label class="sr" for="ym">기준년월</label>
+    <select id="ym" name="ym" aria-label="기준년월"></select>
+  </form>
+
+  <p id="status" class="status" aria-live="polite">데이터를 불러오는 중…</p>
+  <section id="results" class="results"></section>
+
+  <footer class="foot">
+    <p>출처: <a href="https://www.data.go.kr/data/15061344/openapi.do" rel="noopener" target="_blank">금융위원회_금융통계농업협동조합정보</a> (공공데이터포털, 이용허락범위 제한 없음)</p>
+    <p id="updated"></p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
