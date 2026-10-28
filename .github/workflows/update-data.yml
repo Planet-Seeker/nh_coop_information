@@ -9,6 +9,10 @@ on:
         description: "수집할 기준년월(YYYYMM). 비우면 최신 월 자동 탐색"
         required: false
         default: ""
+      probe:
+        description: "진단 모드(데이터 범위만 확인, 저장 안 함)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -32,6 +36,7 @@ jobs:
         env:
           SERVICE_KEY: ${{ secrets.SERVICE_KEY }}
           BAS_YM: ${{ github.event.inputs.bas_ym }}
+          PROBE: ${{ github.event.inputs.probe }}
         run: python scripts/fetch_gene.py
 
       - name: 변경분 커밋

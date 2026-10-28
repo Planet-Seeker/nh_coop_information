@@ -83,6 +83,31 @@ def find_latest(key: str) -> str:
     raise ApiError(f"최근 {LOOKBACK_MONTHS}개월 안에 데이터가 있는 기준년월을 찾지 못했습니다.")
 
 
+def notice(msg: str) -> None:
+    print(msg)
+    if os.environ.get("GITHUB_ACTIONS"):
+        print("::notice title=진단::" + msg.replace("\n", " | "))
+
+
+def probe(key: str) -> None:
+    """기준년월 없이 조회해 실제 보유 데이터의 범위와 구성을 확인한다."""
+    from collections import Counter
+    first = call(key, pageNo=1, numOfRows=ROWS)
+    total = first["total"]
+    notice(f"기준년월 미지정 totalCount={total}")
+    if not total:
+        return
+    pages = -(-total // ROWS)
+    samples = list(first["items"])
+    if pages > 1:
+        samples += call(key, pageNo=pages, numOfRows=ROWS)["items"]
+    yms = Counter(str(i.get("basYm")) for i in samples)
+    titles = Counter(str(i.get("title")) for i in samples)
+    notice(f"첫/마지막 페이지 기준년월 범위 {min(yms)} ~ {max(yms)} / 표본 월 {sorted(yms)[-12:]}")
+    notice("표본 title: " + ", ".join(f"{t}({n})" for t, n in titles.most_common(10)))
+    notice("첫 항목: " + json.dumps(first["items"][0], ensure_ascii=False)[:400])
+
+
 def fetch_month(key: str, ym: str) -> list:
     first = call(key, basYm=ym, pageNo=1, numOfRows=ROWS)
     items = list(first["items"])
@@ -142,6 +167,9 @@ def main() -> int:
         return 2
 
     try:
+        if os.environ.get("PROBE") == "true":
+            probe(key)
+            return 0
         ym = ym or find_latest(key)
         data = build(ym, fetch_month(key, ym))
     except ApiError as e:
