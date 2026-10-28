@@ -37,7 +37,8 @@
   const qEl = $("q"), statusEl = $("status"), resEl = $("results"), detEl = $("detail");
   let INDEX = null, CODES = {}, LIST = [];
   const coopCache = new Map();
-  const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[0], hideZero: true };
+  const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[0] };
+  const MISSING = "자료누락";
 
   // ── 유틸 ───────────────────────────────────────────────────
   const norm = (s) => String(s || "").replace(/\s+/g, "").toLowerCase();
@@ -85,7 +86,7 @@
     return /(율|비율\(|ROA|ROE)/.test(n) ? "pct" : "won";
   }
   function fmt(v, kind, short = false) {
-    if (v == null) return "-";
+    if (v == null) return MISSING;
     if (kind === "pct") return `${NF2.format(v)}%`;
     if (kind === "cnt") return `${NF0.format(v)}${short ? "명" : ""}`;
     if (kind === "num") return NF0.format(v);
@@ -108,12 +109,15 @@
   const unitLabel = (kind) => ({ pct: "%", cnt: "명", num: "", won: "" })[kind];
   const colHead = (kind) => ({ pct: "비율(%)", cnt: "인원(명)", won: "금액", num: "값" })[kind] || "값";
 
+  // 표의 전체 항목(전 기간 코드 사전 기준)을 모두 나열하고, 이 조합·기준년월에 값이 없으면 null(자료누락)
   function rowsOf(coop, ym, t) {
-    const rows = (coop.d[ym] && coop.d[ym][t]) || [];
-    return rows.map(([c, v, r]) => {
+    const have = new Map(((coop.d[ym] && coop.d[ym][t]) || []).map(([c, v, r]) => [c, [v, r]]));
+    const codes = [...new Set([...Object.keys(CODES[t] || {}), ...have.keys()])].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
+    return codes.map((c) => {
+      const [v, r] = have.get(c) || [null, null];
       const name = clean(codeName(t, c));
       const parts = name.split("_");
-      return { c, v, r, name, label: parts[parts.length - 1], depth: parts.length - 1 };
+      return { c, v: v ?? null, r: r ?? null, name, label: parts[parts.length - 1], depth: parts.length - 1 };
     });
   }
   const valueOf = (coop, ym, t, c) => {
@@ -221,7 +225,7 @@
       return el("button", { type: "button", class: "kpi" + (active ? " on" : ""), "aria-pressed": active ? "true" : "false",
         title: `${k.label} 추이 보기`, onclick: () => { view.metric = k; renderDetail(); } },
         el("span", { class: "kpi-l" }, k.label),
-        el("span", { class: "kpi-v" + (v < 0 ? " neg" : "") }, fmt(v, kind, true)),
+        el("span", { class: "kpi-v" + (v == null ? " miss" : v < 0 ? " neg" : "") }, fmt(v, kind, true)),
         k.note ? el("span", { class: "kpi-n" }, k.note) : null);
     }));
 
@@ -234,21 +238,21 @@
     const m = view.metric;
     const kind = kindOf(m.t, m.c);
     const label = m.label || codeName(m.t, m.c).replace(/_/g, " › ");
-    const pts = months.slice().reverse()
-      .map((ym) => ({ ym, v: valueOf(coop, ym, m.t, m.c) }))
-      .filter((p) => p.v != null);
+    const pts = months.slice().reverse().map((ym) => ({ ym, v: valueOf(coop, ym, m.t, m.c) }));  // 오래된 → 최신
+    const valid = pts.filter((p) => p.v != null);
+    const selIdx = pts.findIndex((p) => p.ym === view.ym);
 
     const box = el("section", { class: "trend" },
       el("div", { class: "trend-h" },
         el("h3", {}, `${label} 추이`),
-        el("span", { class: "unit" }, unitLabel(kind) ? `단위: ${unitLabel(kind)}` : "")));
-    if (pts.length < 2) {
-      box.append(el("p", { class: "muted" }, "추이를 그릴 자료가 부족합니다."));
+        el("span", { class: "unit" }, `${unitLabel(kind) ? `단위: ${unitLabel(kind)} · ` : ""}강조 표시: ${ymLabel(view.ym)}`)));
+    if (valid.length < 2) {
+      box.append(el("p", { class: "muted" }, valid.length ? "추이를 그릴 자료가 부족합니다." : `${MISSING}: 이 항목은 이 조합의 자료가 없습니다.`));
       return box;
     }
 
     const disp = (v) => (kind === "won" ? v / 1e8 : v);
-    const vals = pts.map((p) => disp(p.v));
+    const vals = valid.map((p) => disp(p.v));
     let lo = Math.min(...vals), hi = Math.max(...vals);
     // 값이 모두 양수이고 변동폭이 작으면 0 대신 아래쪽 여유만 두어 변화가 보이게 함
     if (lo > 0 && (hi - lo) / hi < 0.5) lo = Math.max(0, lo - (hi - lo) * 0.6);
@@ -262,10 +266,14 @@
     const W = Math.round(Math.min(720, Math.max(300, (detEl.clientWidth || 640) - 34)));
     const narrow = W < 520;
     const H = narrow ? 200 : 220, ml = narrow ? 46 : 56, mr = narrow ? 58 : 70, mt = 14, mb = 28;
-    const x = (i) => ml + (i * (W - ml - mr)) / (pts.length - 1);
+    const x = (i) => ml + (i * (W - ml - mr)) / Math.max(1, pts.length - 1);
     const y = (v) => mt + (H - mt - mb) * (1 - (v - lo) / (hi - lo));
     const base = y(Math.min(Math.max(0, lo), hi));
     const svg = svgEl("svg", { viewBox: `0 0 ${W} ${H}`, class: "chart", role: "img", "aria-label": `${label} 반기별 추이` });
+
+    // 선택한 기준년월 강조 띠
+    const step = (W - ml - mr) / Math.max(1, pts.length - 1);
+    if (selIdx >= 0) svg.append(svgEl("rect", { x: x(selIdx) - Math.min(step, 40) / 2, y: mt, width: Math.min(step, 40), height: H - mt - mb, class: "sel-band" }));
 
     for (const t of ticks) {
       svg.append(svgEl("line", { x1: ml, x2: W - mr, y1: y(t), y2: y(t), class: t === 0 ? "axis0" : "grid" }));
@@ -274,42 +282,61 @@
       svg.append(tx);
     }
     pts.forEach((p, i) => {
-      if (narrow && pts.length > 6 && (pts.length - 1 - i) % 2) return;   // 좁은 화면은 하나 걸러 표시(최신은 항상)
-      const tx = svgEl("text", { x: x(i), y: H - 8, class: "tick", "text-anchor": "middle" });
+      const keep = i === selIdx || !(narrow && pts.length > 6 && (pts.length - 1 - i) % 2);   // 좁은 화면은 하나 걸러(선택 월·최신은 항상)
+      if (!keep) return;
+      const tx = svgEl("text", { x: x(i), y: H - 8, class: "tick" + (i === selIdx ? " sel" : ""), "text-anchor": "middle" });
       tx.textContent = ymShort(p.ym);
       svg.append(tx);
     });
-    const d = pts.map((p, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(disp(p.v)).toFixed(1)}`).join("");
-    svg.append(svgEl("path", { d: `${d}L${x(pts.length - 1).toFixed(1)},${base.toFixed(1)}L${x(0).toFixed(1)},${base.toFixed(1)}Z`, class: "area" }));
-    svg.append(svgEl("path", { d, class: "line" }));
+
+    // 자료누락 구간에서는 선을 끊음
+    const segs = [];
+    let cur = [];
+    pts.forEach((p, i) => { if (p.v == null) { if (cur.length) segs.push(cur); cur = []; } else cur.push(i); });
+    if (cur.length) segs.push(cur);
+    for (const sg of segs) {
+      const d = sg.map((i, k) => `${k ? "L" : "M"}${x(i).toFixed(1)},${y(disp(pts[i].v)).toFixed(1)}`).join("");
+      if (sg.length > 1) {
+        svg.append(svgEl("path", { d: `${d}L${x(sg[sg.length - 1]).toFixed(1)},${base.toFixed(1)}L${x(sg[0]).toFixed(1)},${base.toFixed(1)}Z`, class: "area" }));
+        svg.append(svgEl("path", { d, class: "line" }));
+      }
+    }
+    pts.forEach((p, i) => {                                // 누락 지점은 축 위에 빈 표시
+      if (p.v != null) return;
+      svg.append(svgEl("circle", { cx: x(i), cy: base, r: 3.5, class: "miss-dot" }));
+    });
 
     const cross = svgEl("line", { y1: mt, y2: H - mb, class: "cross", visibility: "hidden" });
     svg.append(cross);
     const dots = pts.map((p, i) => {
-      const c = svgEl("circle", { cx: x(i), cy: y(disp(p.v)), r: i === pts.length - 1 ? 5 : 4, class: "dot" });
+      if (p.v == null) return null;
+      const c = svgEl("circle", { cx: x(i), cy: y(disp(p.v)), r: i === selIdx ? 6 : 4, class: "dot" + (i === selIdx ? " sel" : "") });
       svg.append(c);
       return c;
     });
-    const last = pts[pts.length - 1];                      // 끝값만 직접 표시
-    const endTx = svgEl("text", { x: x(pts.length - 1) + 10, y: y(disp(last.v)) + 4, class: "endlabel" });
-    endTx.textContent = fmt(last.v, kind, true);
-    svg.append(endTx);
+    // 선택한 기준년월 값만 직접 표시
+    const sel = pts[selIdx];
+    if (sel && sel.v != null) {
+      const atEnd = selIdx === pts.length - 1;
+      const lt = svgEl("text", { x: atEnd ? x(selIdx) + 10 : x(selIdx), y: atEnd ? y(disp(sel.v)) + 4 : y(disp(sel.v)) - 12, class: "endlabel", "text-anchor": atEnd ? "start" : "middle" });
+      lt.textContent = fmt(sel.v, kind, true);
+      svg.append(lt);
+    }
 
     // 호버·터치 툴팁 (점보다 넓은 감지 영역)
     const tip = el("div", { class: "tip", hidden: true });
     const wrap = el("div", { class: "chart-wrap" }, svg, tip);
-    const step = (W - ml - mr) / (pts.length - 1);
-    const hide = () => { tip.hidden = true; cross.setAttribute("visibility", "hidden"); dots.forEach((dd) => dd.classList.remove("hot")); };
+    const hide = () => { tip.hidden = true; cross.setAttribute("visibility", "hidden"); dots.forEach((dd) => dd && dd.classList.remove("hot")); };
     pts.forEach((p, i) => {
       const hit = svgEl("rect", { x: x(i) - step / 2, y: 0, width: step, height: H, class: "hit" });
       const show = () => {
         cross.setAttribute("x1", x(i)); cross.setAttribute("x2", x(i)); cross.setAttribute("visibility", "visible");
-        dots.forEach((dd, j) => dd.classList.toggle("hot", j === i));
+        dots.forEach((dd, j) => dd && dd.classList.toggle("hot", j === i));
         tip.replaceChildren(el("b", {}, ymLabel(p.ym)), el("span", {}, fmt(p.v, kind, true)));
         tip.hidden = false;
         const r = svg.getBoundingClientRect();
         tip.style.left = `${Math.min(Math.max((x(i) / W) * r.width, 60), r.width - 60)}px`;
-        const top = (y(disp(p.v)) / H) * r.height;
+        const top = ((p.v == null ? base : y(disp(p.v))) / H) * r.height;
         tip.classList.toggle("below", top < 56);           // 위쪽 끝이면 점 아래에 표시
         tip.style.top = `${top}px`;
       };
@@ -324,7 +351,8 @@
       el("summary", {}, "표로 보기"),
       el("table", {},
         el("thead", {}, el("tr", {}, el("th", {}, "기준년월"), el("th", { class: "num" }, colHead(kind)))),
-        el("tbody", {}, pts.slice().reverse().map((p) => el("tr", {}, el("td", {}, ymLabel(p.ym)), el("td", { class: "num" }, fmt(p.v, kind))))))));
+        el("tbody", {}, pts.slice().reverse().map((p) => el("tr", { class: p.ym === view.ym ? "on" : "" },
+          el("td", {}, ymLabel(p.ym)), el("td", { class: "num" + (p.v == null ? " miss" : "") }, fmt(p.v, kind))))))));
     return box;
   }
 
@@ -350,20 +378,16 @@
       el("button", { type: "button", role: "tab", class: "tab" + (t.id === view.tab ? " on" : ""), "aria-selected": t.id === view.tab ? "true" : "false",
         onclick: () => { view.tab = t.id; setURL(detailURL(), true); renderDetail(); } }, t.label)));
     const tab = TABS.find((t) => t.id === view.tab);
-    const zero = el("label", { class: "zero" },
-      el("input", { type: "checkbox", checked: view.hideZero, onchange: (e) => { view.hideZero = e.target.checked; renderDetail(); } }),
-      " 0인 항목 숨기기");
     const panel = el("div", { class: "panel", role: "tabpanel" },
-      el("div", { class: "panel-bar" }, el("span", { class: "hint" }, "항목을 누르면 위 그래프에 추이가 나옵니다."), zero),
+      el("div", { class: "panel-bar" }, el("span", { class: "hint" }, "항목을 누르면 위 그래프에 추이가 나옵니다.")),
       tab.tables.map(([t, title]) => renderTable(coop, ym, t, title)));
     return el("section", { class: "tabbox" }, tabs, panel);
   }
 
   function renderTable(coop, ym, t, title) {
     let rows = rowsOf(coop, ym, t);
-    if (!rows.length) return el("section", { class: "sec" }, el("h3", {}, title), el("p", { class: "muted" }, `${ymLabel(ym)} 자료가 없습니다.`));
+    if (!rows.length) return el("section", { class: "sec" }, el("h3", {}, title), el("p", { class: "muted" }, MISSING));
     const hasR = rows.some((r) => r.r != null);
-    if (view.hideZero) rows = rows.filter((r) => r.v !== 0);
     const kinds = new Set(rows.map((r) => kindOf(t, r.c)));
     const body = el("tbody", {}, rows.map((r) => {
       const kind = kindOf(t, r.c);
@@ -377,7 +401,7 @@
             detEl.querySelector(".trend").scrollIntoView({ block: "nearest", behavior: "smooth" });
           } },
           r.label, kinds.size > 1 && unitLabel(kind) ? el("small", { class: "u" }, ` (${unitLabel(kind)})`) : null)),
-        el("td", { class: "num" + (r.v < 0 ? " neg" : "") }, fmt(r.v, kind)),
+        el("td", { class: "num" + (r.v == null ? " miss" : r.v < 0 ? " neg" : "") }, fmt(r.v, kind)),
         hasR ? el("td", { class: "num rto" }, r.r == null ? "" : NF2.format(r.r)) : null);
     }));
     const thead = el("thead", {}, el("tr", {},

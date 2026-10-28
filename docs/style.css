@@ -42,6 +42,7 @@ button { font: inherit; color: inherit; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .muted { color: var(--muted); }
 .neg { color: var(--neg); }
+.miss { color: var(--muted); font-size: 12px; font-weight: 400 !important; }
 
 /* 머리말 */
 .eyebrow { margin: 0; font-size: 12px; letter-spacing: .08em; color: var(--acc); font-weight: 600; }
@@ -113,6 +114,10 @@ h1 .home { color: inherit; text-decoration: none; }
 .chart .cross { stroke: var(--sub); stroke-width: 1; }
 .chart .endlabel { fill: var(--ink); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .chart .hit { fill: transparent; cursor: crosshair; }
+.chart .sel-band { fill: var(--acc-soft); }
+.chart .tick.sel { fill: var(--ink); font-weight: 650; }
+.chart .dot.sel { stroke-width: 2.5; }
+.chart .miss-dot { fill: var(--card); stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 2 2; }
 .tip {
   position: absolute; transform: translate(-50%, calc(-100% - 12px)); pointer-events: none;
   background: var(--ink); color: var(--bg); border-radius: 8px; padding: 6px 10px; font-size: 12px; white-space: nowrap;
@@ -132,7 +137,6 @@ h1 .home { color: inherit; text-decoration: none; }
 .panel { padding: 6px 16px 16px; }
 .panel-bar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; align-items: center; padding: 6px 0; }
 .hint { font-size: 12px; color: var(--muted); }
-.zero { font-size: 12px; color: var(--sub); cursor: pointer; }
 .sec + .sec { margin-top: 14px; }
 .sec h3 { margin: 8px 0 4px; font-size: 13px; color: var(--acc); font-weight: 600; }
 
