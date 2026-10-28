@@ -1,0 +1,43 @@
+name: 항목코드 확인(임시)
+on: workflow_dispatch
+permissions:
+  contents: write
+concurrency:
+  group: probe-codes
+jobs:
+  codes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: 1페이지 표본으로 항목코드 수집
+        env:
+          SERVICE_KEY: ${{ secrets.SERVICE_KEY }}
+        run: |
+          python - <<'PY'
+          import json, sys
+          sys.path.insert(0, "scripts")
+          import collect as c
+          key = c.os.environ["SERVICE_KEY"]
+          out = {}
+          for op in c.OPS.values():
+              r = c.call(key, op, basYm="202606", pageNo=1, numOfRows=1000)
+              for t in r["tables"]:
+                  tk = c.table_key(t["title"]); d = out.setdefault(tk, {})
+                  for it in t["items"]:
+                      code, name, val, rto = c.fields(it)
+                      d.setdefault(str(code), [name, val, rto, it.get("fncoNm")])
+          json.dump(out, open("probe_codes.json", "w"), ensure_ascii=False, indent=1)
+          PY
+      - name: 임시 브랜치에 저장
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q --orphan probe-codes
+          git rm -rq --cached . 
+          git add probe_codes.json
+          git commit -qm "항목코드 표본"
+          git push -qf origin probe-codes
