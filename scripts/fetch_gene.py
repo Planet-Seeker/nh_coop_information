@@ -33,9 +33,10 @@ class ApiError(Exception):
     pass
 
 
-def call(key: str, **params) -> dict:
+def call(key: str, op: str = "", **params) -> dict:
     q = {"serviceKey": key, "resultType": "json", **params}
-    url = API + "?" + urllib.parse.urlencode(q)
+    base = API.rsplit("/", 1)[0] + "/" + op if op else API
+    url = base + "?" + urllib.parse.urlencode(q)
     last = None
     for attempt in range(3):
         try:
@@ -117,16 +118,22 @@ def notice(msg: str) -> None:
 
 
 def probe(key: str) -> None:
-    """보유 표(title) 구성, 항목 필드, 기준년월별 건수를 확인한다."""
-    r = call(key, pageNo=1, numOfRows=3)
-    for t in r["tables"]:
-        keys = sorted({k for i in t["items"] for k in i})
-        sample = json.dumps(t["items"][0], ensure_ascii=False)[:160] if t["items"] else ""
-        notice(f"[표] {t['title']} total={t['total']} 필드={keys} 예={sample}")
-    for ym in ("202606", "202603", "202512", "202509", "202506", "202412"):
-        r = call(key, pageNo=1, numOfRows=1, basYm=ym)
-        notice(f"basYm={ym}: " + ", ".join(f"{t['title']}={t['total']}" for t in r["tables"]))
-        time.sleep(0.3)
+    """각 오퍼레이션의 표(title) 구성, 필드, 기준년월별 건수를 확인한다."""
+    for op in ("getAgriCoopFinaInfo", "getAgriCoopKeyManaIndi"):
+        try:
+            r = call(key, op, pageNo=1, numOfRows=3)
+        except ApiError as e:
+            notice(f"{op}: {e}")
+            continue
+        notice(f"{op}: 표 {len(r['tables'])}개")
+        for t in r["tables"]:
+            keys = sorted({k for i in t["items"] for k in i} - {"title", "crno"})
+            sample = json.dumps({k: v for k, v in t["items"][0].items() if k not in ("title", "crno")}, ensure_ascii=False)[:260] if t["items"] else ""
+            notice(f"{op} [표] {t['title']} total={t['total']} 필드={keys} 예={sample}")
+        for ym in ("202606", "202603", "202512"):
+            r = call(key, op, pageNo=1, numOfRows=1, basYm=ym)
+            notice(f"{op} basYm={ym}: " + ", ".join(f"{t['title']}={t['total']}" for t in r["tables"]))
+            time.sleep(0.3)
 
 
 def fetch_month(key: str, ym: str) -> list:
