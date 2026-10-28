@@ -48,9 +48,9 @@
   const ymShort = (ym) => `${ym.slice(2, 4)}.${ym.slice(4)}`;
   // 화면은 연 단위: 연도마다 12월(연말) 자료, 그해 12월 자료가 아직 없으면 그해 최신 반기 자료로 대표
   const isYearEnd = (ym) => ym.endsWith("12");
-  const yearLabel = (ym) => (isYearEnd(ym) ? `${ym.slice(0, 4)}년` : `${ym.slice(0, 4)}년 ${Number(ym.slice(4))}월`);
-  const yearPick = (ym) => (isYearEnd(ym) ? `${ym.slice(0, 4)}년 말 기준` : `${ym.slice(0, 4)}년 ${Number(ym.slice(4))}월 기준`);
-  const axisLabel = (ym) => (isYearEnd(ym) ? ym.slice(0, 4) : `${ym.slice(2, 4)}.${ym.slice(4)}`);
+  const yearLabel = (ym) => `${ym.slice(0, 4)}년`;      // 화면 표기는 연도로 통일
+  const yearPick = yearLabel;
+  const axisLabel = (ym) => ym.slice(0, 4);
   function yearReps(monthsDesc) {
     const best = new Map();
     for (const ym of monthsDesc) {
@@ -241,7 +241,8 @@
       back,
       el("div", { class: "d-title" },
         el("h2", {}, coop.nm),
-        el("p", { class: "meta" }, `금융회사코드 ${coop.cd}`, coop.crno ? ` · 법인등록번호 ${coop.crno}` : "")),
+        el("p", { class: "meta" }, `금융회사코드 ${coop.cd}`, coop.crno ? ` · 법인등록번호 ${coop.crno}` : ""),
+        isYearEnd(ym) ? null : el("p", { class: "partial-note" }, `${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준입니다(연말 자료 공개 전).`)),
       sel);
 
     // 핵심 수치 (누르면 추이 그래프 전환)
