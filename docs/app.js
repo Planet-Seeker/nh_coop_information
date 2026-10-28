@@ -376,15 +376,21 @@
     requestAnimationFrame(() => {                           // 화면에 붙은 뒤 크기를 알 수 있음
       if (!entry.map) {
         const dark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
+        // 배경지도 스타일: 밝은 화면 gray, 다크 모드 midnight. 비교용으로 주소에 ?mapstyle=Base|gray|midnight|Satellite|Hybrid 지정 가능
+        const want = new URLSearchParams(location.search).get("mapstyle");
+        const layer = ["Base", "gray", "midnight", "Satellite", "Hybrid"].includes(want) ? want : dark ? "midnight" : "gray";
+        const ext = layer === "Satellite" ? "jpeg" : "png";
         entry.map = L.map(entry.node, { zoomControl: true, attributionControl: true, scrollWheelZoom: false }).setView(ll, 15);
         entry.map.attributionControl.setPrefix("Leaflet");
-        L.tileLayer(`https://api.vworld.kr/req/wmts/1.0.0/${VWORLD_KEY}/${dark ? "midnight" : "Base"}/{z}/{y}/{x}.png`, {
-          minZoom: 6, maxZoom: 19, attribution: "지도: VWorld(국토교통부)",
+        if (layer === "Hybrid") L.tileLayer(`https://api.vworld.kr/req/wmts/1.0.0/${VWORLD_KEY}/Satellite/{z}/{y}/{x}.jpeg`, { minZoom: 6, maxZoom: 19 }).addTo(entry.map);
+        L.tileLayer(`https://api.vworld.kr/req/wmts/1.0.0/${VWORLD_KEY}/${layer}/{z}/{y}/{x}.${ext}`, {
+          minZoom: 6, maxZoom: 19, attribution: "지도: VWorld(국토교통부)", className: `tiles-${layer}`,
         }).addTo(entry.map);
-        const css = getComputedStyle(document.documentElement);
-        L.circleMarker(ll, { radius: 8, color: css.getPropertyValue("--card").trim() || "#fff", weight: 2,
-          fillColor: css.getPropertyValue("--chart").trim() || "#1b7339", fillOpacity: 1 })
-          .addTo(entry.map).bindTooltip(coop.nm, { permanent: true, direction: "top", offset: [0, -8] });
+        // 사이트 녹색 핀(이미지 없이 SVG, 테마 색은 CSS 변수로)
+        const pin = L.divIcon({ className: "pin", iconSize: [28, 36], iconAnchor: [14, 34], tooltipAnchor: [0, -30],
+          html: '<svg viewBox="0 0 28 36" width="28" height="36" aria-hidden="true"><path class="pin-body" d="M14 1C7 1 1.5 6.4 1.5 13.2 1.5 22 14 35 14 35s12.5-13 12.5-21.8C26.5 6.4 21 1 14 1z"/><circle class="pin-dot" cx="14" cy="13" r="4.6"/></svg>' });
+        L.marker(ll, { icon: pin, keyboard: false, title: coop.nm }).addTo(entry.map)
+          .bindTooltip(coop.nm, { permanent: true, direction: "top", className: "pin-label" });
       } else entry.map.invalidateSize();
     });
     return box;

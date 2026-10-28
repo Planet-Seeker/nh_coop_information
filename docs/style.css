@@ -103,7 +103,18 @@ h1 .home { color: inherit; text-decoration: none; }
 .map { flex: 1 1 auto; min-height: 260px; }
 .map-empty { margin: auto; color: var(--muted); font-size: 13px; }
 .leaflet-container { font: inherit; background: var(--grid); }
-.leaflet-tooltip { font-size: 12px; font-weight: 600; }
+.tiles-gray { filter: saturate(.6) contrast(.95) brightness(1.03); }      /* 회색 지도를 카드 톤에 맞게 살짝 */
+.tiles-midnight { filter: saturate(.7) brightness(.9); }
+.pin { background: none; border: 0; }
+.pin-body { fill: var(--chart); stroke: var(--card); stroke-width: 2; }
+.pin-dot { fill: var(--card); }
+.leaflet-tooltip.pin-label { font: inherit; font-size: 12px; font-weight: 650; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 3px 8px; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+.leaflet-tooltip.pin-label::before { display: none; }
+.leaflet-bar { border: 1px solid var(--line) !important; border-radius: 10px !important; overflow: hidden; box-shadow: none !important; }
+.leaflet-bar a { background: var(--card) !important; color: var(--ink) !important; border-bottom-color: var(--line) !important; }
+.leaflet-bar a:hover { background: var(--acc-soft) !important; }
+.leaflet-control-attribution { background: color-mix(in srgb, var(--card) 80%, transparent) !important; color: var(--muted) !important; font-size: 10px; }
+.leaflet-control-attribution a { color: var(--sub) !important; }
 .kpi {
   min-width: 0;
   display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left;

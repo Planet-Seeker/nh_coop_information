@@ -191,6 +191,9 @@ docs/data/meta/coop_meta.csv        수기 지정(공개). 출처와 무관한 �
   Leaflet 1.9.4는 `docs/vendor/leaflet/`(BSD-2-Clause). CSP img-src에 api.vworld.kr·xdworld.vworld.kr 허용.
 - 위치 수집은 지금 하지 않음(사용자 결정): 나중에 meta.csv에 주소·좌표를 채우면 그대로 표시.
 - 지도 표시 시험 완료(2026-10-28, 사용자 확인). 시험용 가상 좌표는 삭제함.
+- 지도 디자인 개선(2026-10-28): 밝은 화면 VWorld **gray**, 다크 **midnight**, 톤 보정 필터, 사이트 녹색 SVG 핀·이름표, 확대 버튼·출처 표시 스타일 통일.
+  비교용 주소 매개변수 `?mapstyle=Base|gray|midnight|Satellite|Hybrid`.
+- **⚠ 임시 시험값(다시 넣음)**: 오창농협 위도 36.7170·경도 127.4330 — 지도 스타일 결정 후 삭제.
 
 ## 5. 진행 상황
 
