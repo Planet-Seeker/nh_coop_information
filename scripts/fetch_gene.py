@@ -93,6 +93,11 @@ def probe(key: str) -> None:
     """기준년월 없이 조회해 실제 보유 데이터의 범위와 구성을 확인한다."""
     from collections import Counter
     T = "농협_일반현황_임직원현황"
+    for rt in ("json", "xml"):
+        url = API + "?" + urllib.parse.urlencode({"serviceKey": key, "resultType": rt, "pageNo": 1, "numOfRows": 2})
+        with urllib.request.urlopen(url, timeout=30) as r:
+            raw = r.read().decode("utf-8", "replace")
+        notice(f"원문({rt}): " + re.sub(r"\s+", " ", raw).replace(key, "***")[:700])
     combos = [
         {}, {"title": T}, {"basYm": "201112"}, {"title": T, "basYm": "201112"},
         {"basYm": "202312"}, {"title": T, "basYm": "202312"}, {"basYm": "202412"},
