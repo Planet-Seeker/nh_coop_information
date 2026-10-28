@@ -24,12 +24,12 @@
   const KPIS = [
     { label: "조합원", t: T.G, c: "B" },
     { label: "자산총계", t: T.AS, c: "A" },
-    { label: "당기순이익", t: T.PL, c: "A", note: "6월은 상반기 누적" },
+    { label: "유동성비율", t: T.L, c: "B" },
     { label: "예수부채", t: T.LE, c: "A1" },
     { label: "대출채권", t: T.AS, c: "A3" },
     { label: "예대율", t: T.L, c: "C" },
+    { label: "당기순이익", t: T.PL, c: "A", note: "6월은 상반기 누적" },
     { label: "고정이하여신비율", t: T.Q, c: "C", note: "낮을수록 건전" },
-    { label: "유동성비율", t: T.L, c: "B" },
   ];
   const MAX_LIST = 50;
 
@@ -39,13 +39,26 @@
   let INDEX = null, CODES = {}, LIST = [];
   const coopCache = new Map();
   const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[1], range: "5y" };
-  const RANGES = [["3y", "최근 3년", 6], ["5y", "최근 5년", 10], ["10y", "최근 10년", 20], ["all", "전체", Infinity]];  // 반기 개수
+  const RANGES = [["3y", "최근 3년", 3], ["5y", "최근 5년", 5], ["10y", "최근 10년", 10], ["all", "전체", Infinity]];  // 연도 개수
   const MISSING = "자료누락";
 
   // ── 유틸 ───────────────────────────────────────────────────
   const norm = (s) => String(s || "").replace(/\s+/g, "").toLowerCase();
   const ymLabel = (ym) => `${ym.slice(0, 4)}년 ${Number(ym.slice(4))}월`;
   const ymShort = (ym) => `${ym.slice(2, 4)}.${ym.slice(4)}`;
+  // 화면은 연 단위: 연도마다 12월(연말) 자료, 그해 12월 자료가 아직 없으면 그해 최신 반기 자료로 대표
+  const isYearEnd = (ym) => ym.endsWith("12");
+  const yearLabel = (ym) => (isYearEnd(ym) ? `${ym.slice(0, 4)}년` : `${ym.slice(0, 4)}년 ${Number(ym.slice(4))}월`);
+  const yearPick = (ym) => (isYearEnd(ym) ? `${ym.slice(0, 4)}년 말 기준` : `${ym.slice(0, 4)}년 ${Number(ym.slice(4))}월 기준`);
+  const axisLabel = (ym) => (isYearEnd(ym) ? ym.slice(0, 4) : `${ym.slice(2, 4)}.${ym.slice(4)}`);
+  function yearReps(monthsDesc) {
+    const best = new Map();
+    for (const ym of monthsDesc) {
+      const y = ym.slice(0, 4), cur = best.get(y);
+      if (!cur || ym > cur) best.set(y, ym);
+    }
+    return [...best.values()].sort().reverse();
+  }
   const nf = (d) => new Intl.NumberFormat("ko-KR", { maximumFractionDigits: d, minimumFractionDigits: d });
   const NF0 = nf(0), NF1 = nf(1), NF2 = nf(2);
 
@@ -197,7 +210,8 @@
       setStatus("조합 자료를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.", true);
       return;
     }
-    const months = Object.keys(coop.d).sort().reverse();
+    const months = yearReps(Object.keys(coop.d).sort().reverse());   // 연도별 대표 기준년월(최신순)
+    if (ym && !months.includes(ym)) ym = months.find((m) => m.slice(0, 4) === ym.slice(0, 4)) || null;
     view.coop = coop;
     view.months = months;
     view.ym = ym && months.includes(ym) ? ym : months[0];
@@ -220,8 +234,8 @@
     const back = qEl.value.trim()
       ? el("button", { type: "button", class: "back", onclick: () => { setURL({ q: qEl.value.trim() }); search({ push: false }); } }, "‹ 검색 결과")
       : null;
-    const sel = el("select", { "aria-label": "기준년월", onchange: (e) => { view.ym = e.target.value; setURL(detailURL(), true); renderDetail(); } },
-      months.map((m) => el("option", { value: m, selected: m === ym }, `${ymLabel(m)} 기준`)));
+    const sel = el("select", { "aria-label": "기준연도", onchange: (e) => { view.ym = e.target.value; setURL(detailURL(), true); renderDetail(); } },
+      months.map((m) => el("option", { value: m, selected: m === ym }, yearPick(m))));
 
     const head = el("div", { class: "d-head" },
       back,
@@ -254,13 +268,13 @@
     const m = view.metric;
     const kind = kindOf(m.t, m.c);
     const label = m.label || codeName(m.t, m.c).replace(/_/g, " › ");
-    // 기본: 선택한 기준년월을 오른쪽 끝으로 하는 5년(반기 10개). '전체 기간'이면 보유 자료 전체.
+    // 연 단위: 선택한 연도를 오른쪽 끝으로 최근 N년(연도별 대표 자료). '전체'면 보유 연도 전체.
     const asc = months.slice().reverse();
     const win = (RANGES.find((r) => r[0] === view.range) || RANGES[1])[2];
     const annual = decOnly(coop, m.t, m.c);               // 연말에만 공시되는 항목은 12월 자료만 이어서 그림
     const pool = annual ? asc.filter((ym) => ym.endsWith("12") || ym === view.ym) : asc;
     const pend = pool.indexOf(view.ym);
-    const shown = pool.slice(Math.max(0, pend - (annual ? Math.ceil(win / 2) : win) + 1), pend + 1);
+    const shown = pool.slice(Math.max(0, pend - win + 1), pend + 1);
     const pts = shown.map((ym) => ({ ym, v: valueOf(coop, ym, m.t, m.c) }));  // 오래된 → 최신
     const valid = pts.filter((p) => p.v != null);
     const selIdx = pts.findIndex((p) => p.ym === view.ym);
@@ -271,7 +285,7 @@
       el("div", { class: "trend-h" },
         el("div", { class: "trend-t" },
           el("h3", {}, `${label} 추이`),
-          el("span", { class: "unit" }, `${unitLabel(kind) ? `단위: ${unitLabel(kind)} · ` : ""}${pts.length ? `${ymLabel(pts[0].ym)}~${ymLabel(pts[pts.length - 1].ym)}` : ""}${annual ? " · 연말(12월) 공시 항목" : ""}`)),
+          el("span", { class: "unit" }, `${unitLabel(kind) ? `단위: ${unitLabel(kind)} · ` : ""}${pts.length ? `${yearLabel(pts[0].ym)}~${yearLabel(pts[pts.length - 1].ym)}` : ""}${annual ? " · 연말(12월) 공시 항목" : ""}`)),
         el("div", { class: "segs", role: "group", "aria-label": "기간" }, RANGES.map(([id, text]) => rangeBtn(id, text)))));
 
     if (valid.length < 2) {
@@ -317,7 +331,7 @@
       const keep = i === selIdx || ((pts.length - 1 - i) % every === 0 && Math.abs(i - selIdx) >= every / 2);
       if (!keep) return;
       const tx = svgEl("text", { x: x(i), y: H - 8, class: "tick" + (i === selIdx ? " sel" : ""), "text-anchor": "middle" });
-      tx.textContent = ymShort(p.ym);
+      tx.textContent = axisLabel(p.ym);
       svg.append(tx);
     });
 
@@ -342,7 +356,7 @@
     svg.append(cross);
     const dots = pts.map((p, i) => {
       if (p.v == null) return null;
-      const c = svgEl("circle", { cx: x(i), cy: y(disp(p.v)), r: i === selIdx ? 6 : pts.length > 20 ? 3 : 4, class: "dot" + (i === selIdx ? " sel" : "") });
+      const c = svgEl("circle", { cx: x(i), cy: y(disp(p.v)), r: i === selIdx ? 6 : pts.length > 20 ? 3 : 4, class: "dot" + (i === selIdx ? " sel" : "") + (isYearEnd(p.ym) ? "" : " partial") });
       svg.append(c);
       return c;
     });

@@ -133,6 +133,7 @@ h1 .home { color: inherit; text-decoration: none; }
 .chart .sel-band { fill: var(--acc-soft); }
 .chart .tick.sel { fill: var(--ink); font-weight: 650; }
 .chart .dot.sel { stroke-width: 2.5; }
+.chart .dot.partial { fill: var(--card); stroke: var(--chart); stroke-width: 2; }   /* 연말 전(반기) 자료 */
 .chart .miss-dot { fill: var(--card); stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 2 2; }
 .tip {
   position: absolute; transform: translate(-50%, calc(-100% - 12px)); pointer-events: none;
