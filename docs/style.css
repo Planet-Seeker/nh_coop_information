@@ -83,7 +83,13 @@ th, td { padding: 7px 4px; border-bottom: 1px solid var(--line); text-align: lef
 tr:last-child th, tr:last-child td { border-bottom: 0; }
 th { color: var(--sub); font-weight: 500; }
 .num { text-align: right; font-variant-numeric: tabular-nums; }
-tr.sum th, tr.sum td { color: var(--ink); font-weight: 600; }
+tr.top td { font-weight: 600; }
+tr.sub td:first-child { padding-left: 22px; color: var(--sub); font-size: 13px; }
+tr.sub td.num { color: var(--sub); font-size: 13px; }
+.kpis { flex-basis: 100%; display: flex; gap: 16px; margin-top: 4px; }
+.kpi { font-size: 13px; color: var(--sub); }
+.kpi small { font-size: 12px; margin-right: 6px; }
+.kpi b { font-size: 17px; color: var(--ink); font-variant-numeric: tabular-nums; margin-right: 1px; }
 
 .foot { margin-top: 36px; font-size: 12px; color: var(--sub); }
 .foot p { margin: 2px 0; }
