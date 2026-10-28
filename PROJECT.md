@@ -245,3 +245,11 @@ PROJECT.md / README.md
   5. 농업경영체·농가 통계(시군별) — 조합원 대비 지역 농가 비교. 예: https://www.data.go.kr/data/15109070/openapi.do (내용 확인 필요)
   6. 포털 밖: 금감원 FISIS(상호금융 통계), 오피넷(농협 주유소), LOCALDATA(대규모점포·하나로마트 인허가), KOSIS(농가 통계), VWorld 지오코딩(주소→좌표)
 
+### 2026-10-29 응답 나열 순서 진단 · 금감원 FISIS 조사
+- `ORDER_YM` 진단(2025-12): 모든 표가 같은 순서, 1,126곳이 46개 구간으로 나뉘고 각 구간 안에서만 금융회사코드 오름차순(구간은 등록 묶음으로 보이며 지역과 일관된 관계 없음) → 나열 순서로 얻는 지역 정보는 코드 자체 이상 없음. 결과: docs/data/probe/order_202512.json
+- 금감원 금융통계정보시스템(FISIS) Open API: https://fisis.fss.or.kr/page/api-spec.jsp
+  - 금융회사 API(companySearch, partDiv **Q=농업협동조합**), 통계목록(statisticsListSearch, lrgDiv Q: 일반현황 A·재무현황 B·주요경영지표 C·보도자료통계 P), 통계정보(statisticsInfoSearch), 계정항목(accountListSearch)
+  - 2014.12 개편 때 농·수·산림조합 1,383곳이 공개 대상에 추가(연체율, 부문별 손익, 유형별 대출채권 등 확대). 지금 쓰는 공공데이터포털 API의 원천으로 보이나 통계표가 더 많을 수 있음
+  - 인증키: 비영리는 신청 즉시 발급, 하루 1만 건. 영리는 서류·승인. 12개월 미사용 시 삭제. 신청폼에 회사명·사업자번호 칸이 있음(개인 신청 가능 여부 확인 필요)
+  - 할 일: 키 발급 → Secrets(FISIS_KEY) → Q 권역 통계목록 전체와 금융회사 목록(순서·추가 항목) 확인 → 지금 자료에 없는 통계표 추가
+
