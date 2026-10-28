@@ -45,6 +45,10 @@ jobs:
           PROBE: ${{ github.event.inputs.probe }}
         run: python scripts/collect.py
 
+      - name: 순위용 지표 파일 생성
+        if: ${{ !cancelled() && github.event.inputs.probe != 'true' }}
+        run: python scripts/build_metrics.py
+
       - name: 변경분 커밋
         if: ${{ !cancelled() }}   # 수집이 중간에 실패해도 받은 데까지는 저장
         run: |

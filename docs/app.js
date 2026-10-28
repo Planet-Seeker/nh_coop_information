@@ -57,7 +57,40 @@
   const qEl = $("q"), statusEl = $("status"), resEl = $("results"), detEl = $("detail");
   let INDEX = null, CODES = {}, LIST = [];
   const AGG = { nation: null, sido: new Map() };            // 집계값(시도 합계·전국 합계) — 검색 목록에서 분리, 비교 기능용
-  const META = new Map();                                   // 수기 지정 조합 정보(data/meta/coop_meta.csv), 금융회사코드 → 행
+  const META = new Map();
+  const BYCD = new Map();                                   // 금융회사코드 → 검색 목록 항목
+  const METRICS = new Map();                                // 기준년월 → {keys, rows} (순위 계산용, data/metrics)
+  const NO_RANK = new Set(["예대율"]);                       // 순위를 표시하지 않는 지표
+  const LOW_FIRST = new Set(["고정이하여신비율"]);           // 낮을수록 1위
+
+  async function loadMetrics(ym) {
+    if (METRICS.has(ym)) return METRICS.get(ym);
+    let d = null;
+    try { d = await getJSON(`data/metrics/${ym}.json`); } catch { d = { keys: [], rows: {} }; }
+    METRICS.set(ym, d);
+    return d;
+  }
+
+  // 순위: 전국 / 소속구역(광역) 내 / 소속구역(기초) 내. 값이 없는 조합은 제외. 동점은 같은 순위.
+  function ranksOf(cd, ym, label) {
+    const d = METRICS.get(ym);
+    if (!d || NO_RANK.has(label)) return null;
+    const i = d.keys.indexOf(label);
+    const mine = d.rows[cd] && d.rows[cd][i];
+    if (i < 0 || mine == null) return null;
+    const low = LOW_FIRST.has(label);
+    const me = affOf(cd);
+    const out = [["전국", 0, 0], [me.aff1 ? (me.est ? `${me.aff1}(추정)` : me.aff1) : "", 0, 0], [me.aff2 ? (me.aff2 === "직할" ? "직할" : `${me.aff2}지부`) : "", 0, 0]];
+    for (const [k, vals] of Object.entries(d.rows)) {
+      const v = vals[i];
+      if (v == null) continue;
+      const better = low ? v < mine : v > mine;
+      const a = affOf(k);
+      const groups = [true, me.aff1 && a.aff1 === me.aff1, me.aff2 && a.aff1 === me.aff1 && a.aff2 === me.aff2];
+      groups.forEach((g, j) => { if (g) { out[j][2]++; if (better) out[j][1]++; } });
+    }
+    return out.map(([name, b, n]) => (name ? { name, rank: b + 1, n } : { name: "", rank: 0, n: 0 }));
+  }                                   // 수기 지정 조합 정보(data/meta/coop_meta.csv), 금융회사코드 → 행
 
   // 간단한 CSV 파서(따옴표·쉼표·줄바꿈 처리). 첫 줄은 열 이름.
   function parseCSV(text) {
@@ -82,13 +115,17 @@
 
   // 지역 4구분을 두 줄 문장으로: "충남 천안시 위치" / "충남지역본부 천안시지부 소속"(직할이면 "충남지역본부 직할")
   // meta.csv 값 우선, 없으면 소속구역(광역)만 금융회사코드로 추정(한 지역으로 정해지는 경우만)
-  function regionLines(cd) {
+  function affOf(cd) {
     const m = META.get(cd) || {};
-    const c = LIST.find((x) => x.cd === cd);
-    const adm1 = m["행정구역_광역"] || "", adm2 = m["행정구역_기초"] || "";
+    const c = BYCD.get(cd);
     let aff1 = m["소속구역_광역"] || "", est = false;
     if (!aff1 && c && c.rc !== "17" && !c.region.includes("·") && c.region !== "기타") { aff1 = c.region; est = true; }
-    const aff2 = m["소속구역_기초"] || "";
+    return { aff1, aff2: m["소속구역_기초"] || "", est };
+  }
+  function regionLines(cd) {
+    const m = META.get(cd) || {};
+    const adm1 = m["행정구역_광역"] || "", adm2 = m["행정구역_기초"] || "";
+    const { aff1, aff2, est } = affOf(cd);
     const loc = [adm1, adm2].filter(Boolean).join(" ");
     let aff = "";
     if (aff1 && aff2 === "직할") aff = `${aff1}지역본부 직할`;
@@ -294,6 +331,16 @@
     if (push) detEl.scrollIntoView({ block: "start", behavior: "smooth" });
   }
 
+  function rankRows(cd, ym, label) {
+    if (NO_RANK.has(label)) return null;
+    if (!METRICS.has(ym)) { loadMetrics(ym).then(() => { if (view.coop && view.ym === ym) renderDetail(); }); return el("span", { class: "rk" }, el("span", { class: "rk-row" }, "순위 계산 중…")); }
+    const r = ranksOf(cd, ym, label);
+    if (!r) return el("span", { class: "rk" }, el("span", { class: "rk-row miss" }, "순위 없음"));
+    return el("span", { class: "rk" }, r.map((x, j) => el("span", { class: "rk-row" + (x.name ? "" : " miss") },
+      x.name ? [el("span", { class: "rk-g" }, x.name), el("span", { class: "rk-n" }, `${NF0.format(x.rank)}위`, el("small", {}, ` / ${NF0.format(x.n)}`))]
+        : (j === 1 ? "소속 광역 미지정" : "소속 기초 미지정"))));
+  }
+
   function detailURL() {
     return { c: view.coop.cd, ym: view.ym === view.months[0] ? null : view.ym, tab: view.tab === "gen" ? null : view.tab };
   }
@@ -326,7 +373,7 @@
         title: `${k.label} 추이 보기`, onclick: () => { view.metric = k; renderDetail(); } },
         el("span", { class: "kpi-l" }, k.label),
         el("span", { class: "kpi-v" + (v == null ? " miss" : v < 0 ? " neg" : "") }, fmt(v, kind, true)),
-        null);
+        rankRows(coop.cd, ym, k.label));
     }));
 
     const kpiRow = el("div", { class: "kpi-row" },
@@ -584,11 +631,16 @@
       INDEX = idx; CODES = codes;
       try {                                                 // 수기 지정 파일은 없어도 됨
         const r = await fetch("data/meta/coop_meta.csv", { cache: "no-cache" });
-        if (r.ok) for (const row of parseCSV(await r.text())) if (row["금융회사코드"]) META.set(row["금융회사코드"], row);
+        if (r.ok) for (const row of parseCSV(await r.text())) {
+          // 엑셀용 ="0010027…" 형식, 앞자리 0이 지워진 숫자 모두 13자리 코드로 맞춤
+          let cd = (row["금융회사코드"] || "").replace(/^=/, "").replace(/"/g, "").trim();
+          if (/^\d{8,12}$/.test(cd)) cd = cd.padStart(13, "0");
+          if (cd) META.set(cd, row);
+        }
       } catch { /* 무시 */ }
       for (const [cd, nm, ym] of list.list) {
         const c = { cd, nm, ym, k: norm(nm), ...classify(cd, nm) };
-        if (c.kind === "coop") LIST.push(c);
+        if (c.kind === "coop") { LIST.push(c); BYCD.set(cd, c); }
         else if (c.kind === "sido") AGG.sido.set(c.sido, c);
         else if (c.kind === "nation") AGG.nation = c;
       }
