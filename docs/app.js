@@ -57,6 +57,42 @@
   const qEl = $("q"), statusEl = $("status"), resEl = $("results"), detEl = $("detail");
   let INDEX = null, CODES = {}, LIST = [];
   const AGG = { nation: null, sido: new Map() };            // 집계값(시도 합계·전국 합계) — 검색 목록에서 분리, 비교 기능용
+  const META = new Map();                                   // 수기 지정 조합 정보(data/meta/coop_meta.csv), 금융회사코드 → 행
+
+  // 간단한 CSV 파서(따옴표·쉼표·줄바꿈 처리). 첫 줄은 열 이름.
+  function parseCSV(text) {
+    const rows = []; let row = [], cur = "", q = false;
+    text = text.replace(/^\uFEFF/, "");
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      if (q) {
+        if (ch === '"') { if (text[i + 1] === '"') { cur += '"'; i++; } else q = false; }
+        else cur += ch;
+      } else if (ch === '"') q = true;
+      else if (ch === ",") { row.push(cur); cur = ""; }
+      else if (ch === "\n" || ch === "\r") {
+        if (ch === "\r" && text[i + 1] === "\n") i++;
+        row.push(cur); cur = ""; if (row.some((v) => v !== "")) rows.push(row); row = [];
+      } else cur += ch;
+    }
+    row.push(cur); if (row.some((v) => v !== "")) rows.push(row);
+    const head = (rows.shift() || []).map((h) => h.trim());
+    return rows.map((r) => Object.fromEntries(head.map((h, i) => [h, (r[i] || "").trim()])));
+  }
+
+  // 지역 4구분: meta.csv 값 우선, 없으면 소속구역(광역)만 금융회사코드로 추정(한 지역으로 정해지는 경우만)
+  function regionsOf(cd) {
+    const m = META.get(cd) || {};
+    const c = LIST.find((x) => x.cd === cd);
+    let aff1 = m["소속구역_광역"] || "", est = false;
+    if (!aff1 && c && c.rc !== "17" && !c.region.includes("·") && c.region !== "기타") { aff1 = c.region; est = true; }
+    return [
+      ["행정구역(광역)", m["행정구역_광역"] || "", false],
+      ["소속구역(광역)", aff1, est],
+      ["행정구역(기초)", m["행정구역_기초"] || "", false],
+      ["소속구역(기초)", m["소속구역_기초"] || "", false],
+    ];
+  }
   const coopCache = new Map();
   const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[1], range: "5y" };
   const RANGES = [["3y", "최근 3년", 3], ["5y", "최근 5년", 5], ["10y", "최근 10년", 10], ["all", "전체", Infinity]];  // 연도 개수
@@ -290,7 +326,13 @@
 
     const kpiRow = el("div", { class: "kpi-row" },
       el("section", { class: "kpi-box", "aria-labelledby": "kpi-h" },
-        el("div", { class: "kpi-hd" }, sel, el("h3", { id: "kpi-h", class: "kpi-h" }, "주요 지표")), kpis),
+        el("div", { class: "kpi-hd" }, sel, el("h3", { id: "kpi-h", class: "kpi-h" }, "주요 지표")),
+        el("div", { class: "rgns" }, regionsOf(coop.cd).map(([label, val, est]) =>   // 왼쪽 열: 행정구역, 오른쪽 열: 소속구역
+          el("div", { class: "rgn" },
+            el("span", { class: "rgn-l" }, label),
+            el("span", { class: "rgn-v" + (val ? "" : " miss") }, val || "미지정"),
+            est ? el("span", { class: "rgn-n" }, "코드 추정") : null))),
+        kpis),
       el("div", { class: "kpi-slot", "aria-hidden": "true" }));
     detEl.replaceChildren(head, kpiRow, renderTrend(), renderTabs());
   }
@@ -538,6 +580,10 @@
     try {
       const [idx, codes, list] = await Promise.all([getJSON("data/index.json"), getJSON("data/codes.json"), getJSON("data/coops.json")]);
       INDEX = idx; CODES = codes;
+      try {                                                 // 수기 지정 파일은 없어도 됨
+        const r = await fetch("data/meta/coop_meta.csv", { cache: "no-cache" });
+        if (r.ok) for (const row of parseCSV(await r.text())) if (row["금융회사코드"]) META.set(row["금융회사코드"], row);
+      } catch { /* 무시 */ }
       for (const [cd, nm, ym] of list.list) {
         const c = { cd, nm, ym, k: norm(nm), ...classify(cd, nm) };
         if (c.kind === "coop") LIST.push(c);
