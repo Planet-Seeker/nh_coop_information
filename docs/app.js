@@ -89,11 +89,24 @@
     if (kind === "pct") return `${NF2.format(v)}%`;
     if (kind === "cnt") return `${NF0.format(v)}${short ? "명" : ""}`;
     if (kind === "num") return NF0.format(v);
-    const eok = v / 1e8;                                   // 원 → 억원
-    if (short) return `${Math.abs(eok) >= 100 ? NF0.format(eok) : NF1.format(eok)}억`;
-    return Math.abs(eok) >= 10 || eok === 0 ? NF0.format(eok) : NF1.format(eok);
+    return won(v);
   }
-  const unitLabel = (kind) => ({ pct: "%", cnt: "명", num: "", won: "억원" })[kind];
+  // 원 → "2조 9,720억" / "538억" / "9.2억" / "0.05억"
+  function won(v) {
+    if (v === 0) return "0";
+    const sign = v < 0 ? "-" : "";
+    const a = Math.abs(v) / 1e8;                           // 억 단위
+    if (a >= 10000) {
+      let jo = Math.floor(a / 10000), rest = Math.round(a - jo * 10000);
+      if (rest === 10000) { jo += 1; rest = 0; }
+      return `${sign}${NF0.format(jo)}조${rest ? ` ${NF0.format(rest)}억` : ""}`;
+    }
+    if (a >= 10) return `${sign}${NF0.format(Math.round(a))}억`;
+    if (a >= 1) return `${sign}${NF1.format(a)}억`;
+    return `${sign}${NF2.format(a)}억`;
+  }
+  const unitLabel = (kind) => ({ pct: "%", cnt: "명", num: "", won: "" })[kind];
+  const colHead = (kind) => ({ pct: "비율(%)", cnt: "인원(명)", won: "금액", num: "값" })[kind] || "값";
 
   function rowsOf(coop, ym, t) {
     const rows = (coop.d[ym] && coop.d[ym][t]) || [];
@@ -310,7 +323,7 @@
     box.append(el("details", { class: "tbl-view" },
       el("summary", {}, "표로 보기"),
       el("table", {},
-        el("thead", {}, el("tr", {}, el("th", {}, "기준년월"), el("th", { class: "num" }, unitLabel(kind) ? `${unitLabel(kind)}` : "값"))),
+        el("thead", {}, el("tr", {}, el("th", {}, "기준년월"), el("th", { class: "num" }, colHead(kind)))),
         el("tbody", {}, pts.slice().reverse().map((p) => el("tr", {}, el("td", {}, ymLabel(p.ym)), el("td", { class: "num" }, fmt(p.v, kind))))))));
     return box;
   }
@@ -352,7 +365,6 @@
     const hasR = rows.some((r) => r.r != null);
     if (view.hideZero) rows = rows.filter((r) => r.v !== 0);
     const kinds = new Set(rows.map((r) => kindOf(t, r.c)));
-    const unit = kinds.size === 1 ? unitLabel([...kinds][0]) : "";
     const body = el("tbody", {}, rows.map((r) => {
       const kind = kindOf(t, r.c);
       const active = view.metric.t === t && view.metric.c === r.c;
@@ -364,13 +376,13 @@
             renderDetail();
             detEl.querySelector(".trend").scrollIntoView({ block: "nearest", behavior: "smooth" });
           } },
-          r.label, unit ? null : el("small", { class: "u" }, ` (${unitLabel(kind)})`))),
+          r.label, kinds.size > 1 && unitLabel(kind) ? el("small", { class: "u" }, ` (${unitLabel(kind)})`) : null)),
         el("td", { class: "num" + (r.v < 0 ? " neg" : "") }, fmt(r.v, kind)),
         hasR ? el("td", { class: "num rto" }, r.r == null ? "" : NF2.format(r.r)) : null);
     }));
     const thead = el("thead", {}, el("tr", {},
       el("th", {}, "항목"),
-      el("th", { class: "num" }, unit ? (unit === "%" ? "비율(%)" : unit === "명" ? "인원(명)" : `금액(${unit})`) : "값"),
+      el("th", { class: "num" }, kinds.size === 1 ? colHead([...kinds][0]) : "값"),
       hasR ? el("th", { class: "num" }, "구성비(%)") : null));
     return el("section", { class: "sec" }, el("h3", {}, title), el("div", { class: "tbl-scroll" }, el("table", {}, thead, body)));
   }
@@ -434,7 +446,7 @@
       setStatus("데이터를 준비 중입니다. 잠시 후 다시 방문해 주세요.", true);
       return;
     }
-    if (INDEX.updated) $("updated").textContent = ` · 갱신일자 ${INDEX.updated}`;
+    if (INDEX.updated) $("updated").textContent = INDEX.updated;
     renderSummary();
     route();
   })();
