@@ -81,7 +81,7 @@ h1 .home { color: inherit; text-decoration: none; }
 /* 상세 머리 */
 .detail, .trend { scroll-margin-top: 84px; }
 .detail { margin-top: 4px; }
-.d-head { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px 16px; margin-bottom: 14px; }
+.d-head { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px 16px; margin-bottom: 8px; }
 .back { flex-basis: 100%; text-align: left; background: none; border: 0; padding: 0; color: var(--acc); cursor: pointer; font-size: 14px; }
 .d-title { flex: 1 1 260px; }
 .d-title h2 { margin: 0; font-size: 24px; letter-spacing: -.02em; }
@@ -89,18 +89,27 @@ h1 .home { color: inherit; text-decoration: none; }
 .d-head select { font: inherit; font-size: 14px; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; }
 
 /* 핵심 수치 */
-.kpi-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; margin-bottom: 14px; }
+.kpi-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; margin-bottom: 14px; align-items: stretch; }
+/* 왼쪽(조합명~카드)은 오른쪽 정사각형 지도와 같은 높이: 카드 행이 남는 높이를 나눠 가짐 */
+.kpi-box { display: flex; flex-direction: column; min-width: 0; }
+.kpi-box .kpis { flex: 1 1 auto; grid-auto-rows: 1fr; }
+.d-name { margin: 0; font-size: 24px; letter-spacing: -.02em; text-wrap: balance; }
+.kpi-box .meta { margin: 2px 0 0; }
+.rgn-text { margin: 8px 0 12px; }
+.rgn-text p { margin: 0; font-size: 14px; font-weight: 600; line-height: 1.5; }
+.rgn-text p.miss { font-weight: 400; color: var(--muted); }
 .kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .kpi-box { min-width: 0; }
-.kpi-hd { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; }
+.kpi-hd { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 0 0 8px; }
+.kpi-hd .partial-note { margin: 0; }
 .kpi-hd select { font: inherit; font-size: 14px; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 6px 10px; }
 .kpi-h { margin: 0; font-size: 15px; font-weight: 650; }
 .rgns { display: grid; gap: 6px; margin-bottom: 8px; }
 .rgn { margin: 0; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); font-size: 14px; font-weight: 600; }
 .rgn.miss { font-weight: 400; color: var(--muted); }
 .rgn-n { font-size: 11px; color: var(--muted); }
-.map-box { min-width: 0; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--card); min-height: 260px; }
-.map { flex: 1 1 auto; min-height: 260px; }
+.map-box { min-width: 0; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--card); aspect-ratio: 1 / 1; }
+.map { flex: 1 1 auto; min-height: 0; }
 .map-empty { margin: auto; color: var(--muted); font-size: 13px; }
 .leaflet-container { font: inherit; background: var(--grid); }
 .tiles-gray { filter: saturate(.6) contrast(.95) brightness(1.03); }      /* 회색 지도를 카드 톤에 맞게 살짝 */
@@ -131,7 +140,7 @@ h1 .home { color: inherit; text-decoration: none; }
 .rk-g { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .rk-n { color: var(--ink); font-weight: 600; white-space: nowrap; }
 .rk-n small { color: var(--muted); font-weight: 400; font-size: 11px; }
-@media (max-width: 760px) { .kpi-row { grid-template-columns: 1fr; } .map-box, .map { min-height: 240px; } }
+@media (max-width: 760px) { .kpi-row { grid-template-columns: 1fr; } }
 @media (max-width: 420px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* 추이 그래프 */

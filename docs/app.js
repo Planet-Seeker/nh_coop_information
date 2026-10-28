@@ -408,16 +408,16 @@
     const sel = el("select", { "aria-label": "기준연도", onchange: (e) => { view.ym = e.target.value; setURL(detailURL(), true); renderDetail(); } },
       months.map((m) => el("option", { value: m, selected: m === ym }, yearPick(m))));
 
-    const head = el("div", { class: "d-head" },
-      back,
-      el("div", { class: "d-title" },
-        el("h2", {}, coop.nm),
-        el("p", { class: "meta" }, (() => {                // 금융회사코드·법인등록번호는 화면에 표시하지 않음(데이터에는 보관)
-          const c = LIST.find((x) => x.cd === coop.cd);
-          return c ? `${c.region} · ${c.type}` : "";
-        })()),
-        isYearEnd(ym) ? null : el("p", { class: "partial-note" }, `${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준입니다(연말 자료 공개 전).`)));
-
+    // 조합명 · 권역·유형 · 위치/소속(텍스트 2행) → 주요 지표 → 카드. 이 왼쪽 묶음 높이를 오른쪽 정사각형 지도와 맞춤.
+    const title = [
+      el("h2", { class: "d-name" }, coop.nm),
+      el("p", { class: "meta" }, (() => {                  // 금융회사코드·법인등록번호는 화면에 표시하지 않음(데이터에는 보관)
+        const c = LIST.find((x) => x.cd === coop.cd);
+        return c ? `${c.region} · ${c.type}` : "";
+      })()),
+      el("div", { class: "rgn-text" }, regionLines(coop.cd).map((r) =>   // 1행: 행정구역(위치), 2행: 소속구역
+        el("p", { class: r.miss ? "miss" : "" }, r.text, r.est ? el("span", { class: "rgn-n" }, " (코드 추정)") : null))),
+    ];
     // 핵심 수치 (누르면 추이 그래프 전환)
     const kpis = el("div", { class: "kpis" }, KPIS.map((k) => {
       const kind = kindOf(k.t, k.c);
@@ -432,12 +432,12 @@
 
     const kpiRow = el("div", { class: "kpi-row" },
       el("section", { class: "kpi-box", "aria-labelledby": "kpi-h" },
-        el("div", { class: "kpi-hd" }, sel, el("h3", { id: "kpi-h", class: "kpi-h" }, "주요 지표")),
-        el("div", { class: "rgns" }, regionLines(coop.cd).map((r) =>    // 1행: 행정구역(위치), 2행: 소속구역
-          el("p", { class: "rgn" + (r.miss ? " miss" : "") }, r.text, r.est ? el("span", { class: "rgn-n" }, " (코드 추정)") : null))),
+        ...title,
+        el("div", { class: "kpi-hd" }, sel, el("h3", { id: "kpi-h", class: "kpi-h" }, "주요 지표"),
+          isYearEnd(ym) ? null : el("span", { class: "partial-note" }, `${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준입니다(연말 자료 공개 전).`)),
         kpis),
       mapBox(coop));
-    detEl.replaceChildren(head, kpiRow, renderTrend(), renderTabs());
+    detEl.replaceChildren(...(back ? [el("div", { class: "d-head" }, back)] : []), kpiRow, renderTrend(), renderTabs());
   }
 
   // ── 추이 그래프 ─────────────────────────────────────────────
