@@ -80,17 +80,22 @@
     return rows.map((r) => Object.fromEntries(head.map((h, i) => [h, (r[i] || "").trim()])));
   }
 
-  // 지역 4구분: meta.csv 값 우선, 없으면 소속구역(광역)만 금융회사코드로 추정(한 지역으로 정해지는 경우만)
-  function regionsOf(cd) {
+  // 지역 4구분을 두 줄 문장으로: "충남 천안시 위치" / "충남지역본부 천안시지부 소속"(직할이면 "충남지역본부 직할")
+  // meta.csv 값 우선, 없으면 소속구역(광역)만 금융회사코드로 추정(한 지역으로 정해지는 경우만)
+  function regionLines(cd) {
     const m = META.get(cd) || {};
     const c = LIST.find((x) => x.cd === cd);
+    const adm1 = m["행정구역_광역"] || "", adm2 = m["행정구역_기초"] || "";
     let aff1 = m["소속구역_광역"] || "", est = false;
     if (!aff1 && c && c.rc !== "17" && !c.region.includes("·") && c.region !== "기타") { aff1 = c.region; est = true; }
+    const aff2 = m["소속구역_기초"] || "";
+    const loc = [adm1, adm2].filter(Boolean).join(" ");
+    let aff = "";
+    if (aff1 && aff2 === "직할") aff = `${aff1}지역본부 직할`;
+    else if (aff1 || aff2) aff = `${[aff1 && `${aff1}지역본부`, aff2 && `${aff2}지부`].filter(Boolean).join(" ")} 소속`;
     return [
-      ["행정구역(광역)", m["행정구역_광역"] || "", false],
-      ["소속구역(광역)", aff1, est],
-      ["행정구역(기초)", m["행정구역_기초"] || "", false],
-      ["소속구역(기초)", m["소속구역_기초"] || "", false],
+      { text: loc ? `${loc} 위치` : "위치 미지정", miss: !loc },
+      { text: aff || "소속 미지정", miss: !aff, est },
     ];
   }
   const coopCache = new Map();
@@ -327,11 +332,8 @@
     const kpiRow = el("div", { class: "kpi-row" },
       el("section", { class: "kpi-box", "aria-labelledby": "kpi-h" },
         el("div", { class: "kpi-hd" }, sel, el("h3", { id: "kpi-h", class: "kpi-h" }, "주요 지표")),
-        el("div", { class: "rgns" }, regionsOf(coop.cd).map(([label, val, est]) =>   // 왼쪽 열: 행정구역, 오른쪽 열: 소속구역
-          el("div", { class: "rgn" },
-            el("span", { class: "rgn-l" }, label),
-            el("span", { class: "rgn-v" + (val ? "" : " miss") }, val || "미지정"),
-            est ? el("span", { class: "rgn-n" }, "코드 추정") : null))),
+        el("div", { class: "rgns" }, regionLines(coop.cd).map((r) =>    // 1행: 행정구역(위치), 2행: 소속구역
+          el("p", { class: "rgn" + (r.miss ? " miss" : "") }, r.text, r.est ? el("span", { class: "rgn-n" }, " (코드 추정)") : null))),
         kpis),
       el("div", { class: "kpi-slot", "aria-hidden": "true" }));
     detEl.replaceChildren(head, kpiRow, renderTrend(), renderTabs());
