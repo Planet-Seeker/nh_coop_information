@@ -14,6 +14,7 @@
 .github/workflows/deploy-pages.yml 사이트 배포(코드 변경·데이터 갱신 시), 지도 키는 Secrets에서 주입
 scripts/collect.py                 수집기(일반현황·재무현황·주요경영지표, 이어받기)
 scripts/build_metrics.py           순위용 연도별 지표 파일 생성
+scripts/sync_meta.py               meta.csv에 새 조합 행 추가·상태 자동 추정(빈 칸만, 수동 실행)
 docs/                              사이트(정적, 서버 없음)
 docs/data/                         수집된 정적 JSON, 순위용 지표, 조합 정보(meta/coop_meta.csv)
 ```
