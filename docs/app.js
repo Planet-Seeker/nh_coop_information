@@ -30,8 +30,9 @@
     { label: "고정이하여신비율", t: T.Q, c: "C" },
   ];
   const MAX_LIST = 50;
-  // VWorld 지도 인증키 — 브라우저에 노출되는 키이며, VWorld에 등록한 사이트 주소에서만 동작한다.
-  const VWORLD_KEY = "";
+  // VWorld 지도 인증키: 저장소에 두지 않고, 배포 때 GitHub Secrets(VWORLD_KEY)로 config.js를 만들어 넣는다.
+  // (브라우저에는 전달되지만 VWorld에 등록한 사이트 주소에서만 동작)
+  const VWORLD_KEY = (window.NH_CONFIG && window.NH_CONFIG.vworldKey) || "";
   const SOURCE = { id: "fsc_agcoop", label: "금융위원회 농협 금융통계" };   // 자료 출처 구분(추후 다른 API 추가 대비)
 
   // ── 금융회사코드 기반 분류 ─────────────────────────────────

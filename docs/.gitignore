@@ -1,0 +1,2 @@
+# 배포 때 GitHub Actions가 Secrets로 생성(저장소에 올리지 않음)
+config.js

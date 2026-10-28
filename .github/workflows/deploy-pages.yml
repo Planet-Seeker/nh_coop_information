@@ -1,0 +1,41 @@
+name: 사이트 배포
+
+# 코드가 바뀌거나 데이터 수집이 끝나면 배포. 지도 키는 Secrets에서 config.js로 넣는다(저장소에는 없음).
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: ["농협 데이터 갱신"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: 지도 키 설정 파일 생성
+        env:
+          VWORLD_KEY: ${{ secrets.VWORLD_KEY }}
+        run: |
+          printf 'window.NH_CONFIG = { vworldKey: "%s" };\n' "$VWORLD_KEY" > docs/config.js
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deployment
+        uses: actions/deploy-pages@v4
