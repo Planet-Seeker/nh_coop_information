@@ -253,7 +253,27 @@
     }
     return dec;
   }
-  const missText = (coop, ym, t, c) => (ym.endsWith("06") && decOnly(coop, t, c) ? "연말 공시" : MISSING);
+  // 공시 기간: 이 조합 자료에서 값이 있는 첫·마지막 기준년월(예: 직원 책임자·일반직원·기타는 2018년 6월까지,
+  // 정규·비정규직원과 임원 전무·상무는 2018년 12월부터 → 원자료 분류 변경)
+  function spanOf(coop, t, c) {
+    let a = null, b = null;
+    for (const [ym, tb] of Object.entries(coop.d)) {
+      if (!(tb[t] || []).some((r) => r[0] === c && r[1] != null)) continue;
+      if (!a || ym < a) a = ym;
+      if (!b || ym > b) b = ym;
+    }
+    return [a, b];
+  }
+  function missText(coop, ym, t, c) {
+    if (ym.endsWith("06") && decOnly(coop, t, c)) return "연말 공시";
+    const tableHas = ((coop.d[ym] || {})[t] || []).some((r) => r[1] != null);
+    if (tableHas) {                                          // 같은 표의 다른 항목은 있는데 이 항목만 없음
+      const [a, b] = spanOf(coop, t, c);
+      if (b && ym > b) return `${ymLabel(b)}까지 공시`;
+      if (a && ym < a) return `${ymLabel(a)}부터 공시`;
+    }
+    return MISSING;
+  }
   const valueOf = (coop, ym, t, c) => {
     const row = coop.d[ym] && coop.d[ym][t] && coop.d[ym][t].find((r) => r[0] === c);
     return row ? row[1] : null;
@@ -272,6 +292,25 @@
     return [chars.slice(0, s).join(""), el("mark", {}, chars.slice(s, e).join("")), chars.slice(e).join("")];
   }
 
+  // 지역 검색: 광역 정식 명칭은 줄임말로("인천광역시"→"인천", "충청남도"→"충남")
+  const SIDO_FULL = { 서울특별시: "서울", 부산광역시: "부산", 대구광역시: "대구", 인천광역시: "인천", 광주광역시: "광주", 대전광역시: "대전",
+    울산광역시: "울산", 세종특별자치시: "세종", 경기도: "경기", 강원도: "강원", 강원특별자치도: "강원", 충청북도: "충북", 충청남도: "충남",
+    전라북도: "전북", 전북특별자치도: "전북", 전라남도: "전남", 경상북도: "경북", 경상남도: "경남", 제주특별자치도: "제주", 제주도: "제주" };
+  const regionQuery = (nq) => SIDO_FULL[nq] || nq.replace(/(지역본부|본부|지부)$/, "");
+  // 이 조합이 속한 지역 이름들: 행정구역 광역·기초, 소속구역 광역·기초(meta.csv), 없으면 코드로 정해지는 소속 광역
+  function regionKeys(cd) {
+    const m = META.get(cd) || {};
+    const { aff1 } = affOf(cd);
+    const c = BYCD.get(cd);
+    const code = c && c.rc !== "17" ? c.region.split("·") : [];   // 금융회사코드 권역("대전·충남"이면 대전·충남 둘 다)
+    return [m["행정구역_광역"], m["행정구역_기초"], aff1, m["소속구역_기초"] === "직할" ? "" : m["소속구역_기초"], ...code]
+      .filter(Boolean).map(norm);
+  }
+  function regionHit(cd, rq) {
+    if (rq.length < 2) return false;                         // 한 글자는 조합명만 검색
+    return regionKeys(cd).some((k) => k === rq || k.startsWith(rq));
+  }
+
   function search({ push = true } = {}) {
     const q = qEl.value.trim().slice(0, 30);
     detEl.hidden = true;
@@ -283,9 +322,12 @@
       return;
     }
     const nq = norm(q);
-    const rank = (c) => (c.k === nq ? 0 : c.k.startsWith(nq) ? 1 : 2);
-    const hits = LIST.filter((c) => c.k.includes(nq))
+    const rq = regionQuery(nq);
+    const byName = (c) => c.k.includes(nq);
+    const rank = (c) => (c.k === nq ? 0 : c.k.startsWith(nq) ? 1 : byName(c) ? 2 : 3);   // 조합명 일치 먼저, 지역 일치는 뒤에
+    const hits = LIST.filter((c) => byName(c) || regionHit(c.cd, rq))
       .sort((a, b) => rank(a) - rank(b) || a.nm.localeCompare(b.nm, "ko"));
+    const nName = hits.filter(byName).length, nRegion = hits.length - nName;
 
     if (!hits.length) {
       resEl.replaceChildren();
@@ -293,8 +335,8 @@
       return;
     }
     setStatus(hits.length > MAX_LIST
-      ? `${NF0.format(hits.length)}곳 중 ${MAX_LIST}곳만 표시합니다. 조합명을 더 구체적으로 입력해 보세요.`
-      : `${hits.length}곳 검색됨 · 조합을 선택하세요`);
+      ? `${NF0.format(hits.length)}곳${nRegion ? ` (조합명 ${nName}곳 · 지역 ${nRegion}곳)` : ""} 중 ${MAX_LIST}곳만 표시합니다. 더 구체적으로 입력해 보세요.`
+      : `${hits.length}곳 검색됨${nRegion ? ` (조합명 ${nName}곳 · 지역 ${nRegion}곳)` : ""} · 조합을 선택하세요`);
     // 같은 이름·같은 권역 조합 구분(금융회사코드는 보이지 않음): 자료가 끊긴 곳은 마지막 연도, 나머지는 번호
     const same = new Map();
     for (const h of LIST) { const k = `${h.nm}|${h.region}`; same.set(k, [...(same.get(k) || []), h]); }
@@ -309,7 +351,7 @@
       el("li", {}, el("button", { type: "button", class: "hit", onclick: () => openCoop(h.cd) },
         el("span", { class: "hit-nm" }, highlight(h.nm, q)),
         el("span", { class: "hit-meta" },
-          `${h.region} · ${h.type}${tag(h)}`),
+          `${(affOf(h.cd).aff1 || h.region)} · ${h.type}${tag(h)}`),
         el("span", { class: "hit-go", "aria-hidden": "true" }, "›"))))));
   }
 
@@ -441,6 +483,17 @@
   }
 
   // ── 추이 그래프 ─────────────────────────────────────────────
+  // 글자 폭 측정(캔버스). 실패하면 글자 수로 어림
+  const measureCtx = (() => { try { return document.createElement("canvas").getContext("2d"); } catch { return null; } })();
+  function textW(s, size, weight = 400) {
+    if (measureCtx) {
+      const fam = getComputedStyle(document.body).fontFamily || "sans-serif";
+      measureCtx.font = `${weight} ${size}px ${fam}`;
+      return measureCtx.measureText(s).width;
+    }
+    return [...s].reduce((w, ch) => w + (/[가-힣]/.test(ch) ? 1 : /[\s.,]/.test(ch) ? 0.3 : 0.6) * size, 0);
+  }
+
   function renderTrend() {
     const { coop, months } = view;
     const m = view.metric;
@@ -485,7 +538,12 @@
     // 실제 화면 폭에 맞춰 그림 → 휴대폰에서도 글자가 작아지지 않음
     const W = Math.round(Math.min(720, Math.max(300, (detEl.clientWidth || 640) - 34)));
     const narrow = W < 520;
-    const H = narrow ? 200 : 220, ml = narrow ? 46 : 56, mr = narrow ? 58 : 70, mt = 14, mb = 28;
+    // 좌우 여백은 고정값 대신 실제 글자 폭으로: 왼쪽 = 가장 긴 눈금 글자, 오른쪽 = 끝 값 표시(없으면 연도 글자 절반)
+    const selV = selIdx >= 0 ? pts[selIdx].v : null;
+    const endLbl = selIdx === pts.length - 1 && selV != null ? fmt(selV, kind, true) : "";
+    const ml = Math.ceil(Math.max(...ticks.map((t) => textW(tickFmt(t, kind), 11)))) + 10;
+    const mr = endLbl ? Math.ceil(textW(endLbl, 12, 600)) + 14 : 18;
+    const H = narrow ? 200 : 220, mt = 14, mb = 28;
     const x = (i) => ml + (i * (W - ml - mr)) / Math.max(1, pts.length - 1);
     const y = (v) => mt + (H - mt - mb) * (1 - (v - lo) / (hi - lo));
     const base = y(Math.min(Math.max(0, lo), hi));
@@ -661,7 +719,7 @@
   }
 
   // 검색창 안내문: 좁은 화면에서는 짧게(긴 문장이 잘리지 않도록)
-  const LONG_PH = qEl.getAttribute("placeholder"), SHORT_PH = "조합명 검색 (예: 순천농협)";
+  const LONG_PH = qEl.getAttribute("placeholder"), SHORT_PH = "조합명·지역 검색 (예: 순천농협, 인천)";
   const narrowMQ = window.matchMedia("(max-width: 640px)");
   const setPH = () => qEl.setAttribute("placeholder", narrowMQ.matches ? SHORT_PH : LONG_PH);
   setPH(); narrowMQ.addEventListener("change", setPH);
