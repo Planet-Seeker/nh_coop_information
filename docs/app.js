@@ -400,7 +400,10 @@
       const end = `${ymLabel(c.ym)} 이후 공시 없음`;
       if (s.st === "합병" && s.succ) lines.push([end, " · ", link(s.succ), `에 합병${s.est ? "(추정)" : ""}`]);
       else if (s.st === "코드변경" && s.succ) lines.push(["같은 조합의 이후 자료: ", link(s.succ)]);
-      else lines.push([`${end} · 사유 미확인`]);
+      else {                                                // 공시중단: 비고에 확인된 사유가 있으면 그 내용
+        const why = /^(확인|정황): (.+?) \(https?:/.exec((META.get(cd) || {})["비고"] || "");
+        lines.push([`${end} · ${why ? why[2] : "사유 미확인"}`]);
+      }
     }
     const preds = PRED.get(cd) || [];
     const merged = preds.filter((p) => stOf(p).st === "합병");

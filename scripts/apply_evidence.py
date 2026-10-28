@@ -14,12 +14,16 @@ code = lambda v: (v or "").strip().lstrip("=").strip('"')
 n = 0
 for r in rows:
     e = ev.get(code(r["금융회사코드"]))
-    if not e or e["grade"] == "미확인":
+    if not e:
         continue
     if r["비고"] and "자동 추정" not in r["비고"] and not re.match(r"^(확인|정황):", r["비고"]):
         continue
-    r["상태"] = "합병"
-    if e.get("succ"):
+    if e["grade"] == "미확인":                     # 상태·승계는 자동 추정 그대로, 비고만 표시
+        r["비고"] = "자동 추정(웹 검색 근거 없음)"
+        n += 1
+        continue
+    r["상태"] = e.get("st", "합병")
+    if "succ" in e:
         r["승계조합코드"] = e["succ"]
     if e.get("prev") and not r["이전명칭"]:
         r["이전명칭"] = e["prev"]
