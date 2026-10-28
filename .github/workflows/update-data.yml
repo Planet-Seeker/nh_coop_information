@@ -13,6 +13,10 @@ on:
         description: "특정 기준년월만 다시 받기(YYYY06/YYYY12). 보통은 비워 둠"
         required: false
         default: ""
+      order_ym:
+        description: "응답 나열 순서 진단(YYYY06/YYYY12). 보통은 비워 둠"
+        required: false
+        default: ""
       probe:
         description: "진단 모드(표 구성만 확인, 저장 안 함)"
         type: boolean
@@ -43,6 +47,7 @@ jobs:
           MAX_MINUTES: "300"   # 이 시간이 지나면 새 반기를 시작하지 않고 저장 후 종료(작업 제한 350분)
           BAS_YM: ${{ github.event.inputs.bas_ym }}
           PROBE: ${{ github.event.inputs.probe }}
+          ORDER_YM: ${{ github.event.inputs.order_ym }}
         run: python scripts/collect.py
 
       - name: 순위용 지표 파일 생성

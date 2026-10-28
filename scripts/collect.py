@@ -14,6 +14,7 @@
   MAX_NEW      한 번 실행에 새로 받을 기준년월 수 (기본 4)
   BAS_YM       특정 기준년월만 (다시) 받기
   PROBE=true   진단 모드(저장 안 함), PROBE_OPS로 오퍼레이션 지정
+  ORDER_YM     응답 나열 순서 진단: 그 기준년월의 표별 조합 등장 순서를 docs/data/probe/order_<ym>.json에 저장(다른 저장 없음)
   API_BASE     테스트용 서비스 URL 교체
 """
 import json
@@ -227,6 +228,30 @@ def probe(key: str) -> None:
             log(f"{op} [표] {t['title']} total={t['total']} 필드={keys}", "notice")
 
 
+def order_probe(key: str, ym: str) -> None:
+    """원자료가 조합을 어떤 순서로 나열하는지(코드순·지역순 등) 확인용"""
+    out = {"ym": ym, "tables": {}}
+    for op in OPS.values():
+        seen = {}
+        for title, it in fetch(key, op, ym):
+            cd = str(it.get("fncoCd") or "").strip()
+            lst = seen.setdefault(table_key(title), [])
+            if cd and (not lst or lst[-1][0] != cd):
+                lst.append([cd, str(it.get("fncoNm") or "").strip()])
+        for t, lst in seen.items():
+            uniq, dup = [], 0
+            for x in lst:
+                if any(u[0] == x[0] for u in uniq[-3:]):
+                    dup += 1
+                    continue
+                uniq.append(x)
+            codes = [u[0] for u in uniq]
+            out["tables"][t] = {"count": len(uniq), "is_code_sorted": codes == sorted(codes), "order": uniq}
+            log(f"[순서] {t}: {len(uniq)}곳, 코드순={codes == sorted(codes)}", "notice")
+        time.sleep(0.5)
+    write_json(OUT / "probe" / f"order_{ym}.json", out)
+
+
 def main() -> int:
     key = os.environ.get("SERVICE_KEY", "").strip()
     if not key:
@@ -241,6 +266,9 @@ def main() -> int:
     try:
         if os.environ.get("PROBE") == "true":
             probe(key)
+            return 0
+        if os.environ.get("ORDER_YM", "").strip():
+            order_probe(key, os.environ["ORDER_YM"].strip())
             return 0
 
         index = read_json(OUT / "index.json", {})
