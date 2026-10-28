@@ -87,6 +87,8 @@ h1 .home { color: inherit; text-decoration: none; }
 /* 핵심 수치 */
 .kpi-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; margin-bottom: 14px; }
 .kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.kpi-box { min-width: 0; }
+.kpi-h { margin: 0 0 8px; font-size: 15px; font-weight: 650; }
 .kpi-slot { min-height: 100%; }   /* 오른쪽 절반: 추후 기능 자리(비워 둠) */
 .kpi {
   min-width: 0;

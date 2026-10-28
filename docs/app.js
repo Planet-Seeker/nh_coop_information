@@ -22,14 +22,14 @@
   ];
   // 핵심 수치: 화면 왼쪽 절반에 3열로 배치. 오른쪽 절반은 추후 별도 기능 자리로 비워 둠
   const KPIS = [
+    { label: "조합원", t: T.G, c: "B" },
     { label: "자산총계", t: T.AS, c: "A" },
+    { label: "당기순이익", t: T.PL, c: "A", note: "6월은 상반기 누적" },
     { label: "예수부채", t: T.LE, c: "A1" },
     { label: "대출채권", t: T.AS, c: "A3" },
-    { label: "당기순이익", t: T.PL, c: "A", note: "6월은 상반기 누적" },
-    { label: "고정이하여신비율", t: T.Q, c: "C", note: "낮을수록 건전" },
     { label: "예대율", t: T.L, c: "C" },
+    { label: "고정이하여신비율", t: T.Q, c: "C", note: "낮을수록 건전" },
     { label: "유동성비율", t: T.L, c: "B" },
-    { label: "조합원", t: T.G, c: "B" },
   ];
   const MAX_LIST = 50;
 
@@ -38,7 +38,7 @@
   const qEl = $("q"), statusEl = $("status"), resEl = $("results"), detEl = $("detail");
   let INDEX = null, CODES = {}, LIST = [];
   const coopCache = new Map();
-  const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[0], range: "5y", trendView: "chart" };
+  const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[1], range: "5y" };
   const RANGES = [["3y", "최근 3년", 6], ["5y", "최근 5년", 10], ["10y", "최근 10년", 20], ["all", "전체", Infinity]];  // 반기 개수
   const MISSING = "자료누락";
 
@@ -122,6 +122,17 @@
       return { c, v: v ?? null, r: r ?? null, name, label: parts[parts.length - 1], depth: parts.length - 1 };
     });
   }
+  // 12월 기준에만 공시되는 항목(예: ROA·ROE) 판별: 이 조합 자료에서 12월에는 있고 6월에는 한 번도 없음
+  function decOnly(coop, t, c) {
+    let dec = false;
+    for (const [ym, tb] of Object.entries(coop.d)) {
+      const has = (tb[t] || []).some((r) => r[0] === c && r[1] != null);
+      if (has && ym.endsWith("06")) return false;
+      if (has && ym.endsWith("12")) dec = true;
+    }
+    return dec;
+  }
+  const missText = (coop, ym, t, c) => (ym.endsWith("06") && decOnly(coop, t, c) ? "연말 공시" : MISSING);
   const valueOf = (coop, ym, t, c) => {
     const row = coop.d[ym] && coop.d[ym][t] && coop.d[ym][t].find((r) => r[0] === c);
     return row ? row[1] : null;
@@ -191,7 +202,7 @@
     view.months = months;
     view.ym = ym && months.includes(ym) ? ym : months[0];
     view.tab = tab && TABS.some((t) => t.id === tab) ? tab : "gen";
-    view.metric = KPIS[0];
+    view.metric = KPIS[1];                                 // 기본 그래프: 자산총계
     if (push) setURL({ c: cd });
     setStatus("");
     resEl.replaceChildren();
@@ -231,7 +242,9 @@
         k.note ? el("span", { class: "kpi-n" }, k.note) : null);
     }));
 
-    const kpiRow = el("div", { class: "kpi-row" }, kpis, el("div", { class: "kpi-slot", "aria-hidden": "true" }));
+    const kpiRow = el("div", { class: "kpi-row" },
+      el("section", { class: "kpi-box", "aria-labelledby": "kpi-h" }, el("h3", { id: "kpi-h", class: "kpi-h" }, "주요 지표"), kpis),
+      el("div", { class: "kpi-slot", "aria-hidden": "true" }));
     detEl.replaceChildren(head, kpiRow, renderTrend(), renderTabs());
   }
 
@@ -243,32 +256,24 @@
     const label = m.label || codeName(m.t, m.c).replace(/_/g, " › ");
     // 기본: 선택한 기준년월을 오른쪽 끝으로 하는 5년(반기 10개). '전체 기간'이면 보유 자료 전체.
     const asc = months.slice().reverse();
-    const end = asc.indexOf(view.ym);
     const win = (RANGES.find((r) => r[0] === view.range) || RANGES[1])[2];
-    const shown = asc.slice(Math.max(0, end - win + 1), end + 1);
+    const annual = decOnly(coop, m.t, m.c);               // 연말에만 공시되는 항목은 12월 자료만 이어서 그림
+    const pool = annual ? asc.filter((ym) => ym.endsWith("12") || ym === view.ym) : asc;
+    const pend = pool.indexOf(view.ym);
+    const shown = pool.slice(Math.max(0, pend - (annual ? Math.ceil(win / 2) : win) + 1), pend + 1);
     const pts = shown.map((ym) => ({ ym, v: valueOf(coop, ym, m.t, m.c) }));  // 오래된 → 최신
     const valid = pts.filter((p) => p.v != null);
     const selIdx = pts.findIndex((p) => p.ym === view.ym);
 
     const rangeBtn = (id, text) => el("button", { type: "button", class: "seg" + (view.range === id ? " on" : ""), "aria-pressed": view.range === id ? "true" : "false",
       onclick: () => { view.range = id; renderDetail(); } }, text);
-    const viewTab = (id, text) => el("button", { type: "button", role: "tab", class: "vtab" + (view.trendView === id ? " on" : ""), "aria-selected": view.trendView === id ? "true" : "false",
-      onclick: () => { view.trendView = id; renderDetail(); } }, text);
     const box = el("section", { class: "trend" },
       el("div", { class: "trend-h" },
-        el("div", { class: "vtabs", role: "tablist", "aria-label": "보기 방식" }, viewTab("chart", "그래프"), viewTab("table", "표")),
-        el("div", { class: "segs", role: "group", "aria-label": "기간" }, RANGES.map(([id, text]) => rangeBtn(id, text)))),
-      el("div", { class: "trend-t" },
-        el("h3", {}, `${label} 추이`),
-        el("span", { class: "unit" }, `${unitLabel(kind) ? `단위: ${unitLabel(kind)} · ` : ""}${pts.length ? `${ymLabel(pts[0].ym)}~${ymLabel(pts[pts.length - 1].ym)}` : ""}`)));
+        el("div", { class: "trend-t" },
+          el("h3", {}, `${label} 추이`),
+          el("span", { class: "unit" }, `${unitLabel(kind) ? `단위: ${unitLabel(kind)} · ` : ""}${pts.length ? `${ymLabel(pts[0].ym)}~${ymLabel(pts[pts.length - 1].ym)}` : ""}${annual ? " · 연말(12월) 공시 항목" : ""}`)),
+        el("div", { class: "segs", role: "group", "aria-label": "기간" }, RANGES.map(([id, text]) => rangeBtn(id, text)))));
 
-    if (view.trendView === "table") {                       // 표 보기: 같은 기간을 최신순 표로
-      box.append(el("div", { class: "tbl-scroll trend-tbl" }, el("table", {},
-        el("thead", {}, el("tr", {}, el("th", {}, "기준년월"), el("th", { class: "num" }, colHead(kind)))),
-        el("tbody", {}, pts.slice().reverse().map((p) => el("tr", { class: p.ym === view.ym ? "on" : "" },
-          el("td", {}, ymLabel(p.ym)), el("td", { class: "num" + (p.v == null ? " miss" : p.v < 0 ? " neg" : "") }, fmt(p.v, kind))))))));
-      return box;
-    }
     if (valid.length < 2) {
       box.append(el("p", { class: "muted" }, valid.length ? "추이를 그릴 자료가 부족합니다." : `${MISSING}: 이 항목은 이 조합의 자료가 없습니다.`));
       return box;
@@ -359,7 +364,7 @@
       const show = () => {
         cross.setAttribute("x1", x(i)); cross.setAttribute("x2", x(i)); cross.setAttribute("visibility", "visible");
         dots.forEach((dd, j) => dd && dd.classList.toggle("hot", j === i));
-        tip.replaceChildren(el("b", {}, ymLabel(p.ym)), el("span", {}, fmt(p.v, kind, true)));
+        tip.replaceChildren(el("b", {}, ymLabel(p.ym)), el("span", {}, p.v == null ? missText(coop, p.ym, m.t, m.c) : fmt(p.v, kind, true)));
         tip.hidden = false;
         const r = svg.getBoundingClientRect();
         tip.style.left = `${Math.min(Math.max((x(i) / W) * r.width, 60), r.width - 60)}px`;
@@ -414,7 +419,7 @@
     const body = el("tbody", {}, rows.map((r) => {
       const kind = kindOf(t, r.c);
       const active = view.metric.t === t && view.metric.c === r.c;
-      const total = r.depth === 0 && (r.c === "A" || /(총계|총여신|총자산)/.test(r.name));
+      const total = r.depth === 0 && (r.c === "A" || /총계$/.test(r.name));
       return el("tr", { class: [`d${Math.min(r.depth, 3)}`, total ? "total" : "", active ? "on" : ""].join(" ").trim() },
         el("td", {}, el("button", { type: "button", class: "item", title: "추이 보기",
           onclick: () => {
@@ -423,7 +428,7 @@
             detEl.querySelector(".trend").scrollIntoView({ block: "nearest", behavior: "smooth" });
           } },
           r.label, kinds.size > 1 && unitLabel(kind) ? el("small", { class: "u" }, ` (${unitLabel(kind)})`) : null)),
-        el("td", { class: "num" + (r.v == null ? " miss" : r.v < 0 ? " neg" : "") }, fmt(r.v, kind)),
+        el("td", { class: "num" + (r.v == null ? " miss" : r.v < 0 ? " neg" : "") }, r.v == null ? missText(coop, ym, t, r.c) : fmt(r.v, kind)),
         hasR ? el("td", { class: "num rto" }, r.r == null ? "" : NF2.format(r.r)) : null);
     }));
     const thead = el("thead", {}, el("tr", {},
