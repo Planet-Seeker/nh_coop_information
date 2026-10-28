@@ -384,7 +384,7 @@
         entry.map.attributionControl.setPrefix("Leaflet");
         if (layer === "Hybrid") L.tileLayer(`https://api.vworld.kr/req/wmts/1.0.0/${VWORLD_KEY}/Satellite/{z}/{y}/{x}.jpeg`, { minZoom: 6, maxZoom: 19 }).addTo(entry.map);
         L.tileLayer(`https://api.vworld.kr/req/wmts/1.0.0/${VWORLD_KEY}/${layer}/{z}/{y}/{x}.${ext}`, {
-          minZoom: 6, maxZoom: 19, attribution: "지도: VWorld(국토교통부)", className: `tiles-${layer}`,
+          minZoom: 6, maxZoom: 19, attribution: '지도: <a href="https://www.vworld.kr" target="_blank" rel="noopener">VWorld</a>(국토교통부)', className: `tiles-${layer}`,
         }).addTo(entry.map);
         // 사이트 녹색 핀(이미지 없이 SVG, 테마 색은 CSS 변수로)
         const pin = L.divIcon({ className: "pin", iconSize: [28, 36], iconAnchor: [14, 34], tooltipAnchor: [0, -30],
@@ -434,7 +434,7 @@
       el("section", { class: "kpi-box", "aria-labelledby": "kpi-h" },
         ...title,
         el("div", { class: "kpi-hd" }, sel, el("h3", { id: "kpi-h", class: "kpi-h" }, "주요 지표"),
-          isYearEnd(ym) ? null : el("span", { class: "partial-note" }, `${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준입니다(연말 자료 공개 전).`)),
+          isYearEnd(ym) ? null : el("span", { class: "partial-note" }, `${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준입니다.`)),
         kpis),
       mapBox(coop));
     detEl.replaceChildren(...(back ? [el("div", { class: "d-head" }, back)] : []), kpiRow, renderTrend(), renderTabs());
