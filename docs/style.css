@@ -99,7 +99,11 @@ h1 .home { color: inherit; text-decoration: none; }
 .rgn { margin: 0; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); font-size: 14px; font-weight: 600; }
 .rgn.miss { font-weight: 400; color: var(--muted); }
 .rgn-n { font-size: 11px; color: var(--muted); }
-.kpi-slot { min-height: 100%; }   /* 오른쪽 절반: 추후 기능 자리(비워 둠) */
+.map-box { min-width: 0; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--card); min-height: 260px; }
+.map { flex: 1 1 auto; min-height: 260px; }
+.map-empty { margin: auto; color: var(--muted); font-size: 13px; }
+.leaflet-container { font: inherit; background: var(--grid); }
+.leaflet-tooltip { font-size: 12px; font-weight: 600; }
 .kpi {
   min-width: 0;
   display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left;
@@ -116,7 +120,7 @@ h1 .home { color: inherit; text-decoration: none; }
 .rk-g { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .rk-n { color: var(--ink); font-weight: 600; white-space: nowrap; }
 .rk-n small { color: var(--muted); font-weight: 400; font-size: 11px; }
-@media (max-width: 760px) { .kpi-row { grid-template-columns: 1fr; } .kpi-slot { display: none; } }
+@media (max-width: 760px) { .kpi-row { grid-template-columns: 1fr; } .map-box, .map { min-height: 240px; } }
 @media (max-width: 420px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* 추이 그래프 */

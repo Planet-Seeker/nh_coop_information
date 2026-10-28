@@ -186,6 +186,11 @@ docs/data/meta/coop_meta.csv        수기 지정(공개). 출처와 무관한 �
   GitHub Secrets `VWORLD_KEY` 등록됨.
 - **VWorld API는 GitHub Actions(해외 IP)에서 접속 불가**(502·연결 끊김) → 위치 수집은 국내에서 실행해야 함.
 - 지도 표시는 방문자 브라우저(국내)에서 VWorld 타일을 불러오므로 문제없음. 지도 라이브러리(Leaflet)는 사이트에 포함.
+- **구현(2026-10-28)**: 주요 지표 오른쪽 절반(휴대폰은 카드 아래)에 본점 위치 지도. 좌표는 **meta.csv의 `위도`·`경도` 열**(주소 뒤에 추가).
+  좌표 없으면 "본점 위치 미지정". 다크 모드는 VWorld `midnight` 지도. 지도 키는 `app.js`의 `VWORLD_KEY`(브라우저 노출, 등록 도메인 제한).
+  Leaflet 1.9.4는 `docs/vendor/leaflet/`(BSD-2-Clause). CSP img-src에 api.vworld.kr·xdworld.vworld.kr 허용.
+- 위치 수집은 지금 하지 않음(사용자 결정): 나중에 meta.csv에 주소·좌표를 채우면 그대로 표시.
+- **⚠ 임시 시험값**: 오창농협 위도 36.7170·경도 127.4330(가상 좌표) — 시험 후 지울 것.
 
 ## 5. 진행 상황
 

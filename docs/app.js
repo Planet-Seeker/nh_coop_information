@@ -30,6 +30,8 @@
     { label: "고정이하여신비율", t: T.Q, c: "C" },
   ];
   const MAX_LIST = 50;
+  // VWorld 지도 인증키 — 브라우저에 노출되는 키이며, VWorld에 등록한 사이트 주소에서만 동작한다.
+  const VWORLD_KEY = "";
   const SOURCE = { id: "fsc_agcoop", label: "금융위원회 농협 금융통계" };   // 자료 출처 구분(추후 다른 API 추가 대비)
 
   // ── 금융회사코드 기반 분류 ─────────────────────────────────
@@ -348,6 +350,45 @@
         : (j === 1 ? "소속 광역 미지정" : "행정 기초 미지정"))));
   }
 
+  // ── 본점 위치 지도(VWorld 배경지도 + Leaflet) ─────────────────
+  // 좌표는 meta.csv의 위도·경도. 조합별로 지도 요소를 한 번만 만들어 다시 그릴 때 재사용(타일 깜빡임 방지).
+  const maps = new Map();
+  function coordsOf(cd) {
+    const m = META.get(cd) || {};
+    const lat = parseFloat(m["위도"]), lng = parseFloat(m["경도"]);
+    return lat >= 33 && lat <= 39 && lng >= 124 && lng <= 132 ? [lat, lng] : null;   // 국내 범위만 인정
+  }
+  function mapBox(coop) {
+    const ll = coordsOf(coop.cd);
+    const box = el("section", { class: "map-box", "aria-label": "본점 위치" });
+    if (!ll || !VWORLD_KEY || !window.L) {
+      box.append(el("p", { class: "map-empty" }, !ll ? "본점 위치 미지정" : "지도를 불러올 수 없습니다."));
+      return box;
+    }
+    let entry = maps.get(coop.cd);
+    if (!entry) {
+      const node = el("div", { class: "map" });
+      entry = { node, map: null };
+      maps.set(coop.cd, entry);
+    }
+    box.append(entry.node);
+    requestAnimationFrame(() => {                           // 화면에 붙은 뒤 크기를 알 수 있음
+      if (!entry.map) {
+        const dark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
+        entry.map = L.map(entry.node, { zoomControl: true, attributionControl: true, scrollWheelZoom: false }).setView(ll, 15);
+        entry.map.attributionControl.setPrefix("Leaflet");
+        L.tileLayer(`https://api.vworld.kr/req/wmts/1.0.0/${VWORLD_KEY}/${dark ? "midnight" : "Base"}/{z}/{y}/{x}.png`, {
+          minZoom: 6, maxZoom: 19, attribution: "지도: VWorld(국토교통부)",
+        }).addTo(entry.map);
+        const css = getComputedStyle(document.documentElement);
+        L.circleMarker(ll, { radius: 8, color: css.getPropertyValue("--card").trim() || "#fff", weight: 2,
+          fillColor: css.getPropertyValue("--chart").trim() || "#1b7339", fillOpacity: 1 })
+          .addTo(entry.map).bindTooltip(coop.nm, { permanent: true, direction: "top", offset: [0, -8] });
+      } else entry.map.invalidateSize();
+    });
+    return box;
+  }
+
   function detailURL() {
     return { c: view.coop.cd, ym: view.ym === view.months[0] ? null : view.ym, tab: view.tab === "gen" ? null : view.tab };
   }
@@ -389,7 +430,7 @@
         el("div", { class: "rgns" }, regionLines(coop.cd).map((r) =>    // 1행: 행정구역(위치), 2행: 소속구역
           el("p", { class: "rgn" + (r.miss ? " miss" : "") }, r.text, r.est ? el("span", { class: "rgn-n" }, " (코드 추정)") : null))),
         kpis),
-      el("div", { class: "kpi-slot", "aria-hidden": "true" }));
+      mapBox(coop));
     detEl.replaceChildren(head, kpiRow, renderTrend(), renderTabs());
   }
 
