@@ -24,11 +24,9 @@
   const KPIS = [
     { label: "조합원", t: T.G, c: "B" },
     { label: "자산총계", t: T.AS, c: "A" },
-    { label: "유동성비율", t: T.L, c: "B" },
+    { label: "당기순이익", t: T.PL, c: "A" },
     { label: "예수부채", t: T.LE, c: "A1" },
     { label: "대출채권", t: T.AS, c: "A3" },
-    { label: "예대율", t: T.L, c: "C" },
-    { label: "당기순이익", t: T.PL, c: "A" },
     { label: "고정이하여신비율", t: T.Q, c: "C" },
   ];
   const MAX_LIST = 50;
