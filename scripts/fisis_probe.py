@@ -45,10 +45,26 @@ def save(name, obj):
     (OUT / name).write_text(json.dumps(obj, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
+def span_probe(fcd):
+    """표본 조합 1곳 × 신규 8개 표를 전체 기간으로 조회해 표별 첫·마지막 기준년월 확인(8회 호출)"""
+    out = {}
+    for no in ["SQ014", "SQ015", "SQ016", "SQ017", "SQ018", "SQ019", "SQ020", "SQ021"]:
+        cd, msg, val = body(call("statisticsInfoSearch", financeCd=fcd, listNo=no, term="H",
+                                 startBaseMm="201106", endBaseMm="202606"))
+        months = sorted({v.get("base_month") for v in val})
+        out[no] = {"err": [cd, msg], "rows": len(val), "months": months, "values": val}
+        note(f"{no}: {len(val)}행, {months[0] if months else '-'}~{months[-1] if months else '-'} ({len(months)}개 반기) {'' if cd == '000' else msg}")
+        time.sleep(0.3)
+    save(f"fisis_span_{fcd}.json", out)
+
+
 def main():
     if not KEY:
         note("FISIS_KEY가 Secrets에 없습니다. Settings > Secrets and variables > Actions에 등록하세요.", "error")
         return 2
+    if os.environ.get("SPAN_CD", "").strip():
+        span_probe(os.environ["SPAN_CD"].strip())
+        return 0
     cd, msg, comp = body(call("companySearch", partDiv="Q"))
     note(f"금융회사(Q): 응답코드 {cd} {msg}, {len(comp)}곳, 항목 {sorted(comp[0]) if comp else []}")
     save("fisis_company_Q.json", {"err": [cd, msg], "count": len(comp), "list": comp})
