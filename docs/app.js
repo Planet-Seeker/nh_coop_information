@@ -90,7 +90,7 @@
     const me = affOf(cd);
     const adm = (k) => { const m = META.get(k) || {}; return m["행정구역_광역"] && m["행정구역_기초"] ? `${m["행정구역_광역"]} ${m["행정구역_기초"]}` : ""; };
     const myAdm = adm(cd);
-    const out = [["전국", 0, 0], [me.aff1 ? (me.est ? `${me.aff1}(추정)` : me.aff1) : "", 0, 0], [myAdm ? myAdm.split(" ")[1] : "", 0, 0]];
+    const out = [["전국", 0, 0], [me.aff1 ? (me.est1 ? `${me.aff1}(추정)` : me.aff1) : "", 0, 0], [myAdm ? myAdm.split(" ")[1] : "", 0, 0]];
     for (const [k, vals] of Object.entries(d.rows)) {
       const v = vals[i];
       if (v == null) continue;
@@ -131,9 +131,10 @@
   function affOf(cd) {
     const m = META.get(cd) || {};
     const c = BYCD.get(cd);
-    let aff1 = m["소속구역_광역"] || "", est = estOf(cd, "소속구역_광역") || estOf(cd, "소속구역_기초");
-    if (!aff1 && c && c.rc !== "17" && !c.region.includes("·") && c.region !== "기타") { aff1 = c.region; est = true; }
-    return { aff1, aff2: m["소속구역_기초"] || "", est };
+    let aff1 = m["소속구역_광역"] || "", est1 = estOf(cd, "소속구역_광역");
+    if (!aff1 && c && c.rc !== "17" && !c.region.includes("·") && c.region !== "기타") { aff1 = c.region; est1 = true; }
+    const aff2 = m["소속구역_기초"] || "";
+    return { aff1, aff2, est1, est: est1 || (!!aff2 && estOf(cd, "소속구역_기초")) };   // est1: 광역만(순위용), est: 문장 전체
   }
   function regionLines(cd) {
     const m = META.get(cd) || {};
@@ -377,7 +378,7 @@
     const item = (h) => el("li", {}, el("button", { type: "button", class: "hit" + (gone(h) ? " gone" : ""), onclick: () => openCoop(h.cd) },
       el("span", { class: "hit-nm" }, highlight(h.nm, q)),
       el("span", { class: "hit-meta" },
-        `${(() => { const a = affOf(h.cd); return a.aff1 ? `${a.aff1}${a.est ? "(추정)" : ""}` : h.rc === "17" ? h.region : `${h.region}(추정)`; })()} · ${typeText(h)}${tag(h)}${aliasText(h)}${gone(h) ? goneText(h) : ""}`),
+        `${(() => { const a = affOf(h.cd); return a.aff1 ? `${a.aff1}${a.est1 ? "(추정)" : ""}` : h.rc === "17" ? h.region : `${h.region}(추정)`; })()} · ${typeText(h)}${tag(h)}${aliasText(h)}${gone(h) ? goneText(h) : ""}`),
       el("span", { class: "hit-go", "aria-hidden": "true" }, "›")));
     const shown = hits.slice(0, MAX_LIST);
     const liveHits = shown.filter((h) => !gone(h)), goneHits = shown.filter(gone);
@@ -418,7 +419,20 @@
       lines.push([`${ymLabel(last)}까지는 금융회사코드 변경 전 자료를 이어 붙였습니다${moved.some((p) => stOf(p).est) ? "(추정)" : ""}`]);
     }
     if (s.prev.length) lines.push([`옛 이름: ${s.prev.join(", ")}${s.prevEst ? "(추정)" : ""}`]);
-    return lines.length ? el("div", { class: "hist" }, lines.map((l) => el("p", {}, ...l))) : null;
+    return lines;
+  }
+
+  // 카드와 그래프 사이 주석(최대 5행 높이, 넘치면 스크롤): 공시 상태·합병 이력, 기준월, 공시 공백, 추정 안내, 단위·갱신일
+  function notesBox(coop, ym) {
+    const lines = historyLines(coop);
+    if (!isYearEnd(ym)) lines.push([`${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준입니다(손익은 상반기 누적).`]);
+    const years = [...new Set(Object.keys(coop.d).map((m) => +m.slice(0, 4)))].sort((a, b) => a - b);
+    const gaps = [];
+    for (let y = years[0]; y < years[years.length - 1]; y++) if (!years.includes(y)) gaps.push(`${y}년`);
+    if (gaps.length) lines.push([`공시 자료 끊김: ${gaps.join(", ")}`]);
+    lines.push(["(추정): 공시 원자료가 아닌 추정값입니다. 원자료는 따로 표시하지 않습니다."]);
+    lines.push([`금액은 조·억 단위로 반올림해 표시합니다. 6월 기준 손익은 상반기 누적입니다. 데이터 최종갱신일(${INDEX.updated || "-"})`]);
+    return el("section", { class: "notes", "aria-label": "참고 사항" }, el("ul", {}, lines.map((l) => el("li", {}, ...l))));
   }
 
   async function openCoop(cd, { push = true, ym = null, tab = null } = {}) {
@@ -531,7 +545,6 @@
       })()),
       el("div", { class: "rgn-text" }, regionLines(coop.cd).map((r) =>   // 1행: 행정구역(위치), 2행: 소속구역
         el("p", { class: r.miss ? "miss" : "" }, r.text, r.est ? el("span", { class: "rgn-n" }, " (추정)") : null))),
-      historyLines(coop),
     ];
     // 핵심 수치 (누르면 추이 그래프 전환)
     const kpis = el("div", { class: "kpis" }, KPIS.map((k) => {
@@ -549,10 +562,10 @@
       el("section", { class: "kpi-box", "aria-labelledby": "kpi-h" },
         ...title,
         el("div", { class: "kpi-hd" }, sel, el("h3", { id: "kpi-h", class: "kpi-h" }, "주요 지표"),
-          isYearEnd(ym) ? null : el("span", { class: "partial-note" }, `${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준입니다.`)),
+          ),
         kpis),
       mapBox(coop));
-    detEl.replaceChildren(...(back ? [el("div", { class: "d-head" }, back)] : []), kpiRow, renderTrend(), renderTabs());
+    detEl.replaceChildren(...(back ? [el("div", { class: "d-head" }, back)] : []), kpiRow, notesBox(coop, ym), renderTrend(), renderTabs());
   }
 
   // ── 추이 그래프 ─────────────────────────────────────────────
@@ -846,7 +859,7 @@
       setStatus("데이터를 준비 중입니다. 잠시 후 다시 방문해 주세요.", true);
       return;
     }
-    if (INDEX.updated) $("updated").textContent = INDEX.updated;
+    // 데이터 최종갱신일은 상세 화면 주석에 표시
     // 전국 회원조합수 요약 줄은 표시하지 않음(2026-10-28 결정). 데이터(index.json summary)는 비교 기능용으로 보관.
     route();
   })();
