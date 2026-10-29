@@ -430,8 +430,89 @@
     }
     return c;
   }
+  // ── 주석: 연혁(날짜 오래된 순) · 특이사항(조합별 사항 → 통상 안내 순) ─────────
+  // 연혁 날짜: meta 변동일(기사·연혁으로 확인한 합병·출범일) 또는 마지막 공시월 기준 "YYYY.MM 이후"
+  //           meta 연혁 열: "YYYY.MM.DD 내용;…"(개칭 등 직접 기록)
+  const dateKey = (d) => { const m = /^(\d{4})(?:\.(\d{1,2}))?(?:\.(\d{1,2}))?/.exec(d) || []; return `${m[1] || "0000"}${(m[2] || "00").padStart(2, "0")}${(m[3] || "00").padStart(2, "0")}`; };
+  const afterYm = (ym) => ({ label: `${ym.slice(0, 4)}.${ym.slice(4)} 이후`, key: `${ym}99` });   // 날짜 미확인: 마지막 공시 뒤
+  function eventDate(cd) {
+    const d = ((META.get(cd) || {})["변동일"] || "").trim();
+    return d ? { label: d, key: dateKey(d) } : afterYm(BYCD.get(cd).ym);
+  }
+  function historyItems(coop) {
+    const cd = coop.cd, s = stOf(cd), c = BYCD.get(cd), mt = META.get(cd) || {};
+    const link = (k, label) => el("button", { type: "button", class: "linkish", onclick: () => openCoop(k) }, label || BYCD.get(k).nm);
+    const est = (x) => (x ? "(추정)" : "");
+    const items = [];
+    // 이 조합에 합병된 조합
+    for (const p of (PRED.get(cd) || []).filter((p) => stOf(p).st === "합병")) {
+      const ps = stOf(p), d = eventDate(p);
+      // 공시 이름이 "○○농협 ○○지점"(합병 뒤 지점 이름)이고 옛 조합 이름이 있으면 옛 이름으로 보여 줌
+      const asBranch = /지점$/.test(BYCD.get(p).nm) && ps.prev.length;
+      items.push({ ...d, body: [link(p, asBranch ? ps.prev[0] : ""), asBranch ? el("span", { class: "sub" }, `(공시 이름 ${BYCD.get(p).nm})`) : null, ` 합병${est(ps.est)}`] });
+    }
+    // 직접 기록한 연혁(개칭 등)
+    const manual = (mt["연혁"] || "").split(/[;；]/).map((x) => x.trim()).filter(Boolean);
+    for (const m of manual) {
+      const r = /^(\d{4}(?:\.\d{1,2}){0,2})\s+(.+)$/.exec(m);
+      items.push(r ? { label: r[1], key: dateKey(r[1]), body: [r[2]] } : { label: "", key: "99999999", body: [m] });
+    }
+    // 이 조합의 합병·공시 중단·코드 변경
+    if (s.st !== "운영" && c) {
+      const d = eventDate(cd);
+      if (s.st === "합병" && s.succ) {
+        // 승계 조합이 합병 뒤 이름을 바꿨으면 합병 당시 이름으로 적고 현재 이름을 덧붙임(예: 가야농협(현 해인사농협))
+        const ren = ((META.get(s.succ) || {})["연혁"] || "").split(/[;；]/).map((x) => /^(\d{4}(?:\.\d{1,2}){0,2})\s+(\S+)에서 \S+으로 이름 변경/.exec(x.trim())).filter(Boolean)
+          .filter((r) => dateKey(r[1]) > d.key).sort((a, b) => (dateKey(a[1]) < dateKey(b[1]) ? -1 : 1));
+        items.push({ ...d, body: ren.length ? [link(s.succ, ren[0][2]), el("span", { class: "sub" }, `(현 ${BYCD.get(s.succ).nm})`), `에 합병${est(s.est)}`] : [link(s.succ), `에 합병${est(s.est)}`] });
+      }
+      else if (s.st === "코드변경" && s.succ) items.push({ ...d, body: ["금융회사코드 변경 · 이후 자료는 ", link(s.succ), est(s.est)] });
+      else {
+        const why = /^(확인|정황): (.+?) \(https?:/.exec(mt["비고"] || "");
+        items.push({ ...d, body: [`공시 중단 · ${why ? why[2] + est(s.est) : "사유 미확인"}`] });
+      }
+    }
+    items.sort((a, b) => (a.key < b.key ? -1 : a.key > b.key ? 1 : 0));
+    // 날짜 없는 옛 이름(금감원 [폐] 이름 등)은 맨 아래. 직접 기록한 연혁에 나온 이름은 생략
+    const prev = s.prev.filter((n) => !manual.some((m) => m.includes(n)));
+    if (prev.length) items.push({ label: "", key: "", body: [`옛 이름: ${prev.join(", ")}${est(s.prevEst)}`] });
+    return items;
+  }
+  function specialItems(coop) {
+    const cd = coop.cd, mt = META.get(cd) || {}, C = BYCD.get(cd), out = [];
+    if (C && C.oldNm) out.push(`현재 이름은 ${C.nm}이며, 금융당국 공시 자료(${ymLabel(INDEX.latest)} 기준)에는 ${C.oldNm}으로 되어 있습니다.`);
+    if (mt["공시지역"] && mt["소속구역_광역"] && mt["공시지역"] !== mt["소속구역_광역"])   // 조직도 소속과 금융당국 지역분류가 다른 조합
+      out.push(`소속은 농협중앙회 조직도상 ${mt["소속구역_광역"]}지역본부이지만, 금융당국 제출 지역분류는 ${mt["공시지역"]}입니다. 순위는 ${regionLabel(mt["공시지역"])} 기준으로 매깁니다.`);
+    const years = [...new Set(Object.keys(coop.d).map((m) => +m.slice(0, 4)))].sort((a, b) => a - b);
+    const gaps = [];
+    for (let y = years[0]; y < years[years.length - 1]; y++) if (!years.includes(y)) gaps.push(`${y}년`);
+    if (gaps.length) out.push(`공시 자료 끊김: ${gaps.join(", ")}`);
+    const moved = (PRED.get(cd) || []).filter((p) => stOf(p).st === "코드변경");
+    if (moved.length) {
+      const last = moved.map((p) => BYCD.get(p).ym).sort().pop();
+      out.push(`${ymLabel(last)}까지는 금융회사코드 변경 전 자료를 이어 붙였습니다${moved.some((p) => stOf(p).est) ? "(추정)" : ""}.`);
+    }
+    const mm = MISMATCH[cd] || [];                          // 통상 안내 성격 → 맨 아래
+    if (mm.length) {
+      const ys = [...new Set(mm.map((x) => x[0].slice(0, 4)))].sort();
+      out.push(`금융감독원 자료와 값이 다른 항목 ${NF0.format(mm.length)}건(${ys.length > 3 ? `${ys[0]}~${ys[ys.length - 1]}년` : ys.map((y) => `${y}년`).join(", ")}). 화면에는 금융위원회 값을 쓰고 금융감독원 값을 옆에 표기합니다.`);
+    }
+    return out;
+  }
+  const NOTES_PREVIEW = new Set(["0010027843173", "0010027843151"]);   // 시안 확인용: 해인사농협 · 가야농협 야로지점(옛 야로농협)
+  // 카드와 그래프 사이: 연혁 · 특이사항 두 묶음(있는 것만). 둘 다 없으면 "별도 주석 없음". 통상 안내는 ? 도움말
+  function notesBox(coop) {
+    const hist = historyItems(coop), spec = specialItems(coop);
+    if (!hist.length && !spec.length) return el("section", { class: "notes empty", "aria-label": "이 조합 주석" }, el("ul", {}, el("li", {}, "별도 주석 없음")));
+    const grp = (title, list) => el("div", { class: "note-grp" }, el("h3", {}, title), el("ul", {}, list));
+    return el("section", { class: "notes", "aria-label": "이 조합 주석" },
+      hist.length ? grp("연혁", hist.map((h) => el("li", { class: h.label ? "dated" : "" }, h.label ? el("span", { class: "dt" }, h.label) : null, el("span", {}, ...h.body)))) : null,
+      spec.length ? grp("특이사항", spec.map((t) => el("li", {}, t))) : null);
+  }
+
+  // ── 기존 주석(한 묶음). 새 연혁·특이사항 주석은 NOTES_PREVIEW 조합에서 먼저 확인 후 전체 적용 ──
   // 합병·코드변경·옛 이름 안내 줄
-  function historyLines(coop) {
+  function historyLinesOld(coop) {
     const cd = coop.cd, s = stOf(cd), c = BYCD.get(cd);
     const link = (k) => el("button", { type: "button", class: "linkish", onclick: () => openCoop(k) }, BYCD.get(k).nm);
     const lines = [];
@@ -459,8 +540,8 @@
   // 카드와 그래프 사이 주석(최대 5행 높이, 넘치면 스크롤): 단위·갱신일, 공시 상태·합병 이력, 기준월, 공시 공백, 자료 산출 방식, 추정 안내
   // 카드와 그래프 사이 주석: 이 조합에만 해당하는 사항(공시 상태·합병 이력·옛 이름·공시 끊김·금감원과 다른 값). 없으면 "별도 주석 없음"
   // 통상적인 안내(금액 단위, 자료 산출·우선순위, 소속·순위 기준, 표시 뜻)는 ? 도움말 팝업
-  function notesBox(coop, ym) {
-    const lines = historyLines(coop);
+  function notesBoxOld(coop) {
+    const lines = historyLinesOld(coop);
     const years = [...new Set(Object.keys(coop.d).map((m) => +m.slice(0, 4)))].sort((a, b) => a - b);
     const gaps = [];
     for (let y = years[0]; y < years[years.length - 1]; y++) if (!years.includes(y)) gaps.push(`${y}년`);
@@ -468,7 +549,7 @@
     const mt = META.get(coop.cd) || {};
     const C = BYCD.get(coop.cd);
     if (C && C.oldNm)                                       // 현재 이름이 공시 이름과 다른 조합(최근 개칭·합병)
-      lines.push([`${mt["명칭변경"] || `현재 이름은 ${C.nm}입니다.`} 금융당국 공시 자료(${ymLabel(INDEX.latest)} 기준)에는 ${C.oldNm}으로 되어 있습니다.`]);
+      lines.push([`${(() => { const h = (mt["연혁"] || "").split(/[;；]/).map((x) => x.trim()).find((x) => x.includes(C.nm)); return h ? h.replace(/^(\d{4})\.(\d{2})(?:\.(\d{2}))?\s+/, (_, y, m, d) => `${y}년 ${+m}월${d ? ` ${+d}일` : ""} `) + "." : `현재 이름은 ${C.nm}입니다.`; })()} 금융당국 공시 자료(${ymLabel(INDEX.latest)} 기준)에는 ${C.oldNm}으로 되어 있습니다.`]);
     if (mt["공시지역"] && mt["소속구역_광역"] && mt["공시지역"] !== mt["소속구역_광역"])   // 조직도 소속과 금융당국 지역분류가 다른 조합
       lines.push([`소속은 농협중앙회 조직도상 ${mt["소속구역_광역"]}지역본부이지만, 금융당국 제출 지역분류는 ${mt["공시지역"]}입니다. 순위는 ${regionLabel(mt["공시지역"])} 기준으로 매깁니다.`]);
     const mm = MISMATCH[coop.cd] || [];
@@ -477,7 +558,7 @@
       lines.push([`금융감독원 자료와 값이 다른 항목 ${NF0.format(mm.length)}건(${ys.length > 3 ? `${ys[0]}~${ys[ys.length - 1]}년` : ys.map((y) => `${y}년`).join(", ")}). 화면에는 금융위원회 값을 쓰고 금융감독원 값을 옆에 표기합니다.`]);
     }
     if (!lines.length) lines.push(["별도 주석 없음"]);
-    return el("section", { class: "notes" + (lines[0][0] === "별도 주석 없음" ? " empty" : ""), "aria-label": "이 조합 주석" }, el("ul", {}, lines.map((l) => el("li", {}, ...l))));
+    return el("section", { class: "notes notes-old" + (lines[0][0] === "별도 주석 없음" ? " empty" : ""), "aria-label": "이 조합 주석" }, el("ul", {}, lines.map((l) => el("li", {}, ...l))));
   }
 
   async function openCoop(cd, { push = true, ym = null, tab = null } = {}) {
@@ -617,7 +698,7 @@
           ),
         kpis),
       mapBox(coop));
-    detEl.replaceChildren(...(back ? [el("div", { class: "d-head" }, back)] : []), kpiRow, notesBox(coop, ym), renderTrend(), renderTabs());
+    detEl.replaceChildren(...(back ? [el("div", { class: "d-head" }, back)] : []), kpiRow, NOTES_PREVIEW.has(coop.cd) ? notesBox(coop) : notesBoxOld(coop), renderTrend(), renderTabs());
   }
 
   // ── 추이 그래프 ─────────────────────────────────────────────
