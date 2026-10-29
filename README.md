@@ -2,10 +2,10 @@
 대한민국 농업협동조합(지역농협·품목조합·축협)의 일반현황·재무현황·경영지표를 조합명으로 검색해 연도별 추이와 함께 보여주는 웹 서비스입니다.
 
 - 사이트: https://planet-seeker.github.io/nh_coop_information/
-- 데이터: [금융위원회_금융통계농업협동조합정보](https://www.data.go.kr/data/15061344/openapi.do) (공공데이터포털, 이용허락범위 제한 없음)
+- 데이터: [금융위원회_금융통계농업협동조합정보](https://www.data.go.kr/data/15061344/openapi.do) (공공데이터포털, 이용허락범위 제한 없음, 기준 자료), [금융감독원 금융통계정보시스템](https://fisis.fss.or.kr) (Open API 비영리, 국가승인통계 아님, 교차검증·보충)
 - 지도: VWorld 배경지도(국토교통부), Leaflet (BSD-2-Clause)
 - 글꼴: Pretendard GOV (SIL Open Font License 1.1)
-- 결정 사항·구조·남은 일: [PROJECT.md](PROJECT.md)
+- 결정 사항·구조·남은 일: [PROJECT.md](PROJECT.md), 지자체 확인 현황: [CONFIRM.md](CONFIRM.md)
 
 ## 구조
 
@@ -23,7 +23,7 @@ docs/data/                         수집된 정적 JSON, 순위용 지표, 조�
 
 ## 설정
 
-1. **Settings → Secrets and variables → Actions**: `SERVICE_KEY`(공공데이터포털), `VWORLD_KEY`(VWorld)
+1. **Settings → Secrets and variables → Actions**: `SERVICE_KEY`(공공데이터포털), `VWORLD_KEY`(VWorld), `FISIS_KEY`(금감원 FISIS)
 2. **Settings → Pages**: Source = **GitHub Actions**
 3. **Actions → 농협 데이터 갱신 → Run workflow**: 수집 실행(이미 받은 반기는 건너뜀)
 

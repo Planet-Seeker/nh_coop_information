@@ -5,7 +5,7 @@
 
 - 저장소: `Planet-Seeker/nh_coop_information` (공개)
 - 사이트: https://planet-seeker.github.io/nh_coop_information/
-- 최종 갱신: 2026-10-28 22:30 (KST)
+- 최종 갱신: 2026-10-29 11:00 (KST)
 
 ---
 
@@ -13,14 +13,15 @@
 
 | 항목 | 상태 |
 |---|---|
-| 데이터 | 금융위원회 농협 금융통계 3개 기능, **2011-12 ~ 2026-06 반기 29개** 수집 완료 (2021-06은 원자료에 없음 — 재수집으로 확인) |
-| 대상 | 개별 조합 1,117곳 (+ 시도 합계 16, 전국 합계 1 — 검색 목록에서 분리) |
-| 화면 | 검색 → 상세(조합명·위치/소속·주요 지표 6개+순위·정사각형 지도) → 연도별 추이 그래프 → 상세 표 5개 탭 |
-| 자동화 | 매주 월 03:17 새 반기 확인·수집 → 순위 파일 생성 → 사이트 자동 배포 |
-| 미완 | meta.csv(행정·소속구역, 주소, 좌표) 입력, 데이터 폴더 출처별 재구성, 비교·필터 기능 |
-| 운영 방침 | 완성 전까지 GitHub Pages에서 공개 개발 → 완성 후 개인 호스팅(iwinv)으로 이전 |
-
----
+| 이름 | **농축협정보검색기** (저장소·사이트 주소는 nh_coop_information 그대로) |
+| 데이터 ① 금융위원회 | 공공데이터포털 농협 금융통계 3개 기능, **2011-12 ~ 2026-06 반기 29개** 수집 완료(2021-06은 원자료에 없음). **기준 자료** |
+| 데이터 ② 금융감독원 | FISIS Open API(국가승인통계 아님) 8개 표, 조합별 수집 진행 중(하루 8,000회, 매일 03:47 자동 이어받기). 교차검증·보충용 |
+| 대상 | 금융회사코드 기준 1,173곳(운영 1,107) + 시도 합계 16·전국 합계 — 검색 목록에서 분리 |
+| 소속(지역본부) | 금감원 목록 = 금융위원회 시도 합계로 640건 불일치 0 검증. 단 화면 소속은 **농협중앙회 홈페이지 조직도** 기준 |
+| 지자체 확정 | 사용자 캡처로 세종·서울·인천·제주·부산·경기 완료, 지역농협 914곳 중 196곳 확정(현황 `CONFIRM.md`) |
+| 화면 | 검색(조합명·지역·환코드) → 상세: 조합명(환코드)·본점소재지·위치/구분·소속 → 주요 지표 6개+순위 → 주석 칸 → 추이 그래프 → 상세 표 탭 |
+| 자동화 | 금융위: 매주 월 03:17 / 금감원: 매일 03:47 → 커밋되면 사이트 자동 배포 |
+| 운영 방침 | 완성 전까지 GitHub Pages 공개 개발 → 완성 후 개인 호스팅(iwinv) 이전. **실행(수집·배포·대량 변경) 전에는 사용자에게 먼저 묻는다** |
 
 ## 1. 목적
 
@@ -74,9 +75,20 @@
 .github/workflows/
   update-data.yml     농협 데이터 갱신: 매주 월 03:17(KST) + 수동(max_new, bas_ym, probe) → collect.py → build_metrics.py → 커밋
   deploy-pages.yml    사이트 배포: push·데이터 갱신 완료 시 → Secrets VWORLD_KEY로 docs/config.js 생성 → Pages 배포
+  collect-fss.yml     금감원 자료 수집: 매일 03:47(KST) + 수동(call_budget) → collect_fss.py → 커밋
+  fisis-probe.yml     금감원 진단(수동, span_cd로 표본 조합 전체 기간 확인)
 scripts/
-  collect.py          수집기(표준 라이브러리만). 2011-06 이후 전 반기 보관, 이어받기, 반기마다 중간 저장, 300분 시간 한도
+  collect.py          금융위원회 수집기(표준 라이브러리만). 2011-06 이후 전 반기 보관, 이어받기, ORDER_YM 나열 순서 진단
   build_metrics.py    순위용 연도별 지표 파일 생성(카드 6개 지표)
+  collect_fss.py      금감원 FISIS 조합별 수집(8개 표, 10년 제한으로 두 구간, 하루 한도, 교차검증 mismatch.json)
+  fisis_probe.py / fss_convert.py   금감원 진단 / 조회 결과를 사이트 형식으로 변환
+  sync_meta.py        meta.csv에 새 조합 행 추가·합병 상태 자동 추정(빈 칸만)
+  estimate_region.py  유형·소속·위치 추정(추정 칸만 매번 재계산, 원본·확인 값 보존)
+  apply_capture.py    사용자 캡처 옮겨 적은 파일 → meta.csv 확정 반영, units.csv
+  apply_fisis_company.py  금감원 목록의 지역본부·옛 이름 원본 반영
+  apply_evidence.py   합병 웹 교차검증 기록(merger_evidence.json) 반영
+  verify_hq.py        지역본부별 합 = 금융위원회 시도 합계 검증
+  confirm_status.py   지자체 확인 현황표 CONFIRM.md 생성
 docs/                 사이트(정적, 서버 없음)
   index.html app.js style.css   화면 — 고칠 때마다 index.html의 ?v= 버전을 올릴 것
   config.js           (저장소에 없음) 배포 때 생성: window.NH_CONFIG.vworldKey
@@ -87,12 +99,16 @@ docs/                 사이트(정적, 서버 없음)
   data/coops.json     검색 목록 [[코드, 이름, 최신 기준년월], ...] (집계 코드 포함 — 화면에서 분리)
   data/coop/<코드>.json   조합별 전체 자료 {cd, nm, crno, d: {ym: {표: [[코드, 값, 구성비?], ...]}}}
   data/metrics/<ym>.json  연도별 대표 기준년월의 전 조합 카드 지표 {keys, rows: {코드: [값…]}}
-  data/meta/coop_meta.csv 수기 지정 조합 정보(공개)
-PROJECT.md / README.md
+  data/meta/coop_meta.csv 조합 정보(공개): 유형·상태·승계·이전명칭·별칭·행정/소속구역·주소·우편번호·전화·비고·추정(추정 열 목록)
+  data/meta/capture/      사용자 캡처를 옮겨 적은 원본(본부·시군별 CSV)
+  data/meta/units.csv     지역본부·시군지부(회원지원국) 주소·전화
+  data/fss/               금감원 자료: coop/<코드>.json, codes.json, companies.json, status.json, mismatch.json
+  data/probe/             진단 결과(나열 순서, FISIS 목록·표본)
+PROJECT.md / README.md / CONFIRM.md(지자체 확인 현황)
 ```
 
 - GitHub Pages: **Source = GitHub Actions**(브랜치 배포 아님).
-- Secrets: `SERVICE_KEY`(공공데이터포털), `VWORLD_KEY`(VWorld, 등록 URL `https://planet-seeker.github.io`).
+- Secrets: `SERVICE_KEY`(공공데이터포털), `VWORLD_KEY`(VWorld, 등록 URL `https://planet-seeker.github.io`), `FISIS_KEY`(금감원 FISIS).
 - 데이터 용량 약 118MB(조합별 파일). 방문자는 클릭한 조합 파일 하나만 받음.
 
 ## 4. 화면 결정 사항 (사용자 확정)
@@ -166,32 +182,6 @@ PROJECT.md / README.md
 - 주소 자동 수집 원천 검토(금융회사기본정보·농협 누리집·법률구조공단 → 모두 불가)
 - 2021-06 반기는 `bas_ym=202106` 재수집에서도 빈 응답 → **원자료에 없는 반기**로 확정(`index.json` empty)
 - 진행 기록(이 문서) 정리
-
-## 6. 남은 일 (우선순위 순)
-
-1. **meta.csv 채우기** — 지역 표시·기초 순위·지도가 모두 이 파일에 달려 있음.
-   - 행정구역(광역·기초), 소속구역(광역·기초), 주소, 위도·경도. 유형 오분류 2~3곳 확인.
-   - 방법 후보: (a) 엑셀로 직접 입력 (b) 관리자 화면에서 사용자 브라우저로 VWorld 장소 검색 → 결과 확인·선택 → meta.csv 파일로 받기
-     (VWorld는 국내 브라우저에서만 호출 가능) (c) 농협중앙회에 전국 농·축협 본점 주소 목록 요청.
-   - 사용자 결정: **지금은 미룸**("나중에 CSV에서 읽어 맵핑").
-2. **데이터 폴더 출처별 재구성**: `docs/data/sources.json`(기관·자료 목록) + `docs/data/fsc/agcoop_fin/`로 이동,
-   수집기·화면·워크플로 경로 수정, coops.json에 구분·권역·유형을 수집기에서 계산해 넣기.
-3. **분류 기능**: 유형·권역(행정/소속 선택) 필터, 권역별·시군구별 비교, 시도·전국 합계 대비 비교(집계 코드 활용).
-4. **운영 정리**
-   - 임시 브랜치 `probe-codes` 삭제(사용자가 저장소 Branches 화면에서).
-   - Actions 경고: 일부 액션이 Node 20 기반(configure-pages·deploy-pages·upload-artifact) — 새 버전 나오면 올림.
-5. **개인 호스팅(iwinv) 이전 — 완성 후**: planetseeker.iwinv.net 하위 폴더 예정. `docs/` 그대로 업로드하면 동작.
-   - VWorld 등록 URL에 새 주소 추가, 지도 키는 config.js로 별도 배치.
-   - 데이터 갱신: 처음엔 수동 업로드, 필요하면 GitHub→FTP 자동 전송. 이전 후 PHP 로그인 관리자 페이지 가능.
-
-## 7. 작업 재개 방법
-
-1. 이 파일과 최근 커밋(`git log`)을 읽는다.
-2. Actions의 "농협 데이터 갱신"·"사이트 배포" 최근 실행과 Annotations(오류·안내)를 확인한다.
-3. 화면을 고치면 `docs/index.html`의 `?v=` 버전을 올리고, 이 파일의 4·5·6절을 갱신한다.
-4. 로컬 확인: `cd docs && python3 -m http.server 8000` → http://localhost:8000
-   (config.js가 없으면 지도만 비어 보임. VWorld는 해외 IP에서 지도 그림이 안 나옴)
-5. 새 대화에서 이어 할 때: "nh_coop_information 저장소의 PROJECT.md 보고 이어서 하자".
 
 ### 2026-10-28 (밤) 추가 수정
 - 차트 좌우 여백을 고정값 대신 실제 글자 폭으로 계산 → 모바일에서 오른쪽 빈 공간 제거
@@ -319,3 +309,28 @@ PROJECT.md / README.md
   - 남한산성농협 = 원자료 중부농협(221087): 광주시 중부면→남한산성면(2021) 개칭, 경기 광주시에서 짝 없는 유일 조합 → 별칭으로 연결
   - 홈페이지 이름 별칭: 김포고촌농협=고촌농협, 서울동경기인삼농협=동경기인삼농협 등
 
+## 6. 남은 일 (우선순위 순)
+
+1. **지자체 캡처 계속** — 남은 도: 충남·충북·강원·전북·전남·경북·경남, 광역시: 대구·광주·대전·울산
+   - 캡처(농협 홈페이지 지역 농·축협 목록, 도 › 시군지부 전체)를 받으면: `docs/data/meta/capture/<날짜>_<본부>.csv`로 옮겨 적기
+     (지역본부,단위,조합명,우편번호,주소,전화번호 / 단위 줄 다음 조합은 그 단위 소속) → `python3 scripts/apply_capture.py` →
+     `python3 scripts/estimate_region.py` → `python3 scripts/confirm_status.py` → 못 찾은 이름은 별칭·개칭 확인 → PROJECT.md 기록 → 커밋
+   - 경남 캡처 때 확인: 부경원예농협·부산우유농협(금융당국 자료상 부산본부)
+   - 유형(구분)은 원자료에 없음: 지부 소속 확정 → 지역농협 자동 확정. 본부 직할 조합의 축협/품목 구분은 아직 추정
+2. **금감원 수집 마무리 확인** — `docs/data/fss/status.json`(진행), `mismatch.json`(금융위원회와 다른 항목). 최근 구간 전 조합 → 이전 구간(2011~2016) 순.
+   다 받으면 불일치 경향 정리(천안농협 2012~2015 대출금 소액 차이 같은 사례)
+3. **지도** — 주소가 생긴 조합은 방문자 브라우저에서 VWorld 주소→좌표 변환해 지도 표시(해외 서버에서는 VWorld 차단). 필요 시 CSP에 api.vworld.kr 추가
+4. **화면 보완 후보**: 우편번호·전화번호 표시 여부(저장은 되어 있음), 이자손익 등 주요 지표 카드 후보, 2021-06 반기를 금감원 자료로 보충
+5. **데이터 폴더 출처별 재구성**(fsc/fss), 유형·권역 필터·비교 기능
+6. **운영 정리**: 임시 브랜치 `probe-codes` 삭제(사용자), Actions Node 20 경고
+7. **개인 호스팅(iwinv) 이전 — 완성 후**: planetseeker.iwinv.net 하위 폴더. `docs/` 업로드로 동작, VWorld 등록 URL 추가, config.js 별도 배치
+
+## 7. 작업 재개 방법
+
+1. 이 파일(특히 0·6절)과 `CONFIRM.md`, 최근 커밋(`git log`)을 읽는다.
+2. Actions: "농협 데이터 갱신"(금융위), "금감원 자료 수집"(금감원), "사이트 배포" 최근 실행과 Annotations 확인. 금감원 진행은 `docs/data/fss/status.json`.
+3. 원칙: 금융위원회 자료 우선(금감원과 다르면 금감원 값 병기), 원자료 아닌 값은 meta.csv `추정` 열 + 화면 "(추정)", 소속은 농협 홈페이지 조직도, **실행 전 사용자 승인**.
+4. 화면을 고치면 `docs/index.html`의 `?v=` 버전을 올린다(마지막 20261029u). 로컬 확인: `cd docs && python3 -m http.server 8000`
+   (config.js가 없으면 지도만 비어 보임)
+5. Secrets: `SERVICE_KEY`(공공데이터포털), `VWORLD_KEY`, `FISIS_KEY`(금감원, 비영리 하루 1만 건)
+6. 새 대화에서: "농축협정보검색기(nh_coop_information) PROJECT.md 보고 이어서 하자".
