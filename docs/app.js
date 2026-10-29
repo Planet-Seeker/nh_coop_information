@@ -457,9 +457,6 @@
     for (let y = years[0]; y < years[years.length - 1]; y++) if (!years.includes(y)) gaps.push(`${y}년`);
     if (gaps.length) lines.push([`공시 자료 끊김: ${gaps.join(", ")}`]);
     lines.push(["(추정): 공시 원자료가 아닌 추정값입니다. 원자료는 따로 표시하지 않습니다."]);
-    lines.push([coop.fss
-      ? "(금감원) 표시는 금융감독원 자료(국가승인통계 아님)입니다. 나머지는 금융위원회 공시이며, 두 자료가 다르면 금융위원회 값 옆에 금감원 값을 병기합니다."
-      : "이 조합의 금융감독원 자료는 수집 전입니다."]);
     lines.push([`금액은 조·억 단위로 반올림해 표시합니다. 6월 기준 손익은 상반기 누적입니다. 데이터 최종갱신일(${INDEX.updated || "-"})`]);
     return el("section", { class: "notes", "aria-label": "참고 사항" }, el("ul", {}, lines.map((l) => el("li", {}, ...l))));
   }
