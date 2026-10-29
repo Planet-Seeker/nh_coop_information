@@ -439,7 +439,7 @@
     const preds = PRED.get(cd) || [];
     const merged = preds.filter((p) => stOf(p).st === "합병");
     const moved = preds.filter((p) => stOf(p).st === "코드변경");
-    if (merged.length) lines.push(["합병 이력: ", ...merged.flatMap((p, i) => [i ? ", " : "", link(p), ` (${BYCD.get(p).ym.slice(0, 4)}년까지${stOf(p).est ? ", 추정" : ""})`])]);
+    if (merged.length) lines.push(["합병 이력: ", ...merged.flatMap((p, i) => [i ? ", " : "", link(p), ` ${BYCD.get(p).ym.slice(0, 4)}년까지 공시${stOf(p).est ? "(추정)" : ""}`])]);
     if (moved.length) {
       const last = moved.map((p) => BYCD.get(p).ym).sort().pop();
       lines.push([`${ymLabel(last)}까지는 금융회사코드 변경 전 자료를 이어 붙였습니다${moved.some((p) => stOf(p).est) ? "(추정)" : ""}`]);
@@ -451,13 +451,13 @@
   // 카드와 그래프 사이 주석(최대 5행 높이, 넘치면 스크롤): 공시 상태·합병 이력, 기준월, 공시 공백, 추정 안내, 단위·갱신일
   function notesBox(coop, ym) {
     const lines = historyLines(coop);
-    if (!isYearEnd(ym)) lines.push([`${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준입니다(손익은 상반기 누적).`]);
+    if (!isYearEnd(ym)) lines.push([`${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준이며 손익은 상반기 누적입니다.`]);
     const years = [...new Set(Object.keys(coop.d).map((m) => +m.slice(0, 4)))].sort((a, b) => a - b);
     const gaps = [];
     for (let y = years[0]; y < years[years.length - 1]; y++) if (!years.includes(y)) gaps.push(`${y}년`);
     if (gaps.length) lines.push([`공시 자료 끊김: ${gaps.join(", ")}`]);
-    lines.push(["(추정): 공시 원자료가 아닌 추정값입니다. 원자료는 따로 표시하지 않습니다."]);
-    lines.push([`금액은 조·억 단위로 반올림해 표시합니다. 6월 기준 손익은 상반기 누적입니다. 데이터 최종갱신일(${INDEX.updated || "-"})`]);
+    lines.push(["(추정)이 붙은 값은 공시 원자료가 아닌 추정값입니다."]);
+    lines.push([`금액은 조·억 단위로 반올림해 표시합니다. 데이터 최종갱신일은 ${INDEX.updated || "-"}입니다.`]);
     return el("section", { class: "notes", "aria-label": "참고 사항" }, el("ul", {}, lines.map((l) => el("li", {}, ...l))));
   }
 
