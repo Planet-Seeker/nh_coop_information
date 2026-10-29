@@ -565,12 +565,14 @@
     // 조합명 · 위치·구분(1행) · 소속(2행) → 주요 지표 → 카드. 이 왼쪽 묶음 높이를 오른쪽 정사각형 지도와 맞춤.
     const title = [
       el("h2", { class: "d-name" }, coop.nm),
-      (() => {                                              // 1행: 위치 · 구분(유형), 2행: 소속. 금융회사코드·법인등록번호는 표시하지 않음
+      (() => {                                              // 본점소재지(주소), 위치 · 구분(유형), 소속. 금융회사코드·법인등록번호는 표시하지 않음
         const c = LIST.find((x) => x.cd === coop.cd);
         const [loc, aff] = regionLines(coop.cd);
         const item = (label, text, miss, est) => el("span", { class: "rgn-item" }, el("span", { class: "rgn-l" }, label),
           el("span", { class: "rgn-v" + (miss ? " miss" : "") }, text), est ? el("span", { class: "rgn-n" }, "(추정)") : null);
+        const addr = ((META.get(coop.cd) || {})["주소"] || "").trim();
         return el("div", { class: "rgn-text" },
+          el("p", { class: "addr" }, el("span", { class: "rgn-l" }, "본점소재지 :"), el("span", { class: "rgn-v" + (addr ? "" : " miss") }, addr || "미지정")),
           el("p", {}, item("위치", loc.text, loc.miss, loc.est), el("span", { class: "rgn-sep" }, "·"),
             item("구분", c ? c.type : "미지정", !c, c ? estOf(c.cd, "유형") : false)),
           el("p", {}, item("소속", aff.text, aff.miss, aff.est)));
