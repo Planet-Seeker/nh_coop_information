@@ -162,12 +162,12 @@
     const adm1 = m["행정구역_광역"] || "", adm2 = m["행정구역_기초"] || "";
     const { aff1, aff2, est } = affOf(cd);
     const loc = [adm1, adm2].filter(Boolean).join(" ");
+    // 소속: 농협중앙회 ○○지역본부 ○○지부(세종시회원지원국처럼 단위 이름이 있으면 그대로, 직할이면 직할)
     let aff = "";
-    if (aff2 === "직할") aff = aff1 ? `${aff1}지역본부 직할` : "지역본부 직할";
-    else if (aff1 || aff2) aff = `${[aff1 && `${aff1}지역본부`, aff2 && (/(지부|국)$/.test(aff2) ? aff2 : `${aff2}지부`)].filter(Boolean).join(" ")} 소속`;   // 세종시회원지원국처럼 단위 이름이 있으면 그대로
+    if (aff1 || aff2) aff = ["농협중앙회", aff1 ? `${aff1}지역본부` : "", aff2 === "직할" ? "직할" : aff2 ? (/(지부|국)$/.test(aff2) ? aff2 : `${aff2}지부`) : ""].filter(Boolean).join(" ");
     return [
-      { text: loc ? `${loc} 위치` : "위치 미지정", miss: !loc, est: estOf(cd, "행정구역_광역") || estOf(cd, "행정구역_기초") },
-      { text: aff || "소속 미지정", miss: !aff, est },
+      { label: "위치", text: loc || "미지정", miss: !loc, est: !!loc && (estOf(cd, "행정구역_광역") || estOf(cd, "행정구역_기초")) },
+      { label: "소속", text: aff || "미지정", miss: !aff, est: !!aff && est },
     ];
   }
   // 조합 상태(meta.csv 상태·승계조합코드·이전명칭). 상태가 비어 있으면 공시 여부로 판단
@@ -562,15 +562,18 @@
     const sel = el("select", { "aria-label": "기준연도", onchange: (e) => { view.ym = e.target.value; setURL(detailURL(), true); renderDetail(); } },
       months.map((m) => el("option", { value: m, selected: m === ym }, yearPick(m))));
 
-    // 조합명 · 권역·유형 · 위치/소속(텍스트 2행) → 주요 지표 → 카드. 이 왼쪽 묶음 높이를 오른쪽 정사각형 지도와 맞춤.
+    // 조합명 · 유형 · 위치·소속(한 줄) → 주요 지표 → 카드. 이 왼쪽 묶음 높이를 오른쪽 정사각형 지도와 맞춤.
     const title = [
       el("h2", { class: "d-name" }, coop.nm),
       el("p", { class: "meta" }, (() => {                  // 금융회사코드·법인등록번호는 화면에 표시하지 않음(데이터에는 보관)
         const c = LIST.find((x) => x.cd === coop.cd);
-        return c ? `${c.region}${c.rc === "17" ? "" : "(추정)"} · ${typeText(c)}` : "";
+        return c ? typeText(c) : "";                        // 권역은 소속 지역본부(원본)로 대체
       })()),
-      el("div", { class: "rgn-text" }, regionLines(coop.cd).map((r) =>   // 1행: 행정구역(위치), 2행: 소속구역
-        el("p", { class: r.miss ? "miss" : "" }, r.text, r.est ? el("span", { class: "rgn-n" }, " (추정)") : null))),
+      el("p", { class: "rgn-text" }, regionLines(coop.cd).flatMap((r, i) => [   // 위치 · 소속 한 줄(좁으면 소속이 통째로 다음 줄)
+        i ? el("span", { class: "rgn-sep" }, "·") : null,
+        el("span", { class: "rgn-item" }, el("span", { class: "rgn-l" }, r.label),
+          el("span", { class: "rgn-v" + (r.miss ? " miss" : "") }, r.text),
+          r.est ? el("span", { class: "rgn-n" }, "(추정)") : null)])),
     ];
     // 핵심 수치 (누르면 추이 그래프 전환)
     const kpis = el("div", { class: "kpis" }, KPIS.map((k) => {
