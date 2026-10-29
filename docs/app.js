@@ -448,9 +448,9 @@
     return lines;
   }
 
-  // 카드와 그래프 사이 주석(최대 5행 높이, 넘치면 스크롤): 공시 상태·합병 이력, 기준월, 공시 공백, 추정 안내, 단위·갱신일
+  // 카드와 그래프 사이 주석(최대 5행 높이, 넘치면 스크롤): 단위·갱신일, 공시 상태·합병 이력, 기준월, 공시 공백, 자료 산출 방식, 추정 안내
   function notesBox(coop, ym) {
-    const lines = historyLines(coop);
+    const lines = [[`금액은 조·억 단위로 반올림해 표시합니다. 데이터 최종갱신일은 ${INDEX.updated || "-"}입니다.`], ...historyLines(coop)];
     if (!isYearEnd(ym)) lines.push([`${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준이며 손익은 상반기 누적입니다.`]);
     const years = [...new Set(Object.keys(coop.d).map((m) => +m.slice(0, 4)))].sort((a, b) => a - b);
     const gaps = [];
@@ -458,7 +458,6 @@
     if (gaps.length) lines.push([`공시 자료 끊김: ${gaps.join(", ")}`]);
     lines.push(["기본적으로 데이터는 금융위원회 자료를 기반으로 금융감독원 자료를 보충하는 식으로 산출됩니다. 두 자료가 다르면 금융위원회 자료를 우선하며, 금융위원회 값 옆에 금감원 값을 별도 표기합니다."]);
     lines.push(["(추정)이 붙은 값은 공시 원자료가 아닌 추정값입니다."]);
-    lines.push([`금액은 조·억 단위로 반올림해 표시합니다. 데이터 최종갱신일은 ${INDEX.updated || "-"}입니다.`]);
     return el("section", { class: "notes", "aria-label": "참고 사항" }, el("ul", {}, lines.map((l) => el("li", {}, ...l))));
   }
 
