@@ -1,0 +1,43 @@
+name: 금감원 자료 수집
+
+on:
+  schedule:
+    - cron: "47 18 * * *"   # 매일 03:47 (KST). 다 받은 뒤에는 목록만 확인하고 바로 끝남
+  workflow_dispatch:
+    inputs:
+      call_budget:
+        description: "이번 실행 호출 한도(비영리 하루 1만 건)"
+        required: false
+        default: "8000"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-fss
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: 금감원 FISIS 수집
+        env:
+          FISIS_KEY: ${{ secrets.FISIS_KEY }}
+          CALL_BUDGET: ${{ github.event.inputs.call_budget || '8000' }}
+          MAX_MINUTES: "320"
+        run: python scripts/collect_fss.py
+      - name: 변경분 커밋
+        if: ${{ always() }}   # 중간에 멈춰도 받은 데까지 저장
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A docs/data/fss
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -q -m "금감원 자료 수집 $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
