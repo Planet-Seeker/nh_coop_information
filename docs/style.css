@@ -234,3 +234,14 @@ tr.on td { background: var(--acc-soft); }
 .credits dd { margin: 0; }   /* dt 하나에 dd 하나(두 칸 격자). 여러 줄은 dd 안에 목록으로 */
 .credit-src { list-style: none; margin: 2px 0 0; padding: 0; }
 .credit-src li { margin: 0; }
+/* 출처 꼬리표: 금융위원회가 기준이라 표시 없음, 금감원만 (금감원) 회청색 + 행 배경 옅게, 불일치는 금감원 값 병기 */
+:root { --fss: #4f6d8a; --fss-soft: #eef2f6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fss: #8fb0cf; --fss-soft: #1f2a33; } }
+.src { display: inline-block; margin-left: 6px; font-size: 10.5px; font-weight: 500; color: var(--muted); white-space: nowrap; vertical-align: 1px; }
+.src::before { content: "("; } .src::after { content: ")"; }
+.src.fss { color: var(--fss); }
+.sec h3 .src, .trend h3 .src { font-size: 11px; }
+tr.fss td { background: var(--fss-soft); }
+td .alt { font-size: 10.5px; color: #b45309; white-space: nowrap; margin-left: 6px; }
+.chart.fss .line { stroke: var(--fss); } .chart.fss .area { fill: var(--fss); } .chart.fss .dot { fill: var(--fss); } .chart.fss .dot.partial { fill: var(--card); stroke: var(--fss); }
+

@@ -13,10 +13,29 @@
     P: "주요경영지표_수익성",
     L: "주요경영지표_유동성",
   };
+  // 금융감독원 FISIS 상세 표(공식 통계 아님, data/fss). 화면 표 제목에 '· 금융감독원' 표시
+  const F = {
+    LOAN: "fss_대출채권", SEC: "fss_유가증권", DEP: "fss_예수부채·차입부채", FIX: "fss_유형자산",
+    FEE: "fss_수수료 손익", SECPL: "fss_유가증권 평가·처분 손익", INT: "fss_이자 손익·판매비와 관리비", MEM: "fss_유형별 대출(조합원·비조합원)",
+  };
+  const FSS_TAG = " · 금융감독원";
+  // 교차검증 대응표: 금융위원회 항목 → 같은 값의 금감원 항목. 둘 다 있으면 일치 여부를 꼬리표로 표시
+  const XMAP = (() => {
+    const m = {}, add = (t, f, pairs) => pairs.split(" ").forEach((x) => { const [a, b] = x.split(":"); m[`${t}|${a}`] = [f, b]; });
+    add("재무현황_요약재무상태표(자산)", F.LOAN, "A3:A A32:A1 A320:A11 A33:A2 A330:A21 A34:A3 A340:A31");
+    add("재무현황_요약재무상태표(자산)", F.SEC, "A2:A A23:A1 A24:A2 A25:A3");
+    add("재무현황_요약재무상태표(자산)", F.FIX, "A4:A A42:A1 A420:A11 A43:A2 A430:A21 A431:A22 A44:A3 A440:A31 A441:A32");
+    add("재무현황_요약재무상태표(부채및자본)", F.DEP, "A1:A A11:A1 A12:A2 A13:A3 A2:B A21:B1 A22:B2 A23:B3");
+    add("재무현황_주요자금조달및운용", F.MEM, "A21:A");
+    return m;
+  })();
+  // 금감원에만 있는 하위 항목을 금융위원회 표 안에 끼워 넣는 위치: [금융위원회 표, 부모 항목, 금감원 표, 금감원 항목들]
+  const NEST = [["재무현황_주요자금조달및운용", "A21", F.MEM, ["A1", "A2", "A3"]]];
   const TABS = [
     { id: "gen", label: "일반현황", tables: [[T.G, "임직원·조합원"]] },
     { id: "bs", label: "재무상태표", tables: [[T.AS, "자산"], [T.LE, "부채 및 자본"]] },
-    { id: "pl", label: "손익계산서", tables: [[T.PL, "요약 손익계산서"]] },
+    { id: "pl", label: "손익계산서", tables: [[T.PL, "요약 손익계산서"],
+      [F.FEE, "수수료 손익"], [F.SECPL, "유가증권 평가·처분 손익"], [F.INT, "이자 손익·판매비와 관리비"]] },
     { id: "fund", label: "자금조달·운용", tables: [[T.FU, "주요 자금조달 및 운용"]] },
     { id: "kmi", label: "경영지표", tables: [[T.Q, "여신건전성"], [T.P, "수익성"], [T.L, "유동성"]] },
   ];
@@ -392,6 +411,11 @@
     let c = coopCache.get(cd);
     if (!c) {
       c = await getJSON(`data/coop/${encodeURIComponent(cd.replace(/[^0-9A-Za-z]/g, ""))}.json`);
+      try {                                                 // 금감원 상세 표(있을 때만). 금융위원회 자료가 있는 기준년월에만 붙임
+        const f = await getJSON(`data/fss/coop/${encodeURIComponent(cd.replace(/[^0-9A-Za-z]/g, ""))}.json`);
+        for (const [ym, tb] of Object.entries(f.d || {})) if (c.d[ym]) Object.assign(c.d[ym], tb);
+        c.fss = true;
+      } catch { c.fss = false; }
       coopCache.set(cd, c);
     }
     return c;
@@ -431,6 +455,9 @@
     for (let y = years[0]; y < years[years.length - 1]; y++) if (!years.includes(y)) gaps.push(`${y}년`);
     if (gaps.length) lines.push([`공시 자료 끊김: ${gaps.join(", ")}`]);
     lines.push(["(추정): 공시 원자료가 아닌 추정값입니다. 원자료는 따로 표시하지 않습니다."]);
+    lines.push([coop.fss
+      ? "(금감원) 표시는 금융감독원 자료(공식 통계 아님)입니다. 나머지는 금융위원회 공시이며, 두 자료가 다르면 금융위원회 값 옆에 금감원 값을 병기합니다."
+      : "이 조합의 금융감독원 자료는 수집 전입니다."]);
     lines.push([`금액은 조·억 단위로 반올림해 표시합니다. 6월 기준 손익은 상반기 누적입니다. 데이터 최종갱신일(${INDEX.updated || "-"})`]);
     return el("section", { class: "notes", "aria-label": "참고 사항" }, el("ul", {}, lines.map((l) => el("li", {}, ...l))));
   }
@@ -601,7 +628,7 @@
     const box = el("section", { class: "trend" },
       el("div", { class: "trend-h" },
         el("div", { class: "trend-t" },
-          el("h3", {}, `${label} 추이`),
+          el("h3", {}, `${label} 추이`, m.t.startsWith("fss_") ? srcTag("금감원", "fss") : null),
           el("span", { class: "unit" }, `${unitLabel(kind) ? `단위: ${unitLabel(kind)} · ` : ""}${pts.length ? `${yearLabel(pts[0].ym)}~${yearLabel(pts[pts.length - 1].ym)}` : ""}${annual ? " · 연말(12월) 공시 항목" : ""}`)),
         el("div", { class: "segs", role: "group", "aria-label": "기간" }, RANGES.map(([id, text]) => rangeBtn(id, text)))));
 
@@ -633,7 +660,7 @@
     const x = (i) => ml + (i * (W - ml - mr)) / Math.max(1, pts.length - 1);
     const y = (v) => mt + (H - mt - mb) * (1 - (v - lo) / (hi - lo));
     const base = y(Math.min(Math.max(0, lo), hi));
-    const svg = svgEl("svg", { viewBox: `0 0 ${W} ${H}`, class: "chart", role: "img", "aria-label": `${label} 반기별 추이` });
+    const svg = svgEl("svg", { viewBox: `0 0 ${W} ${H}`, class: "chart" + (m.t.startsWith("fss_") ? " fss" : ""), role: "img", "aria-label": `${label} 반기별 추이` });
 
     // 선택한 기준년월 강조 띠
     const step = (W - ml - mr) / Math.max(1, pts.length - 1);
@@ -747,31 +774,50 @@
     return el("section", { class: "tabbox" }, tabs, panel);
   }
 
+  // 출처 꼬리표: 기준은 금융위원회 → 금융위원회 값은 표시 없음. 금감원에만 있는 값은 (금감원), 서로 다르면 금감원 값 병기
+  const srcTag = (txt, cls = "") => el("span", { class: "src" + (cls ? " " + cls : "") }, txt);
   function renderTable(coop, ym, t, title) {
-    let rows = rowsOf(coop, ym, t);
+    const fssTable = t.startsWith("fss_");
+    if (fssTable && !coop.fss) return el("section", { class: "sec" }, el("h3", {}, title, srcTag("금감원", "fss")), el("p", { class: "muted" }, "금융감독원 자료 수집 전입니다."));
+    let rows = rowsOf(coop, ym, t).map((r) => ({ ...r, t }));
+    for (const [nt, parent, ft, codes] of NEST) {           // 금감원 하위 항목 끼워 넣기(예: 대출금 아래 조합원·준조합원·비조합원)
+      if (nt !== t || !coop.fss) continue;
+      const at = rows.findIndex((r) => r.c === parent);
+      if (at < 0) continue;
+      const kids = codes.map((c) => ({ c, t: ft, v: valueOf(coop, ym, ft, c), r: null, name: codeName(ft, c), label: codeName(ft, c), depth: rows[at].depth + 1, nested: true }));
+      rows.splice(at + 1, 0, ...kids);
+    }
     if (!rows.length) return el("section", { class: "sec" }, el("h3", {}, title), el("p", { class: "muted" }, MISSING));
     const hasR = rows.some((r) => r.r != null);
-    const kinds = new Set(rows.map((r) => kindOf(t, r.c)));
+    const kinds = new Set(rows.map((r) => kindOf(r.t, r.c)));
     const body = el("tbody", {}, rows.map((r) => {
-      const kind = kindOf(t, r.c);
-      const active = view.metric.t === t && view.metric.c === r.c;
-      const total = r.depth === 0 && (r.c === "A" || /총계$/.test(r.name));
-      return el("tr", { class: [`d${Math.min(r.depth, 3)}`, total ? "total" : "", active ? "on" : ""].join(" ").trim() },
+      const kind = kindOf(r.t, r.c);
+      const onlyFss = fssTable || r.nested;
+      const active = view.metric.t === r.t && view.metric.c === r.c;
+      const total = r.depth === 0 && (r.c === "A" || /총계$| 계$/.test(r.name));
+      // 출처 판정
+      const x = !onlyFss && XMAP[`${t}|${r.c}`];
+      const fv = x && coop.fss ? valueOf(coop, ym, x[0], x[1]) : null;
+      let shown = r.v, tag;
+      if (onlyFss) tag = srcTag("금감원", "fss");
+      else if (r.v == null && fv != null) { shown = fv; tag = srcTag("금감원", "fss"); }
+      else if (fv != null && fv !== r.v) tag = el("small", { class: "alt" }, ` 금감원 ${fmt(fv, kind)}`);   // 불일치만 병기
+      return el("tr", { class: [`d${Math.min(r.depth, 3)}`, total ? "total" : "", active ? "on" : "", onlyFss || (r.v == null && fv != null) ? "fss" : ""].join(" ").trim() },
         el("td", {}, el("button", { type: "button", class: "item", title: "추이 보기",
           onclick: () => {
-            view.metric = { t, c: r.c, label: r.name.replace(/_/g, " › ") };
+            view.metric = { t: r.t, c: r.c, label: r.name.replace(/_/g, " › ") };
             renderDetail();
             detEl.querySelector(".trend").scrollIntoView({ block: "nearest", behavior: "smooth" });
           } },
-          r.label, kinds.size > 1 && unitLabel(kind) ? el("small", { class: "u" }, ` (${unitLabel(kind)})`) : null)),
-        el("td", { class: "num" + (r.v == null ? " miss" : r.v < 0 ? " neg" : "") }, r.v == null ? missText(coop, ym, t, r.c) : fmt(r.v, kind)),
+          r.label, kinds.size > 1 && unitLabel(kind) ? el("small", { class: "u" }, ` (${unitLabel(kind)})`) : null), tag),
+        el("td", { class: "num" + (shown == null ? " miss" : shown < 0 ? " neg" : "") }, shown == null ? missText(coop, ym, r.t, r.c) : fmt(shown, kind)),
         hasR ? el("td", { class: "num rto" }, r.r == null ? "" : NF2.format(r.r)) : null);
     }));
     const thead = el("thead", {}, el("tr", {},
       el("th", {}, "항목"),
       el("th", { class: "num" }, kinds.size === 1 ? colHead([...kinds][0]) : "값"),
       hasR ? el("th", { class: "num" }, "구성비(%)") : null));
-    return el("section", { class: "sec" }, el("h3", {}, title), el("div", { class: "tbl-scroll" }, el("table", {}, thead, body)));
+    return el("section", { class: "sec" }, el("h3", {}, title, fssTable ? srcTag("금감원", "fss") : null), el("div", { class: "tbl-scroll" }, el("table", {}, thead, body)));
   }
 
   // ── 전국 요약 ──────────────────────────────────────────────
@@ -833,6 +879,7 @@
     try {
       const [idx, codes, list] = await Promise.all([getJSON("data/index.json"), getJSON("data/codes.json"), getJSON("data/coops.json")]);
       INDEX = idx; CODES = codes;
+      try { Object.assign(CODES, await getJSON("data/fss/codes.json")); } catch { /* 금감원 표 없음 */ }
       try {                                                 // 수기 지정 파일은 없어도 됨
         const r = await fetch("data/meta/coop_meta.csv", { cache: "no-cache" });
         if (r.ok) for (const row of parseCSV(await r.text())) {
