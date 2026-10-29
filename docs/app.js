@@ -184,6 +184,7 @@
       prev: (m["이전명칭"] || "").split(/[;；]/).map((x) => x.trim()).filter(Boolean) };
   }
   const hiddenOld = (cd) => { const s = stOf(cd); return s.st === "코드변경" && !!s.succ; };   // 새 코드 조합에 이어 붙여 보여 줌
+  const hwanOf = (cd) => (/^0010027\d{6}$/.test(cd) ? cd.slice(7) : "");   // 환코드: 권역 2자리 + 일련번호 4자리(조합 고유)
   const coopCache = new Map();
   const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[1], range: "5y" };
   const RANGES = [["3y", "최근 3년", 3], ["5y", "최근 5년", 5], ["10y", "최근 10년", 10], ["all", "전체", Infinity]];  // 연도 개수
@@ -362,7 +363,8 @@
     }
     const nq = norm(q);
     const rq = regionQuery(nq);
-    const byName = (c) => c.k.includes(nq) || c.alias.some((a) => a.includes(nq));
+    const isCode = /^\d{2,6}$/.test(nq);                    // 숫자만 입력하면 환코드로 검색(앞부분 일치)
+    const byName = (c) => isCode ? hwanOf(c.cd).startsWith(nq) : c.k.includes(nq) || c.alias.some((a) => a.includes(nq));
     const rank = (c) => (c.k === nq ? 0 : c.k.startsWith(nq) ? 1 : byName(c) ? 2 : 3);   // 조합명 일치 먼저, 지역 일치는 뒤에
     const gone = (c) => stOf(c.cd).st !== "운영";
     const hits = LIST.filter((c) => !hiddenOld(c.cd) && (byName(c) || regionHit(c.cd, rq)))
@@ -399,7 +401,7 @@
     const item = (h) => el("li", {}, el("button", { type: "button", class: "hit" + (gone(h) ? " gone" : ""), onclick: () => openCoop(h.cd) },
       el("span", { class: "hit-nm" }, highlight(h.nm, q)),
       el("span", { class: "hit-meta" },
-        `${(() => { const a = affOf(h.cd); return a.aff1 ? `${a.aff1}${a.est1 ? "(추정)" : ""}` : h.rc === "17" ? h.region : `${h.region}(추정)`; })()} · ${typeText(h)}${tag(h)}${aliasText(h)}${gone(h) ? goneText(h) : ""}`),
+        `${(() => { const a = affOf(h.cd); return a.aff1 ? `${a.aff1}${a.est1 ? "(추정)" : ""}` : h.rc === "17" ? h.region : `${h.region}(추정)`; })()} · ${typeText(h)}${isCode ? ` · ${hwanOf(h.cd)}` : tag(h)}${aliasText(h)}${gone(h) ? goneText(h) : ""}`),
       el("span", { class: "hit-go", "aria-hidden": "true" }, "›")));
     const shown = hits.slice(0, MAX_LIST);
     const liveHits = shown.filter((h) => !gone(h)), goneHits = shown.filter(gone);
@@ -564,7 +566,7 @@
 
     // 조합명 · 위치·구분(1행) · 소속(2행) → 주요 지표 → 카드. 이 왼쪽 묶음 높이를 오른쪽 정사각형 지도와 맞춤.
     const title = [
-      el("h2", { class: "d-name" }, coop.nm),
+      el("h2", { class: "d-name" }, coop.nm, hwanOf(coop.cd) ? el("span", { class: "hwan" }, ` (${hwanOf(coop.cd)})`) : null),   // 환코드(금융회사코드 끝 6자리)
       (() => {                                              // 본점소재지(주소), 위치 · 구분(유형), 소속. 금융회사코드·법인등록번호는 표시하지 않음
         const c = LIST.find((x) => x.cd === coop.cd);
         const [loc, aff] = regionLines(coop.cd);
@@ -572,7 +574,7 @@
           el("span", { class: "rgn-v" + (miss ? " miss" : "") }, text), est ? el("span", { class: "rgn-n" }, "(추정)") : null);
         const addr = ((META.get(coop.cd) || {})["주소"] || "").trim();
         return el("div", { class: "rgn-text" },
-          el("p", { class: "addr" }, el("span", { class: "rgn-l" }, "본점소재지 :"), el("span", { class: "rgn-v" + (addr ? "" : " miss") }, addr || "미지정")),
+          addr ? el("p", { class: "addr" }, addr) : null,      // 본점소재지: 이름 아래 회색 한 줄(없으면 생략)
           el("p", {}, item("위치", loc.text, loc.miss, loc.est), el("span", { class: "rgn-sep" }, "·"),
             item("구분", c ? c.type : "미지정", !c, c ? estOf(c.cd, "유형") : false)),
           el("p", {}, item("소속", aff.text, aff.miss, aff.est)));
@@ -869,7 +871,7 @@
   $("f").addEventListener("submit", (e) => {
     e.preventDefault(); clearTimeout(timer);
     const q = norm(qEl.value);
-    const exact = LIST.filter((c) => c.k === q && !hiddenOld(c.cd));
+    const exact = LIST.filter((c) => (c.k === q || hwanOf(c.cd) === q) && !hiddenOld(c.cd));
     if (exact.length === 1) openCoop(exact[0].cd); else search();
   });
   window.addEventListener("popstate", route);
