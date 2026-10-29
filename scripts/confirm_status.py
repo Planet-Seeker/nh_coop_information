@@ -6,7 +6,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 rows = [r for r in csv.DictReader(open(ROOT / "docs/data/meta/coop_meta.csv", encoding="utf-8-sig")) if r["상태"] == "운영"]
 ORDER = ["서울", "부산", "대구", "인천", "광주", "대전", "울산", "경기", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"]
-conf, est, blank, total = (collections.defaultdict(collections.Counter) for _ in range(3)) + (collections.Counter(),)
+conf, est, blank = (collections.defaultdict(collections.Counter) for _ in range(3))
+total = collections.Counter()
 for r in rows:
     h, b = r["소속구역_광역"], r["소속구역_기초"]
     total[h] += 1
