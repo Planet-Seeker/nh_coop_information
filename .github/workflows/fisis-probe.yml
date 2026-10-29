@@ -1,0 +1,28 @@
+name: FISIS 진단
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: FISIS 조회
+        env:
+          FISIS_KEY: ${{ secrets.FISIS_KEY }}
+        run: python scripts/fisis_probe.py
+      - name: 결과 커밋
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A docs/data/probe
+          git diff --cached --quiet || { git commit -m "FISIS 진단 결과"; git pull --rebase -q; git push; }

@@ -250,6 +250,6 @@ PROJECT.md / README.md
 - 금감원 금융통계정보시스템(FISIS) Open API: https://fisis.fss.or.kr/page/api-spec.jsp
   - 금융회사 API(companySearch, partDiv **Q=농업협동조합**), 통계목록(statisticsListSearch, lrgDiv Q: 일반현황 A·재무현황 B·주요경영지표 C·보도자료통계 P), 통계정보(statisticsInfoSearch), 계정항목(accountListSearch)
   - 2014.12 개편 때 농·수·산림조합 1,383곳이 공개 대상에 추가(연체율, 부문별 손익, 유형별 대출채권 등 확대). 지금 쓰는 공공데이터포털 API의 원천으로 보이나 통계표가 더 많을 수 있음
-  - 인증키: 비영리는 신청 즉시 발급, 하루 1만 건. 영리는 서류·승인. 12개월 미사용 시 삭제. 신청폼에 회사명·사업자번호 칸이 있음(개인 신청 가능 여부 확인 필요)
+  - 인증키: 확보함(2026-10-29). 비영리 하루 1만 건 제한(회사명·사업자번호·승인은 영리 이용 조건). 12개월 미사용 시 삭제
   - 할 일: 키 발급 → Secrets(FISIS_KEY) → Q 권역 통계목록 전체와 금융회사 목록(순서·추가 항목) 확인 → 지금 자료에 없는 통계표 추가
 
