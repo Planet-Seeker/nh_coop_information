@@ -51,20 +51,24 @@ def main():
             caps.append(x)
     units = {u["단위"]: u for u in csv.DictReader(open(UNITS, encoding="utf-8-sig"))} if UNITS.exists() else {}
     done, miss, seen_hq = 0, [], {}
+    # 홈페이지에 그 이름 그대로 있는 조합은 끝맞춤·규칙 매칭에서 제외(북상주농협이 상주농협에 붙는 것 방지)
+    exact = {(x["지역본부"].strip(), x["조합명"].strip()) for x in caps}
+    taken = set()   # 이번 실행에서 이미 짝지은 조합(한 조합에 두 줄이 붙지 않게)
     for x in caps:
         hq, unit, nm = x["지역본부"].strip(), x["단위"].strip(), x["조합명"].strip()
         if nm == unit:
             units[unit] = {"지역본부": hq, "단위": unit, "우편번호": x["우편번호"], "주소": x["주소"], "전화번호": x["전화번호"], "출처": x["_src"]}
             continue
         seen_hq.setdefault(hq, set())
-        pool = [r for r in rows if r["상태"] == "운영" and r["소속구역_광역"] == hq]
+        pool = [r for r in rows if r["상태"] == "운영" and r["소속구역_광역"] == hq and code(r["금융회사코드"]) not in taken]
+        loose = [r for r in pool if (hq, r["조합명(참고)"]) not in exact]
         hit = [r for r in pool if r["조합명(참고)"] == nm] or \
               [r for r in pool if nm in [x.strip() for x in (r.get("별칭") or "").split(";")]] or \
-              [r for r in pool if nm.endswith(r["조합명(참고)"]) and len(nm) > len(r["조합명(참고)"])] or \
+              [r for r in loose if nm.endswith(r["조합명(참고)"]) and len(nm) > len(r["조합명(참고)"])] or \
               [r for r in pool if r["조합명(참고)"] == ALIAS.get(nm)] or \
-              [r for r in pool if norm(r["조합명(참고)"]) == norm(nm)]
+              [r for r in loose if norm(r["조합명(참고)"]) == norm(nm)]
         if not hit:   # 금융당국 자료의 지역본부와 홈페이지 조직도가 다른 조합(과천=서울본부 등) 또는 공시가 끊긴 조합: 전체에서 같은 이름 하나
-            alls = [r for r in rows if r["조합명(참고)"] == nm]
+            alls = [r for r in rows if r["조합명(참고)"] == nm and code(r["금융회사코드"]) not in taken]
             live = [r for r in alls if r["상태"] == "운영"]
             hit = live if len(live) == 1 else alls if len(alls) == 1 else []
         if len(hit) > 1:   # 같은 본부에 같은 이름(당진·아산 송악농협 등): 주소의 시군과 위치(행정구역 기초)가 같은 쪽
@@ -74,6 +78,7 @@ def main():
             miss.append(f"{x['_src']}: {nm} (후보 {len(hit)}곳)")
             continue
         r = hit[0]
+        taken.add(code(r["금융회사코드"]))
         seen_hq[hq].add(code(r["금융회사코드"]))
         est = [e for e in r.get("추정", "").split(";") if e]
         fsc_hq = r["소속구역_광역"]
