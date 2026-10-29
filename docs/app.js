@@ -405,7 +405,7 @@
       return a ? ` · 옛 이름 ${a}${stOf(h.cd).prevEst ? "(추정)" : ""}` : "";
     };
     const item = (h) => el("li", {}, el("button", { type: "button", class: "hit" + (gone(h) ? " gone" : ""), onclick: () => openCoop(h.cd) },
-      el("span", { class: "hit-nm" }, highlight(h.nm, q)),
+      el("span", { class: "hit-nm" }, highlight(h.nm, q), h.oldNm ? el("small", { class: "old" }, ` (구 ${h.oldNm})`) : null),
       el("span", { class: "hit-meta" },
         `${(() => { const a = affOf(h.cd); return a.aff1 ? `${a.aff1}${a.est1 ? "(추정)" : ""}` : h.rc === "17" ? h.region : `${h.region}(추정)`; })()} · ${typeText(h)}${isCode ? ` · ${hwanOf(h.cd)}` : tag(h)}${aliasText(h)}${gone(h) ? goneText(h) : ""}`),
       el("span", { class: "hit-go", "aria-hidden": "true" }, "›")));
@@ -466,6 +466,9 @@
     for (let y = years[0]; y < years[years.length - 1]; y++) if (!years.includes(y)) gaps.push(`${y}년`);
     if (gaps.length) lines.push([`공시 자료 끊김: ${gaps.join(", ")}`]);
     const mt = META.get(coop.cd) || {};
+    const C = BYCD.get(coop.cd);
+    if (C && C.oldNm)                                       // 현재 이름이 공시 이름과 다른 조합(최근 개칭·합병)
+      lines.push([`${mt["명칭변경"] || `현재 이름은 ${C.nm}입니다.`} 금융당국 공시 자료(${ymLabel(INDEX.latest)} 기준)에는 ${C.oldNm}으로 되어 있습니다.`]);
     if (mt["공시지역"] && mt["소속구역_광역"] && mt["공시지역"] !== mt["소속구역_광역"])   // 조직도 소속과 금융당국 지역분류가 다른 조합
       lines.push([`소속은 농협중앙회 조직도상 ${mt["소속구역_광역"]}지역본부이지만, 금융당국 제출 지역분류는 ${mt["공시지역"]}입니다. 순위는 ${regionLabel(mt["공시지역"])} 기준으로 매깁니다.`]);
     const mm = MISMATCH[coop.cd] || [];
@@ -559,8 +562,8 @@
         // 사이트 녹색 핀(이미지 없이 SVG, 테마 색은 CSS 변수로)
         const pin = L.divIcon({ className: "pin", iconSize: [28, 36], iconAnchor: [14, 34], tooltipAnchor: [0, -30],
           html: '<svg viewBox="0 0 28 36" width="28" height="36" aria-hidden="true"><path class="pin-body" d="M14 1C7 1 1.5 6.4 1.5 13.2 1.5 22 14 35 14 35s12.5-13 12.5-21.8C26.5 6.4 21 1 14 1z"/><circle class="pin-dot" cx="14" cy="13" r="4.6"/></svg>' });
-        L.marker(ll, { icon: pin, keyboard: false, title: coop.nm }).addTo(entry.map)
-          .bindTooltip(coop.nm, { permanent: true, direction: "top", className: "pin-label" });
+        L.marker(ll, { icon: pin, keyboard: false, title: (BYCD.get(coop.cd) || coop).nm }).addTo(entry.map)
+          .bindTooltip((BYCD.get(coop.cd) || coop).nm, { permanent: true, direction: "top", className: "pin-label" });
       } else entry.map.invalidateSize();
     });
     return box;
@@ -580,7 +583,8 @@
 
     // 조합명 · 위치·구분(1행) · 소속(2행) → 주요 지표 → 카드. 이 왼쪽 묶음 높이를 오른쪽 정사각형 지도와 맞춤.
     const title = [
-      el("h2", { class: "d-name" }, coop.nm, hwanOf(coop.cd) ? el("span", { class: "hwan" }, ` (${hwanOf(coop.cd)})`) : null),   // 환코드(금융회사코드 끝 6자리)
+      el("h2", { class: "d-name" }, (BYCD.get(coop.cd) || coop).nm,
+        BYCD.get(coop.cd)?.oldNm ? el("span", { class: "old" }, `(구 ${BYCD.get(coop.cd).oldNm})`) : null, hwanOf(coop.cd) ? el("span", { class: "hwan" }, ` (${hwanOf(coop.cd)})`) : null),   // 환코드(금융회사코드 끝 6자리)
       (() => {                                              // 본점소재지(주소), 위치 · 구분(유형), 소속. 금융회사코드·법인등록번호는 표시하지 않음
         const c = LIST.find((x) => x.cd === coop.cd);
         const [loc, aff] = regionLines(coop.cd);
@@ -927,6 +931,9 @@
         const c = { cd, nm, ym, k: norm(nm), ...classify(cd, nm) };
         const mt = (META.get(cd) || {})["유형"];               // meta.csv 유형이 있으면 그 값을 우선
         if (c.kind === "coop" && ["지역농협", "지역축협", "품목농협", "품목축협"].includes(mt)) c.type = mt;
+        // 현재 이름(홈페이지·기사로 확인한 개칭·합병 후 이름)이 공시 이름과 다르면 현재 이름을 주 이름으로. 공시 이름이 바뀌면 저절로 해제
+        const cur = ((META.get(cd) || {})["현재명칭"] || "").trim();
+        if (c.kind === "coop" && cur && cur !== nm) { c.oldNm = nm; c.nm = cur; c.k = norm(cur); }
         if (c.kind === "coop") { LIST.push(c); BYCD.set(cd, c); }
         else if (c.kind === "sido") AGG.sido.set(c.sido, c);
         else if (c.kind === "nation") AGG.nation = c;
@@ -934,7 +941,7 @@
       if (!INDEX.months || !INDEX.months.length) throw new Error("empty");
       for (const c of LIST) {                               // 옛 이름(검색용)·승계 관계
         const s = stOf(c.cd);
-        c.alias = [...s.prev, ...((META.get(c.cd) || {})["별칭"] || "").split(";")].map((x) => x.trim()).filter(Boolean).map(norm);   // 옛 이름·홈페이지 표기 이름도 검색
+        c.alias = [...s.prev, ...(c.oldNm ? [c.oldNm] : []), ...((META.get(c.cd) || {})["별칭"] || "").split(";")].map((x) => x.trim()).filter(Boolean).map(norm);   // 옛 이름·홈페이지 표기 이름도 검색
         if (s.succ && s.st !== "운영") PRED.set(s.succ, [...(PRED.get(s.succ) || []), c.cd]);
       }
     } catch {
