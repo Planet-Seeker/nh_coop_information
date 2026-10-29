@@ -904,7 +904,7 @@
       if (!INDEX.months || !INDEX.months.length) throw new Error("empty");
       for (const c of LIST) {                               // 옛 이름(검색용)·승계 관계
         const s = stOf(c.cd);
-        c.alias = s.prev.map(norm);
+        c.alias = [...s.prev, ...((META.get(c.cd) || {})["별칭"] || "").split(";")].map((x) => x.trim()).filter(Boolean).map(norm);   // 옛 이름·홈페이지 표기 이름도 검색
         if (s.succ && s.st !== "운영") PRED.set(s.succ, [...(PRED.get(s.succ) || []), c.cd]);
       }
     } catch {

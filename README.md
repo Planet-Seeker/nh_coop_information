@@ -1,4 +1,4 @@
-# nh_coop_information
+# 농축협정보검색기 (nh_coop_information)
 대한민국 농업협동조합(지역농협·품목조합·축협)의 일반현황·재무현황·경영지표를 조합명으로 검색해 연도별 추이와 함께 보여주는 웹 서비스입니다.
 
 - 사이트: https://planet-seeker.github.io/nh_coop_information/
