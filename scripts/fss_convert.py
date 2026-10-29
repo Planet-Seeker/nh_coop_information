@@ -2,7 +2,7 @@
 """금감원 FISIS 조회 결과(statisticsInfoSearch 행 목록)를 사이트 형식으로 저장.
   docs/data/fss/coop/<코드>.json  {"cd","src":"fss","d":{기준년월:{표:[[항목코드,값],...]}}}
   docs/data/fss/codes.json        {표:{항목코드:항목명}}
-금융위원회 자료와 별도 출처로 보관(금감원 자료는 공식 통계 아님 → 화면에서 금융위원회 값 우선, 다르면 병기).
+금융위원회 자료와 별도 출처로 보관(금감원 자료는 국가승인통계 아님 → 화면에서 금융위원회 값 우선, 다르면 병기).
 사용: python3 scripts/fss_convert.py docs/data/probe/fisis_span_<코드>.json"""
 import json, sys
 from pathlib import Path
