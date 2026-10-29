@@ -111,7 +111,7 @@
     const me = affOf(cd);
     const adm = (k) => { const m = META.get(k) || {}; return m["행정구역_광역"] && m["행정구역_기초"] ? `${m["행정구역_광역"]} ${m["행정구역_기초"]}` : ""; };
     const myAdm = adm(cd);
-    const out = [["전국", 0, 0], [me.aff1 ? (me.est1 ? `${me.aff1}(추정)` : me.aff1) : "", 0, 0], [myAdm ? myAdm.split(" ")[1] : "", 0, 0]];
+    const out = [["전국", 0, 0], [me.aff1 ? (me.est1 ? `${me.aff1}(추정)` : me.aff1) : "", 0, 0], [myAdm ? myAdm.split(" ")[1] + (estOf(cd, "행정구역_기초") ? "(추정)" : "") : "", 0, 0]];
     for (const [k, vals] of Object.entries(d.rows)) {
       const v = vals[i];
       if (v == null) continue;

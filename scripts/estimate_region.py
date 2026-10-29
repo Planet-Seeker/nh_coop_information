@@ -4,7 +4,8 @@
 (사용자가 직접 확인한 열만 '추정'에서 지운다). 화면은 추정만 "(추정)"으로 표시.
 meta.csv의 빈 칸을 추정값으로 채우고, 채운 열 이름을 '추정' 열에 남긴다(수동 실행, 이미 적힌 값은 보존).
   유형        조합명 규칙(화면 app.js coopType과 같음): 지역농협·지역축협·품목농협·품목축협
-  소속구역    지역농협 → 지역본부(광역) + 시군지부(기초, 시·군만 지부가 있고 광역시 구는 직할), 그 밖(지역축협·품목농협·품목축협) → 지역본부 직할
+  소속구역    지역농협 → 지역본부(광역) + 시군지부(기초, 시·군만 지부가 있고 광역시 구는 직할), 그 밖
+  행정구역    추정한 시군과 그 시도(위치 기준, 기초 순위에 사용)(지역축협·품목농협·품목축협) → 지역본부 직할
 시군 추정 순서
   1) 조합명에 시군 이름이 있으면 그 시군(예: 남김천농협 → 김천시). 단, 금융회사코드 권역과 맞지 않으면 버림
      (예: 포항 동해면의 동해농협이 강원 동해시로 잡히는 것 방지)
@@ -84,15 +85,25 @@ def code_sido(cd):
     return CODE_SIDO.get(rc) or CODE_SIDO.get(rc[0]) or set()
 
 
-def by_name(cd, nm):
-    """조합명에서 (시도, 시군). 가장 앞에 나오는 조각, 같은 위치면 긴 조각. 코드 권역과 맞지 않으면 제외."""
-    ok = code_sido(cd) if cd[7:9] != "17" else None
+# 소속 지역본부(금감원 원본, 금융위원회 시도 합계로 검증) → 위치 시도로 가능한 곳
+HQ_OK = {"서울": {"서울", "경기"}, "부산": {"부산", "경남"}, "대구": {"대구", "경북"}, "인천": {"인천", "경기"},
+         "광주": {"광주", "전남"}, "대전": {"대전", "충남", "세종"}, "울산": {"울산", "경남"}, "경기": {"경기"},
+         "강원": {"강원"}, "충북": {"충북", "세종"}, "충남": {"충남", "세종", "대전"}, "전북": {"전북"},
+         "전남": {"전남", "광주"}, "경북": {"경북", "대구"}, "경남": {"경남", "부산", "울산"}, "제주": {"제주"}}
+
+
+def by_name(cd, nm, hq=""):
+    """조합명에서 (시도, 시군). 시군까지 잡히는 조각 → 앞에 나오는 조각 → 긴 조각 순.
+    소속 지역본부(원본)와 금융회사코드 권역(축산계 제외) 양쪽과 맞는 시도만."""
+    cs = code_sido(cd) if cd[7:9] != "17" else None
+    hs = HQ_OK.get(hq)
+    ok = (hs & cs) if hs and cs else (hs or cs)       # 지역본부와 코드 권역을 모두 만족(예: 대구 코드의 칠곡농협은 경북 칠곡군이 아님)
     best = None
     for stem, sido, full in STEMS:
         i = nm.find(stem)
         if i < 0 or (ok is not None and sido not in ok):
             continue
-        key = (i, -len(stem))
+        key = (not full, i, -len(stem))          # 시군까지 잡히는 조각 우선(예: 인천강화옹진축협 → 강화군)
         if best is None or key < best[0]:
             best = (key, sido, full)
     return (best[1], best[2]) if best else None
@@ -108,11 +119,21 @@ def main():
     code = lambda v: (v or "").strip().lstrip("=").strip('"')
     names = {code(r["금융회사코드"]): r["조합명(참고)"] for r in rows}
 
-    guess = {cd: by_name(cd, nm) for cd, nm in names.items()}
+    hq_of = {code(r["금융회사코드"]): (r["소속구역_광역"] if "소속구역_광역" not in (r.get("추정") or "") else "") for r in rows}
+    guess = {cd: by_name(cd, nm, hq_of.get(cd, "")) for cd, nm in names.items()}
+    # 코드군 다수결: 같은 코드군·같은 지역본부에서 이름으로 시군이 잡힌 조합이 2곳 이상이고 70% 이상 한 시군일 때만
+    # (광역시 구는 한 코드군에 여러 구가 섞여 다수결로 정하지 않음)
     grp = {}
     for cd, g in guess.items():
         if g and g[1] and cd[7:9] != "17":
-            grp.setdefault(cd[7:10], Counter())[g] += 1
+            grp.setdefault((cd[7:10], hq_of.get(cd, "")), Counter())[g] += 1
+
+    def group_pick(cd):
+        c = grp.get((cd[7:10], hq_of.get(cd, "")))
+        if not c:
+            return None
+        (top, n), total = c.most_common(1)[0], sum(c.values())
+        return top if n >= 2 and n / total >= 0.7 and not top[1].endswith("구") else None
 
     stat = Counter()
     for r in rows:
@@ -122,12 +143,18 @@ def main():
             est.append("유형")                      # 지금까지의 유형은 모두 이름 규칙으로 정한 값
         if not r["유형"]:
             r["유형"] = coop_type(cd, r["조합명(참고)"]); est.append("유형")
+        # 추정 표시가 붙은 칸은 매번 다시 계산(원본·직접 확인한 칸은 그대로)
+        for col in ("소속구역_기초", "행정구역_광역", "행정구역_기초"):
+            if col in est:
+                r[col] = ""
+                est.remove(col)
         g = guess[cd]
         if (not g or not g[1]) and cd[7:9] != "17":
-            if cd[7:10] in GROUP:
+            hq = hq_of.get(cd, "")
+            if cd[7:10] in GROUP and (not hq or GROUP[cd[7:10]][0] in HQ_OK.get(hq, {GROUP[cd[7:10]][0]})):
                 g = GROUP[cd[7:10]]
-            elif cd[7:10] in grp:
-                g = grp[cd[7:10]].most_common(1)[0][0]
+            else:
+                g = group_pick(cd) or g
         sido = g[0] if g else ""
         sigun = g[1] if g else ""
         if not sido:
@@ -135,11 +162,20 @@ def main():
             sido = next(iter(cs)) if len(cs) == 1 else ""
         if not r["소속구역_광역"] and sido:
             r["소속구역_광역"] = sido; est.append("소속구역_광역")
+        METRO = {"서울", "부산", "대구", "인천", "광주", "대전", "울산"}
         if not r["소속구역_기초"]:
-            # 지부는 시·군에만 있음(광역시 구는 지부가 없어 지역본부 직할)
-            v = (sigun if r["유형"] == "지역농협" and not sigun.endswith("구") else "직할" if sigun or r["유형"] != "지역농협" else "")
+            # 지부는 시·군에만 있음(광역시 구는 지부가 없어 지역본부 직할).
+            # 시군을 못 정해도 소속 지역본부가 광역시이고 군 지역이 아니면 직할로 봄(예: 대구 시내 지역농협)
+            if r["유형"] != "지역농협" or sigun.endswith("구") or (not sigun and r["소속구역_광역"] in METRO):
+                v = "직할"
+            else:
+                v = sigun
             if v and (sido or v == "직할"):
                 r["소속구역_기초"] = v; est.append("소속구역_기초")
+        # 행정구역(위치) 추정: 조합명·코드군으로 정한 시군과 그 시군이 속한 시도(지역본부와 다를 수 있음, 예: 과천=경기 과천시·서울본부)
+        if not r["행정구역_광역"] and not r["행정구역_기초"] and g and g[1]:
+            r["행정구역_광역"], r["행정구역_기초"] = g[0], g[1]
+            est += ["행정구역_광역", "행정구역_기초"]
         if re.search(r"자동 추정|^확인:|^정황:", r["비고"] or ""):   # 합병·승계·옛 이름도 원자료가 아닌 추정
             est += [c for c in ("상태", "승계조합코드", "이전명칭") if code(r.get(c)) and not (c == "상태" and r[c] == "운영")]
         r["추정"] = ";".join(dict.fromkeys(est))
