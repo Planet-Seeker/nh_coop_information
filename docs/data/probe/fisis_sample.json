@@ -63,11 +63,445 @@
      "account_nm": "조합원"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "임 원",
+     "a": "40"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "임 원_상근 이사 및 감사",
+     "a": "3"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "임 원_비상근 이사 및 감사",
+     "a": "14"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "임 원_전무 및 상무",
+     "a": "23"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "직 원",
+     "a": "245"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "직 원_정규직원",
+     "a": "221"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A25",
+     "account_nm": "직 원_비정규직원",
+     "a": "24"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총임직원",
+     "a": "285"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "조합원",
+     "a": "5578"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "임 원",
+     "a": "35"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "임 원_상근 이사 및 감사",
+     "a": "3"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "임 원_비상근 이사 및 감사",
+     "a": "11"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "임 원_전무 및 상무",
+     "a": "21"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "직 원",
+     "a": "241"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "직 원_정규직원",
+     "a": "217"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A25",
+     "account_nm": "직 원_비정규직원",
+     "a": "24"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총임직원",
+     "a": "276"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "조합원",
+     "a": "5628"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "임 원",
+     "a": "34"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "임 원_상근 이사 및 감사",
+     "a": "3"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "임 원_비상근 이사 및 감사",
+     "a": "10"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "임 원_전무 및 상무",
+     "a": "21"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "직 원",
+     "a": "230"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "직 원_정규직원",
+     "a": "208"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A25",
+     "account_nm": "직 원_비정규직원",
+     "a": "22"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총임직원",
+     "a": "264"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "조합원",
+     "a": "5553"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "임 원",
+     "a": "38"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "임 원_상근 이사 및 감사",
+     "a": "3"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "임 원_비상근 이사 및 감사",
+     "a": "14"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "임 원_전무 및 상무",
+     "a": "21"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "직 원",
+     "a": "231"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "직 원_정규직원",
+     "a": "211"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A25",
+     "account_nm": "직 원_비정규직원",
+     "a": "20"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총임직원",
+     "a": "269"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "조합원",
+     "a": "5576"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "임 원",
+     "a": "38"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "임 원_상근 이사 및 감사",
+     "a": "3"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "임 원_비상근 이사 및 감사",
+     "a": "14"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "임 원_전무 및 상무",
+     "a": "21"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "직 원",
+     "a": "227"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "직 원_정규직원",
+     "a": "209"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A25",
+     "account_nm": "직 원_비정규직원",
+     "a": "18"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총임직원",
+     "a": "265"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "조합원",
+     "a": "5445"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "임 원",
+     "a": "38"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "임 원_상근 이사 및 감사",
+     "a": "3"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "임 원_비상근 이사 및 감사",
+     "a": "14"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "임 원_전무 및 상무",
+     "a": "21"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "직 원",
+     "a": "218"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "직 원_정규직원",
+     "a": "202"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A25",
+     "account_nm": "직 원_비정규직원",
+     "a": "16"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총임직원",
+     "a": "256"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "조합원",
+     "a": "5465"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ002": {
    "name": "회원조합수 현황",
@@ -95,7 +529,8 @@
    "err": [
     "101",
     "financeCd의 부적절한 값"
-   ]
+   ],
+   "term": null
   },
   "SQ003": {
    "name": "요약재무상태표(자산)",
@@ -359,11 +794,553 @@
      "account_nm": "자산총계"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "현금 및 예치금",
+     "a": "380114255781",
+     "b": "20.76"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "현금 및 예치금_현금",
+     "a": "8055460751",
+     "b": ".44"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "현금 및 예치금_예치금",
+     "a": "372058795030",
+     "b": "20.32"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A120",
+     "account_nm": "현금 및 예치금_예치금_상환준비금",
+     "a": "165968000000",
+     "b": "9.06"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A121",
+     "account_nm": "현금 및 예치금_예치금_대내예치금",
+     "a": "192090795030",
+     "b": "10.49"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A122",
+     "account_nm": "현금 및 예치금_예치금_대외예치금",
+     "a": "14000000000",
+     "b": ".76"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A123",
+     "account_nm": "현금 및 예치금_예치금_기타예치금",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "유가증권",
+     "a": "29499133257",
+     "b": "1.61"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A23",
+     "account_nm": "유가증권_단기매매증권",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "유가증권_매도가능증권",
+     "a": "29499133257",
+     "b": "1.61"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A25",
+     "account_nm": "유가증권_만기보유증권",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "대출채권",
+     "a": "1265391772127",
+     "b": "69.11"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A32",
+     "account_nm": "대출채권_상호금융대출금",
+     "a": "1290531104564",
+     "b": "70.49"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A320",
+     "account_nm": "대출채권_상호금융대출금_(대손충당금)",
+     "a": "-34406491158",
+     "b": "-1.88"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A33",
+     "account_nm": "대출채권_정책자금대출금",
+     "a": "9396643585",
+     "b": ".51"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A330",
+     "account_nm": "대출채권_정책자금대출금_(대손충당금)",
+     "a": "-129484864",
+     "b": "-.01"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A34",
+     "account_nm": "대출채권_기타",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A340",
+     "account_nm": "대출채권_기타_(대손충당금)",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A4",
+     "account_nm": "유형자산",
+     "a": "14534375829",
+     "b": ".79"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A42",
+     "account_nm": "유형자산_토지",
+     "a": "4695579163",
+     "b": ".26"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A420",
+     "account_nm": "유형자산_토지_(손상차손누계액)",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A43",
+     "account_nm": "유형자산_건물",
+     "a": "12382470061",
+     "b": ".68"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A430",
+     "account_nm": "유형자산_건물_(감가상각누계액)",
+     "a": "-3216448055",
+     "b": "-.18"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A431",
+     "account_nm": "유형자산_건물_(손상차손누계액)",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A44",
+     "account_nm": "유형자산_기타",
+     "a": "5990710212",
+     "b": ".33"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A440",
+     "account_nm": "유형자산_기타_(감가상각누계액)",
+     "a": "-5317935552",
+     "b": "-.29"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A441",
+     "account_nm": "유형자산_기타_(손상차손누계액)",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A5",
+     "account_nm": "기타자산",
+     "a": "18235569899",
+     "b": "1"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A58",
+     "account_nm": "기타자산_신용카드채권",
+     "a": "2502773806",
+     "b": ".14"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A580",
+     "account_nm": "기타자산_신용카드채권_(대손충당금)",
+     "a": "-286907899",
+     "b": "-.02"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A51",
+     "account_nm": "기타자산_비업무용자산",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A52",
+     "account_nm": "기타자산_보증금",
+     "a": "4660000000",
+     "b": ".25"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A53",
+     "account_nm": "기타자산_미수수익",
+     "a": "7314140348",
+     "b": ".4"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A54",
+     "account_nm": "기타자산_미수금",
+     "a": "1465412",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A540",
+     "account_nm": "기타자산_미수금_(대손충당금)",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A55",
+     "account_nm": "기타자산_가지급금",
+     "a": "44681852",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A550",
+     "account_nm": "기타자산_가지급금_(대손충당금)",
+     "a": "-29507085",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A56",
+     "account_nm": "기타자산_선급비용",
+     "a": "1984923465",
+     "b": ".11"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A57",
+     "account_nm": "기타자산_무형자산",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A59",
+     "account_nm": "기타자산_타회계자금수수",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A5A",
+     "account_nm": "기타자산_기타",
+     "a": "2044000000",
+     "b": ".11"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A6",
+     "account_nm": "비신용사업계정",
+     "a": "123094667465",
+     "b": "6.72"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "자산총계",
+     "a": "1830869774358",
+     "b": "100"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "현금 및 예치금",
+     "a": "461115847377",
+     "b": "24.16"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "현금 및 예치금_현금",
+     "a": "8075537608",
+     "b": ".42"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "현금 및 예치금_예치금",
+     "a": "453040309769",
+     "b": "23.74"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A120",
+     "account_nm": "현금 및 예치금_예치금_상환준비금",
+     "a": "172273000000",
+     "b": "9.03"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A121",
+     "account_nm": "현금 및 예치금_예치금_대내예치금",
+     "a": "265767309769",
+     "b": "13.92"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A122",
+     "account_nm": "현금 및 예치금_예치금_대외예치금",
+     "a": "15000000000",
+     "b": ".79"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A123",
+     "account_nm": "현금 및 예치금_예치금_기타예치금",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "유가증권",
+     "a": "29988322236",
+     "b": "1.57"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A23",
+     "account_nm": "유가증권_단기매매증권",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "유가증권_매도가능증권",
+     "a": "29988322236",
+     "b": "1.57"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A25",
+     "account_nm": "유가증권_만기보유증권",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "대출채권",
+     "a": "1257712745481",
+     "b": "65.89"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A32",
+     "account_nm": "대출채권_상호금융대출금",
+     "a": "1282469702317",
+     "b": "67.19"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A320",
+     "account_nm": "대출채권_상호금융대출금_(대손충당금)",
+     "a": "-34440487972",
+     "b": "-1.8"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A33",
+     "account_nm": "대출채권_정책자금대출금",
+     "a": "9813016000",
+     "b": ".51"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A330",
+     "account_nm": "대출채권_정책자금대출금_(대손충당금)",
+     "a": "-129484864",
+     "b": "-.01"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A34",
+     "account_nm": "대출채권_기타",
+     "a": "0",
+     "b": "0"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ004": {
    "name": "요약재무상태표(부채 및 자본)",
@@ -609,11 +1586,553 @@
      "account_nm": "부채 및 자본총계"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "예수부채",
+     "a": "1675716141306",
+     "b": "91.53"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "예수부채_요구불예금",
+     "a": "119955082067",
+     "b": "6.55"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "예수부채_기한부예금",
+     "a": "1555233881010",
+     "b": "84.95"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "예수부채_기타예금",
+     "a": "527178229",
+     "b": ".03"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "차입부채",
+     "a": "10375511110",
+     "b": ".57"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "차입부채_상호금융차입금",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "차입부채_정책자금차입금",
+     "a": "9395438585",
+     "b": ".51"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A23",
+     "account_nm": "차입부채_기타",
+     "a": "980072525",
+     "b": ".05"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타부채",
+     "a": "30655007296",
+     "b": "1.67"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타부채_퇴직급여충당부채",
+     "a": "10186342187",
+     "b": ".56"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A32",
+     "account_nm": "기타부채_미지급비용",
+     "a": "24841507660",
+     "b": "1.36"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A33",
+     "account_nm": "기타부채_미지급금",
+     "a": "832592896",
+     "b": ".05"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A34",
+     "account_nm": "기타부채_제세예수금",
+     "a": "991424210",
+     "b": ".05"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A35",
+     "account_nm": "기타부채_미지급법인세",
+     "a": "629291740",
+     "b": ".03"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A36",
+     "account_nm": "기타부채_대리점미지급금",
+     "a": "166485510",
+     "b": ".01"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A37",
+     "account_nm": "기타부채_지로예수금",
+     "a": "9718994",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A38",
+     "account_nm": "기타부채_선수수익",
+     "a": "2314214",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A39",
+     "account_nm": "기타부채_타회계자금수수",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3A",
+     "account_nm": "기타부채_기타",
+     "a": "2070817989",
+     "b": ".11"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "AB",
+     "account_nm": "비신용사업계정",
+     "a": "18493356073",
+     "b": "1.01"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A4",
+     "account_nm": "부채총계",
+     "a": "1735240015785",
+     "b": "94.78"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A5",
+     "account_nm": "출자금",
+     "a": "41883550502",
+     "b": "2.29"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A6",
+     "account_nm": "자본잉여금",
+     "a": "5708842416",
+     "b": ".31"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A61",
+     "account_nm": "자본잉여금_재평가 적립금",
+     "a": "5109068475",
+     "b": ".28"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A62",
+     "account_nm": "자본잉여금_기타자본잉여금",
+     "a": "599773941",
+     "b": ".03"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A7",
+     "account_nm": "자본조정",
+     "a": "-305537021",
+     "b": "-.02"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A8",
+     "account_nm": "기타포괄손익누계액",
+     "a": "-646441067",
+     "b": "-.04"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A84",
+     "account_nm": "기타포괄손익누계액_매도가능증권평가이익",
+     "a": "296336850",
+     "b": ".02"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A85",
+     "account_nm": "기타포괄손익누계액_매도가능증권평가손실",
+     "a": "-942777917",
+     "b": "-.05"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A86",
+     "account_nm": "기타포괄손익누계액_만기보유증권평가이익",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A87",
+     "account_nm": "기타포괄손익누계액_만기보유증권평가손실",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A83",
+     "account_nm": "기타포괄손익누계액_재평가이익",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A9",
+     "account_nm": "이익잉여금(또는 이월결손금)",
+     "a": "48989343743",
+     "b": "2.68"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A91",
+     "account_nm": "이익잉여금(또는 이월결손금)_법정적립금",
+     "a": "26183977402",
+     "b": "1.43"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A92",
+     "account_nm": "이익잉여금(또는 이월결손금)_임의적립금",
+     "a": "15802018003",
+     "b": ".86"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A93",
+     "account_nm": "이익잉여금(또는 이월결손금)_기타적립금",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A94",
+     "account_nm": "이익잉여금(또는 이월결손금)_미처분이익잉여금(미처리결손금)",
+     "a": "7003348338",
+     "b": ".38"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "AC",
+     "account_nm": "(당기순이익 또는 당기순손실)",
+     "a": "5800448338",
+     "b": ".32"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "AA",
+     "account_nm": "자본총계",
+     "a": "95629758573",
+     "b": "5.22"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "부채 및 자본총계",
+     "a": "1830869774358",
+     "b": "100"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "예수부채",
+     "a": "1750921806743",
+     "b": "91.73"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "예수부채_요구불예금",
+     "a": "133831798100",
+     "b": "7.01"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "예수부채_기한부예금",
+     "a": "1616538983501",
+     "b": "84.69"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "예수부채_기타예금",
+     "a": "551025142",
+     "b": ".03"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "차입부채",
+     "a": "10869878668",
+     "b": ".57"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "차입부채_상호금융차입금",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "차입부채_정책자금차입금",
+     "a": "9813016000",
+     "b": ".51"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A23",
+     "account_nm": "차입부채_기타",
+     "a": "1056862668",
+     "b": ".06"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타부채",
+     "a": "27630942698",
+     "b": "1.45"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타부채_퇴직급여충당부채",
+     "a": "10612011187",
+     "b": ".56"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A32",
+     "account_nm": "기타부채_미지급비용",
+     "a": "22713957079",
+     "b": "1.19"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A33",
+     "account_nm": "기타부채_미지급금",
+     "a": "724380436",
+     "b": ".04"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A34",
+     "account_nm": "기타부채_제세예수금",
+     "a": "285736700",
+     "b": ".01"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A35",
+     "account_nm": "기타부채_미지급법인세",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A36",
+     "account_nm": "기타부채_대리점미지급금",
+     "a": "545599270",
+     "b": ".03"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A37",
+     "account_nm": "기타부채_지로예수금",
+     "a": "10830377",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A38",
+     "account_nm": "기타부채_선수수익",
+     "a": "1331239",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A39",
+     "account_nm": "기타부채_타회계자금수수",
+     "a": "0",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3A",
+     "account_nm": "기타부채_기타",
+     "a": "1812584514",
+     "b": ".09"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "AB",
+     "account_nm": "비신용사업계정",
+     "a": "17838638595",
+     "b": ".93"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ005": {
    "name": "요약손익계산서",
@@ -1015,11 +2534,493 @@
      "account_nm": "당기순이익"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "영업수익",
+     "b": "113784858156"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "이자수익",
+     "b": "98538435848"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A111",
+     "account_nm": "이자수익_예치금이자",
+     "b": "10456032314"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1111",
+     "account_nm": "이자수익_예치금이자_상환준비금이자",
+     "b": "3314458754"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1112",
+     "account_nm": "이자수익_예치금이자_대내예치금이자",
+     "b": "7141573560"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1113",
+     "account_nm": "이자수익_예치금이자_대외예치금이자",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A112",
+     "account_nm": "이자수익_유가증권이자",
+     "b": "1068776687"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A113",
+     "account_nm": "이자수익_대출채권이자",
+     "b": "76533140091"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A114",
+     "account_nm": "이자수익_기타이자수익",
+     "b": "10480486756"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "유가증권평가 및 처분이익",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "대출채권평가 및 처분이익",
+     "b": "616291458"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A131",
+     "account_nm": "대출채권평가 및 처분이익_제대출금대손충당금환입",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A132",
+     "account_nm": "대출채권평가 및 처분이익_대출채권처분이익",
+     "b": "616291458"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A14",
+     "account_nm": "수수료수익",
+     "b": "7755290900"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A141",
+     "account_nm": "수수료수익_수입수수료",
+     "b": "3015731736"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A142",
+     "account_nm": "수수료수익_공제수수료",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A144",
+     "account_nm": "수수료수익_신용카드수탁취급수수료(카드수입수수료)",
+     "b": "3687831455"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A143",
+     "account_nm": "수수료수익_기타수입수수료",
+     "b": "1051727709"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A15",
+     "account_nm": "기타영업수익",
+     "b": "6874839950"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "영업비용",
+     "b": "90957465728"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "이자비용",
+     "b": "45619790739"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A211",
+     "account_nm": "이자비용_예수부채이자",
+     "b": "44645700862"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A212",
+     "account_nm": "이자비용_차입부채이자",
+     "b": "92212486"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A213",
+     "account_nm": "이자비용_기타이자비용",
+     "b": "881877391"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "유가증권평가 및 처분손실",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A23",
+     "account_nm": "대출채권평가 및 처분손실",
+     "b": "1947726272"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A231",
+     "account_nm": "대출채권평가 및 처분손실_제대출금대손충당금환입",
+     "b": "1663000000"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A232",
+     "account_nm": "대출채권평가 및 처분손실_대출채권처분이익",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "수수료비용",
+     "b": "1672617958"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A241",
+     "account_nm": "수수료비용_지급수수료",
+     "b": "181258140"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A242",
+     "account_nm": "수수료비용_신용카드수탁취급비용(카드지급수수료)",
+     "b": "1491359818"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A243",
+     "account_nm": "수수료비용_기타",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A25",
+     "account_nm": "기타영업비용",
+     "b": "20612242790"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A26",
+     "account_nm": "판매비와 관리비",
+     "b": "21105087969"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A261",
+     "account_nm": "판매비와 관리비_인건비",
+     "b": "8905996139"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A263",
+     "account_nm": "판매비와 관리비_퇴직급여",
+     "b": "2149124001"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A264",
+     "account_nm": "판매비와 관리비_복리후생비",
+     "b": "5421710752"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A265",
+     "account_nm": "판매비와 관리비_임차료",
+     "b": "336500690"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A266",
+     "account_nm": "판매비와 관리비_접대비",
+     "b": "394797910"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A267",
+     "account_nm": "판매비와 관리비_감가상각비",
+     "b": "567380592"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A268",
+     "account_nm": "판매비와 관리비_무형자산상각비",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A269",
+     "account_nm": "판매비와 관리비_세금과공과",
+     "b": "73845987"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A262",
+     "account_nm": "판매비와 관리비_기타 경비",
+     "b": "3255731898"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "영업이익",
+     "b": "22827392428"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A4",
+     "account_nm": "영업외수익",
+     "b": "26618265582"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A41",
+     "account_nm": "영업외수익_유형자산처분이익",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A42",
+     "account_nm": "영업외수익_유형자산손상차손환입",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A43",
+     "account_nm": "영업외수익_비업무용자산처분이익",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A44",
+     "account_nm": "영업외수익_임대료",
+     "b": "332963632"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A45",
+     "account_nm": "영업외수익_자산수증이익",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A46",
+     "account_nm": "영업외수익_내부수익",
+     "b": "25874837272"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A47",
+     "account_nm": "영업외수익_전기오류수정이익",
+     "b": "1367385"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A48",
+     "account_nm": "영업외수익_기타",
+     "b": "409097293"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A5",
+     "account_nm": "영업외비용",
+     "b": "26064678427"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A51",
+     "account_nm": "영업외비용_유형자산처분손실",
+     "b": "63409"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A52",
+     "account_nm": "영업외비용_유형자산손상차손",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A53",
+     "account_nm": "영업외비용_비업무용자산처분손실",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A54",
+     "account_nm": "영업외비용_전기오류수정손실",
+     "b": "414831"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A55",
+     "account_nm": "영업외비용_기부금",
+     "b": "170000000"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A56",
+     "account_nm": "영업외비용_내부비용",
+     "b": "25735097057"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ006": {
    "name": "주요자금조달및운용",
@@ -1079,11 +3080,499 @@
      "account_nm": "운용_기타"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "조달_예금",
+     "a": "1675716141306",
+     "b": "91.53"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "조달_차입금",
+     "a": "10375511110",
+     "b": ".57"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "조달_출자금",
+     "a": "41883550502",
+     "b": "2.29"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A14",
+     "account_nm": "조달_기타",
+     "a": "102894571440",
+     "b": "5.62"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "조달(운용)계",
+     "a": "1830869774358",
+     "b": "100"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "운용_대출금",
+     "a": "1299927748149",
+     "b": "71"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "운용_중앙회예치금",
+     "a": "358058795030",
+     "b": "19.56"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A23",
+     "account_nm": "운용_유가증권",
+     "a": "29499133257",
+     "b": "1.61"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "운용_기타",
+     "a": "143384097922",
+     "b": "7.83"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "조달_예금",
+     "a": "1750921806743",
+     "b": "91.73"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "조달_차입금",
+     "a": "10869878668",
+     "b": ".57"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "조달_출자금",
+     "a": "42924535717",
+     "b": "2.25"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A14",
+     "account_nm": "조달_기타",
+     "a": "104016472318",
+     "b": "5.45"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "조달(운용)계",
+     "a": "1908732693446",
+     "b": "100"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "운용_대출금",
+     "a": "1292282718317",
+     "b": "67.7"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "운용_중앙회예치금",
+     "a": "438040309769",
+     "b": "22.95"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A23",
+     "account_nm": "운용_유가증권",
+     "a": "29988322236",
+     "b": "1.57"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "운용_기타",
+     "a": "148421343124",
+     "b": "7.78"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "조달_예금",
+     "a": "1777888197294",
+     "b": "88.56"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "조달_차입금",
+     "a": "10851129356",
+     "b": ".54"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "조달_출자금",
+     "a": "44692658287",
+     "b": "2.23"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A14",
+     "account_nm": "조달_기타",
+     "a": "174194548437",
+     "b": "8.68"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "조달(운용)계",
+     "a": "2007626533374",
+     "b": "100"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "운용_대출금",
+     "a": "1371897647999",
+     "b": "68.33"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "운용_중앙회예치금",
+     "a": "398426351344",
+     "b": "19.85"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A23",
+     "account_nm": "운용_유가증권",
+     "a": "30395604406",
+     "b": "1.51"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "운용_기타",
+     "a": "206906929625",
+     "b": "10.31"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "조달_예금",
+     "a": "1819647578525",
+     "b": "88.89"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "조달_차입금",
+     "a": "10925720349",
+     "b": ".53"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "조달_출자금",
+     "a": "45423660080",
+     "b": "2.22"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A14",
+     "account_nm": "조달_기타",
+     "a": "171096194637",
+     "b": "8.36"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "조달(운용)계",
+     "a": "2047093153591",
+     "b": "100"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "운용_대출금",
+     "a": "1413398411952",
+     "b": "69.04"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "운용_중앙회예치금",
+     "a": "396486836946",
+     "b": "19.37"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A23",
+     "account_nm": "운용_유가증권",
+     "a": "35710832128",
+     "b": "1.74"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "운용_기타",
+     "a": "201497072565",
+     "b": "9.84"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "조달_예금",
+     "a": "1816215373508",
+     "b": "89.01"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "조달_차입금",
+     "a": "11510326350",
+     "b": ".56"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "조달_출자금",
+     "a": "47201459038",
+     "b": "2.31"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A14",
+     "account_nm": "조달_기타",
+     "a": "165493006155",
+     "b": "8.11"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "조달(운용)계",
+     "a": "2040420165051",
+     "b": "100"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "운용_대출금",
+     "a": "1416638704929",
+     "b": "69.43"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "운용_중앙회예치금",
+     "a": "385911599840",
+     "b": "18.91"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A23",
+     "account_nm": "운용_유가증권",
+     "a": "49342741616",
+     "b": "2.42"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "운용_기타",
+     "a": "188527118666",
+     "b": "9.24"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "조달_예금",
+     "a": "1776379173587",
+     "b": "87.56"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A12",
+     "account_nm": "조달_차입금",
+     "a": "35467734162",
+     "b": "1.75"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A13",
+     "account_nm": "조달_출자금",
+     "a": "47237437595",
+     "b": "2.33"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A14",
+     "account_nm": "조달_기타",
+     "a": "169740073373",
+     "b": "8.37"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "조달(운용)계",
+     "a": "2028824418717",
+     "b": "100"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "운용_대출금",
+     "a": "1453707176018",
+     "b": "71.65"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "운용_중앙회예치금",
+     "a": "329437000000",
+     "b": "16.24"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A23",
+     "account_nm": "운용_유가증권",
+     "a": "48048529916",
+     "b": "2.37"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A24",
+     "account_nm": "운용_기타",
+     "a": "197631712783",
+     "b": "9.74"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ014": {
    "name": "자산현황(대출채권)",
@@ -1131,11 +3620,349 @@
      "account_nm": "기타_(대손충당금)"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "대출채권 계",
+     "a": "1265391772127"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "상호금융대출금",
+     "a": "1290531104564"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "상호금융대출금_(대손충당금)",
+     "a": "-34406491158"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "정책자금대출금",
+     "a": "9396643585"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "정책자금대출금_(대손충당금)",
+     "a": "-129484864"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타_(대손충당금)",
+     "a": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "대출채권 계",
+     "a": "1257712745481"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "상호금융대출금",
+     "a": "1282469702317"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "상호금융대출금_(대손충당금)",
+     "a": "-34440487972"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "정책자금대출금",
+     "a": "9813016000"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "정책자금대출금_(대손충당금)",
+     "a": "-129484864"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타_(대손충당금)",
+     "a": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "대출채권 계",
+     "a": "1333127099472"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "상호금융대출금",
+     "a": "1362292194790"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "상호금융대출금_(대손충당금)",
+     "a": "-38641063663"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "정책자금대출금",
+     "a": "9605453209"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "정책자금대출금_(대손충당금)",
+     "a": "-129484864"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타_(대손충당금)",
+     "a": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "대출채권 계",
+     "a": "1374670998100"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "상호금융대출금",
+     "a": "1403634992275"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "상호금융대출금_(대손충당금)",
+     "a": "-38597928988"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "정책자금대출금",
+     "a": "9763419677"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "정책자금대출금_(대손충당금)",
+     "a": "-129484864"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타_(대손충당금)",
+     "a": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "대출채권 계",
+     "a": "1372365528925"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "상호금융대출금",
+     "a": "1406059477069"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "상호금융대출금_(대손충당금)",
+     "a": "-44143191140"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "정책자금대출금",
+     "a": "10579227860"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "정책자금대출금_(대손충당금)",
+     "a": "-129984864"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타_(대손충당금)",
+     "a": "0"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "대출채권 계",
+     "a": "1411307091430"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "상호금융대출금",
+     "a": "1442610362229"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "상호금융대출금_(대손충당금)",
+     "a": "-42270099724"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "정책자금대출금",
+     "a": "11096813789"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "정책자금대출금_(대손충당금)",
+     "a": "-129984864"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "0"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타_(대손충당금)",
+     "a": "0"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ015": {
    "name": "자산현황(유가증권)",
@@ -1165,11 +3992,205 @@
      "account_nm": "만기보유증권"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유가증권 계",
+     "a": "29499133257"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "단기매매증권",
+     "a": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "매도가능증권",
+     "a": "29499133257"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "만기보유증권",
+     "a": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유가증권 계",
+     "a": "29988322236"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "단기매매증권",
+     "a": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "매도가능증권",
+     "a": "29988322236"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "만기보유증권",
+     "a": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유가증권 계",
+     "a": "30395604406"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "단기매매증권",
+     "a": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "매도가능증권",
+     "a": "30395604406"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "만기보유증권",
+     "a": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유가증권 계",
+     "a": "35710832128"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "단기매매증권",
+     "a": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "매도가능증권",
+     "a": "35710832128"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "만기보유증권",
+     "a": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유가증권 계",
+     "a": "49342741616"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "단기매매증권",
+     "a": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "매도가능증권",
+     "a": "49342741616"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "만기보유증권",
+     "a": "0"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유가증권 계",
+     "a": "48048529916"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "단기매매증권",
+     "a": "0"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "매도가능증권",
+     "a": "48048529916"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "만기보유증권",
+     "a": "0"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ016": {
    "name": "부채현황(예수부채, 차입부채)",
@@ -1223,11 +4244,397 @@
      "account_nm": "기타"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "예수부채 계",
+     "a": "1675716141306"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "요구불예금",
+     "a": "119955082067"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "기한부예금",
+     "a": "1555233881010"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "527178229"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "차입부채 계",
+     "a": "10375511110"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "상호금융자금차입금",
+     "a": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "정책자금차입금",
+     "a": "9395438585"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "기타",
+     "a": "980072525"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "예수부채 계",
+     "a": "1750921806743"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "요구불예금",
+     "a": "133831798100"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "기한부예금",
+     "a": "1616538983501"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "551025142"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "차입부채 계",
+     "a": "10869878668"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "상호금융자금차입금",
+     "a": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "정책자금차입금",
+     "a": "9813016000"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "기타",
+     "a": "1056862668"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "예수부채 계",
+     "a": "1777888197294"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "요구불예금",
+     "a": "126245153769"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "기한부예금",
+     "a": "1650955000466"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "688043059"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "차입부채 계",
+     "a": "10851129356"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "상호금융자금차입금",
+     "a": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "정책자금차입금",
+     "a": "9598716280"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "기타",
+     "a": "1252413076"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "예수부채 계",
+     "a": "1819647578525"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "요구불예금",
+     "a": "132662696123"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "기한부예금",
+     "a": "1686515790502"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "469091900"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "차입부채 계",
+     "a": "10925720349"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "상호금융자금차입금",
+     "a": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "정책자금차입금",
+     "a": "9736290760"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "기타",
+     "a": "1189429589"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "예수부채 계",
+     "a": "1816215373508"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "요구불예금",
+     "a": "130632518374"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "기한부예금",
+     "a": "1684905557192"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "677297942"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "차입부채 계",
+     "a": "11510326350"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "상호금융자금차입금",
+     "a": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "정책자금차입금",
+     "a": "10574517860"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "기타",
+     "a": "935808490"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "예수부채 계",
+     "a": "1776379173587"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "요구불예금",
+     "a": "135138110335"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "기한부예금",
+     "a": "1640510980667"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "730082585"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "차입부채 계",
+     "a": "35467734162"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "상호금융자금차입금",
+     "a": "23020681099"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "정책자금차입금",
+     "a": "11085501140"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "기타",
+     "a": "1361551923"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ017": {
    "name": "유형자산 보유현황",
@@ -1287,11 +4694,445 @@
      "account_nm": "기타_(손상차손누계액)"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유형자산 계",
+     "a": "14534375829"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "토지",
+     "a": "4695579163"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "토지_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "건물",
+     "a": "12382470061"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "건물_(감가상각누계액)",
+     "a": "-3216448055"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "건물_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "5990710212"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타_(감가상각누계액)",
+     "a": "-5317935552"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A32",
+     "account_nm": "기타_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유형자산 계",
+     "a": "14575461644"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "토지",
+     "a": "4695579163"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "토지_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "건물",
+     "a": "12394665063"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "건물_(감가상각누계액)",
+     "a": "-3401039798"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "건물_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "6113893097"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타_(감가상각누계액)",
+     "a": "-5227635881"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A32",
+     "account_nm": "기타_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유형자산 계",
+     "a": "22605104323"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "토지",
+     "a": "12486573650"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "토지_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "건물",
+     "a": "12879603615"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "건물_(감가상각누계액)",
+     "a": "-3588966360"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "건물_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "6027787102"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타_(감가상각누계액)",
+     "a": "-5199893684"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A32",
+     "account_nm": "기타_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유형자산 계",
+     "a": "22537095680"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "토지",
+     "a": "12486573650"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "토지_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "건물",
+     "a": "12896558897"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "건물_(감가상각누계액)",
+     "a": "-3784588970"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "건물_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "6164320815"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타_(감가상각누계액)",
+     "a": "-5225768712"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A32",
+     "account_nm": "기타_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유형자산 계",
+     "a": "22243768302"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "토지",
+     "a": "12486573650"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "토지_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "건물",
+     "a": "12907433899"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "건물_(감가상각누계액)",
+     "a": "-3979027988"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "건물_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "6030504206"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타_(감가상각누계액)",
+     "a": "-5201715465"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A32",
+     "account_nm": "기타_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유형자산 계",
+     "a": "22172283370"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "토지",
+     "a": "12486573650"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A11",
+     "account_nm": "토지_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "건물",
+     "a": "12908463901"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A21",
+     "account_nm": "건물_(감가상각누계액)",
+     "a": "-4145851622"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A22",
+     "account_nm": "건물_(손상차손누계액)",
+     "a": "0"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "기타",
+     "a": "6100255425"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A31",
+     "account_nm": "기타_(감가상각누계액)",
+     "a": "-5177157984"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A32",
+     "account_nm": "기타_(손상차손누계액)",
+     "a": "0"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ018": {
    "name": "부문별 손익(수수료)",
@@ -1357,11 +5198,493 @@
      "account_nm": "수수료비용_기타"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "수수료 손익",
+     "b": "6082672942"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "수수료수익",
+     "b": "7755290900"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "수수료수익_수입수수료",
+     "b": "3015731736"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "수수료수익_공제수수료",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "수수료수익_신용카드수탁취급수수료(카드수입수수료)",
+     "b": "3687831455"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "수수료수익_기타수입수수료",
+     "b": "1051727709"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "수수료비용",
+     "b": "1672617958"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "수수료비용_지급수수료",
+     "b": "181258140"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "수수료비용_신용카드수탁취급비용(카드지급수수료)",
+     "b": "1491359818"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C3",
+     "account_nm": "수수료비용_기타",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "수수료 손익",
+     "b": "2868615755"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "수수료수익",
+     "b": "3747133963"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "수수료수익_수입수수료",
+     "b": "1328065985"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "수수료수익_공제수수료",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "수수료수익_신용카드수탁취급수수료(카드수입수수료)",
+     "b": "1887146037"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "수수료수익_기타수입수수료",
+     "b": "531921941"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "수수료비용",
+     "b": "878518208"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "수수료비용_지급수수료",
+     "b": "163962461"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "수수료비용_신용카드수탁취급비용(카드지급수수료)",
+     "b": "714555747"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C3",
+     "account_nm": "수수료비용_기타",
+     "b": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "수수료 손익",
+     "b": "5719429022"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "수수료수익",
+     "b": "7477203703"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "수수료수익_수입수수료",
+     "b": "2588345348"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "수수료수익_공제수수료",
+     "b": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "수수료수익_신용카드수탁취급수수료(카드수입수수료)",
+     "b": "3821370889"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "수수료수익_기타수입수수료",
+     "b": "1067487466"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "수수료비용",
+     "b": "1757774681"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "수수료비용_지급수수료",
+     "b": "189123797"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "수수료비용_신용카드수탁취급비용(카드지급수수료)",
+     "b": "1568650884"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C3",
+     "account_nm": "수수료비용_기타",
+     "b": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "수수료 손익",
+     "b": "3138477075"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "수수료수익",
+     "b": "3976121088"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "수수료수익_수입수수료",
+     "b": "1646373663"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "수수료수익_공제수수료",
+     "b": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "수수료수익_신용카드수탁취급수수료(카드수입수수료)",
+     "b": "1814645184"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "수수료수익_기타수입수수료",
+     "b": "515102241"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "수수료비용",
+     "b": "837644013"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "수수료비용_지급수수료",
+     "b": "131984674"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "수수료비용_신용카드수탁취급비용(카드지급수수료)",
+     "b": "705659339"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C3",
+     "account_nm": "수수료비용_기타",
+     "b": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "수수료 손익",
+     "b": "5836159172"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "수수료수익",
+     "b": "7549008085"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "수수료수익_수입수수료",
+     "b": "2834912222"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "수수료수익_공제수수료",
+     "b": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "수수료수익_신용카드수탁취급수수료(카드수입수수료)",
+     "b": "3684541500"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "수수료수익_기타수입수수료",
+     "b": "1029554363"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "수수료비용",
+     "b": "1712848913"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "수수료비용_지급수수료",
+     "b": "181928607"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "수수료비용_신용카드수탁취급비용(카드지급수수료)",
+     "b": "1530920306"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C3",
+     "account_nm": "수수료비용_기타",
+     "b": "0"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "수수료 손익",
+     "b": "2405244722"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "수수료수익",
+     "b": "3244952429"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "수수료수익_수입수수료",
+     "b": "920464413"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "수수료수익_공제수수료",
+     "b": "0"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "수수료수익_신용카드수탁취급수수료(카드수입수수료)",
+     "b": "1830645647"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "수수료수익_기타수입수수료",
+     "b": "493842369"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "수수료비용",
+     "b": "839707707"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "수수료비용_지급수수료",
+     "b": "133038562"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "수수료비용_신용카드수탁취급비용(카드지급수수료)",
+     "b": "706669145"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C3",
+     "account_nm": "수수료비용_기타",
+     "b": "0"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ019": {
    "name": "부문별 손익(증권평가 및 처분)",
@@ -1385,11 +5708,157 @@
      "account_nm": "유가증권평가 및 처분손실"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유가증권평가 및 처분손익",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "유가증권평가 및 처분이익",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "유가증권평가 및 처분손실",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유가증권평가 및 처분손익",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "유가증권평가 및 처분이익",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "유가증권평가 및 처분손실",
+     "b": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유가증권평가 및 처분손익",
+     "b": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "유가증권평가 및 처분이익",
+     "b": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "유가증권평가 및 처분손실",
+     "b": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유가증권평가 및 처분손익",
+     "b": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "유가증권평가 및 처분이익",
+     "b": "0"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "유가증권평가 및 처분손실",
+     "b": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유가증권평가 및 처분손익",
+     "b": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "유가증권평가 및 처분이익",
+     "b": "0"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "유가증권평가 및 처분손실",
+     "b": "0"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "유가증권평가 및 처분손익",
+     "b": "0"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "유가증권평가 및 처분이익",
+     "b": "0"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "유가증권평가 및 처분손실",
+     "b": "0"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ020": {
    "name": "부문별 손익(이자, 판매비와 관리비)",
@@ -1533,11 +6002,493 @@
      "account_nm": "판매비와 관리비_기타"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "이자손익",
+     "b": "52918645109"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "이자수익",
+     "b": "98538435848"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "이자수익_예치금이자",
+     "b": "10456032314"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B11",
+     "account_nm": "이자수익_예치금이자_상환준비금이자",
+     "b": "3314458754"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B12",
+     "account_nm": "이자수익_예치금이자_대내예치금이자",
+     "b": "7141573560"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B13",
+     "account_nm": "이자수익_예치금이자_대외예치금이자",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "이자수익_유가증권이자",
+     "b": "1068776687"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "이자수익_대출채권이자",
+     "b": "76533140091"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "이자수익_기타이자수익",
+     "b": "10480486756"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "이자비용",
+     "b": "45619790739"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "이자비용_예수부채이자",
+     "b": "44645700862"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "이자비용_차입부채이자",
+     "b": "92212486"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C3",
+     "account_nm": "이자비용_기타이자비용",
+     "b": "881877391"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D",
+     "account_nm": "판매비와 관리비",
+     "b": "21105087969"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D1",
+     "account_nm": "판매비와 관리비_급여",
+     "b": "8905996139"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D2",
+     "account_nm": "판매비와 관리비_퇴직급여",
+     "b": "2149124001"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D3",
+     "account_nm": "판매비와 관리비_복리후생비",
+     "b": "5421710752"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D4",
+     "account_nm": "판매비와 관리비_임차료",
+     "b": "336500690"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D5",
+     "account_nm": "판매비와 관리비_접대비",
+     "b": "394797910"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D6",
+     "account_nm": "판매비와 관리비_감가상각비",
+     "b": "567380592"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D7",
+     "account_nm": "판매비와 관리비_무형자산상각비",
+     "b": "0"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D8",
+     "account_nm": "판매비와 관리비_세금과공과",
+     "b": "73845987"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D9",
+     "account_nm": "판매비와 관리비_기타",
+     "b": "3255731898"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "이자손익",
+     "b": "26684274622"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "이자수익",
+     "b": "47733586832"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "이자수익_예치금이자",
+     "b": "5658196886"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B11",
+     "account_nm": "이자수익_예치금이자_상환준비금이자",
+     "b": "1461851799"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B12",
+     "account_nm": "이자수익_예치금이자_대내예치금이자",
+     "b": "4196345087"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B13",
+     "account_nm": "이자수익_예치금이자_대외예치금이자",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "이자수익_유가증권이자",
+     "b": "560781114"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "이자수익_대출채권이자",
+     "b": "36451035162"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "이자수익_기타이자수익",
+     "b": "5063573670"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "이자비용",
+     "b": "21049312210"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "이자비용_예수부채이자",
+     "b": "20601479867"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "이자비용_차입부채이자",
+     "b": "49077847"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C3",
+     "account_nm": "이자비용_기타이자비용",
+     "b": "398754496"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D",
+     "account_nm": "판매비와 관리비",
+     "b": "9471033118"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D1",
+     "account_nm": "판매비와 관리비_급여",
+     "b": "3879121418"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D2",
+     "account_nm": "판매비와 관리비_퇴직급여",
+     "b": "425678000"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D3",
+     "account_nm": "판매비와 관리비_복리후생비",
+     "b": "2875711596"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D4",
+     "account_nm": "판매비와 관리비_임차료",
+     "b": "141477500"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D5",
+     "account_nm": "판매비와 관리비_접대비",
+     "b": "180347910"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D6",
+     "account_nm": "판매비와 관리비_감가상각비",
+     "b": "342097192"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D7",
+     "account_nm": "판매비와 관리비_무형자산상각비",
+     "b": "0"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D8",
+     "account_nm": "판매비와 관리비_세금과공과",
+     "b": "32439523"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D9",
+     "account_nm": "판매비와 관리비_기타",
+     "b": "1594159979"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "이자손익",
+     "b": "52815557814"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "이자수익",
+     "b": "95721483517"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "이자수익_예치금이자",
+     "b": "12153371422"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B11",
+     "account_nm": "이자수익_예치금이자_상환준비금이자",
+     "b": "3968380665"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B12",
+     "account_nm": "이자수익_예치금이자_대내예치금이자",
+     "b": "8184990757"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B13",
+     "account_nm": "이자수익_예치금이자_대외예치금이자",
+     "b": "0"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "이자수익_유가증권이자",
+     "b": "1123903669"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "이자수익_대출채권이자",
+     "b": "72008078251"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "이자수익_기타이자수익",
+     "b": "10436130175"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "이자비용",
+     "b": "42905925703"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "이자비용_예수부채이자",
+     "b": "42009940037"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "이자비용_차입부채이자",
+     "b": "99616427"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C3",
+     "account_nm": "이자비용_기타이자비용",
+     "b": "796369239"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D",
+     "account_nm": "판매비와 관리비",
+     "b": "19953544937"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ021": {
    "name": "유형별 대출채권(조합, 비조합 대출금)",
@@ -1567,11 +6518,205 @@
      "account_nm": "비조합원 대출"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총대출",
+     "a": "1299927748149"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "조합원 대출",
+     "a": "301065560976"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "준조합원 대출",
+     "a": "526130163796"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "비조합원 대출",
+     "a": "472732023377"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총대출",
+     "a": "1292282718317"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "조합원 대출",
+     "a": "301816822995"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "준조합원 대출",
+     "a": "518035032851"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "비조합원 대출",
+     "a": "472430862471"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총대출",
+     "a": "1371897647999"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "조합원 대출",
+     "a": "299289282501"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "준조합원 대출",
+     "a": "523322746430"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "비조합원 대출",
+     "a": "549285619068"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총대출",
+     "a": "1413398411952"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "조합원 대출",
+     "a": "290990981751"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "준조합원 대출",
+     "a": "514112013543"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "비조합원 대출",
+     "a": "608295416658"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총대출",
+     "a": "1416638704929"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "조합원 대출",
+     "a": "289234659859"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "준조합원 대출",
+     "a": "523943634205"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "비조합원 대출",
+     "a": "603460410865"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총대출",
+     "a": "1453707176018"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "조합원 대출",
+     "a": "284022157264"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "준조합원 대출",
+     "a": "520829034043"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A3",
+     "account_nm": "비조합원 대출",
+     "a": "648855984711"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ007": {
    "name": "여신건전성",
@@ -1631,11 +6776,445 @@
      "account_nm": "대손충당금 실적립액"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총여신",
+     "a": "1299971351581"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "고정이하분류여신",
+     "a": "18631927506"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "고정이하분류여신_고정",
+     "a": "16105786165"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "고정이하분류여신_회수의문",
+     "a": "1207316836"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B5",
+     "account_nm": "고정이하분류여신_추정손실",
+     "a": "1318824505"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "고정이하여신비율",
+     "a": "1.43"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D",
+     "account_nm": "대손충당금 적립비율(요적립액 대비)",
+     "a": "175.56"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D1",
+     "account_nm": "대손충당금 요적립액",
+     "a": "20574431511"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D2",
+     "account_nm": "대손충당금 실적립액",
+     "a": "36120245089"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총여신",
+     "a": "1292332180475"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "고정이하분류여신",
+     "a": "30272196547"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "고정이하분류여신_고정",
+     "a": "27158925646"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "고정이하분류여신_회수의문",
+     "a": "1195215811"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B5",
+     "account_nm": "고정이하분류여신_추정손실",
+     "a": "1918055090"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "고정이하여신비율",
+     "a": "2.34"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D",
+     "account_nm": "대손충당금 적립비율(요적립액 대비)",
+     "a": "139.52"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D1",
+     "account_nm": "대손충당금 요적립액",
+     "a": "25804844976"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D2",
+     "account_nm": "대손충당금 실적립액",
+     "a": "36002563399"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총여신",
+     "a": "1371955945977"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "고정이하분류여신",
+     "a": "51593998768"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "고정이하분류여신_고정",
+     "a": "46556177411"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "고정이하분류여신_회수의문",
+     "a": "2946104584"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B5",
+     "account_nm": "고정이하분류여신_추정손실",
+     "a": "2091716773"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "고정이하여신비율",
+     "a": "3.76"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D",
+     "account_nm": "대손충당금 적립비율(요적립액 대비)",
+     "a": "127.06"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D1",
+     "account_nm": "대손충당금 요적립액",
+     "a": "31884661223"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D2",
+     "account_nm": "대손충당금 실적립액",
+     "a": "40512043307"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총여신",
+     "a": "1413477765694"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "고정이하분류여신",
+     "a": "73206700983"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "고정이하분류여신_고정",
+     "a": "68992105535"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "고정이하분류여신_회수의문",
+     "a": "1397776052"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B5",
+     "account_nm": "고정이하분류여신_추정손실",
+     "a": "2816819396"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "고정이하여신비율",
+     "a": "5.18"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D",
+     "account_nm": "대손충당금 적립비율(요적립액 대비)",
+     "a": "106.07"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D1",
+     "account_nm": "대손충당금 요적립액",
+     "a": "38151655559"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D2",
+     "account_nm": "대손충당금 실적립액",
+     "a": "40468025065"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총여신",
+     "a": "1416717798948"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "고정이하분류여신",
+     "a": "74006136636"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "고정이하분류여신_고정",
+     "a": "66166081237"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "고정이하분류여신_회수의문",
+     "a": "5296520401"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B5",
+     "account_nm": "고정이하분류여신_추정손실",
+     "a": "2543534998"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "고정이하여신비율",
+     "a": "5.22"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D",
+     "account_nm": "대손충당금 적립비율(요적립액 대비)",
+     "a": "116.87"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D1",
+     "account_nm": "대손충당금 요적립액",
+     "a": "39384814888"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D2",
+     "account_nm": "대손충당금 실적립액",
+     "a": "46028281180"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총여신",
+     "a": "1453851065254"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "고정이하분류여신",
+     "a": "71334258557"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B3",
+     "account_nm": "고정이하분류여신_고정",
+     "a": "61126927988"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B4",
+     "account_nm": "고정이하분류여신_회수의문",
+     "a": "9012065520"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B5",
+     "account_nm": "고정이하분류여신_추정손실",
+     "a": "1195265049"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "고정이하여신비율",
+     "a": "4.91"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D",
+     "account_nm": "대손충당금 적립비율(요적립액 대비)",
+     "a": "104.27"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D1",
+     "account_nm": "대손충당금 요적립액",
+     "a": "42168860063"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D2",
+     "account_nm": "대손충당금 실적립액",
+     "a": "43969652955"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ008": {
    "name": "수익성",
@@ -1701,11 +7280,421 @@
      "account_nm": "영업수익"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총자산(말잔)",
+     "a": "1830869774358"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "자기자본(말잔)",
+     "a": "95629758573"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "총자산순이익률(ROA)",
+     "a": ".32"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "당기순이익",
+     "a": "5800448338"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D",
+     "account_nm": "자기자본순이익률(ROE)",
+     "a": "6.07"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "E",
+     "account_nm": "총자산경비율",
+     "a": "1.15"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "E1",
+     "account_nm": "판매비와 일반관리비",
+     "a": "21105087969"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F",
+     "account_nm": "수지비율",
+     "a": "79.94"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F1",
+     "account_nm": "영업비용",
+     "a": "90957465728"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F2",
+     "account_nm": "영업수익",
+     "a": "113784858156"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총자산(말잔)",
+     "a": "1908732693446"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "자기자본(말잔)",
+     "a": "101471426742"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "당기순이익",
+     "a": "8178350295"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "E1",
+     "account_nm": "판매비와 일반관리비",
+     "a": "9471033118"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F",
+     "account_nm": "수지비율",
+     "a": "71.22"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F1",
+     "account_nm": "영업비용",
+     "a": "38050159444"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F2",
+     "account_nm": "영업수익",
+     "a": "53426203749"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총자산(말잔)",
+     "a": "2007626533374"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "자기자본(말잔)",
+     "a": "166367914678"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "총자산순이익률(ROA)",
+     "a": ".29"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "당기순이익",
+     "a": "5800247739"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D",
+     "account_nm": "자기자본순이익률(ROE)",
+     "a": "3.49"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "E",
+     "account_nm": "총자산경비율",
+     "a": ".99"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "E1",
+     "account_nm": "판매비와 일반관리비",
+     "a": "19953544937"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F",
+     "account_nm": "수지비율",
+     "a": "80.75"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F1",
+     "account_nm": "영업비용",
+     "a": "88745320173"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F2",
+     "account_nm": "영업수익",
+     "a": "109905713249"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총자산(말잔)",
+     "a": "2047093153591"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "자기자본(말잔)",
+     "a": "170636557906"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "당기순이익",
+     "a": "7038489817"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "E1",
+     "account_nm": "판매비와 일반관리비",
+     "a": "9566278457"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F",
+     "account_nm": "수지비율",
+     "a": "75.14"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F1",
+     "account_nm": "영업비용",
+     "a": "39594548099"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F2",
+     "account_nm": "영업수익",
+     "a": "52695207014"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총자산(말잔)",
+     "a": "2040420165051"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "자기자본(말잔)",
+     "a": "169684164973"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "총자산순이익률(ROA)",
+     "a": ".26"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "당기순이익",
+     "a": "5300130270"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "D",
+     "account_nm": "자기자본순이익률(ROE)",
+     "a": "3.12"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "E",
+     "account_nm": "총자산경비율",
+     "a": ".94"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "E1",
+     "account_nm": "판매비와 일반관리비",
+     "a": "19083678496"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F",
+     "account_nm": "수지비율",
+     "a": "82.74"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F1",
+     "account_nm": "영업비용",
+     "a": "85609502147"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F2",
+     "account_nm": "영업수익",
+     "a": "103462431772"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "총자산(말잔)",
+     "a": "2028824418717"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "자기자본(말잔)",
+     "a": "172052473050"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "당기순이익",
+     "a": "7431767233"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "E1",
+     "account_nm": "판매비와 일반관리비",
+     "a": "9266463938"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F",
+     "account_nm": "수지비율",
+     "a": "72.41"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F1",
+     "account_nm": "영업비용",
+     "a": "35421586445"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "F2",
+     "account_nm": "영업수익",
+     "a": "48916847755"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ009": {
    "name": "유동성",
@@ -1765,11 +7754,445 @@
      "account_nm": "예대율_예수금"
     }
    ],
-   "values": [],
+   "values": [
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "고정자산비율",
+     "a": "99.31"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "고정자산",
+     "a": "94965671299"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "자기자본",
+     "a": "95629758573"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "유동성비율",
+     "a": "55.46"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "유동성비율_유동성자산",
+     "a": "358127642303"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "유동성비율_유동성부채",
+     "a": "645765625236"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "예대율",
+     "a": "79.06"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "예대율_대출금",
+     "a": "1353531107735"
+    },
+    {
+     "base_month": "202312",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "예대율_예수금",
+     "a": "1712055677420"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "고정자산비율",
+     "a": "93.24"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "고정자산",
+     "a": "94583895709"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "자기자본",
+     "a": "101446113873"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "유동성비율",
+     "a": "79.86"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "유동성비율_유동성자산",
+     "a": "318685673980"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "유동성비율_유동성부채",
+     "a": "399062348383"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "예대율",
+     "a": "75.43"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "예대율_대출금",
+     "a": "1333200220063"
+    },
+    {
+     "base_month": "202406",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "예대율_예수금",
+     "a": "1767482708834"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "고정자산비율",
+     "a": "94.39"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "고정자산",
+     "a": "157039417681"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "자기자본",
+     "a": "166367914678"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "유동성비율",
+     "a": "65.57"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "유동성비율_유동성자산",
+     "a": "428168263944"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "유동성비율_유동성부채",
+     "a": "653015644929"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "예대율",
+     "a": "78.75"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "예대율_대출금",
+     "a": "1423623721410"
+    },
+    {
+     "base_month": "202412",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "예대율_예수금",
+     "a": "1807790707573"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "고정자산비율",
+     "a": "91.57"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "고정자산",
+     "a": "156256976473"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "자기자본",
+     "a": "170636557906"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "유동성비율",
+     "a": "94.24"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "유동성비율_유동성자산",
+     "a": "429211065344"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "유동성비율_유동성부채",
+     "a": "455450539664"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "예대율",
+     "a": "79.64"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "예대율_대출금",
+     "a": "1492532637276"
+    },
+    {
+     "base_month": "202506",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "예대율_예수금",
+     "a": "1874179210654"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "고정자산비율",
+     "a": "91.06"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "고정자산",
+     "a": "154522329639"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "자기자본",
+     "a": "169684164973"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "유동성비율",
+     "a": "81.32"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "유동성비율_유동성자산",
+     "a": "498697418626"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "유동성비율_유동성부채",
+     "a": "613277420406"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "예대율",
+     "a": "79.65"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "예대율_대출금",
+     "a": "1490253639284"
+    },
+    {
+     "base_month": "202512",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "예대율_예수금",
+     "a": "1870946575142"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A",
+     "account_nm": "고정자산비율",
+     "a": "89.43"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A1",
+     "account_nm": "고정자산",
+     "a": "153868867926"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "A2",
+     "account_nm": "자기자본",
+     "a": "172052473050"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B",
+     "account_nm": "유동성비율",
+     "a": "96.55"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B1",
+     "account_nm": "유동성비율_유동성자산",
+     "a": "534083314734"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "B2",
+     "account_nm": "유동성비율_유동성부채",
+     "a": "553142371498"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C",
+     "account_nm": "예대율",
+     "a": "80.75"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C1",
+     "account_nm": "예대율_대출금",
+     "a": "1501580078471"
+    },
+    {
+     "base_month": "202606",
+     "finance_cd": "0010027485014",
+     "finance_nm": "천안농협",
+     "account_cd": "C2",
+     "account_nm": "예대율_예수금",
+     "a": "1859511913209"
+    }
+   ],
    "err": [
-    "101",
-    "term의 부적절한 값"
-   ]
+    "000",
+    "정상"
+   ],
+   "term": "H"
   },
   "SQ010": {
    "name": "총자산현황",
@@ -1791,7 +8214,8 @@
    "err": [
     "101",
     "financeCd의 부적절한 값"
-   ]
+   ],
+   "term": null
   },
   "SQ011": {
    "name": "여수신현황",
@@ -1819,7 +8243,8 @@
    "err": [
     "101",
     "financeCd의 부적절한 값"
-   ]
+   ],
+   "term": null
   },
   "SQ012": {
    "name": "당기순이익현황",
@@ -1835,7 +8260,8 @@
    "err": [
     "101",
     "financeCd의 부적절한 값"
-   ]
+   ],
+   "term": null
   },
   "SQ013": {
    "name": "순자본 비율",
@@ -1851,7 +8277,8 @@
    "err": [
     "101",
     "financeCd의 부적절한 값"
-   ]
+   ],
+   "term": null
   }
  }
 }
