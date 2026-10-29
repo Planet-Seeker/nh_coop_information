@@ -1,0 +1,136 @@
+{
+ "A": [
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "일반현황",
+   "list_no": "SQ001",
+   "list_nm": "임직원현황"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "일반현황",
+   "list_no": "SQ002",
+   "list_nm": "회원조합수 현황"
+  }
+ ],
+ "B": [
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "재무현황",
+   "list_no": "SQ003",
+   "list_nm": "요약재무상태표(자산)"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "재무현황",
+   "list_no": "SQ004",
+   "list_nm": "요약재무상태표(부채 및 자본)"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "재무현황",
+   "list_no": "SQ005",
+   "list_nm": "요약손익계산서"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "재무현황",
+   "list_no": "SQ006",
+   "list_nm": "주요자금조달및운용"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "재무현황",
+   "list_no": "SQ014",
+   "list_nm": "자산현황(대출채권)"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "재무현황",
+   "list_no": "SQ015",
+   "list_nm": "자산현황(유가증권)"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "재무현황",
+   "list_no": "SQ016",
+   "list_nm": "부채현황(예수부채, 차입부채)"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "재무현황",
+   "list_no": "SQ017",
+   "list_nm": "유형자산 보유현황"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "재무현황",
+   "list_no": "SQ018",
+   "list_nm": "부문별 손익(수수료)"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "재무현황",
+   "list_no": "SQ019",
+   "list_nm": "부문별 손익(증권평가 및 처분)"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "재무현황",
+   "list_no": "SQ020",
+   "list_nm": "부문별 손익(이자, 판매비와 관리비)"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "재무현황",
+   "list_no": "SQ021",
+   "list_nm": "유형별 대출채권(조합, 비조합 대출금)"
+  }
+ ],
+ "C": [
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "주요경영지표",
+   "list_no": "SQ007",
+   "list_nm": "여신건전성"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "주요경영지표",
+   "list_no": "SQ008",
+   "list_nm": "수익성"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "주요경영지표",
+   "list_no": "SQ009",
+   "list_nm": "유동성"
+  }
+ ],
+ "P": [
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "보도자료통계",
+   "list_no": "SQ010",
+   "list_nm": "총자산현황"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "보도자료통계",
+   "list_no": "SQ011",
+   "list_nm": "여수신현황"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "보도자료통계",
+   "list_no": "SQ012",
+   "list_nm": "당기순이익현황"
+  },
+  {
+   "lrg_div_nm": "농협단위조합",
+   "sml_div_nm": "보도자료통계",
+   "list_no": "SQ013",
+   "list_nm": "순자본 비율"
+  }
+ ]
+}

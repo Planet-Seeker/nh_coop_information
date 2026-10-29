@@ -1,0 +1,5959 @@
+{
+ "err": [
+  "000",
+  "정상"
+ ],
+ "count": 1190,
+ "list": [
+  {
+   "finance_cd": "0010027521105",
+   "finance_nm": "고창농협 부안지점[폐]",
+   "finance_path": "농업협동조합\\고창농협 부안지점[폐]"
+  },
+  {
+   "finance_cd": "0010027515070",
+   "finance_nm": "금과농협[폐]",
+   "finance_path": "농업협동조합\\금과농협[폐]"
+  },
+  {
+   "finance_cd": "0010027503042",
+   "finance_nm": "성수농협[폐]",
+   "finance_path": "농업협동조합\\성수농협[폐]"
+  },
+  {
+   "finance_cd": "0010027321011",
+   "finance_nm": "간동농협",
+   "finance_path": "농협단위조합\\농협(강원)\\간동농협"
+  },
+  {
+   "finance_cd": "0010027333050",
+   "finance_nm": "강릉농협",
+   "finance_path": "농협단위조합\\농협(강원)\\강릉농협"
+  },
+  {
+   "finance_cd": "0010027333810",
+   "finance_nm": "강릉원예농협",
+   "finance_path": "농협단위조합\\농협(강원)\\강릉원예농협"
+  },
+  {
+   "finance_cd": "0010027172381",
+   "finance_nm": "강릉축산농협",
+   "finance_path": "농협단위조합\\농협(강원)\\강릉축산농협"
+  },
+  {
+   "finance_cd": "0010027172996",
+   "finance_nm": "강원양돈농협",
+   "finance_path": "농협단위조합\\농협(강원)\\강원양돈농협"
+  },
+  {
+   "finance_cd": "0010027303811",
+   "finance_nm": "강원인삼농협",
+   "finance_path": "농협단위조합\\농협(강원)\\강원인삼농협"
+  },
+  {
+   "finance_cd": "0010027331014",
+   "finance_nm": "강현농협",
+   "finance_path": "농협단위조합\\농협(강원)\\강현농협"
+  },
+  {
+   "finance_cd": "0010027327028",
+   "finance_nm": "거진농협",
+   "finance_path": "농협단위조합\\농협(강원)\\거진농협"
+  },
+  {
+   "finance_cd": "0010027172462",
+   "finance_nm": "고성축산농협",
+   "finance_path": "농협단위조합\\농협(강원)\\고성축산농협"
+  },
+  {
+   "finance_cd": "0010027305042",
+   "finance_nm": "공근농협",
+   "finance_path": "농협단위조합\\농협(강원)\\공근농협"
+  },
+  {
+   "finance_cd": "0010027335052",
+   "finance_nm": "근덕농협",
+   "finance_path": "농협단위조합\\농협(강원)\\근덕농협"
+  },
+  {
+   "finance_cd": "0010027327062",
+   "finance_nm": "금강농협",
+   "finance_path": "농협단위조합\\농협(강원)\\금강농협"
+  },
+  {
+   "finance_cd": "0010027325048",
+   "finance_nm": "기린농협",
+   "finance_path": "농협단위조합\\농협(강원)\\기린농협"
+  },
+  {
+   "finance_cd": "0010027317025",
+   "finance_nm": "김화농협",
+   "finance_path": "농협단위조합\\농협(강원)\\김화농협"
+  },
+  {
+   "finance_cd": "0010027301082",
+   "finance_nm": "남산농협",
+   "finance_path": "농협단위조합\\농협(강원)\\남산농협"
+  },
+  {
+   "finance_cd": "0010027307077",
+   "finance_nm": "남원주농협",
+   "finance_path": "농협단위조합\\농협(강원)\\남원주농협"
+  },
+  {
+   "finance_cd": "0010027303095",
+   "finance_nm": "내면농협",
+   "finance_path": "농협단위조합\\농협(강원)\\내면농협"
+  },
+  {
+   "finance_cd": "0010027303040",
+   "finance_nm": "내촌농협",
+   "finance_path": "농협단위조합\\농협(강원)\\내촌농협"
+  },
+  {
+   "finance_cd": "0010027313076",
+   "finance_nm": "대관령농협",
+   "finance_path": "농협단위조합\\농협(강원)\\대관령농협"
+  },
+  {
+   "finance_cd": "0010027313814",
+   "finance_nm": "대관령원예농협",
+   "finance_path": "농협단위조합\\농협(강원)\\대관령원예농협"
+  },
+  {
+   "finance_cd": "0010027313043",
+   "finance_nm": "대화농협",
+   "finance_path": "농협단위조합\\농협(강원)\\대화농협"
+  },
+  {
+   "finance_cd": "0010027335041",
+   "finance_nm": "도계농협",
+   "finance_path": "농협단위조합\\농협(강원)\\도계농협"
+  },
+  {
+   "finance_cd": "0010027317036",
+   "finance_nm": "동송농협",
+   "finance_path": "농협단위조합\\농협(강원)\\동송농협"
+  },
+  {
+   "finance_cd": "0010027317014",
+   "finance_nm": "동철원농협",
+   "finance_path": "농협단위조합\\농협(강원)\\동철원농협"
+  },
+  {
+   "finance_cd": "0010027301048",
+   "finance_nm": "동춘천농협",
+   "finance_path": "농협단위조합\\농협(강원)\\동춘천농협"
+  },
+  {
+   "finance_cd": "0010027335029",
+   "finance_nm": "동해농협",
+   "finance_path": "농협단위조합\\농협(강원)\\동해농협"
+  },
+  {
+   "finance_cd": "0010027172569",
+   "finance_nm": "동해삼척태백축협",
+   "finance_path": "농협단위조합\\농협(강원)\\동해삼척태백축협"
+  },
+  {
+   "finance_cd": "0010027305020",
+   "finance_nm": "동횡성농협",
+   "finance_path": "농협단위조합\\농협(강원)\\동횡성농협"
+  },
+  {
+   "finance_cd": "0010027305019",
+   "finance_nm": "둔내농협",
+   "finance_path": "농협단위조합\\농협(강원)\\둔내농협"
+  },
+  {
+   "finance_cd": "0010027335096",
+   "finance_nm": "묵호농협",
+   "finance_path": "농협단위조합\\농협(강원)\\묵호농협"
+  },
+  {
+   "finance_cd": "0010027307044",
+   "finance_nm": "문막농협",
+   "finance_path": "농협단위조합\\농협(강원)\\문막농협"
+  },
+  {
+   "finance_cd": "0010027313054",
+   "finance_nm": "봉평농협",
+   "finance_path": "농협단위조합\\농협(강원)\\봉평농협"
+  },
+  {
+   "finance_cd": "0010027333049",
+   "finance_nm": "북강릉농협",
+   "finance_path": "농협단위조합\\농협(강원)\\북강릉농협"
+  },
+  {
+   "finance_cd": "0010027333027",
+   "finance_nm": "사천농협",
+   "finance_path": "농협단위조합\\농협(강원)\\사천농협"
+  },
+  {
+   "finance_cd": "0010027335018",
+   "finance_nm": "삼척농협",
+   "finance_path": "농협단위조합\\농협(강원)\\삼척농협"
+  },
+  {
+   "finance_cd": "0010027331047",
+   "finance_nm": "서광농협",
+   "finance_path": "농협단위조합\\농협(강원)\\서광농협"
+  },
+  {
+   "finance_cd": "0010027311085",
+   "finance_nm": "서남농협[폐]",
+   "finance_path": "농협단위조합\\농협(강원)\\서남농협[폐]"
+  },
+  {
+   "finance_cd": "0010027303051",
+   "finance_nm": "서석농협",
+   "finance_path": "농협단위조합\\농협(강원)\\서석농협"
+  },
+  {
+   "finance_cd": "0010027305053",
+   "finance_nm": "서원농협[폐]",
+   "finance_path": "농협단위조합\\농협(강원)\\서원농협[폐]"
+  },
+  {
+   "finance_cd": "0010027301026",
+   "finance_nm": "서춘천농협",
+   "finance_path": "농협단위조합\\농협(강원)\\서춘천농협"
+  },
+  {
+   "finance_cd": "0010027303073",
+   "finance_nm": "서홍천농협",
+   "finance_path": "농협단위조합\\농협(강원)\\서홍천농협"
+  },
+  {
+   "finance_cd": "0010027303084",
+   "finance_nm": "서홍천농협[폐]",
+   "finance_path": "농협단위조합\\농협(강원)\\서홍천농협[폐]"
+  },
+  {
+   "finance_cd": "0010027307011",
+   "finance_nm": "소초농협",
+   "finance_path": "농협단위조합\\농협(강원)\\소초농협"
+  },
+  {
+   "finance_cd": "0010027331058",
+   "finance_nm": "속초농협",
+   "finance_path": "농협단위조합\\농협(강원)\\속초농협"
+  },
+  {
+   "finance_cd": "0010027172501",
+   "finance_nm": "속초양양축산농협",
+   "finance_path": "농협단위조합\\농협(강원)\\속초양양축산농협"
+  },
+  {
+   "finance_cd": "0010027307099",
+   "finance_nm": "신림농협",
+   "finance_path": "농협단위조합\\농협(강원)\\신림농협"
+  },
+  {
+   "finance_cd": "0010027301015",
+   "finance_nm": "신북농협",
+   "finance_path": "농협단위조합\\농협(강원)\\신북농협"
+  },
+  {
+   "finance_cd": "0010027305031",
+   "finance_nm": "안흥농협",
+   "finance_path": "농협단위조합\\농협(강원)\\안흥농협"
+  },
+  {
+   "finance_cd": "0010027323013",
+   "finance_nm": "양구군농협",
+   "finance_path": "농협단위조합\\농협(강원)\\양구군농협"
+  },
+  {
+   "finance_cd": "0010027331036",
+   "finance_nm": "양양농협",
+   "finance_path": "농협단위조합\\농협(강원)\\양양농협"
+  },
+  {
+   "finance_cd": "0010027315034",
+   "finance_nm": "여량농협",
+   "finance_path": "농협단위조합\\농협(강원)\\여량농협"
+  },
+  {
+   "finance_cd": "0010027333083",
+   "finance_nm": "연곡농협[폐]",
+   "finance_path": "농협단위조합\\농협(강원)\\연곡농협[폐]"
+  },
+  {
+   "finance_cd": "0010027303062",
+   "finance_nm": "영귀미농협",
+   "finance_path": "농협단위조합\\농협(강원)\\영귀미농협"
+  },
+  {
+   "finance_cd": "0010027311018",
+   "finance_nm": "영월농협",
+   "finance_path": "농협단위조합\\농협(강원)\\영월농협"
+  },
+  {
+   "finance_cd": "0010027315012",
+   "finance_nm": "예미농협",
+   "finance_path": "농협단위조합\\농협(강원)\\예미농협"
+  },
+  {
+   "finance_cd": "0010027333016",
+   "finance_nm": "옥계농협",
+   "finance_path": "농협단위조합\\농협(강원)\\옥계농협"
+  },
+  {
+   "finance_cd": "0010027335063",
+   "finance_nm": "원덕농협",
+   "finance_path": "농협단위조합\\농협(강원)\\원덕농협"
+  },
+  {
+   "finance_cd": "0010027307129",
+   "finance_nm": "원주농협",
+   "finance_path": "농협단위조합\\농협(강원)\\원주농협"
+  },
+  {
+   "finance_cd": "0010027307815",
+   "finance_nm": "원주원예농협",
+   "finance_path": "농협단위조합\\농협(강원)\\원주원예농협"
+  },
+  {
+   "finance_cd": "0010027172297",
+   "finance_nm": "원주축산농협",
+   "finance_path": "농협단위조합\\농협(강원)\\원주축산농협"
+  },
+  {
+   "finance_cd": "0010027325037",
+   "finance_nm": "인제농협",
+   "finance_path": "농협단위조합\\농협(강원)\\인제농협"
+  },
+  {
+   "finance_cd": "0010027172420",
+   "finance_nm": "인제축협",
+   "finance_path": "농협단위조합\\농협(강원)\\인제축협"
+  },
+  {
+   "finance_cd": "0010027315045",
+   "finance_nm": "임계농협",
+   "finance_path": "농협단위조합\\농협(강원)\\임계농협"
+  },
+  {
+   "finance_cd": "0010027315023",
+   "finance_nm": "정선농협",
+   "finance_path": "농협단위조합\\농협(강원)\\정선농협"
+  },
+  {
+   "finance_cd": "0010027313065",
+   "finance_nm": "진부농협",
+   "finance_path": "농협단위조합\\농협(강원)\\진부농협"
+  },
+  {
+   "finance_cd": "0010027317047",
+   "finance_nm": "철원농협",
+   "finance_path": "농협단위조합\\농협(강원)\\철원농협"
+  },
+  {
+   "finance_cd": "0010027301059",
+   "finance_nm": "춘천강동농협",
+   "finance_path": "농협단위조합\\농협(강원)\\춘천강동농협"
+  },
+  {
+   "finance_cd": "0010027301037",
+   "finance_nm": "춘천농협",
+   "finance_path": "농협단위조합\\농협(강원)\\춘천농협"
+  },
+  {
+   "finance_cd": "0010027301819",
+   "finance_nm": "춘천원예농협",
+   "finance_path": "농협단위조합\\농협(강원)\\춘천원예농협"
+  },
+  {
+   "finance_cd": "0010027172226",
+   "finance_nm": "춘천철원화천양구축산농협",
+   "finance_path": "농협단위조합\\농협(강원)\\춘천철원화천양구축산농협"
+  },
+  {
+   "finance_cd": "0010027335030",
+   "finance_nm": "태백농협",
+   "finance_path": "농협단위조합\\농협(강원)\\태백농협"
+  },
+  {
+   "finance_cd": "0010027327051",
+   "finance_nm": "토성농협",
+   "finance_path": "농협단위조합\\농협(강원)\\토성농협"
+  },
+  {
+   "finance_cd": "0010027307088",
+   "finance_nm": "판부농협",
+   "finance_path": "농협단위조합\\농협(강원)\\판부농협"
+  },
+  {
+   "finance_cd": "0010027313010",
+   "finance_nm": "평창농협",
+   "finance_path": "농협단위조합\\농협(강원)\\평창농협"
+  },
+  {
+   "finance_cd": "0010027172666",
+   "finance_nm": "평창영월정선축산농협",
+   "finance_path": "농협단위조합\\농협(강원)\\평창영월정선축산농협"
+  },
+  {
+   "finance_cd": "0010027331025",
+   "finance_nm": "하조대농협",
+   "finance_path": "농협단위조합\\농협(강원)\\하조대농협"
+  },
+  {
+   "finance_cd": "0010027311029",
+   "finance_nm": "한반도농협",
+   "finance_path": "농협단위조합\\농협(강원)\\한반도농협"
+  },
+  {
+   "finance_cd": "0010027303017",
+   "finance_nm": "홍천농협",
+   "finance_path": "농협단위조합\\농협(강원)\\홍천농협"
+  },
+  {
+   "finance_cd": "0010027172255",
+   "finance_nm": "홍천축산농협",
+   "finance_path": "농협단위조합\\농협(강원)\\홍천축산농협"
+  },
+  {
+   "finance_cd": "0010027321033",
+   "finance_nm": "화천농협",
+   "finance_path": "농협단위조합\\농협(강원)\\화천농협"
+  },
+  {
+   "finance_cd": "0010027303039",
+   "finance_nm": "화촌농협",
+   "finance_path": "농협단위조합\\농협(강원)\\화촌농협"
+  },
+  {
+   "finance_cd": "0010027305086",
+   "finance_nm": "횡성농협",
+   "finance_path": "농협단위조합\\농협(강원)\\횡성농협"
+  },
+  {
+   "finance_cd": "0010027172488",
+   "finance_nm": "횡성축협",
+   "finance_path": "농협단위조합\\농협(강원)\\횡성축협"
+  },
+  {
+   "finance_cd": "0010027203038",
+   "finance_nm": "가남농협",
+   "finance_path": "농협단위조합\\농협(경기)\\가남농협"
+  },
+  {
+   "finance_cd": "0010027225014",
+   "finance_nm": "가산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\가산농협"
+  },
+  {
+   "finance_cd": "0010027227016",
+   "finance_nm": "가평군농협",
+   "finance_path": "농협단위조합\\농협(경기)\\가평군농협"
+  },
+  {
+   "finance_cd": "0010027172006",
+   "finance_nm": "가평축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\가평축산농협"
+  },
+  {
+   "finance_cd": "0010027231046",
+   "finance_nm": "개군농협",
+   "finance_path": "농협단위조합\\농협(경기)\\개군농협"
+  },
+  {
+   "finance_cd": "0010027225818",
+   "finance_nm": "개성인삼농협",
+   "finance_path": "농협단위조합\\농협(경기)\\개성인삼농협"
+  },
+  {
+   "finance_cd": "0010027233819",
+   "finance_nm": "경기동부원예농협",
+   "finance_path": "농협단위조합\\농협(경기)\\경기동부원예농협"
+  },
+  {
+   "finance_cd": "0010027237101",
+   "finance_nm": "고삼농협",
+   "finance_path": "농협단위조합\\농협(경기)\\고삼농협"
+  },
+  {
+   "finance_cd": "0010027171751",
+   "finance_nm": "고양축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\고양축산농협"
+  },
+  {
+   "finance_cd": "0010027241083",
+   "finance_nm": "고촌농협",
+   "finance_path": "농협단위조합\\농협(경기)\\고촌농협"
+  },
+  {
+   "finance_cd": "0010027221054",
+   "finance_nm": "곤지암농협",
+   "finance_path": "농협단위조합\\농협(경기)\\곤지암농협"
+  },
+  {
+   "finance_cd": "0010027225070",
+   "finance_nm": "관인농협",
+   "finance_path": "농협단위조합\\농협(경기)\\관인농협"
+  },
+  {
+   "finance_cd": "0010027201047",
+   "finance_nm": "광적농협",
+   "finance_path": "농협단위조합\\농협(경기)\\광적농협"
+  },
+  {
+   "finance_cd": "0010027221010",
+   "finance_nm": "광주농협",
+   "finance_path": "농협단위조합\\농협(경기)\\광주농협"
+  },
+  {
+   "finance_cd": "0010027171395",
+   "finance_nm": "광주지구축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\광주지구축산농협"
+  },
+  {
+   "finance_cd": "0010027215066",
+   "finance_nm": "광탄농협",
+   "finance_path": "농협단위조합\\농협(경기)\\광탄농협"
+  },
+  {
+   "finance_cd": "0010027204028",
+   "finance_nm": "구리농협",
+   "finance_path": "농협단위조합\\농협(경기)\\구리농협"
+  },
+  {
+   "finance_cd": "0010027235095",
+   "finance_nm": "구성농협",
+   "finance_path": "농협단위조합\\농협(경기)\\구성농협"
+  },
+  {
+   "finance_cd": "0010027211053",
+   "finance_nm": "군자농협",
+   "finance_path": "농협단위조합\\농협(경기)\\군자농협"
+  },
+  {
+   "finance_cd": "0010027211073",
+   "finance_nm": "군포농협",
+   "finance_path": "농협단위조합\\농협(경기)\\군포농협"
+  },
+  {
+   "finance_cd": "0010027237112",
+   "finance_nm": "금광농협",
+   "finance_path": "농협단위조합\\농협(경기)\\금광농협"
+  },
+  {
+   "finance_cd": "0010027203061",
+   "finance_nm": "금사농협",
+   "finance_path": "농협단위조합\\농협(경기)\\금사농협"
+  },
+  {
+   "finance_cd": "0010027215044",
+   "finance_nm": "금촌농협",
+   "finance_path": "농협단위조합\\농협(경기)\\금촌농협"
+  },
+  {
+   "finance_cd": "0010027235084",
+   "finance_nm": "기흥농협",
+   "finance_path": "농협단위조합\\농협(경기)\\기흥농협"
+  },
+  {
+   "finance_cd": "0010027241038",
+   "finance_nm": "김포농협",
+   "finance_path": "농협단위조합\\농협(경기)\\김포농협"
+  },
+  {
+   "finance_cd": "0010027171874",
+   "finance_nm": "김포축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\김포축산농협"
+  },
+  {
+   "finance_cd": "0010027241821",
+   "finance_nm": "김포파주인삼농협",
+   "finance_path": "농협단위조합\\농협(경기)\\김포파주인삼농협"
+  },
+  {
+   "finance_cd": "0010027201162",
+   "finance_nm": "남면농협",
+   "finance_path": "농협단위조합\\농협(경기)\\남면농협"
+  },
+  {
+   "finance_cd": "0010027235051",
+   "finance_nm": "남사농협",
+   "finance_path": "농협단위조합\\농협(경기)\\남사농협"
+  },
+  {
+   "finance_cd": "0010027207076",
+   "finance_nm": "남양농협",
+   "finance_path": "농협단위조합\\농협(경기)\\남양농협"
+  },
+  {
+   "finance_cd": "0010027172051",
+   "finance_nm": "남양주축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\남양주축산농협"
+  },
+  {
+   "finance_cd": "0010027237097",
+   "finance_nm": "대덕농협",
+   "finance_path": "농협단위조합\\농협(경기)\\대덕농협"
+  },
+  {
+   "finance_cd": "0010027203072",
+   "finance_nm": "대신농협",
+   "finance_path": "농협단위조합\\농협(경기)\\대신농협"
+  },
+  {
+   "finance_cd": "0010027233071",
+   "finance_nm": "대월농협",
+   "finance_path": "농협단위조합\\농협(경기)\\대월농협"
+  },
+  {
+   "finance_cd": "0010027170874",
+   "finance_nm": "도드람양돈농협",
+   "finance_path": "농협단위조합\\농협(경기)\\도드람양돈농협"
+  },
+  {
+   "finance_cd": "0010027221043",
+   "finance_nm": "도척농협",
+   "finance_path": "농협단위조합\\농협(경기)\\도척농협"
+  },
+  {
+   "finance_cd": "0010027235811",
+   "finance_nm": "동경기인삼농협",
+   "finance_path": "농협단위조합\\농협(경기)\\동경기인삼농협"
+  },
+  {
+   "finance_cd": "0010027201140",
+   "finance_nm": "동두천농협",
+   "finance_path": "농협단위조합\\농협(경기)\\동두천농협"
+  },
+  {
+   "finance_cd": "0010027203083",
+   "finance_nm": "동여주농협",
+   "finance_path": "농협단위조합\\농협(경기)\\동여주농협"
+  },
+  {
+   "finance_cd": "0010027207157",
+   "finance_nm": "동탄농협",
+   "finance_path": "농협단위조합\\농협(경기)\\동탄농협"
+  },
+  {
+   "finance_cd": "0010027207113",
+   "finance_nm": "마도농협",
+   "finance_path": "농협단위조합\\농협(경기)\\마도농협"
+  },
+  {
+   "finance_cd": "0010027233060",
+   "finance_nm": "마장농협",
+   "finance_path": "농협단위조합\\농협(경기)\\마장농협"
+  },
+  {
+   "finance_cd": "0010027012366",
+   "finance_nm": "매송농업협동조합[폐]",
+   "finance_path": "농협단위조합\\농협(경기)\\매송농업협동조합[폐]"
+  },
+  {
+   "finance_cd": "0010027207103",
+   "finance_nm": "매송농협 천천지점[폐]",
+   "finance_path": "농협단위조합\\농협(경기)\\매송농협 천천지점[폐]"
+  },
+  {
+   "finance_cd": "0010027207102",
+   "finance_nm": "매송농협[폐]",
+   "finance_path": "농협단위조합\\농협(경기)\\매송농협[폐]"
+  },
+  {
+   "finance_cd": "0010027233082",
+   "finance_nm": "모가농협",
+   "finance_path": "농협단위조합\\농협(경기)\\모가농협"
+  },
+  {
+   "finance_cd": "0010027235039",
+   "finance_nm": "모현농협",
+   "finance_path": "농협단위조합\\농협(경기)\\모현농협"
+  },
+  {
+   "finance_cd": "0010027204039",
+   "finance_nm": "미금농협",
+   "finance_path": "농협단위조합\\농협(경기)\\미금농협"
+  },
+  {
+   "finance_cd": "0010027237019",
+   "finance_nm": "미양농협",
+   "finance_path": "농협단위조합\\농협(경기)\\미양농협"
+  },
+  {
+   "finance_cd": "0010027207087",
+   "finance_nm": "반월농협",
+   "finance_path": "농협단위조합\\농협(경기)\\반월농협"
+  },
+  {
+   "finance_cd": "0010027207043",
+   "finance_nm": "발안농협",
+   "finance_path": "농협단위조합\\농협(경기)\\발안농협"
+  },
+  {
+   "finance_cd": "0010027201036",
+   "finance_nm": "백석농협",
+   "finance_path": "농협단위조합\\농협(경기)\\백석농협"
+  },
+  {
+   "finance_cd": "0010027235062",
+   "finance_nm": "백암농협",
+   "finance_path": "농협단위조합\\농협(경기)\\백암농협"
+  },
+  {
+   "finance_cd": "0010027217046",
+   "finance_nm": "벽제농협",
+   "finance_path": "농협단위조합\\농협(경기)\\벽제농협"
+  },
+  {
+   "finance_cd": "0010027204017",
+   "finance_nm": "별내농협",
+   "finance_path": "농협단위조합\\농협(경기)\\별내농협"
+  },
+  {
+   "finance_cd": "0010027237053",
+   "finance_nm": "보개농협",
+   "finance_path": "농협단위조합\\농협(경기)\\보개농협"
+  },
+  {
+   "finance_cd": "0010027233048",
+   "finance_nm": "부발농협",
+   "finance_path": "농협단위조합\\농협(경기)\\부발농협"
+  },
+  {
+   "finance_cd": "0010027211028",
+   "finance_nm": "북시흥농협",
+   "finance_path": "농협단위조합\\농협(경기)\\북시흥농협"
+  },
+  {
+   "finance_cd": "0010027215077",
+   "finance_nm": "북파주농협",
+   "finance_path": "농협단위조합\\농협(경기)\\북파주농협"
+  },
+  {
+   "finance_cd": "0010027012044",
+   "finance_nm": "비봉농업협동조합[폐]",
+   "finance_path": "농협단위조합\\농협(경기)\\비봉농업협동조합[폐]"
+  },
+  {
+   "finance_cd": "0010027237075",
+   "finance_nm": "삼죽농협",
+   "finance_path": "농협단위조합\\농협(경기)\\삼죽농협"
+  },
+  {
+   "finance_cd": "0010027207168",
+   "finance_nm": "서신농협",
+   "finance_path": "농협단위조합\\농협(경기)\\서신농협"
+  },
+  {
+   "finance_cd": "0010027237031",
+   "finance_nm": "서안성농협",
+   "finance_path": "농협단위조합\\농협(경기)\\서안성농협"
+  },
+  {
+   "finance_cd": "0010027237123",
+   "finance_nm": "서운농협",
+   "finance_path": "농협단위조합\\농협(경기)\\서운농협"
+  },
+  {
+   "finance_cd": "0010027221102",
+   "finance_nm": "서하남농협",
+   "finance_path": "농협단위조합\\농협(경기)\\서하남농협"
+  },
+  {
+   "finance_cd": "0010027207098",
+   "finance_nm": "서화성농협",
+   "finance_path": "농협단위조합\\농협(경기)\\서화성농협"
+  },
+  {
+   "finance_cd": "0010027233107",
+   "finance_nm": "설성농협",
+   "finance_path": "농협단위조합\\농협(경기)\\설성농협"
+  },
+  {
+   "finance_cd": "0010027221113",
+   "finance_nm": "성남농협",
+   "finance_path": "농협단위조합\\농협(경기)\\성남농협"
+  },
+  {
+   "finance_cd": "0010027203049",
+   "finance_nm": "세종대왕농협",
+   "finance_path": "농협단위조합\\농협(경기)\\세종대왕농협"
+  },
+  {
+   "finance_cd": "0010027225036",
+   "finance_nm": "소흘농협",
+   "finance_path": "농협단위조합\\농협(경기)\\소흘농협"
+  },
+  {
+   "finance_cd": "0010027207021",
+   "finance_nm": "송산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\송산농협"
+  },
+  {
+   "finance_cd": "0010027205030",
+   "finance_nm": "송탄농협",
+   "finance_path": "농협단위조합\\농협(경기)\\송탄농협"
+  },
+  {
+   "finance_cd": "0010027217035",
+   "finance_nm": "송포농협",
+   "finance_path": "농협단위조합\\농협(경기)\\송포농협"
+  },
+  {
+   "finance_cd": "0010027204084",
+   "finance_nm": "수동농협",
+   "finance_path": "농협단위조합\\농협(경기)\\수동농협"
+  },
+  {
+   "finance_cd": "0010027207179",
+   "finance_nm": "수원농협",
+   "finance_path": "농협단위조합\\농협(경기)\\수원농협"
+  },
+  {
+   "finance_cd": "0010027207814",
+   "finance_nm": "수원원예농협",
+   "finance_path": "농협단위조합\\농협(경기)\\수원원예농협"
+  },
+  {
+   "finance_cd": "0010027170765",
+   "finance_nm": "수원축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\수원축산농협"
+  },
+  {
+   "finance_cd": "0010027012643",
+   "finance_nm": "수원화성오산축산업협동조합[폐]",
+   "finance_path": "농협단위조합\\농협(경기)\\수원화성오산축산업협동조합[폐]"
+  },
+  {
+   "finance_cd": "0010027235109",
+   "finance_nm": "수지농협",
+   "finance_path": "농협단위조합\\농협(경기)\\수지농협"
+  },
+  {
+   "finance_cd": "0010027215120",
+   "finance_nm": "신교하농협",
+   "finance_path": "농협단위조합\\농협(경기)\\신교하농협"
+  },
+  {
+   "finance_cd": "0010027241050",
+   "finance_nm": "신김포농협",
+   "finance_path": "농협단위조합\\농협(경기)\\신김포농협"
+  },
+  {
+   "finance_cd": "0010027233026",
+   "finance_nm": "신둔농협",
+   "finance_path": "농협단위조합\\농협(경기)\\신둔농협"
+  },
+  {
+   "finance_cd": "0010027211066",
+   "finance_nm": "안산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\안산농협"
+  },
+  {
+   "finance_cd": "0010027237134",
+   "finance_nm": "안성농협",
+   "finance_path": "농협단위조합\\농협(경기)\\안성농협"
+  },
+  {
+   "finance_cd": "0010027237813",
+   "finance_nm": "안성원예농협",
+   "finance_path": "농협단위조합\\농협(경기)\\안성원예농협"
+  },
+  {
+   "finance_cd": "0010027237824",
+   "finance_nm": "안성인삼농협",
+   "finance_path": "농협단위조합\\농협(경기)\\안성인삼농협"
+  },
+  {
+   "finance_cd": "0010027171683",
+   "finance_nm": "안성축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\안성축산농협"
+  },
+  {
+   "finance_cd": "0010027211017",
+   "finance_nm": "안양농협",
+   "finance_path": "농협단위조합\\농협(경기)\\안양농협"
+  },
+  {
+   "finance_cd": "0010027211811",
+   "finance_nm": "안양원예농협",
+   "finance_path": "농협단위조합\\농협(경기)\\안양원예농협"
+  },
+  {
+   "finance_cd": "0010027170888",
+   "finance_nm": "안양축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\안양축산농협"
+  },
+  {
+   "finance_cd": "0010027205100",
+   "finance_nm": "안중농협",
+   "finance_path": "농협단위조합\\농협(경기)\\안중농협"
+  },
+  {
+   "finance_cd": "0010027231105",
+   "finance_nm": "양동농협",
+   "finance_path": "농협단위조합\\농협(경기)\\양동농협"
+  },
+  {
+   "finance_cd": "0010027231068",
+   "finance_nm": "양서농협",
+   "finance_path": "농협단위조합\\농협(경기)\\양서농협"
+  },
+  {
+   "finance_cd": "0010027237042",
+   "finance_nm": "양성농협",
+   "finance_path": "농협단위조합\\농협(경기)\\양성농협"
+  },
+  {
+   "finance_cd": "0010027201025",
+   "finance_nm": "양주농협",
+   "finance_path": "농협단위조합\\농협(경기)\\양주농협"
+  },
+  {
+   "finance_cd": "0010027171078",
+   "finance_nm": "양주축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\양주축산농협"
+  },
+  {
+   "finance_cd": "0010027231013",
+   "finance_nm": "양평농협",
+   "finance_path": "농협단위조합\\농협(경기)\\양평농협"
+  },
+  {
+   "finance_cd": "0010027171502",
+   "finance_nm": "양평축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\양평축산농협"
+  },
+  {
+   "finance_cd": "0010027203016",
+   "finance_nm": "여주농협",
+   "finance_path": "농협단위조합\\농협(경기)\\여주농협"
+  },
+  {
+   "finance_cd": "0010027171955",
+   "finance_nm": "여주축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\여주축산농협"
+  },
+  {
+   "finance_cd": "0010027223090",
+   "finance_nm": "연천농협",
+   "finance_path": "농협단위조합\\농협(경기)\\연천농협"
+  },
+  {
+   "finance_cd": "0010027225069",
+   "finance_nm": "영북농협",
+   "finance_path": "농협단위조합\\농협(경기)\\영북농협"
+  },
+  {
+   "finance_cd": "0010027225025",
+   "finance_nm": "영중농협",
+   "finance_path": "농협단위조합\\농협(경기)\\영중농협"
+  },
+  {
+   "finance_cd": "0010027207010",
+   "finance_nm": "오산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\오산농협"
+  },
+  {
+   "finance_cd": "0010027221021",
+   "finance_nm": "오포농협",
+   "finance_path": "농협단위조합\\농협(경기)\\오포농협"
+  },
+  {
+   "finance_cd": "0010027204040",
+   "finance_nm": "와부농협",
+   "finance_path": "농협단위조합\\농협(경기)\\와부농협"
+  },
+  {
+   "finance_cd": "0010027231080",
+   "finance_nm": "용문농협",
+   "finance_path": "농협단위조합\\농협(경기)\\용문농협"
+  },
+  {
+   "finance_cd": "0010027235017",
+   "finance_nm": "용인농협",
+   "finance_path": "농협단위조합\\농협(경기)\\용인농협"
+  },
+  {
+   "finance_cd": "0010027171612",
+   "finance_nm": "용인축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\용인축산농협"
+  },
+  {
+   "finance_cd": "0010027217057",
+   "finance_nm": "원당농협",
+   "finance_path": "농협단위조합\\농협(경기)\\원당농협"
+  },
+  {
+   "finance_cd": "0010027235073",
+   "finance_nm": "원삼농협",
+   "finance_path": "농협단위조합\\농협(경기)\\원삼농협"
+  },
+  {
+   "finance_cd": "0010027215011",
+   "finance_nm": "월롱농협",
+   "finance_path": "농협단위조합\\농협(경기)\\월롱농협"
+  },
+  {
+   "finance_cd": "0010027233118",
+   "finance_nm": "율면농협",
+   "finance_path": "농협단위조합\\농협(경기)\\율면농협"
+  },
+  {
+   "finance_cd": "0010027201173",
+   "finance_nm": "은현농협",
+   "finance_path": "농협단위조합\\농협(경기)\\은현농협"
+  },
+  {
+   "finance_cd": "0010027211040",
+   "finance_nm": "의왕농협",
+   "finance_path": "농협단위조합\\농협(경기)\\의왕농협"
+  },
+  {
+   "finance_cd": "0010027201019",
+   "finance_nm": "의정부농협",
+   "finance_path": "농협단위조합\\농협(경기)\\의정부농협"
+  },
+  {
+   "finance_cd": "0010027235040",
+   "finance_nm": "이동농협",
+   "finance_path": "농협단위조합\\농협(경기)\\이동농협"
+  },
+  {
+   "finance_cd": "0010027233015",
+   "finance_nm": "이천농협",
+   "finance_path": "농협단위조합\\농협(경기)\\이천농협"
+  },
+  {
+   "finance_cd": "0010027171560",
+   "finance_nm": "이천축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\이천축산농협"
+  },
+  {
+   "finance_cd": "0010027225058",
+   "finance_nm": "일동농협",
+   "finance_path": "농협단위조합\\농협(경기)\\일동농협"
+  },
+  {
+   "finance_cd": "0010027217024",
+   "finance_nm": "일산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\일산농협"
+  },
+  {
+   "finance_cd": "0010027237020",
+   "finance_nm": "일죽농협",
+   "finance_path": "농협단위조합\\농협(경기)\\일죽농협"
+  },
+  {
+   "finance_cd": "0010027223089",
+   "finance_nm": "임진농협",
+   "finance_path": "농협단위조합\\농협(경기)\\임진농협"
+  },
+  {
+   "finance_cd": "0010027233093",
+   "finance_nm": "장호원농협",
+   "finance_path": "농협단위조합\\농협(경기)\\장호원농협"
+  },
+  {
+   "finance_cd": "0010027201058",
+   "finance_nm": "장흥농협",
+   "finance_path": "농협단위조합\\농협(경기)\\장흥농협"
+  },
+  {
+   "finance_cd": "0010027223023",
+   "finance_nm": "전곡농협",
+   "finance_path": "농협단위조합\\농협(경기)\\전곡농협"
+  },
+  {
+   "finance_cd": "0010027203027",
+   "finance_nm": "점동농협",
+   "finance_path": "농협단위조합\\농협(경기)\\점동농협"
+  },
+  {
+   "finance_cd": "0010027207032",
+   "finance_nm": "정남농협",
+   "finance_path": "농협단위조합\\농협(경기)\\정남농협"
+  },
+  {
+   "finance_cd": "0010027215055",
+   "finance_nm": "조리농협",
+   "finance_path": "농협단위조합\\농협(경기)\\조리농협"
+  },
+  {
+   "finance_cd": "0010027207065",
+   "finance_nm": "조암농협",
+   "finance_path": "농협단위조합\\농협(경기)\\조암농협"
+  },
+  {
+   "finance_cd": "0010027237086",
+   "finance_nm": "죽산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\죽산농협"
+  },
+  {
+   "finance_cd": "0010027221087",
+   "finance_nm": "중부농협",
+   "finance_path": "농협단위조합\\농협(경기)\\중부농협"
+  },
+  {
+   "finance_cd": "0010027217013",
+   "finance_nm": "지도농협",
+   "finance_path": "농협단위조합\\농협(경기)\\지도농협"
+  },
+  {
+   "finance_cd": "0010027231091",
+   "finance_nm": "지평농협",
+   "finance_path": "농협단위조합\\농협(경기)\\지평농협"
+  },
+  {
+   "finance_cd": "0010027204051",
+   "finance_nm": "진건농협",
+   "finance_path": "농협단위조합\\농협(경기)\\진건농협"
+  },
+  {
+   "finance_cd": "0010027204062",
+   "finance_nm": "진접농협",
+   "finance_path": "농협단위조합\\농협(경기)\\진접농협"
+  },
+  {
+   "finance_cd": "0010027215099",
+   "finance_nm": "천현농협",
+   "finance_path": "농협단위조합\\농협(경기)\\천현농협"
+  },
+  {
+   "finance_cd": "0010027231127",
+   "finance_nm": "청운농협",
+   "finance_path": "농협단위조합\\농협(경기)\\청운농협"
+  },
+  {
+   "finance_cd": "0010027221032",
+   "finance_nm": "초월농협",
+   "finance_path": "농협단위조합\\농협(경기)\\초월농협"
+  },
+  {
+   "finance_cd": "0010027215022",
+   "finance_nm": "탄현농협",
+   "finance_path": "농협단위조합\\농협(경기)\\탄현농협"
+  },
+  {
+   "finance_cd": "0010027207050",
+   "finance_nm": "태안농협",
+   "finance_path": "농협단위조합\\농협(경기)\\태안농협"
+  },
+  {
+   "finance_cd": "0010027207054",
+   "finance_nm": "태안농협[폐]",
+   "finance_path": "농협단위조합\\농협(경기)\\태안농협[폐]"
+  },
+  {
+   "finance_cd": "0010027221157",
+   "finance_nm": "퇴촌농협",
+   "finance_path": "농협단위조합\\농협(경기)\\퇴촌농협"
+  },
+  {
+   "finance_cd": "0010027215088",
+   "finance_nm": "파주농협",
+   "finance_path": "농협단위조합\\농협(경기)\\파주농협"
+  },
+  {
+   "finance_cd": "0010027171285",
+   "finance_nm": "파주연천축협",
+   "finance_path": "농협단위조합\\농협(경기)\\파주연천축협"
+  },
+  {
+   "finance_cd": "0010027221135",
+   "finance_nm": "판교낙생농협",
+   "finance_path": "농협단위조합\\농협(경기)\\판교낙생농협"
+  },
+  {
+   "finance_cd": "0010027207135",
+   "finance_nm": "팔탄농협",
+   "finance_path": "농협단위조합\\농협(경기)\\팔탄농협"
+  },
+  {
+   "finance_cd": "0010027205029",
+   "finance_nm": "팽성농협",
+   "finance_path": "농협단위조합\\농협(경기)\\팽성농협"
+  },
+  {
+   "finance_cd": "0010027205018",
+   "finance_nm": "평택농협",
+   "finance_path": "농협단위조합\\농협(경기)\\평택농협"
+  },
+  {
+   "finance_cd": "0010027205812",
+   "finance_nm": "평택원예농협",
+   "finance_path": "농협단위조합\\농협(경기)\\평택원예농협"
+  },
+  {
+   "finance_cd": "0010027171191",
+   "finance_nm": "평택축산농협",
+   "finance_path": "농협단위조합\\농협(경기)\\평택축산농협"
+  },
+  {
+   "finance_cd": "0010027235028",
+   "finance_nm": "포곡농협",
+   "finance_path": "농협단위조합\\농협(경기)\\포곡농협"
+  },
+  {
+   "finance_cd": "0010027225047",
+   "finance_nm": "포천농협",
+   "finance_path": "농협단위조합\\농협(경기)\\포천농협"
+  },
+  {
+   "finance_cd": "0010027171450",
+   "finance_nm": "포천축협",
+   "finance_path": "농협단위조합\\농협(경기)\\포천축협"
+  },
+  {
+   "finance_cd": "0010027221098",
+   "finance_nm": "하남농협",
+   "finance_path": "농협단위조합\\농협(경기)\\하남농협"
+  },
+  {
+   "finance_cd": "0010027217817",
+   "finance_nm": "한국화훼농협",
+   "finance_path": "농협단위조합\\농협(경기)\\한국화훼농협"
+  },
+  {
+   "finance_cd": "0010027233059",
+   "finance_nm": "호법농협",
+   "finance_path": "농협단위조합\\농협(경기)\\호법농협"
+  },
+  {
+   "finance_cd": "0010027204073",
+   "finance_nm": "화도농협",
+   "finance_path": "농협단위조합\\농협(경기)\\화도농협"
+  },
+  {
+   "finance_cd": "0010027201151",
+   "finance_nm": "회천농협",
+   "finance_path": "농협단위조합\\농협(경기)\\회천농협"
+  },
+  {
+   "finance_cd": "0010027203050",
+   "finance_nm": "흥천농협",
+   "finance_path": "농협단위조합\\농협(경기)\\흥천농협"
+  },
+  {
+   "finance_cd": "0010027825102",
+   "finance_nm": "거제농협",
+   "finance_path": "농협단위조합\\농협(경남)\\거제농협"
+  },
+  {
+   "finance_cd": "0010027178045",
+   "finance_nm": "거제축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\거제축산농협"
+  },
+  {
+   "finance_cd": "0010027178039",
+   "finance_nm": "거제축산농협[폐]",
+   "finance_path": "농협단위조합\\농협(경남)\\거제축산농협[폐]"
+  },
+  {
+   "finance_cd": "0010027825021",
+   "finance_nm": "거제해금강농협",
+   "finance_path": "농협단위조합\\농협(경남)\\거제해금강농협"
+  },
+  {
+   "finance_cd": "0010027841137",
+   "finance_nm": "거창농협",
+   "finance_path": "농협단위조합\\농협(경남)\\거창농협"
+  },
+  {
+   "finance_cd": "0010027841816",
+   "finance_nm": "거창사과농협",
+   "finance_path": "농협단위조합\\농협(경남)\\거창사과농협"
+  },
+  {
+   "finance_cd": "0010027177292",
+   "finance_nm": "거창축협",
+   "finance_path": "농협단위조합\\농협(경남)\\거창축협"
+  },
+  {
+   "finance_cd": "0010027817835",
+   "finance_nm": "경남단감원예농협",
+   "finance_path": "농협단위조합\\농협(경남)\\경남단감원예농협"
+  },
+  {
+   "finance_cd": "0010027827034",
+   "finance_nm": "고성농협",
+   "finance_path": "농협단위조합\\농협(경남)\\고성농협"
+  },
+  {
+   "finance_cd": "0010027827148",
+   "finance_nm": "고성동부농협",
+   "finance_path": "농협단위조합\\농협(경남)\\고성동부농협"
+  },
+  {
+   "finance_cd": "0010027177917",
+   "finance_nm": "고성축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\고성축산농협"
+  },
+  {
+   "finance_cd": "0010027845083",
+   "finance_nm": "곤명농협",
+   "finance_path": "농협단위조합\\농협(경남)\\곤명농협"
+  },
+  {
+   "finance_cd": "0010027821072",
+   "finance_nm": "구산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\구산농협"
+  },
+  {
+   "finance_cd": "0010027805047",
+   "finance_nm": "군북농협",
+   "finance_path": "농협단위조합\\농협(경남)\\군북농협"
+  },
+  {
+   "finance_cd": "0010027833103",
+   "finance_nm": "금남농협",
+   "finance_path": "농협단위조합\\농협(경남)\\금남농협"
+  },
+  {
+   "finance_cd": "0010027833088",
+   "finance_nm": "금오농협",
+   "finance_path": "농협단위조합\\농협(경남)\\금오농협"
+  },
+  {
+   "finance_cd": "0010027817019",
+   "finance_nm": "김해농협",
+   "finance_path": "농협단위조합\\농협(경남)\\김해농협"
+  },
+  {
+   "finance_cd": "0010027177713",
+   "finance_nm": "김해축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\김해축산농협"
+  },
+  {
+   "finance_cd": "0010027841115",
+   "finance_nm": "남거창농협",
+   "finance_path": "농협단위조합\\농협(경남)\\남거창농협"
+  },
+  {
+   "finance_cd": "0010027811105",
+   "finance_nm": "남밀양농협",
+   "finance_path": "농협단위조합\\농협(경남)\\남밀양농협"
+  },
+  {
+   "finance_cd": "0010027807061",
+   "finance_nm": "남지농협",
+   "finance_path": "농협단위조합\\농협(경남)\\남지농협"
+  },
+  {
+   "finance_cd": "0010027821038",
+   "finance_nm": "남창원농협",
+   "finance_path": "농협단위조합\\농협(경남)\\남창원농협"
+  },
+  {
+   "finance_cd": "0010027831019",
+   "finance_nm": "남해농협",
+   "finance_path": "농협단위조합\\농협(경남)\\남해농협"
+  },
+  {
+   "finance_cd": "0010027178000",
+   "finance_nm": "남해축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\남해축산농협"
+  },
+  {
+   "finance_cd": "0010027817123",
+   "finance_nm": "대동농협",
+   "finance_path": "농협단위조합\\농협(경남)\\대동농협"
+  },
+  {
+   "finance_cd": "0010027805014",
+   "finance_nm": "대산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\대산농협"
+  },
+  {
+   "finance_cd": "0010027821016",
+   "finance_nm": "대산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\대산농협"
+  },
+  {
+   "finance_cd": "0010027841056",
+   "finance_nm": "동거창농협",
+   "finance_path": "농협단위조합\\농협(경남)\\동거창농협"
+  },
+  {
+   "finance_cd": "0010027827023",
+   "finance_nm": "동고성농협",
+   "finance_path": "농협단위조합\\농협(경남)\\동고성농협"
+  },
+  {
+   "finance_cd": "0010027831064",
+   "finance_nm": "동남해농협",
+   "finance_path": "농협단위조합\\농협(경남)\\동남해농협"
+  },
+  {
+   "finance_cd": "0010027811057",
+   "finance_nm": "동밀양농협",
+   "finance_path": "농협단위조합\\농협(경남)\\동밀양농협"
+  },
+  {
+   "finance_cd": "0010027803148",
+   "finance_nm": "동부농협",
+   "finance_path": "농협단위조합\\농협(경남)\\동부농협"
+  },
+  {
+   "finance_cd": "0010027821027",
+   "finance_nm": "동읍농협",
+   "finance_path": "농협단위조합\\농협(경남)\\동읍농협"
+  },
+  {
+   "finance_cd": "0010027821083",
+   "finance_nm": "동창원농협",
+   "finance_path": "농협단위조합\\농협(경남)\\동창원농협"
+  },
+  {
+   "finance_cd": "0010027805081",
+   "finance_nm": "동함안농협",
+   "finance_path": "농협단위조합\\농협(경남)\\동함안농협"
+  },
+  {
+   "finance_cd": "0010027825032",
+   "finance_nm": "둔덕농협",
+   "finance_path": "농협단위조합\\농협(경남)\\둔덕농협"
+  },
+  {
+   "finance_cd": "0010027821153",
+   "finance_nm": "마산시농협",
+   "finance_path": "농협단위조합\\농협(경남)\\마산시농협"
+  },
+  {
+   "finance_cd": "0010027811127",
+   "finance_nm": "무안농협",
+   "finance_path": "농협단위조합\\농협(경남)\\무안농협"
+  },
+  {
+   "finance_cd": "0010027813060",
+   "finance_nm": "물금농협",
+   "finance_path": "농협단위조합\\농협(경남)\\물금농협"
+  },
+  {
+   "finance_cd": "0010027811015",
+   "finance_nm": "밀양농협",
+   "finance_path": "농협단위조합\\농협(경남)\\밀양농협"
+  },
+  {
+   "finance_cd": "0010027177603",
+   "finance_nm": "밀양축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\밀양축산농협"
+  },
+  {
+   "finance_cd": "0010027178194",
+   "finance_nm": "부경양돈농협",
+   "finance_path": "농협단위조합\\농협(경남)\\부경양돈농협"
+  },
+  {
+   "finance_cd": "0010027807083",
+   "finance_nm": "부곡농협",
+   "finance_path": "농협단위조합\\농협(경남)\\부곡농협"
+  },
+  {
+   "finance_cd": "0010027811035",
+   "finance_nm": "부북농협",
+   "finance_path": "농협단위조합\\농협(경남)\\부북농협"
+  },
+  {
+   "finance_cd": "0010027841104",
+   "finance_nm": "북부농협",
+   "finance_path": "농협단위조합\\농협(경남)\\북부농협"
+  },
+  {
+   "finance_cd": "0010027821049",
+   "finance_nm": "북창원농협",
+   "finance_path": "농협단위조합\\농협(경남)\\북창원농협"
+  },
+  {
+   "finance_cd": "0010027845027",
+   "finance_nm": "사남농협",
+   "finance_path": "농협단위조합\\농협(경남)\\사남농협"
+  },
+  {
+   "finance_cd": "0010027825054",
+   "finance_nm": "사등농협",
+   "finance_path": "농협단위조합\\농협(경남)\\사등농협"
+  },
+  {
+   "finance_cd": "0010027845061",
+   "finance_nm": "사천농협",
+   "finance_path": "농협단위조합\\농협(경남)\\사천농협"
+  },
+  {
+   "finance_cd": "0010027177836",
+   "finance_nm": "사천축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\사천축산농협"
+  },
+  {
+   "finance_cd": "0010027823052",
+   "finance_nm": "산양농협",
+   "finance_path": "농협단위조합\\농협(경남)\\산양농협"
+  },
+  {
+   "finance_cd": "0010027835116",
+   "finance_nm": "산청군농협",
+   "finance_path": "농협단위조합\\농협(경남)\\산청군농협"
+  },
+  {
+   "finance_cd": "0010027177263",
+   "finance_nm": "산청축협[폐]",
+   "finance_path": "농협단위조합\\농협(경남)\\산청축협[폐]"
+  },
+  {
+   "finance_cd": "0010027811091",
+   "finance_nm": "삼랑진농협",
+   "finance_path": "농협단위조합\\농협(경남)\\삼랑진농협"
+  },
+  {
+   "finance_cd": "0010027845108",
+   "finance_nm": "삼천포농협",
+   "finance_path": "농협단위조합\\농협(경남)\\삼천포농협"
+  },
+  {
+   "finance_cd": "0010027811080",
+   "finance_nm": "상남농협",
+   "finance_path": "농협단위조합\\농협(경남)\\상남농협"
+  },
+  {
+   "finance_cd": "0010027811046",
+   "finance_nm": "상동농협",
+   "finance_path": "농협단위조합\\농협(경남)\\상동농협"
+  },
+  {
+   "finance_cd": "0010027817031",
+   "finance_nm": "상동농협",
+   "finance_path": "농협단위조합\\농협(경남)\\상동농협"
+  },
+  {
+   "finance_cd": "0010027813048",
+   "finance_nm": "상북농협",
+   "finance_path": "농협단위조합\\농협(경남)\\상북농협"
+  },
+  {
+   "finance_cd": "0010027827056",
+   "finance_nm": "새고성농협",
+   "finance_path": "농협단위조합\\농협(경남)\\새고성농협"
+  },
+  {
+   "finance_cd": "0010027831020",
+   "finance_nm": "새남해농협",
+   "finance_path": "농협단위조합\\농협(경남)\\새남해농협"
+  },
+  {
+   "finance_cd": "0010027823030",
+   "finance_nm": "새통영농협",
+   "finance_path": "농협단위조합\\농협(경남)\\새통영농협"
+  },
+  {
+   "finance_cd": "0010027817075",
+   "finance_nm": "생림농협",
+   "finance_path": "농협단위조합\\농협(경남)\\생림농협"
+  },
+  {
+   "finance_cd": "0010027821119",
+   "finance_nm": "서창원농협",
+   "finance_path": "농협단위조합\\농협(경남)\\서창원농협"
+  },
+  {
+   "finance_cd": "0010027845050",
+   "finance_nm": "서포농협",
+   "finance_path": "농협단위조합\\농협(경남)\\서포농협"
+  },
+  {
+   "finance_cd": "0010027837015",
+   "finance_nm": "수동농협",
+   "finance_path": "농협단위조합\\농협(경남)\\수동농협"
+  },
+  {
+   "finance_cd": "0010027841023",
+   "finance_nm": "수승대농협",
+   "finance_path": "농협단위조합\\농협(경남)\\수승대농협"
+  },
+  {
+   "finance_cd": "0010027841012",
+   "finance_nm": "신원농협[폐]",
+   "finance_path": "농협단위조합\\농협(경남)\\신원농협[폐]"
+  },
+  {
+   "finance_cd": "0010027825071",
+   "finance_nm": "신현농협",
+   "finance_path": "농협단위조합\\농협(경남)\\신현농협"
+  },
+  {
+   "finance_cd": "0010027012990",
+   "finance_nm": "악양농업협동조합[폐]",
+   "finance_path": "농협단위조합\\농협(경남)\\악양농업협동조합[폐]"
+  },
+  {
+   "finance_cd": "0010027833022",
+   "finance_nm": "악양농협[폐]",
+   "finance_path": "농협단위조합\\농협(경남)\\악양농협[폐]"
+  },
+  {
+   "finance_cd": "0010027837107",
+   "finance_nm": "안의농협",
+   "finance_path": "농협단위조합\\농협(경남)\\안의농협"
+  },
+  {
+   "finance_cd": "0010027843151",
+   "finance_nm": "야로농협[폐]",
+   "finance_path": "농협단위조합\\농협(경남)\\야로농협[폐]"
+  },
+  {
+   "finance_cd": "0010027178055",
+   "finance_nm": "양산기장축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\양산기장축산농협"
+  },
+  {
+   "finance_cd": "0010027813015",
+   "finance_nm": "양산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\양산농협"
+  },
+  {
+   "finance_cd": "0010027825010",
+   "finance_nm": "연초농협",
+   "finance_path": "농협단위조합\\농협(경남)\\연초농협"
+  },
+  {
+   "finance_cd": "0010027817848",
+   "finance_nm": "영남원예농협",
+   "finance_path": "농협단위조합\\농협(경남)\\영남원예농협"
+  },
+  {
+   "finance_cd": "0010027807050",
+   "finance_nm": "영산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\영산농협"
+  },
+  {
+   "finance_cd": "0010027833114",
+   "finance_nm": "옥종농협",
+   "finance_path": "농협단위조합\\농협(경남)\\옥종농협"
+  },
+  {
+   "finance_cd": "0010027823041",
+   "finance_nm": "용남농협",
+   "finance_path": "농협단위조합\\농협(경남)\\용남농협"
+  },
+  {
+   "finance_cd": "0010027845049",
+   "finance_nm": "용현농협",
+   "finance_path": "농협단위조합\\농협(경남)\\용현농협"
+  },
+  {
+   "finance_cd": "0010027807027",
+   "finance_nm": "우포농협",
+   "finance_path": "농협단위조합\\농협(경남)\\우포농협"
+  },
+  {
+   "finance_cd": "0010027821108",
+   "finance_nm": "웅동농협",
+   "finance_path": "농협단위조합\\농협(경남)\\웅동농협"
+  },
+  {
+   "finance_cd": "0010027813059",
+   "finance_nm": "웅상농협",
+   "finance_path": "농협단위조합\\농협(경남)\\웅상농협"
+  },
+  {
+   "finance_cd": "0010027821061",
+   "finance_nm": "웅천농협",
+   "finance_path": "농협단위조합\\농협(경남)\\웅천농협"
+  },
+  {
+   "finance_cd": "0010027843117",
+   "finance_nm": "율곡농협",
+   "finance_path": "농협단위조합\\농협(경남)\\율곡농협"
+  },
+  {
+   "finance_cd": "0010027803012",
+   "finance_nm": "의령농협",
+   "finance_path": "농협단위조합\\농협(경남)\\의령농협"
+  },
+  {
+   "finance_cd": "0010027177975",
+   "finance_nm": "의령축협",
+   "finance_path": "농협단위조합\\농협(경남)\\의령축협"
+  },
+  {
+   "finance_cd": "0010027807038",
+   "finance_nm": "이방농협",
+   "finance_path": "농협단위조합\\농협(경남)\\이방농협"
+  },
+  {
+   "finance_cd": "0010027825087",
+   "finance_nm": "일운농협",
+   "finance_path": "농협단위조합\\농협(경남)\\일운농협"
+  },
+  {
+   "finance_cd": "0010027825043",
+   "finance_nm": "장목농협",
+   "finance_path": "농협단위조합\\농협(경남)\\장목농협"
+  },
+  {
+   "finance_cd": "0010027825113",
+   "finance_nm": "장승포농협",
+   "finance_path": "농협단위조합\\농협(경남)\\장승포농협"
+  },
+  {
+   "finance_cd": "0010027817042",
+   "finance_nm": "장유농협",
+   "finance_path": "농협단위조합\\농협(경남)\\장유농협"
+  },
+  {
+   "finance_cd": "0010027845016",
+   "finance_nm": "정동농협",
+   "finance_path": "농협단위조합\\농협(경남)\\정동농협"
+  },
+  {
+   "finance_cd": "0010027817064",
+   "finance_nm": "주촌농협",
+   "finance_path": "농협단위조합\\농협(경남)\\주촌농협"
+  },
+  {
+   "finance_cd": "0010027837093",
+   "finance_nm": "지곡농협",
+   "finance_path": "농협단위조합\\농협(경남)\\지곡농협"
+  },
+  {
+   "finance_cd": "0010027837071",
+   "finance_nm": "지리산마천농협",
+   "finance_path": "농협단위조합\\농협(경남)\\지리산마천농협"
+  },
+  {
+   "finance_cd": "0010027833055",
+   "finance_nm": "지리산청학농협",
+   "finance_path": "농협단위조합\\농협(경남)\\지리산청학농협"
+  },
+  {
+   "finance_cd": "0010027817097",
+   "finance_nm": "진례농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진례농협"
+  },
+  {
+   "finance_cd": "0010027821120",
+   "finance_nm": "진북농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진북농협"
+  },
+  {
+   "finance_cd": "0010027817086",
+   "finance_nm": "진영농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진영농협"
+  },
+  {
+   "finance_cd": "0010027821050",
+   "finance_nm": "진전농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진전농협"
+  },
+  {
+   "finance_cd": "0010027801021",
+   "finance_nm": "진주금곡농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주금곡농협"
+  },
+  {
+   "finance_cd": "0010027801065",
+   "finance_nm": "진주금산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주금산농협"
+  },
+  {
+   "finance_cd": "0010027801043",
+   "finance_nm": "진주남부농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주남부농협"
+  },
+  {
+   "finance_cd": "0010027801102",
+   "finance_nm": "진주대곡농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주대곡농협"
+  },
+  {
+   "finance_cd": "0010027801172",
+   "finance_nm": "진주동부농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주동부농협"
+  },
+  {
+   "finance_cd": "0010027801032",
+   "finance_nm": "진주문산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주문산농협"
+  },
+  {
+   "finance_cd": "0010027801191",
+   "finance_nm": "진주북부농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주북부농협"
+  },
+  {
+   "finance_cd": "0010027801168",
+   "finance_nm": "진주서부농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주서부농협"
+  },
+  {
+   "finance_cd": "0010027801010",
+   "finance_nm": "진주수곡농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주수곡농협"
+  },
+  {
+   "finance_cd": "0010027801819",
+   "finance_nm": "진주원예농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주원예농협"
+  },
+  {
+   "finance_cd": "0010027801076",
+   "finance_nm": "진주중부농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주중부농협"
+  },
+  {
+   "finance_cd": "0010027801054",
+   "finance_nm": "진주진양농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주진양농협"
+  },
+  {
+   "finance_cd": "0010027177658",
+   "finance_nm": "진주축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진주축산농협"
+  },
+  {
+   "finance_cd": "0010027821142",
+   "finance_nm": "진해농협",
+   "finance_path": "농협단위조합\\농협(경남)\\진해농협"
+  },
+  {
+   "finance_cd": "0010027807131",
+   "finance_nm": "창녕농협",
+   "finance_path": "농협단위조합\\농협(경남)\\창녕농협"
+  },
+  {
+   "finance_cd": "0010027177881",
+   "finance_nm": "창녕축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\창녕축산농협"
+  },
+  {
+   "finance_cd": "0010027831086",
+   "finance_nm": "창선농협",
+   "finance_path": "농협단위조합\\농협(경남)\\창선농협"
+  },
+  {
+   "finance_cd": "0010027177742",
+   "finance_nm": "창원시축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\창원시축산농협"
+  },
+  {
+   "finance_cd": "0010027821810",
+   "finance_nm": "창원원예농협",
+   "finance_path": "농협단위조합\\농협(경남)\\창원원예농협"
+  },
+  {
+   "finance_cd": "0010027821094",
+   "finance_nm": "창원진동농협",
+   "finance_path": "농협단위조합\\농협(경남)\\창원진동농협"
+  },
+  {
+   "finance_cd": "0010027811138",
+   "finance_nm": "청도농협",
+   "finance_path": "농협단위조합\\농협(경남)\\청도농협"
+  },
+  {
+   "finance_cd": "0010027823096",
+   "finance_nm": "통영농협",
+   "finance_path": "농협단위조합\\농협(경남)\\통영농협"
+  },
+  {
+   "finance_cd": "0010027178071",
+   "finance_nm": "통영축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\통영축산농협"
+  },
+  {
+   "finance_cd": "0010027833033",
+   "finance_nm": "하동농협",
+   "finance_path": "농협단위조합\\농협(경남)\\하동농협"
+  },
+  {
+   "finance_cd": "0010027177577",
+   "finance_nm": "하동축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\하동축산농협"
+  },
+  {
+   "finance_cd": "0010027813037",
+   "finance_nm": "하북농협",
+   "finance_path": "농협단위조합\\농협(경남)\\하북농협"
+  },
+  {
+   "finance_cd": "0010027825065",
+   "finance_nm": "하청농협",
+   "finance_path": "농협단위조합\\농협(경남)\\하청농협"
+  },
+  {
+   "finance_cd": "0010027817101",
+   "finance_nm": "한림농협",
+   "finance_path": "농협단위조합\\농협(경남)\\한림농협"
+  },
+  {
+   "finance_cd": "0010027823029",
+   "finance_nm": "한산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\한산농협"
+  },
+  {
+   "finance_cd": "0010027805058",
+   "finance_nm": "함안농협",
+   "finance_path": "농협단위조합\\농협(경남)\\함안농협"
+  },
+  {
+   "finance_cd": "0010027177425",
+   "finance_nm": "함안축산농협",
+   "finance_path": "농협단위조합\\농협(경남)\\함안축산농협"
+  },
+  {
+   "finance_cd": "0010027837026",
+   "finance_nm": "함양농협",
+   "finance_path": "농협단위조합\\농협(경남)\\함양농협"
+  },
+  {
+   "finance_cd": "0010027177946",
+   "finance_nm": "함양산청축협",
+   "finance_path": "농협단위조합\\농협(경남)\\함양산청축협"
+  },
+  {
+   "finance_cd": "0010027843058",
+   "finance_nm": "합천남부농협[폐]",
+   "finance_path": "농협단위조합\\농협(경남)\\합천남부농협[폐]"
+  },
+  {
+   "finance_cd": "0010027843162",
+   "finance_nm": "합천농협",
+   "finance_path": "농협단위조합\\농협(경남)\\합천농협"
+  },
+  {
+   "finance_cd": "0010027843014",
+   "finance_nm": "합천동부농협",
+   "finance_path": "농협단위조합\\농협(경남)\\합천동부농협"
+  },
+  {
+   "finance_cd": "0010027843081",
+   "finance_nm": "합천새남부농협",
+   "finance_path": "농협단위조합\\농협(경남)\\합천새남부농협"
+  },
+  {
+   "finance_cd": "0010027177535",
+   "finance_nm": "합천축협",
+   "finance_path": "농협단위조합\\농협(경남)\\합천축협"
+  },
+  {
+   "finance_cd": "0010027843070",
+   "finance_nm": "합천호농협",
+   "finance_path": "농협단위조합\\농협(경남)\\합천호농협"
+  },
+  {
+   "finance_cd": "0010027843173",
+   "finance_nm": "해인사농협",
+   "finance_path": "농협단위조합\\농협(경남)\\해인사농협"
+  },
+  {
+   "finance_cd": "0010027833011",
+   "finance_nm": "화개악양농협",
+   "finance_path": "농협단위조합\\농협(경남)\\화개악양농협"
+  },
+  {
+   "finance_cd": "0010027735056",
+   "finance_nm": "가산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\가산농협"
+  },
+  {
+   "finance_cd": "0010027737117",
+   "finance_nm": "감문농협",
+   "finance_path": "농협단위조합\\농협(경북)\\감문농협"
+  },
+  {
+   "finance_cd": "0010027715083",
+   "finance_nm": "강구농협",
+   "finance_path": "농협단위조합\\농협(경북)\\강구농협"
+  },
+  {
+   "finance_cd": "0010027721082",
+   "finance_nm": "강동농협",
+   "finance_path": "농협단위조합\\농협(경북)\\강동농협"
+  },
+  {
+   "finance_cd": "0010027721015",
+   "finance_nm": "경주농협",
+   "finance_path": "농협단위조합\\농협(경북)\\경주농협"
+  },
+  {
+   "finance_cd": "0010027176358",
+   "finance_nm": "경주축산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\경주축산농협"
+  },
+  {
+   "finance_cd": "0010027723095",
+   "finance_nm": "고경농협",
+   "finance_path": "농협단위조합\\농협(경북)\\고경농협"
+  },
+  {
+   "finance_cd": "0010027731018",
+   "finance_nm": "고령농협",
+   "finance_path": "농협단위조합\\농협(경북)\\고령농협"
+  },
+  {
+   "finance_cd": "0010027176879",
+   "finance_nm": "고령성주축협",
+   "finance_path": "농협단위조합\\농협(경북)\\고령성주축협"
+  },
+  {
+   "finance_cd": "0010027741099",
+   "finance_nm": "고아농협",
+   "finance_path": "농협단위조합\\농협(경북)\\고아농협"
+  },
+  {
+   "finance_cd": "0010027743161",
+   "finance_nm": "공검농협",
+   "finance_path": "농협단위조합\\농협(경북)\\공검농협"
+  },
+  {
+   "finance_cd": "0010027743080",
+   "finance_nm": "공성농협",
+   "finance_path": "농협단위조합\\농협(경북)\\공성농협"
+  },
+  {
+   "finance_cd": "0010027717085",
+   "finance_nm": "구룡포농협",
+   "finance_path": "농협단위조합\\농협(경북)\\구룡포농협"
+  },
+  {
+   "finance_cd": "0010027741011",
+   "finance_nm": "구미농협",
+   "finance_path": "농협단위조합\\농협(경북)\\구미농협"
+  },
+  {
+   "finance_cd": "0010027176785",
+   "finance_nm": "구미칠곡축협",
+   "finance_path": "농협단위조합\\농협(경북)\\구미칠곡축협"
+  },
+  {
+   "finance_cd": "0010027703022",
+   "finance_nm": "군위농협",
+   "finance_path": "농협단위조합\\농협(경북)\\군위농협"
+  },
+  {
+   "finance_cd": "0010027176905",
+   "finance_nm": "군위축협",
+   "finance_path": "농협단위조합\\농협(경북)\\군위축협"
+  },
+  {
+   "finance_cd": "0010027755096",
+   "finance_nm": "근남농협[폐]",
+   "finance_path": "농협단위조합\\농협(경북)\\근남농협[폐]"
+  },
+  {
+   "finance_cd": "0010027705080",
+   "finance_nm": "금성농협",
+   "finance_path": "농협단위조합\\농협(경북)\\금성농협"
+  },
+  {
+   "finance_cd": "0010027723073",
+   "finance_nm": "금호농협",
+   "finance_path": "농협단위조합\\농협(경북)\\금호농협"
+  },
+  {
+   "finance_cd": "0010027755030",
+   "finance_nm": "기성농협[폐]",
+   "finance_path": "농협단위조합\\농협(경북)\\기성농협[폐]"
+  },
+  {
+   "finance_cd": "0010027737036",
+   "finance_nm": "김천농협",
+   "finance_path": "농협단위조합\\농협(경북)\\김천농협"
+  },
+  {
+   "finance_cd": "0010027176390",
+   "finance_nm": "김천축산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\김천축산농협"
+  },
+  {
+   "finance_cd": "0010027737139",
+   "finance_nm": "김천혁신농협",
+   "finance_path": "농협단위조합\\농협(경북)\\김천혁신농협"
+  },
+  {
+   "finance_cd": "0010027743046",
+   "finance_nm": "낙동농협",
+   "finance_path": "농협단위조합\\농협(경북)\\낙동농협"
+  },
+  {
+   "finance_cd": "0010027737025",
+   "finance_nm": "남김천농협",
+   "finance_path": "농협단위조합\\농협(경북)\\남김천농협"
+  },
+  {
+   "finance_cd": "0010027743079",
+   "finance_nm": "남상주농협",
+   "finance_path": "농협단위조합\\농협(경북)\\남상주농협"
+  },
+  {
+   "finance_cd": "0010027707059",
+   "finance_nm": "남안동농협",
+   "finance_path": "농협단위조합\\농협(경북)\\남안동농협"
+  },
+  {
+   "finance_cd": "0010027713025",
+   "finance_nm": "남영양농협",
+   "finance_path": "농협단위조합\\농협(경북)\\남영양농협"
+  },
+  {
+   "finance_cd": "0010027747121",
+   "finance_nm": "남예천농협",
+   "finance_path": "농협단위조합\\농협(경북)\\남예천농협"
+  },
+  {
+   "finance_cd": "0010027755100",
+   "finance_nm": "남울진농협",
+   "finance_path": "농협단위조합\\농협(경북)\\남울진농협"
+  },
+  {
+   "finance_cd": "0010027711045",
+   "finance_nm": "남청송농협",
+   "finance_path": "농협단위조합\\농협(경북)\\남청송농협"
+  },
+  {
+   "finance_cd": "0010027717018",
+   "finance_nm": "남포항농협",
+   "finance_path": "농협단위조합\\농협(경북)\\남포항농협"
+  },
+  {
+   "finance_cd": "0010027721048",
+   "finance_nm": "내남농협",
+   "finance_path": "농협단위조합\\농협(경북)\\내남농협"
+  },
+  {
+   "finance_cd": "0010027737047",
+   "finance_nm": "농소농협",
+   "finance_path": "농협단위조합\\농협(경북)\\농소농협"
+  },
+  {
+   "finance_cd": "0010027731052",
+   "finance_nm": "다산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\다산농협"
+  },
+  {
+   "finance_cd": "0010027705172",
+   "finance_nm": "다인농협",
+   "finance_path": "농협단위조합\\농협(경북)\\다인농협"
+  },
+  {
+   "finance_cd": "0010027733098",
+   "finance_nm": "대가농협",
+   "finance_path": "농협단위조합\\농협(경북)\\대가농협"
+  },
+  {
+   "finance_cd": "0010027737128",
+   "finance_nm": "대산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\대산농협"
+  },
+  {
+   "finance_cd": "0010027741055",
+   "finance_nm": "도개농협[폐]",
+   "finance_path": "농협단위조합\\농협(경북)\\도개농협[폐]"
+  },
+  {
+   "finance_cd": "0010027721107",
+   "finance_nm": "동경주농협",
+   "finance_path": "농협단위조합\\농협(경북)\\동경주농협"
+  },
+  {
+   "finance_cd": "0010027731041",
+   "finance_nm": "동고령농협",
+   "finance_path": "농협단위조합\\농협(경북)\\동고령농협"
+  },
+  {
+   "finance_cd": "0010027741077",
+   "finance_nm": "동구미농협",
+   "finance_path": "농협단위조합\\농협(경북)\\동구미농협"
+  },
+  {
+   "finance_cd": "0010027735045",
+   "finance_nm": "동명농협",
+   "finance_path": "농협단위조합\\농협(경북)\\동명농협"
+  },
+  {
+   "finance_cd": "0010027745048",
+   "finance_nm": "동문경농협",
+   "finance_path": "농협단위조합\\농협(경북)\\동문경농협"
+  },
+  {
+   "finance_cd": "0010027707130",
+   "finance_nm": "동안동농협",
+   "finance_path": "농협단위조합\\농협(경북)\\동안동농협"
+  },
+  {
+   "finance_cd": "0010027727088",
+   "finance_nm": "동청도농협",
+   "finance_path": "농협단위조합\\농협(경북)\\동청도농협"
+  },
+  {
+   "finance_cd": "0010027717096",
+   "finance_nm": "동해농협",
+   "finance_path": "농협단위조합\\농협(경북)\\동해농협"
+  },
+  {
+   "finance_cd": "0010027727099",
+   "finance_nm": "매전농협",
+   "finance_path": "농협단위조합\\농협(경북)\\매전농협"
+  },
+  {
+   "finance_cd": "0010027743116",
+   "finance_nm": "모서농협",
+   "finance_path": "농협단위조합\\농협(경북)\\모서농협"
+  },
+  {
+   "finance_cd": "0010027741033",
+   "finance_nm": "무을농협",
+   "finance_path": "농협단위조합\\농협(경북)\\무을농협"
+  },
+  {
+   "finance_cd": "0010027745071",
+   "finance_nm": "문경농협",
+   "finance_path": "농협단위조합\\농협(경북)\\문경농협"
+  },
+  {
+   "finance_cd": "0010027176976",
+   "finance_nm": "문경축산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\문경축산농협"
+  },
+  {
+   "finance_cd": "0010027753027",
+   "finance_nm": "물야농협",
+   "finance_path": "농협단위조합\\농협(경북)\\물야농협"
+  },
+  {
+   "finance_cd": "0010027753072",
+   "finance_nm": "법전농협[폐]",
+   "finance_path": "농협단위조합\\농협(경북)\\법전농협[폐]"
+  },
+  {
+   "finance_cd": "0010027733021",
+   "finance_nm": "벽진농협",
+   "finance_path": "농협단위조합\\농협(경북)\\벽진농협"
+  },
+  {
+   "finance_cd": "0010027753016",
+   "finance_nm": "봉화농협",
+   "finance_path": "농협단위조합\\농협(경북)\\봉화농협"
+  },
+  {
+   "finance_cd": "0010027755052",
+   "finance_nm": "북면농협",
+   "finance_path": "농협단위조합\\농협(경북)\\북면농협"
+  },
+  {
+   "finance_cd": "0010027735089",
+   "finance_nm": "북삼농협",
+   "finance_path": "농협단위조합\\농협(경북)\\북삼농협"
+  },
+  {
+   "finance_cd": "0010027723028",
+   "finance_nm": "북안농협",
+   "finance_path": "농협단위조합\\농협(경북)\\북안농협"
+  },
+  {
+   "finance_cd": "0010027707037",
+   "finance_nm": "북안동농협",
+   "finance_path": "농협단위조합\\농협(경북)\\북안동농협"
+  },
+  {
+   "finance_cd": "0010027715050",
+   "finance_nm": "북영덕농협",
+   "finance_path": "농협단위조합\\농협(경북)\\북영덕농협"
+  },
+  {
+   "finance_cd": "0010027715049",
+   "finance_nm": "북영덕농협",
+   "finance_path": "농협단위조합\\농협(경북)\\북영덕농협"
+  },
+  {
+   "finance_cd": "0010027721026",
+   "finance_nm": "불국사농협",
+   "finance_path": "농협단위조합\\농협(경북)\\불국사농협"
+  },
+  {
+   "finance_cd": "0010027705105",
+   "finance_nm": "비안농협[폐]",
+   "finance_path": "농협단위조합\\농협(경북)\\비안농협[폐]"
+  },
+  {
+   "finance_cd": "0010027743024",
+   "finance_nm": "사벌농협",
+   "finance_path": "농협단위조합\\농협(경북)\\사벌농협"
+  },
+  {
+   "finance_cd": "0010027721141",
+   "finance_nm": "산내농협[폐]",
+   "finance_path": "농협단위조합\\농협(경북)\\산내농협[폐]"
+  },
+  {
+   "finance_cd": "0010027753038",
+   "finance_nm": "상운농협[폐]",
+   "finance_path": "농협단위조합\\농협(경북)\\상운농협[폐]"
+  },
+  {
+   "finance_cd": "0010027743013",
+   "finance_nm": "상주농협",
+   "finance_path": "농협단위조합\\농협(경북)\\상주농협"
+  },
+  {
+   "finance_cd": "0010027743817",
+   "finance_nm": "상주원예농협",
+   "finance_path": "농협단위조합\\농협(경북)\\상주원예농협"
+  },
+  {
+   "finance_cd": "0010027176688",
+   "finance_nm": "상주축산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\상주축산농협"
+  },
+  {
+   "finance_cd": "0010027737092",
+   "finance_nm": "새김천농협",
+   "finance_path": "농협단위조합\\농협(경북)\\새김천농협"
+  },
+  {
+   "finance_cd": "0010027705046",
+   "finance_nm": "새의성농협",
+   "finance_path": "농협단위조합\\농협(경북)\\새의성농협"
+  },
+  {
+   "finance_cd": "0010027727055",
+   "finance_nm": "새청도농협",
+   "finance_path": "농협단위조합\\농협(경북)\\새청도농협"
+  },
+  {
+   "finance_cd": "0010027745082",
+   "finance_nm": "서문경농협",
+   "finance_path": "농협단위조합\\농협(경북)\\서문경농협"
+  },
+  {
+   "finance_cd": "0010027733113",
+   "finance_nm": "서부농협",
+   "finance_path": "농협단위조합\\농협(경북)\\서부농협"
+  },
+  {
+   "finance_cd": "0010027743105",
+   "finance_nm": "서상주농협",
+   "finance_path": "농협단위조합\\농협(경북)\\서상주농협"
+  },
+  {
+   "finance_cd": "0010027707118",
+   "finance_nm": "서안동농협",
+   "finance_path": "농협단위조합\\농협(경북)\\서안동농협"
+  },
+  {
+   "finance_cd": "0010027705127",
+   "finance_nm": "서의성농협",
+   "finance_path": "농협단위조합\\농협(경북)\\서의성농협"
+  },
+  {
+   "finance_cd": "0010027727033",
+   "finance_nm": "서청도농협",
+   "finance_path": "농협단위조합\\농협(경북)\\서청도농협"
+  },
+  {
+   "finance_cd": "0010027717111",
+   "finance_nm": "서포항농협",
+   "finance_path": "농협단위조합\\농협(경북)\\서포항농협"
+  },
+  {
+   "finance_cd": "0010027735078",
+   "finance_nm": "석적농협",
+   "finance_path": "농협단위조합\\농협(경북)\\석적농협"
+  },
+  {
+   "finance_cd": "0010027733054",
+   "finance_nm": "선남농협",
+   "finance_path": "농협단위조합\\농협(경북)\\선남농협"
+  },
+  {
+   "finance_cd": "0010027741022",
+   "finance_nm": "선산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\선산농협"
+  },
+  {
+   "finance_cd": "0010027733043",
+   "finance_nm": "성주농협",
+   "finance_path": "농협단위조합\\농협(경북)\\성주농협"
+  },
+  {
+   "finance_cd": "0010027733814",
+   "finance_nm": "성주참외원예농협",
+   "finance_path": "농협단위조합\\농협(경북)\\성주참외원예농협"
+  },
+  {
+   "finance_cd": "0010027733065",
+   "finance_nm": "수륜농협",
+   "finance_path": "농협단위조합\\농협(경북)\\수륜농협"
+  },
+  {
+   "finance_cd": "0010027721129",
+   "finance_nm": "신경주농협",
+   "finance_path": "농협단위조합\\농협(경북)\\신경주농협"
+  },
+  {
+   "finance_cd": "0010027723039",
+   "finance_nm": "신녕농협",
+   "finance_path": "농협단위조합\\농협(경북)\\신녕농협"
+  },
+  {
+   "finance_cd": "0010027705161",
+   "finance_nm": "신평농협[폐]",
+   "finance_path": "농협단위조합\\농협(경북)\\신평농협[폐]"
+  },
+  {
+   "finance_cd": "0010027717030",
+   "finance_nm": "신포항농협",
+   "finance_path": "농협단위조합\\농협(경북)\\신포항농협"
+  },
+  {
+   "finance_cd": "0010027731085",
+   "finance_nm": "쌍림농협",
+   "finance_path": "농협단위조합\\농협(경북)\\쌍림농협"
+  },
+  {
+   "finance_cd": "0010027737070",
+   "finance_nm": "아포농협",
+   "finance_path": "농협단위조합\\농협(경북)\\아포농협"
+  },
+  {
+   "finance_cd": "0010027721071",
+   "finance_nm": "안강농협",
+   "finance_path": "농협단위조합\\농협(경북)\\안강농협"
+  },
+  {
+   "finance_cd": "0010027705138",
+   "finance_nm": "안계농협",
+   "finance_path": "농협단위조합\\농협(경북)\\안계농협"
+  },
+  {
+   "finance_cd": "0010027707015",
+   "finance_nm": "안동농협",
+   "finance_path": "농협단위조합\\농협(경북)\\안동농협"
+  },
+  {
+   "finance_cd": "0010027176442",
+   "finance_nm": "안동봉화축협",
+   "finance_path": "농협단위조합\\농협(경북)\\안동봉화축협"
+  },
+  {
+   "finance_cd": "0010027707026",
+   "finance_nm": "안동와룡농협",
+   "finance_path": "농협단위조합\\농협(경북)\\안동와룡농협"
+  },
+  {
+   "finance_cd": "0010027751069",
+   "finance_nm": "안정농협",
+   "finance_path": "농협단위조합\\농협(경북)\\안정농협"
+  },
+  {
+   "finance_cd": "0010027735090",
+   "finance_nm": "약목농협",
+   "finance_path": "농협단위조합\\농협(경북)\\약목농협"
+  },
+  {
+   "finance_cd": "0010027721118",
+   "finance_nm": "양남농협",
+   "finance_path": "농협단위조합\\농협(경북)\\양남농협"
+  },
+  {
+   "finance_cd": "0010027715016",
+   "finance_nm": "영덕농협",
+   "finance_path": "농협단위조합\\농협(경북)\\영덕농협"
+  },
+  {
+   "finance_cd": "0010027176523",
+   "finance_nm": "영덕울진축산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\영덕울진축산농협"
+  },
+  {
+   "finance_cd": "0010027745026",
+   "finance_nm": "영순농협",
+   "finance_path": "농협단위조합\\농협(경북)\\영순농협"
+  },
+  {
+   "finance_cd": "0010027713014",
+   "finance_nm": "영양농협",
+   "finance_path": "농협단위조합\\농협(경북)\\영양농협"
+  },
+  {
+   "finance_cd": "0010027751011",
+   "finance_nm": "영주농협",
+   "finance_path": "농협단위조합\\농협(경북)\\영주농협"
+  },
+  {
+   "finance_cd": "0010027176743",
+   "finance_nm": "영주축산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\영주축산농협"
+  },
+  {
+   "finance_cd": "0010027723040",
+   "finance_nm": "영천농협",
+   "finance_path": "농협단위조합\\농협(경북)\\영천농협"
+  },
+  {
+   "finance_cd": "0010027176549",
+   "finance_nm": "영천축산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\영천축산농협"
+  },
+  {
+   "finance_cd": "0010027747017",
+   "finance_nm": "예천농협",
+   "finance_path": "농협단위조합\\농협(경북)\\예천농협"
+  },
+  {
+   "finance_cd": "0010027176727",
+   "finance_nm": "예천축산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\예천축산농협"
+  },
+  {
+   "finance_cd": "0010027717074",
+   "finance_nm": "오천농협",
+   "finance_path": "농협단위조합\\농협(경북)\\오천농협"
+  },
+  {
+   "finance_cd": "0010027741044",
+   "finance_nm": "옥성농협[폐]",
+   "finance_path": "농협단위조합\\농협(경북)\\옥성농협[폐]"
+  },
+  {
+   "finance_cd": "0010027755074",
+   "finance_nm": "온정농협[폐]",
+   "finance_path": "농협단위조합\\농협(경북)\\온정농협[폐]"
+  },
+  {
+   "finance_cd": "0010027735012",
+   "finance_nm": "왜관농협",
+   "finance_path": "농협단위조합\\농협(경북)\\왜관농협"
+  },
+  {
+   "finance_cd": "0010027721037",
+   "finance_nm": "외동농협",
+   "finance_path": "농협단위조합\\농협(경북)\\외동농협"
+  },
+  {
+   "finance_cd": "0010027743068",
+   "finance_nm": "외서농협",
+   "finance_path": "농협단위조합\\농협(경북)\\외서농협"
+  },
+  {
+   "finance_cd": "0010027733032",
+   "finance_nm": "용암농협",
+   "finance_path": "농협단위조합\\농협(경북)\\용암농협"
+  },
+  {
+   "finance_cd": "0010027757010",
+   "finance_nm": "울릉농협",
+   "finance_path": "농협단위조합\\농협(경북)\\울릉농협"
+  },
+  {
+   "finance_cd": "0010027755018",
+   "finance_nm": "울진농협",
+   "finance_path": "농협단위조합\\농협(경북)\\울진농협"
+  },
+  {
+   "finance_cd": "0010027755029",
+   "finance_nm": "울진중앙농협",
+   "finance_path": "농협단위조합\\농협(경북)\\울진중앙농협"
+  },
+  {
+   "finance_cd": "0010027733102",
+   "finance_nm": "월항농협",
+   "finance_path": "농협단위조합\\농협(경북)\\월항농협"
+  },
+  {
+   "finance_cd": "0010027743150",
+   "finance_nm": "은척농협",
+   "finance_path": "농협단위조합\\농협(경북)\\은척농협"
+  },
+  {
+   "finance_cd": "0010027705013",
+   "finance_nm": "의성농협",
+   "finance_path": "농협단위조합\\농협(경북)\\의성농협"
+  },
+  {
+   "finance_cd": "0010027705091",
+   "finance_nm": "의성중부농협",
+   "finance_path": "농협단위조합\\농협(경북)\\의성중부농협"
+  },
+  {
+   "finance_cd": "0010027176497",
+   "finance_nm": "의성축산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\의성축산농협"
+  },
+  {
+   "finance_cd": "0010027741103",
+   "finance_nm": "인동농협",
+   "finance_path": "농협단위조합\\농협(경북)\\인동농협"
+  },
+  {
+   "finance_cd": "0010027723051",
+   "finance_nm": "임고농협",
+   "finance_path": "농협단위조합\\농협(경북)\\임고농협"
+  },
+  {
+   "finance_cd": "0010027717063",
+   "finance_nm": "장기농협",
+   "finance_path": "농협단위조합\\농협(경북)\\장기농협"
+  },
+  {
+   "finance_cd": "0010027753061",
+   "finance_nm": "재산농협[폐]",
+   "finance_path": "농협단위조합\\농협(경북)\\재산농협[폐]"
+  },
+  {
+   "finance_cd": "0010027745015",
+   "finance_nm": "점촌농협",
+   "finance_path": "농협단위조합\\농협(경북)\\점촌농협"
+  },
+  {
+   "finance_cd": "0010027737058",
+   "finance_nm": "조마농협",
+   "finance_path": "농협단위조합\\농협(경북)\\조마농협"
+  },
+  {
+   "finance_cd": "0010027743138",
+   "finance_nm": "중화농협",
+   "finance_path": "농협단위조합\\농협(경북)\\중화농협"
+  },
+  {
+   "finance_cd": "0010027747110",
+   "finance_nm": "지보농협",
+   "finance_path": "농협단위조합\\농협(경북)\\지보농협"
+  },
+  {
+   "finance_cd": "0010027735023",
+   "finance_nm": "지천농협",
+   "finance_path": "농협단위조합\\농협(경북)\\지천농협"
+  },
+  {
+   "finance_cd": "0010027737081",
+   "finance_nm": "직지농협",
+   "finance_path": "농협단위조합\\농협(경북)\\직지농협"
+  },
+  {
+   "finance_cd": "0010027721060",
+   "finance_nm": "천북농협",
+   "finance_path": "농협단위조합\\농협(경북)\\천북농협"
+  },
+  {
+   "finance_cd": "0010027727011",
+   "finance_nm": "청도농협",
+   "finance_path": "농협단위조합\\농협(경북)\\청도농협"
+  },
+  {
+   "finance_cd": "0010027176633",
+   "finance_nm": "청도축산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\청도축산농협"
+  },
+  {
+   "finance_cd": "0010027711012",
+   "finance_nm": "청송농협",
+   "finance_path": "농협단위조합\\농협(경북)\\청송농협"
+  },
+  {
+   "finance_cd": "0010027177014",
+   "finance_nm": "청송영양축산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\청송영양축산농협"
+  },
+  {
+   "finance_cd": "0010027733010",
+   "finance_nm": "초전농협",
+   "finance_path": "농협단위조합\\농협(경북)\\초전농협"
+  },
+  {
+   "finance_cd": "0010027753083",
+   "finance_nm": "춘양농협",
+   "finance_path": "농협단위조합\\농협(경북)\\춘양농협"
+  },
+  {
+   "finance_cd": "0010027703066",
+   "finance_nm": "팔공농협",
+   "finance_path": "농협단위조합\\농협(경북)\\팔공농협"
+  },
+  {
+   "finance_cd": "0010027755041",
+   "finance_nm": "평해농협",
+   "finance_path": "농협단위조합\\농협(경북)\\평해농협"
+  },
+  {
+   "finance_cd": "0010027717100",
+   "finance_nm": "포항농협",
+   "finance_path": "농협단위조합\\농협(경북)\\포항농협"
+  },
+  {
+   "finance_cd": "0010027176316",
+   "finance_nm": "포항축산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\포항축산농협"
+  },
+  {
+   "finance_cd": "0010027751081",
+   "finance_nm": "풍기농협",
+   "finance_path": "농협단위조합\\농협(경북)\\풍기농협"
+  },
+  {
+   "finance_cd": "0010027751818",
+   "finance_nm": "풍기인삼농협",
+   "finance_path": "농협단위조합\\농협(경북)\\풍기인삼농협"
+  },
+  {
+   "finance_cd": "0010027743172",
+   "finance_nm": "함창농협",
+   "finance_path": "농협단위조합\\농협(경북)\\함창농협"
+  },
+  {
+   "finance_cd": "0010027741066",
+   "finance_nm": "해평농협",
+   "finance_path": "농협단위조합\\농협(경북)\\해평농협"
+  },
+  {
+   "finance_cd": "0010027721059",
+   "finance_nm": "현곡농협",
+   "finance_path": "농협단위조합\\농협(경북)\\현곡농협"
+  },
+  {
+   "finance_cd": "0010027711056",
+   "finance_nm": "현서농협",
+   "finance_path": "농협단위조합\\농협(경북)\\현서농협"
+  },
+  {
+   "finance_cd": "0010027723017",
+   "finance_nm": "화산농협",
+   "finance_path": "농협단위조합\\농협(경북)\\화산농협"
+  },
+  {
+   "finance_cd": "0010027717041",
+   "finance_nm": "흥해농협",
+   "finance_path": "농협단위조합\\농협(경북)\\흥해농협"
+  },
+  {
+   "finance_cd": "0010027601177",
+   "finance_nm": "광주농협",
+   "finance_path": "농협단위조합\\농협(광주)\\광주농협"
+  },
+  {
+   "finance_cd": "0010027601100",
+   "finance_nm": "광주비아농협",
+   "finance_path": "농협단위조합\\농협(광주)\\광주비아농협"
+  },
+  {
+   "finance_cd": "0010027645818",
+   "finance_nm": "광주원예농협",
+   "finance_path": "농협단위조합\\농협(광주)\\광주원예농협"
+  },
+  {
+   "finance_cd": "0010027175346",
+   "finance_nm": "광주축산농협",
+   "finance_path": "농협단위조합\\농협(광주)\\광주축산농협"
+  },
+  {
+   "finance_cd": "0010027601155",
+   "finance_nm": "남광주농협",
+   "finance_path": "농협단위조합\\농협(광주)\\남광주농협"
+  },
+  {
+   "finance_cd": "0010027601063",
+   "finance_nm": "대촌농협",
+   "finance_path": "농협단위조합\\농협(광주)\\대촌농협"
+  },
+  {
+   "finance_cd": "0010027601029",
+   "finance_nm": "동곡농협",
+   "finance_path": "농협단위조합\\농협(광주)\\동곡농협"
+  },
+  {
+   "finance_cd": "0010027601085",
+   "finance_nm": "본량농협",
+   "finance_path": "농협단위조합\\농협(광주)\\본량농협"
+  },
+  {
+   "finance_cd": "0010027601144",
+   "finance_nm": "북광주농협",
+   "finance_path": "농협단위조합\\농협(광주)\\북광주농협"
+  },
+  {
+   "finance_cd": "0010027601041",
+   "finance_nm": "삼도농협",
+   "finance_path": "농협단위조합\\농협(광주)\\삼도농협"
+  },
+  {
+   "finance_cd": "0010027601137",
+   "finance_nm": "서광주농협",
+   "finance_path": "농협단위조합\\농협(광주)\\서광주농협"
+  },
+  {
+   "finance_cd": "0010027601052",
+   "finance_nm": "서창농협",
+   "finance_path": "농협단위조합\\농협(광주)\\서창농협"
+  },
+  {
+   "finance_cd": "0010027601018",
+   "finance_nm": "송정농협",
+   "finance_path": "농협단위조합\\농협(광주)\\송정농협"
+  },
+  {
+   "finance_cd": "0010027601096",
+   "finance_nm": "임곡농협",
+   "finance_path": "농협단위조합\\농협(광주)\\임곡농협"
+  },
+  {
+   "finance_cd": "0010027601030",
+   "finance_nm": "평동농협",
+   "finance_path": "농협단위조합\\농협(광주)\\평동농협"
+  },
+  {
+   "finance_cd": "0010027601111",
+   "finance_nm": "하남농협",
+   "finance_path": "농협단위조합\\농협(광주)\\하남농협"
+  },
+  {
+   "finance_cd": "0010027702010",
+   "finance_nm": "가창농협",
+   "finance_path": "농협단위조합\\농협(대구)\\가창농협"
+  },
+  {
+   "finance_cd": "0010027177234",
+   "finance_nm": "경북대구낙농농협",
+   "finance_path": "농협단위조합\\농협(대구)\\경북대구낙농농협"
+  },
+  {
+   "finance_cd": "0010027725019",
+   "finance_nm": "경산농협",
+   "finance_path": "농협단위조합\\농협(대구)\\경산농협"
+  },
+  {
+   "finance_cd": "0010027176581",
+   "finance_nm": "경산축산농협",
+   "finance_path": "농협단위조합\\농협(대구)\\경산축산농협"
+  },
+  {
+   "finance_cd": "0010027150062",
+   "finance_nm": "고산농협",
+   "finance_path": "농협단위조합\\농협(대구)\\고산농협"
+  },
+  {
+   "finance_cd": "0010027150095",
+   "finance_nm": "공산농협",
+   "finance_path": "농협단위조합\\농협(대구)\\공산농협"
+  },
+  {
+   "finance_cd": "0010027702087",
+   "finance_nm": "구지농협",
+   "finance_path": "농협단위조합\\농협(대구)\\구지농협"
+  },
+  {
+   "finance_cd": "0010027702065",
+   "finance_nm": "논공농협",
+   "finance_path": "농협단위조합\\농협(대구)\\논공농협"
+  },
+  {
+   "finance_cd": "0010027702021",
+   "finance_nm": "다사농협",
+   "finance_path": "농협단위조합\\농협(대구)\\다사농협"
+  },
+  {
+   "finance_cd": "0010027176921",
+   "finance_nm": "달성축산농협",
+   "finance_path": "농협단위조합\\농협(대구)\\달성축산농협"
+  },
+  {
+   "finance_cd": "0010027702814",
+   "finance_nm": "대경사과원예농협",
+   "finance_path": "농협단위조합\\농협(대구)\\대경사과원예농협"
+  },
+  {
+   "finance_cd": "0010027177098",
+   "finance_nm": "대구경북양돈농협",
+   "finance_path": "농협단위조합\\농협(대구)\\대구경북양돈농협"
+  },
+  {
+   "finance_cd": "0010027150812",
+   "finance_nm": "대구경북원예농협",
+   "finance_path": "농협단위조합\\농협(대구)\\대구경북원예농협"
+  },
+  {
+   "finance_cd": "0010027176138",
+   "finance_nm": "대구축산농협",
+   "finance_path": "농협단위조합\\농협(대구)\\대구축산농협"
+  },
+  {
+   "finance_cd": "0010027150017",
+   "finance_nm": "동대구농협",
+   "finance_path": "농협단위조합\\농협(대구)\\동대구농협"
+  },
+  {
+   "finance_cd": "0010027150040",
+   "finance_nm": "동촌농협",
+   "finance_path": "농협단위조합\\농협(대구)\\동촌농협"
+  },
+  {
+   "finance_cd": "0010027150051",
+   "finance_nm": "반야월농협",
+   "finance_path": "농협단위조합\\농협(대구)\\반야월농협"
+  },
+  {
+   "finance_cd": "0010027150039",
+   "finance_nm": "북대구농협",
+   "finance_path": "농협단위조합\\농협(대구)\\북대구농협"
+  },
+  {
+   "finance_cd": "0010027150028",
+   "finance_nm": "서대구농협",
+   "finance_path": "농협단위조합\\농협(대구)\\서대구농협"
+  },
+  {
+   "finance_cd": "0010027150073",
+   "finance_nm": "성서농협",
+   "finance_path": "농협단위조합\\농협(대구)\\성서농협"
+  },
+  {
+   "finance_cd": "0010027725031",
+   "finance_nm": "압량농협",
+   "finance_path": "농협단위조합\\농협(대구)\\압량농협"
+  },
+  {
+   "finance_cd": "0010027702054",
+   "finance_nm": "옥포농협",
+   "finance_path": "농협단위조합\\농협(대구)\\옥포농협"
+  },
+  {
+   "finance_cd": "0010027725075",
+   "finance_nm": "와촌농협",
+   "finance_path": "농협단위조합\\농협(대구)\\와촌농협"
+  },
+  {
+   "finance_cd": "0010027725101",
+   "finance_nm": "용성농협",
+   "finance_path": "농협단위조합\\농협(대구)\\용성농협"
+  },
+  {
+   "finance_cd": "0010027150084",
+   "finance_nm": "월배농협",
+   "finance_path": "농협단위조합\\농협(대구)\\월배농협"
+  },
+  {
+   "finance_cd": "0010027702098",
+   "finance_nm": "유가농협",
+   "finance_path": "농협단위조합\\농협(대구)\\유가농협"
+  },
+  {
+   "finance_cd": "0010027725097",
+   "finance_nm": "자인농협",
+   "finance_path": "농협단위조합\\농협(대구)\\자인농협"
+  },
+  {
+   "finance_cd": "0010027725086",
+   "finance_nm": "진량농협",
+   "finance_path": "농협단위조합\\농협(대구)\\진량농협"
+  },
+  {
+   "finance_cd": "0010027150109",
+   "finance_nm": "칠곡농협",
+   "finance_path": "농협단위조합\\농협(대구)\\칠곡농협"
+  },
+  {
+   "finance_cd": "0010027702032",
+   "finance_nm": "하빈농협",
+   "finance_path": "농협단위조합\\농협(대구)\\하빈농협"
+  },
+  {
+   "finance_cd": "0010027725064",
+   "finance_nm": "하양농협",
+   "finance_path": "농협단위조합\\농협(대구)\\하양농협"
+  },
+  {
+   "finance_cd": "0010027702076",
+   "finance_nm": "현풍농협",
+   "finance_path": "농협단위조합\\농협(대구)\\현풍농협"
+  },
+  {
+   "finance_cd": "0010027702043",
+   "finance_nm": "화원농협",
+   "finance_path": "농협단위조합\\농협(대구)\\화원농협"
+  },
+  {
+   "finance_cd": "0010027453079",
+   "finance_nm": "기성농협",
+   "finance_path": "농협단위조합\\농협(대전)\\기성농협"
+  },
+  {
+   "finance_cd": "0010027453080",
+   "finance_nm": "남대전농협",
+   "finance_path": "농협단위조합\\농협(대전)\\남대전농협"
+  },
+  {
+   "finance_cd": "0010027453816",
+   "finance_nm": "대전원예농협",
+   "finance_path": "농협단위조합\\농협(대전)\\대전원예농협"
+  },
+  {
+   "finance_cd": "0010027453814",
+   "finance_nm": "대전원예농협 노은공판장지점[폐]",
+   "finance_path": "농협단위조합\\농협(대전)\\대전원예농협 노은공판장지점[폐]"
+  },
+  {
+   "finance_cd": "0010027453819",
+   "finance_nm": "대전원예농협 둔산로지점[폐]",
+   "finance_path": "농협단위조합\\농협(대전)\\대전원예농협 둔산로지점[폐]"
+  },
+  {
+   "finance_cd": "0010027453818",
+   "finance_nm": "대전원예농협 법동지점[폐]",
+   "finance_path": "농협단위조합\\농협(대전)\\대전원예농협 법동지점[폐]"
+  },
+  {
+   "finance_cd": "0010027453811",
+   "finance_nm": "대전원예농협 서대전역지점[폐]",
+   "finance_path": "농협단위조합\\농협(대전)\\대전원예농협 서대전역지점[폐]"
+  },
+  {
+   "finance_cd": "0010027453810",
+   "finance_nm": "대전원예농협 석교지점[폐]",
+   "finance_path": "농협단위조합\\농협(대전)\\대전원예농협 석교지점[폐]"
+  },
+  {
+   "finance_cd": "0010027453817",
+   "finance_nm": "대전원예농협[폐]",
+   "finance_path": "농협단위조합\\농협(대전)\\대전원예농협[폐]"
+  },
+  {
+   "finance_cd": "0010027453091",
+   "finance_nm": "대전진잠농협",
+   "finance_path": "농협단위조합\\농협(대전)\\대전진잠농협"
+  },
+  {
+   "finance_cd": "0010027173652",
+   "finance_nm": "대전축산농협",
+   "finance_path": "농협단위조합\\농협(대전)\\대전축산농협"
+  },
+  {
+   "finance_cd": "0010027174509",
+   "finance_nm": "대전충남우유농협",
+   "finance_path": "농협단위조합\\농협(대전)\\대전충남우유농협"
+  },
+  {
+   "finance_cd": "0010027453011",
+   "finance_nm": "동대전농협",
+   "finance_path": "농협단위조합\\농협(대전)\\동대전농협"
+  },
+  {
+   "finance_cd": "0010027453131",
+   "finance_nm": "북대전농협",
+   "finance_path": "농협단위조합\\농협(대전)\\북대전농협"
+  },
+  {
+   "finance_cd": "0010027453046",
+   "finance_nm": "산내농협",
+   "finance_path": "농협단위조합\\농협(대전)\\산내농협"
+  },
+  {
+   "finance_cd": "0010027453024",
+   "finance_nm": "서대전농협",
+   "finance_path": "농협단위조합\\농협(대전)\\서대전농협"
+  },
+  {
+   "finance_cd": "0010027453048",
+   "finance_nm": "서부농협",
+   "finance_path": "농협단위조합\\농협(대전)\\서부농협"
+  },
+  {
+   "finance_cd": "0010027453121",
+   "finance_nm": "신탄진농협",
+   "finance_path": "농협단위조합\\농협(대전)\\신탄진농협"
+  },
+  {
+   "finance_cd": "0010027453105",
+   "finance_nm": "유성농협",
+   "finance_path": "농협단위조합\\농협(대전)\\유성농협"
+  },
+  {
+   "finance_cd": "0010027453116",
+   "finance_nm": "탄동농협",
+   "finance_path": "농협단위조합\\농협(대전)\\탄동농협"
+  },
+  {
+   "finance_cd": "0010027453068",
+   "finance_nm": "회덕농협",
+   "finance_path": "농협단위조합\\농협(대전)\\회덕농협"
+  },
+  {
+   "finance_cd": "0010027817020",
+   "finance_nm": "가락농협",
+   "finance_path": "농협단위조합\\농협(부산)\\가락농협"
+  },
+  {
+   "finance_cd": "0010027121101",
+   "finance_nm": "강동농협",
+   "finance_path": "농협단위조합\\농협(부산)\\강동농협"
+  },
+  {
+   "finance_cd": "0010027121064",
+   "finance_nm": "금정농협",
+   "finance_path": "농협단위조합\\농협(부산)\\금정농협"
+  },
+  {
+   "finance_cd": "0010027121020",
+   "finance_nm": "남부산농협",
+   "finance_path": "농협단위조합\\농협(부산)\\남부산농협"
+  },
+  {
+   "finance_cd": "0010027817053",
+   "finance_nm": "녹산농협",
+   "finance_path": "농협단위조합\\농협(부산)\\녹산농협"
+  },
+  {
+   "finance_cd": "0010027121086",
+   "finance_nm": "대저농협",
+   "finance_path": "농협단위조합\\농협(부산)\\대저농협"
+  },
+  {
+   "finance_cd": "0010027121075",
+   "finance_nm": "동래농협",
+   "finance_path": "농협단위조합\\농협(부산)\\동래농협"
+  },
+  {
+   "finance_cd": "0010027813118",
+   "finance_nm": "동부산농협",
+   "finance_path": "농협단위조합\\농협(부산)\\동부산농협"
+  },
+  {
+   "finance_cd": "0010027121097",
+   "finance_nm": "명지농협",
+   "finance_path": "농협단위조합\\농협(부산)\\명지농협"
+  },
+  {
+   "finance_cd": "0010027817813",
+   "finance_nm": "부경원예농협",
+   "finance_path": "농협단위조합\\농협(부산)\\부경원예농협"
+  },
+  {
+   "finance_cd": "0010027178107",
+   "finance_nm": "부산우유농협",
+   "finance_path": "농협단위조합\\농협(부산)\\부산우유농협"
+  },
+  {
+   "finance_cd": "0010027177467",
+   "finance_nm": "부산축산농협",
+   "finance_path": "농협단위조합\\농협(부산)\\부산축산농협"
+  },
+  {
+   "finance_cd": "0010027121031",
+   "finance_nm": "북부산농협",
+   "finance_path": "농협단위조합\\농협(부산)\\북부산농협"
+  },
+  {
+   "finance_cd": "0010027121019",
+   "finance_nm": "서부산농협",
+   "finance_path": "농협단위조합\\농협(부산)\\서부산농협"
+  },
+  {
+   "finance_cd": "0010027121042",
+   "finance_nm": "중부산농협",
+   "finance_path": "농협단위조합\\농협(부산)\\중부산농협"
+  },
+  {
+   "finance_cd": "0010027121053",
+   "finance_nm": "해운대농협",
+   "finance_path": "농협단위조합\\농협(부산)\\해운대농협"
+  },
+  {
+   "finance_cd": "0010027100012",
+   "finance_nm": "강남농협",
+   "finance_path": "농협단위조합\\농협(서울)\\강남농협"
+  },
+  {
+   "finance_cd": "0010027100090",
+   "finance_nm": "강서농협",
+   "finance_path": "농협단위조합\\농협(서울)\\강서농협"
+  },
+  {
+   "finance_cd": "0010027100104",
+   "finance_nm": "경서농협",
+   "finance_path": "농협단위조합\\농협(서울)\\경서농협"
+  },
+  {
+   "finance_cd": "0010027211084",
+   "finance_nm": "과천농협",
+   "finance_path": "농협단위조합\\농협(서울)\\과천농협"
+  },
+  {
+   "finance_cd": "0010027211039",
+   "finance_nm": "광명농협",
+   "finance_path": "농협단위조합\\농협(서울)\\광명농협"
+  },
+  {
+   "finance_cd": "0010027100089",
+   "finance_nm": "남서울농협",
+   "finance_path": "농협단위조합\\농협(서울)\\남서울농협"
+  },
+  {
+   "finance_cd": "0010027100056",
+   "finance_nm": "동서울농협",
+   "finance_path": "농협단위조합\\농협(서울)\\동서울농협"
+  },
+  {
+   "finance_cd": "0010027100158",
+   "finance_nm": "동서울농협",
+   "finance_path": "농협단위조합\\농협(서울)\\동서울농협"
+  },
+  {
+   "finance_cd": "0010027100034",
+   "finance_nm": "북서울농협",
+   "finance_path": "농협단위조합\\농협(서울)\\북서울농협"
+  },
+  {
+   "finance_cd": "0010027100126",
+   "finance_nm": "서서울농협",
+   "finance_path": "농협단위조합\\농협(서울)\\서서울농협"
+  },
+  {
+   "finance_cd": "0010027100045",
+   "finance_nm": "서울강동농협",
+   "finance_path": "농협단위조합\\농협(서울)\\서울강동농협"
+  },
+  {
+   "finance_cd": "0010027170435",
+   "finance_nm": "서울경기양돈농협",
+   "finance_path": "농협단위조합\\농협(서울)\\서울경기양돈농협"
+  },
+  {
+   "finance_cd": "0010027100115",
+   "finance_nm": "서울서남부농협",
+   "finance_path": "농협단위조합\\농협(서울)\\서울서남부농협"
+  },
+  {
+   "finance_cd": "0010027170273",
+   "finance_nm": "서울우유농협",
+   "finance_path": "농협단위조합\\농협(서울)\\서울우유농협"
+  },
+  {
+   "finance_cd": "0010027100816",
+   "finance_nm": "서울원예농협",
+   "finance_path": "농협단위조합\\농협(서울)\\서울원예농협"
+  },
+  {
+   "finance_cd": "0010027170011",
+   "finance_nm": "서울축산농협",
+   "finance_path": "농협단위조합\\농협(서울)\\서울축산농협"
+  },
+  {
+   "finance_cd": "0010027100023",
+   "finance_nm": "송파농협",
+   "finance_path": "농협단위조합\\농협(서울)\\송파농협"
+  },
+  {
+   "finance_cd": "0010027217068",
+   "finance_nm": "신도농협",
+   "finance_path": "농협단위조합\\농협(서울)\\신도농협"
+  },
+  {
+   "finance_cd": "0010027100078",
+   "finance_nm": "영등포농협",
+   "finance_path": "농협단위조합\\농협(서울)\\영등포농협"
+  },
+  {
+   "finance_cd": "0010027100067",
+   "finance_nm": "중앙농협",
+   "finance_path": "농협단위조합\\농협(서울)\\중앙농협"
+  },
+  {
+   "finance_cd": "0010027170613",
+   "finance_nm": "한국양계농협",
+   "finance_path": "농협단위조합\\농협(서울)\\한국양계농협"
+  },
+  {
+   "finance_cd": "0010027170383",
+   "finance_nm": "한국양봉농협",
+   "finance_path": "농협단위조합\\농협(서울)\\한국양봉농협"
+  },
+  {
+   "finance_cd": "0010027170587",
+   "finance_nm": "한국양토양록농협",
+   "finance_path": "농협단위조합\\농협(서울)\\한국양토양록농협"
+  },
+  {
+   "finance_cd": "0010027815095",
+   "finance_nm": "강동농협",
+   "finance_path": "농협단위조합\\농협(울산)\\강동농협"
+  },
+  {
+   "finance_cd": "0010027815073",
+   "finance_nm": "농소농협",
+   "finance_path": "농협단위조합\\농협(울산)\\농소농협"
+  },
+  {
+   "finance_cd": "0010027815028",
+   "finance_nm": "두북농협",
+   "finance_path": "농협단위조합\\농협(울산)\\두북농협"
+  },
+  {
+   "finance_cd": "0010027815123",
+   "finance_nm": "방어진농협",
+   "finance_path": "농협단위조합\\농협(울산)\\방어진농협"
+  },
+  {
+   "finance_cd": "0010027815121",
+   "finance_nm": "방어진농협[폐]",
+   "finance_path": "농협단위조합\\농협(울산)\\방어진농협[폐]"
+  },
+  {
+   "finance_cd": "0010027815110",
+   "finance_nm": "범서농협",
+   "finance_path": "농협단위조합\\농협(울산)\\범서농협"
+  },
+  {
+   "finance_cd": "0010027012045",
+   "finance_nm": "병영농업협동조합[폐]",
+   "finance_path": "농협단위조합\\농협(울산)\\병영농업협동조합[폐]"
+  },
+  {
+   "finance_cd": "0010027815154",
+   "finance_nm": "삼남농협",
+   "finance_path": "농협단위조합\\농협(울산)\\삼남농협"
+  },
+  {
+   "finance_cd": "0010027815039",
+   "finance_nm": "상북농협",
+   "finance_path": "농협단위조합\\농협(울산)\\상북농협"
+  },
+  {
+   "finance_cd": "0010027815165",
+   "finance_nm": "서생농협",
+   "finance_path": "농협단위조합\\농협(울산)\\서생농협"
+  },
+  {
+   "finance_cd": "0010027815143",
+   "finance_nm": "언양농협",
+   "finance_path": "농협단위조합\\농협(울산)\\언양농협"
+  },
+  {
+   "finance_cd": "0010027815051",
+   "finance_nm": "온산농협",
+   "finance_path": "농협단위조합\\농협(울산)\\온산농협"
+  },
+  {
+   "finance_cd": "0010027815040",
+   "finance_nm": "온양농협",
+   "finance_path": "농협단위조합\\농협(울산)\\온양농협"
+  },
+  {
+   "finance_cd": "0010027815818",
+   "finance_nm": "울산원예농협",
+   "finance_path": "농협단위조합\\농협(울산)\\울산원예농협"
+  },
+  {
+   "finance_cd": "0010027177328",
+   "finance_nm": "울산축산농협",
+   "finance_path": "농협단위조합\\농협(울산)\\울산축산농협"
+  },
+  {
+   "finance_cd": "0010027815062",
+   "finance_nm": "웅촌농협",
+   "finance_path": "농협단위조합\\농협(울산)\\웅촌농협"
+  },
+  {
+   "finance_cd": "0010027815132",
+   "finance_nm": "중앙농협",
+   "finance_path": "농협단위조합\\농협(울산)\\중앙농협"
+  },
+  {
+   "finance_cd": "0010027815084",
+   "finance_nm": "중울산농협",
+   "finance_path": "농협단위조합\\농협(울산)\\중울산농협"
+  },
+  {
+   "finance_cd": "0010027815017",
+   "finance_nm": "청량농협",
+   "finance_path": "농협단위조합\\농협(울산)\\청량농협"
+  },
+  {
+   "finance_cd": "0010027243041",
+   "finance_nm": "강화남부농협",
+   "finance_path": "농협단위조합\\농협(인천)\\강화남부농협"
+  },
+  {
+   "finance_cd": "0010027243018",
+   "finance_nm": "강화농협",
+   "finance_path": "농협단위조합\\농협(인천)\\강화농협"
+  },
+  {
+   "finance_cd": "0010027130826",
+   "finance_nm": "강화인삼농협",
+   "finance_path": "농협단위조합\\농협(인천)\\강화인삼농협"
+  },
+  {
+   "finance_cd": "0010027241094",
+   "finance_nm": "검단농협",
+   "finance_path": "농협단위조합\\농협(인천)\\검단농협"
+  },
+  {
+   "finance_cd": "0010027241027",
+   "finance_nm": "계양농협",
+   "finance_path": "농협단위조합\\농협(인천)\\계양농협"
+  },
+  {
+   "finance_cd": "0010027243111",
+   "finance_nm": "교동농협[폐]",
+   "finance_path": "농협단위조합\\농협(인천)\\교동농협[폐]"
+  },
+  {
+   "finance_cd": "0010027130044",
+   "finance_nm": "남동농협",
+   "finance_path": "농협단위조합\\농협(인천)\\남동농협"
+  },
+  {
+   "finance_cd": "0010027130022",
+   "finance_nm": "남인천농협",
+   "finance_path": "농협단위조합\\농협(인천)\\남인천농협"
+  },
+  {
+   "finance_cd": "0010027216045",
+   "finance_nm": "백령농협",
+   "finance_path": "농협단위조합\\농협(인천)\\백령농협"
+  },
+  {
+   "finance_cd": "0010027216012",
+   "finance_nm": "부천농협",
+   "finance_path": "농협단위조합\\농협(인천)\\부천농협"
+  },
+  {
+   "finance_cd": "0010027216816",
+   "finance_nm": "부천시흥원예농협",
+   "finance_path": "농협단위조합\\농협(인천)\\부천시흥원예농협"
+  },
+  {
+   "finance_cd": "0010027170972",
+   "finance_nm": "부천축산농협",
+   "finance_path": "농협단위조합\\농협(인천)\\부천축산농협"
+  },
+  {
+   "finance_cd": "0010027130011",
+   "finance_nm": "부평농협",
+   "finance_path": "농협단위조합\\농협(인천)\\부평농협"
+  },
+  {
+   "finance_cd": "0010027012972",
+   "finance_nm": "불은농업협동조합[폐]",
+   "finance_path": "농협단위조합\\농협(인천)\\불은농업협동조합[폐]"
+  },
+  {
+   "finance_cd": "0010027243030",
+   "finance_nm": "불은농협[폐]",
+   "finance_path": "농협단위조합\\농협(인천)\\불은농협[폐]"
+  },
+  {
+   "finance_cd": "0010027243096",
+   "finance_nm": "삼도농협[폐]",
+   "finance_path": "농협단위조합\\농협(인천)\\삼도농협[폐]"
+  },
+  {
+   "finance_cd": "0010027243085",
+   "finance_nm": "서강화농협",
+   "finance_path": "농협단위조합\\농협(인천)\\서강화농협"
+  },
+  {
+   "finance_cd": "0010027130033",
+   "finance_nm": "서인천농협",
+   "finance_path": "농협단위조합\\농협(인천)\\서인천농협"
+  },
+  {
+   "finance_cd": "0010027243063",
+   "finance_nm": "양도농협[폐]",
+   "finance_path": "농협단위조합\\농협(인천)\\양도농협[폐]"
+  },
+  {
+   "finance_cd": "0010027216023",
+   "finance_nm": "오정농협",
+   "finance_path": "농협단위조합\\농협(인천)\\오정농협"
+  },
+  {
+   "finance_cd": "0010027171832",
+   "finance_nm": "인천강화옹진축산농협",
+   "finance_path": "농협단위조합\\농협(인천)\\인천강화옹진축산농협"
+  },
+  {
+   "finance_cd": "0010027216034",
+   "finance_nm": "인천옹진농협",
+   "finance_path": "농협단위조합\\농협(인천)\\인천옹진농협"
+  },
+  {
+   "finance_cd": "0010027130815",
+   "finance_nm": "인천원예농협",
+   "finance_path": "농협단위조합\\농협(인천)\\인천원예농협"
+  },
+  {
+   "finance_cd": "0010027170668",
+   "finance_nm": "인천축산농협",
+   "finance_path": "농협단위조합\\농협(인천)\\인천축산농협"
+  },
+  {
+   "finance_cd": "0010027216036",
+   "finance_nm": "중구농협",
+   "finance_path": "농협단위조합\\농협(인천)\\중구농협"
+  },
+  {
+   "finance_cd": "0010027243052",
+   "finance_nm": "화도농협[폐]",
+   "finance_path": "농협단위조합\\농협(인천)\\화도농협[폐]"
+  },
+  {
+   "finance_cd": "0010027627032",
+   "finance_nm": "강진남부농협",
+   "finance_path": "농협단위조합\\농협(전남)\\강진남부농협"
+  },
+  {
+   "finance_cd": "0010027627010",
+   "finance_nm": "강진농협",
+   "finance_path": "농협단위조합\\농협(전남)\\강진농협"
+  },
+  {
+   "finance_cd": "0010027175634",
+   "finance_nm": "강진완도축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\강진완도축산농협"
+  },
+  {
+   "finance_cd": "0010027627087",
+   "finance_nm": "강진한들농협",
+   "finance_path": "농협단위조합\\농협(전남)\\강진한들농협"
+  },
+  {
+   "finance_cd": "0010027617073",
+   "finance_nm": "거금도농협",
+   "finance_path": "농협단위조합\\농협(전남)\\거금도농협"
+  },
+  {
+   "finance_cd": "0010027631084",
+   "finance_nm": "계곡농협",
+   "finance_path": "농협단위조합\\농협(전남)\\계곡농협"
+  },
+  {
+   "finance_cd": "0010027603087",
+   "finance_nm": "고서농협",
+   "finance_path": "농협단위조합\\농협(전남)\\고서농협"
+  },
+  {
+   "finance_cd": "0010027617017",
+   "finance_nm": "고흥농협",
+   "finance_path": "농협단위조합\\농협(전남)\\고흥농협"
+  },
+  {
+   "finance_cd": "0010027175579",
+   "finance_nm": "고흥축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\고흥축산농협"
+  },
+  {
+   "finance_cd": "0010027605012",
+   "finance_nm": "곡성농협",
+   "finance_path": "농협단위조합\\농협(전남)\\곡성농협"
+  },
+  {
+   "finance_cd": "0010027175906",
+   "finance_nm": "곡성축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\곡성축산농협"
+  },
+  {
+   "finance_cd": "0010027637046",
+   "finance_nm": "공산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\공산농협"
+  },
+  {
+   "finance_cd": "0010027625085",
+   "finance_nm": "관산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\관산농협"
+  },
+  {
+   "finance_cd": "0010027611011",
+   "finance_nm": "광양농협",
+   "finance_path": "농협단위조합\\농협(전남)\\광양농협"
+  },
+  {
+   "finance_cd": "0010027611077",
+   "finance_nm": "광양동부농협",
+   "finance_path": "농협단위조합\\농협(전남)\\광양동부농협"
+  },
+  {
+   "finance_cd": "0010027611815",
+   "finance_nm": "광양원예농협",
+   "finance_path": "농협단위조합\\농협(전남)\\광양원예농협"
+  },
+  {
+   "finance_cd": "0010027607014",
+   "finance_nm": "구례농협",
+   "finance_path": "농협단위조합\\농협(전남)\\구례농협"
+  },
+  {
+   "finance_cd": "0010027175553",
+   "finance_nm": "구례축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\구례축산농협"
+  },
+  {
+   "finance_cd": "0010027643089",
+   "finance_nm": "군남농협[폐]",
+   "finance_path": "농협단위조합\\농협(전남)\\군남농협[폐]"
+  },
+  {
+   "finance_cd": "0010027633075",
+   "finance_nm": "군서농협",
+   "finance_path": "농협단위조합\\농협(전남)\\군서농협"
+  },
+  {
+   "finance_cd": "0010027643045",
+   "finance_nm": "굴비골농협",
+   "finance_path": "농협단위조합\\농협(전남)\\굴비골농협"
+  },
+  {
+   "finance_cd": "0010027603043",
+   "finance_nm": "금성농협",
+   "finance_path": "농협단위조합\\농협(전남)\\금성농협"
+  },
+  {
+   "finance_cd": "0010027633031",
+   "finance_nm": "금정농협",
+   "finance_path": "농협단위조합\\농협(전남)\\금정농협"
+  },
+  {
+   "finance_cd": "0010027637150",
+   "finance_nm": "금천농협",
+   "finance_path": "농협단위조합\\농협(전남)\\금천농협"
+  },
+  {
+   "finance_cd": "0010027641021",
+   "finance_nm": "나비골농협",
+   "finance_path": "농협단위조합\\농협(전남)\\나비골농협"
+  },
+  {
+   "finance_cd": "0010027637013",
+   "finance_nm": "나주농협",
+   "finance_path": "농협단위조합\\농협(전남)\\나주농협"
+  },
+  {
+   "finance_cd": "0010027637817",
+   "finance_nm": "나주배원예농협",
+   "finance_path": "농협단위조합\\농협(전남)\\나주배원예농협"
+  },
+  {
+   "finance_cd": "0010027175692",
+   "finance_nm": "나주축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\나주축산농협"
+  },
+  {
+   "finance_cd": "0010027645058",
+   "finance_nm": "남면농협",
+   "finance_path": "농협단위조합\\농협(전남)\\남면농협"
+  },
+  {
+   "finance_cd": "0010027653107",
+   "finance_nm": "남신안농협",
+   "finance_path": "농협단위조합\\농협(전남)\\남신안농협"
+  },
+  {
+   "finance_cd": "0010027637024",
+   "finance_nm": "남평농협",
+   "finance_path": "농협단위조합\\농협(전남)\\남평농협"
+  },
+  {
+   "finance_cd": "0010027637127",
+   "finance_nm": "노안농협",
+   "finance_path": "농협단위조합\\농협(전남)\\노안농협"
+  },
+  {
+   "finance_cd": "0010027647108",
+   "finance_nm": "노화농협",
+   "finance_path": "농협단위조합\\농협(전남)\\노화농협"
+  },
+  {
+   "finance_cd": "0010027617084",
+   "finance_nm": "녹동농협",
+   "finance_path": "농협단위조합\\농협(전남)\\녹동농협"
+  },
+  {
+   "finance_cd": "0010027623072",
+   "finance_nm": "능주농협",
+   "finance_path": "농협단위조합\\농협(전남)\\능주농협"
+  },
+  {
+   "finance_cd": "0010027637116",
+   "finance_nm": "다시농협",
+   "finance_path": "농협단위조합\\농협(전남)\\다시농협"
+  },
+  {
+   "finance_cd": "0010027611088",
+   "finance_nm": "다압농협",
+   "finance_path": "농협단위조합\\농협(전남)\\다압농협"
+  },
+  {
+   "finance_cd": "0010027603010",
+   "finance_nm": "담양농협",
+   "finance_path": "농협단위조합\\농협(전남)\\담양농협"
+  },
+  {
+   "finance_cd": "0010027175427",
+   "finance_nm": "담양축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\담양축산농협"
+  },
+  {
+   "finance_cd": "0010027603124",
+   "finance_nm": "대전농협",
+   "finance_path": "농협단위조합\\농협(전남)\\대전농협"
+  },
+  {
+   "finance_cd": "0010027633020",
+   "finance_nm": "덕진농협[폐]",
+   "finance_path": "농협단위조합\\농협(전남)\\덕진농협[폐]"
+  },
+  {
+   "finance_cd": "0010027623083",
+   "finance_nm": "도곡농협",
+   "finance_path": "농협단위조합\\농협(전남)\\도곡농협"
+  },
+  {
+   "finance_cd": "0010027627054",
+   "finance_nm": "도암농협",
+   "finance_path": "농협단위조합\\농협(전남)\\도암농협"
+  },
+  {
+   "finance_cd": "0010027653130",
+   "finance_nm": "도초농협",
+   "finance_path": "농협단위조합\\농협(전남)\\도초농협"
+  },
+  {
+   "finance_cd": "0010027637079",
+   "finance_nm": "동강농협",
+   "finance_path": "농협단위조합\\농협(전남)\\동강농협"
+  },
+  {
+   "finance_cd": "0010027611044",
+   "finance_nm": "동광양농협",
+   "finance_path": "농협단위조합\\농협(전남)\\동광양농협"
+  },
+  {
+   "finance_cd": "0010027623049",
+   "finance_nm": "동복농협",
+   "finance_path": "농협단위조합\\농협(전남)\\동복농협"
+  },
+  {
+   "finance_cd": "0010027617062",
+   "finance_nm": "두원농협",
+   "finance_path": "농협단위조합\\농협(전남)\\두원농협"
+  },
+  {
+   "finance_cd": "0010027621117",
+   "finance_nm": "득량농협",
+   "finance_path": "농협단위조합\\농협(전남)\\득량농협"
+  },
+  {
+   "finance_cd": "0010027631121",
+   "finance_nm": "땅끝농협",
+   "finance_path": "농협단위조합\\농협(전남)\\땅끝농협"
+  },
+  {
+   "finance_cd": "0010027637080",
+   "finance_nm": "마한농협",
+   "finance_path": "농협단위조합\\농협(전남)\\마한농협"
+  },
+  {
+   "finance_cd": "0010027653012",
+   "finance_nm": "목포농협",
+   "finance_path": "농협단위조합\\농협(전남)\\목포농협"
+  },
+  {
+   "finance_cd": "0010027175951",
+   "finance_nm": "목포무안신안축협",
+   "finance_path": "농협단위조합\\농협(전남)\\목포무안신안축협"
+  },
+  {
+   "finance_cd": "0010027653819",
+   "finance_nm": "목포원예농협",
+   "finance_path": "농협단위조합\\농협(전남)\\목포원예농협"
+  },
+  {
+   "finance_cd": "0010027635055",
+   "finance_nm": "몽탄농협",
+   "finance_path": "농협단위조합\\농협(전남)\\몽탄농협"
+  },
+  {
+   "finance_cd": "0010027635022",
+   "finance_nm": "무안농협",
+   "finance_path": "농협단위조합\\농협(전남)\\무안농협"
+  },
+  {
+   "finance_cd": "0010027603054",
+   "finance_nm": "무정농협",
+   "finance_path": "농협단위조합\\농협(전남)\\무정농협"
+  },
+  {
+   "finance_cd": "0010027631095",
+   "finance_nm": "문내농협",
+   "finance_path": "농협단위조합\\농협(전남)\\문내농협"
+  },
+  {
+   "finance_cd": "0010027637068",
+   "finance_nm": "문평농협[폐]",
+   "finance_path": "농협단위조합\\농협(전남)\\문평농협[폐]"
+  },
+  {
+   "finance_cd": "0010027633101",
+   "finance_nm": "미암농협[폐]",
+   "finance_path": "농협단위조합\\농협(전남)\\미암농협[폐]"
+  },
+  {
+   "finance_cd": "0010027643034",
+   "finance_nm": "백수농협",
+   "finance_path": "농협단위조합\\농협(전남)\\백수농협"
+  },
+  {
+   "finance_cd": "0010027645106",
+   "finance_nm": "백양사농협",
+   "finance_path": "농협단위조합\\농협(전남)\\백양사농협"
+  },
+  {
+   "finance_cd": "0010027621139",
+   "finance_nm": "벌교농협",
+   "finance_path": "농협단위조합\\농협(전남)\\벌교농협"
+  },
+  {
+   "finance_cd": "0010027615130",
+   "finance_nm": "별량농협[폐]",
+   "finance_path": "농협단위조합\\농협(전남)\\별량농협[폐]"
+  },
+  {
+   "finance_cd": "0010027621014",
+   "finance_nm": "보성농협",
+   "finance_path": "농협단위조합\\농협(전남)\\보성농협"
+  },
+  {
+   "finance_cd": "0010027175870",
+   "finance_nm": "보성축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\보성축산농협"
+  },
+  {
+   "finance_cd": "0010027603065",
+   "finance_nm": "봉산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\봉산농협"
+  },
+  {
+   "finance_cd": "0010027637035",
+   "finance_nm": "봉황농협",
+   "finance_path": "농협단위조합\\농협(전남)\\봉황농협"
+  },
+  {
+   "finance_cd": "0010027621070",
+   "finance_nm": "북부농협",
+   "finance_path": "농협단위조합\\농협(전남)\\북부농협"
+  },
+  {
+   "finance_cd": "0010027653048",
+   "finance_nm": "북신안농협",
+   "finance_path": "농협단위조합\\농협(전남)\\북신안농협"
+  },
+  {
+   "finance_cd": "0010027631132",
+   "finance_nm": "북평농협",
+   "finance_path": "농협단위조합\\농협(전남)\\북평농협"
+  },
+  {
+   "finance_cd": "0010027653129",
+   "finance_nm": "비금농협",
+   "finance_path": "농협단위조합\\농협(전남)\\비금농협"
+  },
+  {
+   "finance_cd": "0010027607081",
+   "finance_nm": "산동농협",
+   "finance_path": "농협단위조합\\농협(전남)\\산동농협"
+  },
+  {
+   "finance_cd": "0010027631062",
+   "finance_nm": "산이농협",
+   "finance_path": "농협단위조합\\농협(전남)\\산이농협"
+  },
+  {
+   "finance_cd": "0010027637138",
+   "finance_nm": "산포농협",
+   "finance_path": "농협단위조합\\농협(전남)\\산포농협"
+  },
+  {
+   "finance_cd": "0010027645069",
+   "finance_nm": "삼계농협",
+   "finance_path": "농협단위조합\\농협(전남)\\삼계농협"
+  },
+  {
+   "finance_cd": "0010027645070",
+   "finance_nm": "삼서농협",
+   "finance_path": "농협단위조합\\농협(전남)\\삼서농협"
+  },
+  {
+   "finance_cd": "0010027635077",
+   "finance_nm": "삼향농협",
+   "finance_path": "농협단위조합\\농협(전남)\\삼향농협"
+  },
+  {
+   "finance_cd": "0010027633112",
+   "finance_nm": "삼호농협",
+   "finance_path": "농협단위조합\\농협(전남)\\삼호농협"
+  },
+  {
+   "finance_cd": "0010027643012",
+   "finance_nm": "서영광농협",
+   "finance_path": "농협단위조합\\농협(전남)\\서영광농협"
+  },
+  {
+   "finance_cd": "0010027633097",
+   "finance_nm": "서영암농협",
+   "finance_path": "농협단위조합\\농협(전남)\\서영암농협"
+  },
+  {
+   "finance_cd": "0010027651057",
+   "finance_nm": "서진도농협",
+   "finance_path": "농협단위조합\\농협(전남)\\서진도농협"
+  },
+  {
+   "finance_cd": "0010027605056",
+   "finance_nm": "석곡농협",
+   "finance_path": "농협단위조합\\농협(전남)\\석곡농협"
+  },
+  {
+   "finance_cd": "0010027651080",
+   "finance_nm": "선진농협",
+   "finance_path": "농협단위조합\\농협(전남)\\선진농협"
+  },
+  {
+   "finance_cd": "0010027627065",
+   "finance_nm": "성전농협[폐]",
+   "finance_path": "농협단위조합\\농협(전남)\\성전농협[폐]"
+  },
+  {
+   "finance_cd": "0010027637105",
+   "finance_nm": "세지농협",
+   "finance_path": "농협단위조합\\농협(전남)\\세지농협"
+  },
+  {
+   "finance_cd": "0010027647094",
+   "finance_nm": "소안농협",
+   "finance_path": "농협단위조합\\농협(전남)\\소안농협"
+  },
+  {
+   "finance_cd": "0010027641065",
+   "finance_nm": "손불농협",
+   "finance_path": "농협단위조합\\농협(전남)\\손불농협"
+  },
+  {
+   "finance_cd": "0010027603113",
+   "finance_nm": "수북농협",
+   "finance_path": "농협단위조합\\농협(전남)\\수북농협"
+  },
+  {
+   "finance_cd": "0010027175511",
+   "finance_nm": "순천광양축협",
+   "finance_path": "농협단위조합\\농협(전남)\\순천광양축협"
+  },
+  {
+   "finance_cd": "0010027615023",
+   "finance_nm": "순천농협",
+   "finance_path": "농협단위조합\\농협(전남)\\순천농협"
+  },
+  {
+   "finance_cd": "0010027615820",
+   "finance_nm": "순천원예농협",
+   "finance_path": "농협단위조합\\농협(전남)\\순천원예농협"
+  },
+  {
+   "finance_cd": "0010027633042",
+   "finance_nm": "신북농협",
+   "finance_path": "농협단위조합\\농협(전남)\\신북농협"
+  },
+  {
+   "finance_cd": "0010027653071",
+   "finance_nm": "신안농협",
+   "finance_path": "농협단위조합\\농협(전남)\\신안농협"
+  },
+  {
+   "finance_cd": "0010027625029",
+   "finance_nm": "안양농협",
+   "finance_path": "농협단위조합\\농협(전남)\\안양농협"
+  },
+  {
+   "finance_cd": "0010027653082",
+   "finance_nm": "안좌농협[폐]",
+   "finance_path": "농협단위조합\\농협(전남)\\안좌농협[폐]"
+  },
+  {
+   "finance_cd": "0010027653026",
+   "finance_nm": "압해농협",
+   "finance_path": "농협단위조합\\농협(전남)\\압해농협"
+  },
+  {
+   "finance_cd": "0010027613092",
+   "finance_nm": "여수농협",
+   "finance_path": "농협단위조합\\농협(전남)\\여수농협"
+  },
+  {
+   "finance_cd": "0010027613810",
+   "finance_nm": "여수원예농협",
+   "finance_path": "농협단위조합\\농협(전남)\\여수원예농협"
+  },
+  {
+   "finance_cd": "0010027175469",
+   "finance_nm": "여수축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\여수축산농협"
+  },
+  {
+   "finance_cd": "0010027613080",
+   "finance_nm": "여천농협",
+   "finance_path": "농협단위조합\\농협(전남)\\여천농협"
+  },
+  {
+   "finance_cd": "0010027643104",
+   "finance_nm": "영광농협",
+   "finance_path": "농협단위조합\\농협(전남)\\영광농협"
+  },
+  {
+   "finance_cd": "0010027175728",
+   "finance_nm": "영광축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\영광축산농협"
+  },
+  {
+   "finance_cd": "0010027637091",
+   "finance_nm": "영산포농협",
+   "finance_path": "농협단위조합\\농협(전남)\\영산포농협"
+  },
+  {
+   "finance_cd": "0010027633064",
+   "finance_nm": "영암낭주농협",
+   "finance_path": "농협단위조합\\농협(전남)\\영암낭주농협"
+  },
+  {
+   "finance_cd": "0010027633019",
+   "finance_nm": "영암농협",
+   "finance_path": "농협단위조합\\농협(전남)\\영암농협"
+  },
+  {
+   "finance_cd": "0010027175773",
+   "finance_nm": "영암축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\영암축산농협"
+  },
+  {
+   "finance_cd": "0010027605089",
+   "finance_nm": "옥과농협",
+   "finance_path": "농협단위조합\\농협(전남)\\옥과농협"
+  },
+  {
+   "finance_cd": "0010027631028",
+   "finance_nm": "옥천농협",
+   "finance_path": "농협단위조합\\농협(전남)\\옥천농협"
+  },
+  {
+   "finance_cd": "0010027647016",
+   "finance_nm": "완도농협",
+   "finance_path": "농협단위조합\\농협(전남)\\완도농협"
+  },
+  {
+   "finance_cd": "0010027625063",
+   "finance_nm": "용두농협",
+   "finance_path": "농협단위조합\\농협(전남)\\용두농협"
+  },
+  {
+   "finance_cd": "0010027625074",
+   "finance_nm": "용산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\용산농협"
+  },
+  {
+   "finance_cd": "0010027635103",
+   "finance_nm": "운남농협",
+   "finance_path": "농협단위조합\\농협(전남)\\운남농협"
+  },
+  {
+   "finance_cd": "0010027603021",
+   "finance_nm": "월산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\월산농협"
+  },
+  {
+   "finance_cd": "0010027641102",
+   "finance_nm": "월야농협",
+   "finance_path": "농협단위조합\\농협(전남)\\월야농협"
+  },
+  {
+   "finance_cd": "0010027633086",
+   "finance_nm": "월출산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\월출산농협"
+  },
+  {
+   "finance_cd": "0010027613068",
+   "finance_nm": "율촌농협",
+   "finance_path": "농협단위조합\\농협(전남)\\율촌농협"
+  },
+  {
+   "finance_cd": "0010027623120",
+   "finance_nm": "이양청풍농협",
+   "finance_path": "농협단위조합\\농협(전남)\\이양청풍농협"
+  },
+  {
+   "finance_cd": "0010027635044",
+   "finance_nm": "일로농협",
+   "finance_path": "농협단위조합\\농협(전남)\\일로농협"
+  },
+  {
+   "finance_cd": "0010027653037",
+   "finance_nm": "임자농협",
+   "finance_path": "농협단위조합\\농협(전남)\\임자농협"
+  },
+  {
+   "finance_cd": "0010027605090",
+   "finance_nm": "입면농협",
+   "finance_path": "농협단위조합\\농협(전남)\\입면농협"
+  },
+  {
+   "finance_cd": "0010027653118",
+   "finance_nm": "장산농협[폐]",
+   "finance_path": "농협단위조합\\농협(전남)\\장산농협[폐]"
+  },
+  {
+   "finance_cd": "0010027645014",
+   "finance_nm": "장성농협",
+   "finance_path": "농협단위조합\\농협(전남)\\장성농협"
+  },
+  {
+   "finance_cd": "0010027175809",
+   "finance_nm": "장성축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\장성축산농협"
+  },
+  {
+   "finance_cd": "0010027175605",
+   "finance_nm": "장흥축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\장흥축산농협"
+  },
+  {
+   "finance_cd": "0010027176125",
+   "finance_nm": "전남낙농농협",
+   "finance_path": "농협단위조합\\농협(전남)\\전남낙농농협"
+  },
+  {
+   "finance_cd": "0010027635815",
+   "finance_nm": "전남서남부채소농협",
+   "finance_path": "농협단위조합\\농협(전남)\\전남서남부채소농협"
+  },
+  {
+   "finance_cd": "0010027625018",
+   "finance_nm": "정남진장흥농협",
+   "finance_path": "농협단위조합\\농협(전남)\\정남진장흥농협"
+  },
+  {
+   "finance_cd": "0010027651013",
+   "finance_nm": "진도농협",
+   "finance_path": "농협단위조합\\농협(전남)\\진도농협"
+  },
+  {
+   "finance_cd": "0010027611066",
+   "finance_nm": "진상농협",
+   "finance_path": "농협단위조합\\농협(전남)\\진상농협"
+  },
+  {
+   "finance_cd": "0010027645047",
+   "finance_nm": "진원농협",
+   "finance_path": "농협단위조합\\농협(전남)\\진원농협"
+  },
+  {
+   "finance_cd": "0010027603076",
+   "finance_nm": "창평농협",
+   "finance_path": "농협단위조합\\농협(전남)\\창평농협"
+  },
+  {
+   "finance_cd": "0010027625096",
+   "finance_nm": "천관농협",
+   "finance_path": "농협단위조합\\농협(전남)\\천관농협"
+  },
+  {
+   "finance_cd": "0010027623038",
+   "finance_nm": "천운농협",
+   "finance_path": "농협단위조합\\농협(전남)\\천운농협"
+  },
+  {
+   "finance_cd": "0010027641087",
+   "finance_nm": "천지농협",
+   "finance_path": "농협단위조합\\농협(전남)\\천지농협"
+  },
+  {
+   "finance_cd": "0010027635011",
+   "finance_nm": "청계농협",
+   "finance_path": "농협단위조합\\농협(전남)\\청계농협"
+  },
+  {
+   "finance_cd": "0010027647038",
+   "finance_nm": "청산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\청산농협"
+  },
+  {
+   "finance_cd": "0010027617110",
+   "finance_nm": "팔영농협",
+   "finance_path": "농협단위조합\\농협(전남)\\팔영농협"
+  },
+  {
+   "finance_cd": "0010027617028",
+   "finance_nm": "풍양농협",
+   "finance_path": "농협단위조합\\농협(전남)\\풍양농협"
+  },
+  {
+   "finance_cd": "0010027641043",
+   "finance_nm": "함평농협",
+   "finance_path": "농협단위조합\\농협(전남)\\함평농협"
+  },
+  {
+   "finance_cd": "0010027175896",
+   "finance_nm": "함평축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\함평축산농협"
+  },
+  {
+   "finance_cd": "0010027631017",
+   "finance_nm": "해남농협",
+   "finance_path": "농협단위조합\\농협(전남)\\해남농협"
+  },
+  {
+   "finance_cd": "0010027175744",
+   "finance_nm": "해남진도축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\해남진도축산농협"
+  },
+  {
+   "finance_cd": "0010027631110",
+   "finance_nm": "현산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\현산농협"
+  },
+  {
+   "finance_cd": "0010027631040",
+   "finance_nm": "화산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\화산농협"
+  },
+  {
+   "finance_cd": "0010027623016",
+   "finance_nm": "화순농협",
+   "finance_path": "농협단위조합\\농협(전남)\\화순농협"
+  },
+  {
+   "finance_cd": "0010027176002",
+   "finance_nm": "화순축산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\화순축산농협"
+  },
+  {
+   "finance_cd": "0010027631109",
+   "finance_nm": "화원농협",
+   "finance_path": "농협단위조합\\농협(전남)\\화원농협"
+  },
+  {
+   "finance_cd": "0010027645025",
+   "finance_nm": "황룡농협",
+   "finance_path": "농협단위조합\\농협(전남)\\황룡농협"
+  },
+  {
+   "finance_cd": "0010027631051",
+   "finance_nm": "황산농협",
+   "finance_path": "농협단위조합\\농협(전남)\\황산농협"
+  },
+  {
+   "finance_cd": "0010027621047",
+   "finance_nm": "회천농협",
+   "finance_path": "농협단위조합\\농협(전남)\\회천농협"
+  },
+  {
+   "finance_cd": "0010027617051",
+   "finance_nm": "흥양농협",
+   "finance_path": "농협단위조합\\농협(전남)\\흥양농협"
+  },
+  {
+   "finance_cd": "0010027523130",
+   "finance_nm": "계화농협",
+   "finance_path": "농협단위조합\\농협(전북)\\계화농협"
+  },
+  {
+   "finance_cd": "0010027501109",
+   "finance_nm": "고산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\고산농협"
+  },
+  {
+   "finance_cd": "0010027521013",
+   "finance_nm": "고창농협",
+   "finance_path": "농협단위조합\\농협(전북)\\고창농협"
+  },
+  {
+   "finance_cd": "0010027174910",
+   "finance_nm": "고창부안축협",
+   "finance_path": "농협단위조합\\농협(전북)\\고창부안축협"
+  },
+  {
+   "finance_cd": "0010027525176",
+   "finance_nm": "공덕농협",
+   "finance_path": "농협단위조합\\농협(전북)\\공덕농협"
+  },
+  {
+   "finance_cd": "0010027525084",
+   "finance_nm": "광활농협",
+   "finance_path": "농협단위조합\\농협(전북)\\광활농협"
+  },
+  {
+   "finance_cd": "0010027515092",
+   "finance_nm": "구림농협",
+   "finance_path": "농협단위조합\\농협(전북)\\구림농협"
+  },
+  {
+   "finance_cd": "0010027501051",
+   "finance_nm": "구이농협",
+   "finance_path": "농협단위조합\\농협(전북)\\구이농협"
+  },
+  {
+   "finance_cd": "0010027505033",
+   "finance_nm": "구천동농협",
+   "finance_path": "농협단위조합\\농협(전북)\\구천동농협"
+  },
+  {
+   "finance_cd": "0010027527019",
+   "finance_nm": "군산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\군산농협"
+  },
+  {
+   "finance_cd": "0010027527815",
+   "finance_nm": "군산원예농협",
+   "finance_path": "농협단위조합\\농협(전북)\\군산원예농협"
+  },
+  {
+   "finance_cd": "0010027531142",
+   "finance_nm": "금마농협",
+   "finance_path": "농협단위조합\\농협(전북)\\금마농협"
+  },
+  {
+   "finance_cd": "0010027525073",
+   "finance_nm": "금만농협",
+   "finance_path": "농협단위조합\\농협(전북)\\금만농협"
+  },
+  {
+   "finance_cd": "0010027525132",
+   "finance_nm": "금산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\금산농협"
+  },
+  {
+   "finance_cd": "0010027525017",
+   "finance_nm": "김제농협",
+   "finance_path": "농협단위조합\\농협(전북)\\김제농협"
+  },
+  {
+   "finance_cd": "0010027525811",
+   "finance_nm": "김제원예농협",
+   "finance_path": "농협단위조합\\농협(전북)\\김제원예농협"
+  },
+  {
+   "finance_cd": "0010027523107",
+   "finance_nm": "남부안농협",
+   "finance_path": "농협단위조합\\농협(전북)\\남부안농협"
+  },
+  {
+   "finance_cd": "0010027513012",
+   "finance_nm": "남원농협",
+   "finance_path": "농협단위조합\\농협(전북)\\남원농협"
+  },
+  {
+   "finance_cd": "0010027513816",
+   "finance_nm": "남원원예농협",
+   "finance_path": "농협단위조합\\농협(전북)\\남원원예농협"
+  },
+  {
+   "finance_cd": "0010027174787",
+   "finance_nm": "남원축협",
+   "finance_path": "농협단위조합\\농협(전북)\\남원축협"
+  },
+  {
+   "finance_cd": "0010027531094",
+   "finance_nm": "낭산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\낭산농협"
+  },
+  {
+   "finance_cd": "0010027521116",
+   "finance_nm": "대성농협",
+   "finance_path": "농협단위조합\\농협(전북)\\대성농협"
+  },
+  {
+   "finance_cd": "0010027527097",
+   "finance_nm": "대야농협",
+   "finance_path": "농협단위조합\\농협(전북)\\대야농협"
+  },
+  {
+   "finance_cd": "0010027515036",
+   "finance_nm": "동계농협",
+   "finance_path": "농협단위조합\\농협(전북)\\동계농협"
+  },
+  {
+   "finance_cd": "0010027527064",
+   "finance_nm": "동군산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\동군산농협"
+  },
+  {
+   "finance_cd": "0010027525121",
+   "finance_nm": "동김제농협",
+   "finance_path": "농협단위조합\\농협(전북)\\동김제농협"
+  },
+  {
+   "finance_cd": "0010027175304",
+   "finance_nm": "동진강낙농축협",
+   "finance_path": "농협단위조합\\농협(전북)\\동진강낙농축협"
+  },
+  {
+   "finance_cd": "0010027531072",
+   "finance_nm": "망성농협",
+   "finance_path": "농협단위조합\\농협(전북)\\망성농협"
+  },
+  {
+   "finance_cd": "0010027505011",
+   "finance_nm": "무주농협",
+   "finance_path": "농협단위조합\\농협(전북)\\무주농협"
+  },
+  {
+   "finance_cd": "0010027175139",
+   "finance_nm": "무진장축산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\무진장축산농협"
+  },
+  {
+   "finance_cd": "0010027525165",
+   "finance_nm": "백구농협",
+   "finance_path": "농협단위조합\\농협(전북)\\백구농협"
+  },
+  {
+   "finance_cd": "0010027525028",
+   "finance_nm": "백산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\백산농협"
+  },
+  {
+   "finance_cd": "0010027503031",
+   "finance_nm": "백운농협",
+   "finance_path": "농협단위조합\\농협(전북)\\백운농협"
+  },
+  {
+   "finance_cd": "0010027523082",
+   "finance_nm": "변산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\변산농협"
+  },
+  {
+   "finance_cd": "0010027501095",
+   "finance_nm": "봉동농협",
+   "finance_path": "농협단위조합\\농협(전북)\\봉동농협"
+  },
+  {
+   "finance_cd": "0010027503064",
+   "finance_nm": "부귀농협",
+   "finance_path": "농협단위조합\\농협(전북)\\부귀농협"
+  },
+  {
+   "finance_cd": "0010027523015",
+   "finance_nm": "부안농협",
+   "finance_path": "농협단위조합\\농협(전북)\\부안농협"
+  },
+  {
+   "finance_cd": "0010027523059",
+   "finance_nm": "부안중앙농협",
+   "finance_path": "농협단위조합\\농협(전북)\\부안중앙농협"
+  },
+  {
+   "finance_cd": "0010027531050",
+   "finance_nm": "북익산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\북익산농협"
+  },
+  {
+   "finance_cd": "0010027501073",
+   "finance_nm": "북전주농협",
+   "finance_path": "농협단위조합\\농협(전북)\\북전주농협"
+  },
+  {
+   "finance_cd": "0010027531120",
+   "finance_nm": "삼기농협",
+   "finance_path": "농협단위조합\\농협(전북)\\삼기농협"
+  },
+  {
+   "finance_cd": "0010027501084",
+   "finance_nm": "삼례농협",
+   "finance_path": "농협단위조합\\농협(전북)\\삼례농협"
+  },
+  {
+   "finance_cd": "0010027501040",
+   "finance_nm": "상관농협",
+   "finance_path": "농협단위조합\\농협(전북)\\상관농협"
+  },
+  {
+   "finance_cd": "0010027517164",
+   "finance_nm": "샘골농협",
+   "finance_path": "농협단위조합\\농협(전북)\\샘골농협"
+  },
+  {
+   "finance_cd": "0010027527020",
+   "finance_nm": "서군산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\서군산농협"
+  },
+  {
+   "finance_cd": "0010027515117",
+   "finance_nm": "서순창농협",
+   "finance_path": "농협단위조합\\농협(전북)\\서순창농협"
+  },
+  {
+   "finance_cd": "0010027531131",
+   "finance_nm": "서익산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\서익산농협"
+  },
+  {
+   "finance_cd": "0010027521057",
+   "finance_nm": "선운산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\선운산농협"
+  },
+  {
+   "finance_cd": "0010027531083",
+   "finance_nm": "성당농협",
+   "finance_path": "농협단위조합\\농협(전북)\\성당농협"
+  },
+  {
+   "finance_cd": "0010027501039",
+   "finance_nm": "소양농협",
+   "finance_path": "농협단위조합\\농협(전북)\\소양농협"
+  },
+  {
+   "finance_cd": "0010027174826",
+   "finance_nm": "순정축협",
+   "finance_path": "농협단위조합\\농협(전북)\\순정축협"
+  },
+  {
+   "finance_cd": "0010027515014",
+   "finance_nm": "순창농협",
+   "finance_path": "농협단위조합\\농협(전북)\\순창농협"
+  },
+  {
+   "finance_cd": "0010027517153",
+   "finance_nm": "신태인농협",
+   "finance_path": "농협단위조합\\농협(전북)\\신태인농협"
+  },
+  {
+   "finance_cd": "0010027531164",
+   "finance_nm": "여산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\여산농협"
+  },
+  {
+   "finance_cd": "0010027531027",
+   "finance_nm": "오산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\오산농협"
+  },
+  {
+   "finance_cd": "0010027511054",
+   "finance_nm": "오수관촌농협",
+   "finance_path": "농협단위조합\\농협(전북)\\오수관촌농협"
+  },
+  {
+   "finance_cd": "0010027527031",
+   "finance_nm": "옥구농협",
+   "finance_path": "농협단위조합\\농협(전북)\\옥구농협"
+  },
+  {
+   "finance_cd": "0010027527042",
+   "finance_nm": "옥산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\옥산농협"
+  },
+  {
+   "finance_cd": "0010027531153",
+   "finance_nm": "왕궁농협",
+   "finance_path": "농협단위조합\\농협(전북)\\왕궁농협"
+  },
+  {
+   "finance_cd": "0010027525154",
+   "finance_nm": "용지농협",
+   "finance_path": "농협단위조합\\농협(전북)\\용지농협"
+  },
+  {
+   "finance_cd": "0010027501028",
+   "finance_nm": "용진농협",
+   "finance_path": "농협단위조합\\농협(전북)\\용진농협"
+  },
+  {
+   "finance_cd": "0010027513148",
+   "finance_nm": "운봉농협",
+   "finance_path": "농협단위조합\\농협(전북)\\운봉농협"
+  },
+  {
+   "finance_cd": "0010027501132",
+   "finance_nm": "운주농협",
+   "finance_path": "농협단위조합\\농협(전북)\\운주농협"
+  },
+  {
+   "finance_cd": "0010027501062",
+   "finance_nm": "이서농협",
+   "finance_path": "농협단위조합\\농협(전북)\\이서농협"
+  },
+  {
+   "finance_cd": "0010027175074",
+   "finance_nm": "익산군산축협",
+   "finance_path": "농협단위조합\\농협(전북)\\익산군산축협"
+  },
+  {
+   "finance_cd": "0010027531014",
+   "finance_nm": "익산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\익산농협"
+  },
+  {
+   "finance_cd": "0010027531810",
+   "finance_nm": "익산원예농협",
+   "finance_path": "농협단위조합\\농협(전북)\\익산원예농협"
+  },
+  {
+   "finance_cd": "0010027511010",
+   "finance_nm": "임실농협",
+   "finance_path": "농협단위조합\\농협(전북)\\임실농협"
+  },
+  {
+   "finance_cd": "0010027175168",
+   "finance_nm": "임실축협",
+   "finance_path": "농협단위조합\\농협(전북)\\임실축협"
+  },
+  {
+   "finance_cd": "0010027178961",
+   "finance_nm": "임실치즈농협",
+   "finance_path": "농협단위조합\\농협(전북)\\임실치즈농협"
+  },
+  {
+   "finance_cd": "0010027507046",
+   "finance_nm": "장계농협",
+   "finance_path": "농협단위조합\\농협(전북)\\장계농협"
+  },
+  {
+   "finance_cd": "0010027507013",
+   "finance_nm": "장수농협",
+   "finance_path": "농협단위조합\\농협(전북)\\장수농협"
+  },
+  {
+   "finance_cd": "0010027503813",
+   "finance_nm": "전북인삼농협",
+   "finance_path": "농협단위조합\\농협(전북)\\전북인삼농협"
+  },
+  {
+   "finance_cd": "0010027175281",
+   "finance_nm": "전북지리산낙농농협",
+   "finance_path": "농협단위조합\\농협(전북)\\전북지리산낙농농협"
+  },
+  {
+   "finance_cd": "0010027174635",
+   "finance_nm": "전주김제완주축협",
+   "finance_path": "농협단위조합\\농협(전북)\\전주김제완주축협"
+  },
+  {
+   "finance_cd": "0010027501017",
+   "finance_nm": "전주농협",
+   "finance_path": "농협단위조합\\농협(전북)\\전주농협"
+  },
+  {
+   "finance_cd": "0010027501814",
+   "finance_nm": "전주원예농협",
+   "finance_path": "농협단위조합\\농협(전북)\\전주원예농협"
+  },
+  {
+   "finance_cd": "0010027517016",
+   "finance_nm": "정읍농협",
+   "finance_path": "농협단위조합\\농협(전북)\\정읍농협"
+  },
+  {
+   "finance_cd": "0010027517810",
+   "finance_nm": "정읍원예농협",
+   "finance_path": "농협단위조합\\농협(전북)\\정읍원예농협"
+  },
+  {
+   "finance_cd": "0010027513171",
+   "finance_nm": "지리산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\지리산농협"
+  },
+  {
+   "finance_cd": "0010027525095",
+   "finance_nm": "진봉농협",
+   "finance_path": "농협단위조합\\농협(전북)\\진봉농협"
+  },
+  {
+   "finance_cd": "0010027503019",
+   "finance_nm": "진안농협",
+   "finance_path": "농협단위조합\\농협(전북)\\진안농협"
+  },
+  {
+   "finance_cd": "0010027513115",
+   "finance_nm": "춘향골농협",
+   "finance_path": "농협단위조합\\농협(전북)\\춘향골농협"
+  },
+  {
+   "finance_cd": "0010027517108",
+   "finance_nm": "칠보농협",
+   "finance_path": "농협단위조합\\농협(전북)\\칠보농협"
+  },
+  {
+   "finance_cd": "0010027517131",
+   "finance_nm": "태인농협",
+   "finance_path": "농협단위조합\\농협(전북)\\태인농협"
+  },
+  {
+   "finance_cd": "0010027523071",
+   "finance_nm": "하서농협",
+   "finance_path": "농협단위조합\\농협(전북)\\하서농협"
+  },
+  {
+   "finance_cd": "0010027521127",
+   "finance_nm": "해리농협",
+   "finance_path": "농협단위조합\\농협(전북)\\해리농협"
+  },
+  {
+   "finance_cd": "0010027501121",
+   "finance_nm": "화산농협",
+   "finance_path": "농협단위조합\\농협(전북)\\화산농협"
+  },
+  {
+   "finance_cd": "0010027531119",
+   "finance_nm": "황등농협",
+   "finance_path": "농협단위조합\\농협(전북)\\황등농협"
+  },
+  {
+   "finance_cd": "0010027517072",
+   "finance_nm": "황토현농협",
+   "finance_path": "농협단위조합\\농협(전북)\\황토현농협"
+  },
+  {
+   "finance_cd": "0010027527112",
+   "finance_nm": "회현농협",
+   "finance_path": "농협단위조합\\농협(전북)\\회현농협"
+  },
+  {
+   "finance_cd": "0010027521079",
+   "finance_nm": "흥덕농협",
+   "finance_path": "농협단위조합\\농협(전북)\\흥덕농협"
+  },
+  {
+   "finance_cd": "0010027901103",
+   "finance_nm": "구좌농협",
+   "finance_path": "농협단위조합\\농협(제주)\\구좌농협"
+  },
+  {
+   "finance_cd": "0010027901099",
+   "finance_nm": "김녕농협",
+   "finance_path": "농협단위조합\\농협(제주)\\김녕농협"
+  },
+  {
+   "finance_cd": "0010027903013",
+   "finance_nm": "대정농협",
+   "finance_path": "농협단위조합\\농협(제주)\\대정농협"
+  },
+  {
+   "finance_cd": "0010027903046",
+   "finance_nm": "서귀포농협",
+   "finance_path": "농협단위조합\\농협(제주)\\서귀포농협"
+  },
+  {
+   "finance_cd": "0010027178466",
+   "finance_nm": "서귀포시축산농협",
+   "finance_path": "농협단위조합\\농협(제주)\\서귀포시축산농협"
+  },
+  {
+   "finance_cd": "0010027012679",
+   "finance_nm": "성산농업협동조합[폐]",
+   "finance_path": "농협단위조합\\농협(제주)\\성산농업협동조합[폐]"
+  },
+  {
+   "finance_cd": "0010027903091",
+   "finance_nm": "성산일출봉농협",
+   "finance_path": "농협단위조합\\농협(제주)\\성산일출봉농협"
+  },
+  {
+   "finance_cd": "0010027901125",
+   "finance_nm": "애월농협",
+   "finance_path": "농협단위조합\\농협(제주)\\애월농협"
+  },
+  {
+   "finance_cd": "0010027903817",
+   "finance_nm": "제주감귤농협",
+   "finance_path": "농협단위조합\\농협(제주)\\제주감귤농협"
+  },
+  {
+   "finance_cd": "0010027901088",
+   "finance_nm": "제주고산농협",
+   "finance_path": "농협단위조합\\농협(제주)\\제주고산농협"
+  },
+  {
+   "finance_cd": "0010027903079",
+   "finance_nm": "제주남원농협",
+   "finance_path": "농협단위조합\\농협(제주)\\제주남원농협"
+  },
+  {
+   "finance_cd": "0010027901018",
+   "finance_nm": "제주시농협",
+   "finance_path": "농협단위조합\\농협(제주)\\제주시농협"
+  },
+  {
+   "finance_cd": "0010027903024",
+   "finance_nm": "제주안덕농협",
+   "finance_path": "농협단위조합\\농협(제주)\\제주안덕농협"
+  },
+  {
+   "finance_cd": "0010027178495",
+   "finance_nm": "제주양돈농협",
+   "finance_path": "농협단위조합\\농협(제주)\\제주양돈농협"
+  },
+  {
+   "finance_cd": "0010027903068",
+   "finance_nm": "제주위미농협",
+   "finance_path": "농협단위조합\\농협(제주)\\제주위미농협"
+  },
+  {
+   "finance_cd": "0010027178411",
+   "finance_nm": "제주축산농협",
+   "finance_path": "농협단위조합\\농협(제주)\\제주축산농협"
+  },
+  {
+   "finance_cd": "0010027901044",
+   "finance_nm": "조천농협",
+   "finance_path": "농협단위조합\\농협(제주)\\조천농협"
+  },
+  {
+   "finance_cd": "0010027903035",
+   "finance_nm": "중문농협",
+   "finance_path": "농협단위조합\\농협(제주)\\중문농협"
+  },
+  {
+   "finance_cd": "0010027903080",
+   "finance_nm": "표선농협",
+   "finance_path": "농협단위조합\\농협(제주)\\표선농협"
+  },
+  {
+   "finance_cd": "0010027901136",
+   "finance_nm": "하귀농협",
+   "finance_path": "농협단위조합\\농협(제주)\\하귀농협"
+  },
+  {
+   "finance_cd": "0010027901077",
+   "finance_nm": "한경농협",
+   "finance_path": "농협단위조합\\농협(제주)\\한경농협"
+  },
+  {
+   "finance_cd": "0010027901066",
+   "finance_nm": "한림농협",
+   "finance_path": "농협단위조합\\농협(제주)\\한림농협"
+  },
+  {
+   "finance_cd": "0010027901055",
+   "finance_nm": "함덕농협",
+   "finance_path": "농협단위조합\\농협(제주)\\함덕농협"
+  },
+  {
+   "finance_cd": "0010027903057",
+   "finance_nm": "효돈농협",
+   "finance_path": "농협단위조합\\농협(제주)\\효돈농협"
+  },
+  {
+   "finance_cd": "0010027473064",
+   "finance_nm": "갈산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\갈산농협"
+  },
+  {
+   "finance_cd": "0010027461117",
+   "finance_nm": "강경농협",
+   "finance_path": "농협단위조합\\농협(충남)\\강경농협"
+  },
+  {
+   "finance_cd": "0010027473101",
+   "finance_nm": "결성농협",
+   "finance_path": "농협단위조합\\농협(충남)\\결성농협"
+  },
+  {
+   "finance_cd": "0010027457017",
+   "finance_nm": "계룡농협",
+   "finance_path": "농협단위조합\\농협(충남)\\계룡농협"
+  },
+  {
+   "finance_cd": "0010027481021",
+   "finance_nm": "고대농협",
+   "finance_path": "농협단위조합\\농협(충남)\\고대농협"
+  },
+  {
+   "finance_cd": "0010027475103",
+   "finance_nm": "고덕농협",
+   "finance_path": "농협단위조합\\농협(충남)\\고덕농협"
+  },
+  {
+   "finance_cd": "0010027477116",
+   "finance_nm": "고북농협",
+   "finance_path": "농협단위조합\\농협(충남)\\고북농협"
+  },
+  {
+   "finance_cd": "0010027457121",
+   "finance_nm": "공주농협",
+   "finance_path": "농협단위조합\\농협(충남)\\공주농협"
+  },
+  {
+   "finance_cd": "0010027461036",
+   "finance_nm": "광석농협",
+   "finance_path": "농협단위조합\\농협(충남)\\광석농협"
+  },
+  {
+   "finance_cd": "0010027475066",
+   "finance_nm": "광시농협",
+   "finance_path": "농협단위조합\\농협(충남)\\광시농협"
+  },
+  {
+   "finance_cd": "0010027473075",
+   "finance_nm": "광천농협",
+   "finance_path": "농협단위조합\\농협(충남)\\광천농협"
+  },
+  {
+   "finance_cd": "0010027463119",
+   "finance_nm": "구룡농협",
+   "finance_path": "농협단위조합\\농협(충남)\\구룡농협"
+  },
+  {
+   "finance_cd": "0010027473053",
+   "finance_nm": "구항농협",
+   "finance_path": "농협단위조합\\농협(충남)\\구항농협"
+  },
+  {
+   "finance_cd": "0010027463094",
+   "finance_nm": "규암농협",
+   "finance_path": "농협단위조합\\농협(충남)\\규암농협"
+  },
+  {
+   "finance_cd": "0010027477150",
+   "finance_nm": "근흥농협",
+   "finance_path": "농협단위조합\\농협(충남)\\근흥농협"
+  },
+  {
+   "finance_cd": "0010027473031",
+   "finance_nm": "금마농협",
+   "finance_path": "농협단위조합\\농협(충남)\\금마농협"
+  },
+  {
+   "finance_cd": "0010027451011",
+   "finance_nm": "금산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\금산농협"
+  },
+  {
+   "finance_cd": "0010027463810",
+   "finance_nm": "금산인삼농협",
+   "finance_path": "농협단위조합\\농협(충남)\\금산인삼농협"
+  },
+  {
+   "finance_cd": "0010027451815",
+   "finance_nm": "금산인삼농협[폐]",
+   "finance_path": "농협단위조합\\농협(충남)\\금산인삼농협[폐]"
+  },
+  {
+   "finance_cd": "0010027173665",
+   "finance_nm": "금산축산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\금산축산농협"
+  },
+  {
+   "finance_cd": "0010027477138",
+   "finance_nm": "남면농협",
+   "finance_path": "농협단위조합\\농협(충남)\\남면농협"
+  },
+  {
+   "finance_cd": "0010027463061",
+   "finance_nm": "남면농협[폐]",
+   "finance_path": "농협단위조합\\농협(충남)\\남면농협[폐]"
+  },
+  {
+   "finance_cd": "0010027463083",
+   "finance_nm": "남부여농협[폐]",
+   "finance_path": "농협단위조합\\농협(충남)\\남부여농협[폐]"
+  },
+  {
+   "finance_cd": "0010027467043",
+   "finance_nm": "남포농협",
+   "finance_path": "농협단위조합\\농협(충남)\\남포농협"
+  },
+  {
+   "finance_cd": "0010027461047",
+   "finance_nm": "노성농협",
+   "finance_path": "농협단위조합\\농협(충남)\\노성농협"
+  },
+  {
+   "finance_cd": "0010027461070",
+   "finance_nm": "논산계룡농협",
+   "finance_path": "농협단위조합\\농협(충남)\\논산계룡농협"
+  },
+  {
+   "finance_cd": "0010027173801",
+   "finance_nm": "논산계룡축산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\논산계룡축산농협"
+  },
+  {
+   "finance_cd": "0010027461014",
+   "finance_nm": "논산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\논산농협"
+  },
+  {
+   "finance_cd": "0010027174583",
+   "finance_nm": "당진낙농축협",
+   "finance_path": "농협단위조합\\농협(충남)\\당진낙농축협"
+  },
+  {
+   "finance_cd": "0010027481010",
+   "finance_nm": "당진농협",
+   "finance_path": "농협단위조합\\농협(충남)\\당진농협"
+  },
+  {
+   "finance_cd": "0010027174127",
+   "finance_nm": "당진축산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\당진축산농협"
+  },
+  {
+   "finance_cd": "0010027477068",
+   "finance_nm": "대산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\대산농협"
+  },
+  {
+   "finance_cd": "0010027178835",
+   "finance_nm": "대전충남양계농협",
+   "finance_path": "농협단위조합\\농협(충남)\\대전충남양계농협"
+  },
+  {
+   "finance_cd": "0010027174525",
+   "finance_nm": "대전충남양돈농협",
+   "finance_path": "농협단위조합\\농협(충남)\\대전충남양돈농협"
+  },
+  {
+   "finance_cd": "0010027467011",
+   "finance_nm": "대천농협",
+   "finance_path": "농협단위조합\\농협(충남)\\대천농협"
+  },
+  {
+   "finance_cd": "0010027481043",
+   "finance_nm": "대호지농협",
+   "finance_path": "농협단위조합\\농협(충남)\\대호지농협"
+  },
+  {
+   "finance_cd": "0010027475088",
+   "finance_nm": "덕산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\덕산농협"
+  },
+  {
+   "finance_cd": "0010027463164",
+   "finance_nm": "동부여농협",
+   "finance_path": "농협단위조합\\농협(충남)\\동부여농협"
+  },
+  {
+   "finance_cd": "0010027465100",
+   "finance_nm": "동서천농협",
+   "finance_path": "농협단위조합\\농협(충남)\\동서천농협"
+  },
+  {
+   "finance_cd": "0010027455059",
+   "finance_nm": "동세종농협",
+   "finance_path": "농협단위조합\\농협(충남)\\동세종농협"
+  },
+  {
+   "finance_cd": "0010027485047",
+   "finance_nm": "동천안농협",
+   "finance_path": "농협단위조합\\농협(충남)\\동천안농협"
+  },
+  {
+   "finance_cd": "0010027483067",
+   "finance_nm": "둔포농협",
+   "finance_path": "농협단위조합\\농협(충남)\\둔포농협"
+  },
+  {
+   "finance_cd": "0010027451088",
+   "finance_nm": "만인산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\만인산농협"
+  },
+  {
+   "finance_cd": "0010027481065",
+   "finance_nm": "면천농협",
+   "finance_path": "농협단위조합\\농협(충남)\\면천농협"
+  },
+  {
+   "finance_cd": "0010027457084",
+   "finance_nm": "반포농협",
+   "finance_path": "농협단위조합\\농협(충남)\\반포농협"
+  },
+  {
+   "finance_cd": "0010027483034",
+   "finance_nm": "배방농협",
+   "finance_path": "농협단위조합\\농협(충남)\\배방농협"
+  },
+  {
+   "finance_cd": "0010027174596",
+   "finance_nm": "백제낙농축협[폐]",
+   "finance_path": "농협단위조합\\농협(충남)\\백제낙농축협[폐]"
+  },
+  {
+   "finance_cd": "0010027173937",
+   "finance_nm": "보령축협",
+   "finance_path": "농협단위조합\\농협(충남)\\보령축협"
+  },
+  {
+   "finance_cd": "0010027451055",
+   "finance_nm": "부리농협",
+   "finance_path": "농협단위조합\\농협(충남)\\부리농협"
+  },
+  {
+   "finance_cd": "0010027477035",
+   "finance_nm": "부석농협",
+   "finance_path": "농협단위조합\\농협(충남)\\부석농협"
+  },
+  {
+   "finance_cd": "0010027463142",
+   "finance_nm": "부여농협",
+   "finance_path": "농협단위조합\\농협(충남)\\부여농협"
+  },
+  {
+   "finance_cd": "0010027173856",
+   "finance_nm": "부여축협",
+   "finance_path": "농협단위조합\\농협(충남)\\부여축협"
+  },
+  {
+   "finance_cd": "0010027461025",
+   "finance_nm": "부적농협",
+   "finance_path": "농협단위조합\\농협(충남)\\부적농협"
+  },
+  {
+   "finance_cd": "0010027457095",
+   "finance_nm": "사곡농협",
+   "finance_path": "농협단위조합\\농협(충남)\\사곡농협"
+  },
+  {
+   "finance_cd": "0010027475077",
+   "finance_nm": "삽교농협",
+   "finance_path": "농협단위조합\\농협(충남)\\삽교농협"
+  },
+  {
+   "finance_cd": "0010027461058",
+   "finance_nm": "상월농협",
+   "finance_path": "농협단위조합\\농협(충남)\\상월농협"
+  },
+  {
+   "finance_cd": "0010027465074",
+   "finance_nm": "서면농협[폐]",
+   "finance_path": "농협단위조합\\농협(충남)\\서면농협[폐]"
+  },
+  {
+   "finance_cd": "0010027473112",
+   "finance_nm": "서부농협",
+   "finance_path": "농협단위조합\\농협(충남)\\서부농협"
+  },
+  {
+   "finance_cd": "0010027463131",
+   "finance_nm": "서부여농협",
+   "finance_path": "농협단위조합\\농협(충남)\\서부여농협"
+  },
+  {
+   "finance_cd": "0010027477013",
+   "finance_nm": "서산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\서산농협"
+  },
+  {
+   "finance_cd": "0010027477828",
+   "finance_nm": "서산인삼농협",
+   "finance_path": "농협단위조합\\농협(충남)\\서산인삼농협"
+  },
+  {
+   "finance_cd": "0010027174198",
+   "finance_nm": "서산태안축산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\서산태안축산농협"
+  },
+  {
+   "finance_cd": "0010027465063",
+   "finance_nm": "서서천농협",
+   "finance_path": "농협단위조합\\농협(충남)\\서서천농협"
+  },
+  {
+   "finance_cd": "0010027465018",
+   "finance_nm": "서천농협",
+   "finance_path": "농협단위조합\\농협(충남)\\서천농협"
+  },
+  {
+   "finance_cd": "0010027173898",
+   "finance_nm": "서천축협",
+   "finance_path": "농협단위조합\\농협(충남)\\서천축협"
+  },
+  {
+   "finance_cd": "0010027481032",
+   "finance_nm": "석문농협",
+   "finance_path": "농협단위조합\\농협(충남)\\석문농협"
+  },
+  {
+   "finance_cd": "0010027483115",
+   "finance_nm": "선도농협",
+   "finance_path": "농협단위조합\\농협(충남)\\선도농협"
+  },
+  {
+   "finance_cd": "0010027485058",
+   "finance_nm": "성거농협",
+   "finance_path": "농협단위조합\\농협(충남)\\성거농협"
+  },
+  {
+   "finance_cd": "0010027461128",
+   "finance_nm": "성동농협",
+   "finance_path": "농협단위조합\\농협(충남)\\성동농협"
+  },
+  {
+   "finance_cd": "0010027477079",
+   "finance_nm": "성연농협",
+   "finance_path": "농협단위조합\\농협(충남)\\성연농협"
+  },
+  {
+   "finance_cd": "0010027485069",
+   "finance_nm": "성환농협",
+   "finance_path": "농협단위조합\\농협(충남)\\성환농협"
+  },
+  {
+   "finance_cd": "0010027463016",
+   "finance_nm": "세도농협",
+   "finance_path": "농협단위조합\\농협(충남)\\세도농협"
+  },
+  {
+   "finance_cd": "0010027455015",
+   "finance_nm": "세종강남농협",
+   "finance_path": "농협단위조합\\농협(충남)\\세종강남농협"
+  },
+  {
+   "finance_cd": "0010027457811",
+   "finance_nm": "세종공주원예농협",
+   "finance_path": "농협단위조합\\농협(충남)\\세종공주원예농협"
+  },
+  {
+   "finance_cd": "0010027173759",
+   "finance_nm": "세종공주축산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\세종공주축산농협"
+  },
+  {
+   "finance_cd": "0010027401072",
+   "finance_nm": "세종부강농협",
+   "finance_path": "농협단위조합\\농협(충남)\\세종부강농협"
+  },
+  {
+   "finance_cd": "0010027457028",
+   "finance_nm": "세종서부농협",
+   "finance_path": "농협단위조합\\농협(충남)\\세종서부농협"
+  },
+  {
+   "finance_cd": "0010027455071",
+   "finance_nm": "세종연서농협",
+   "finance_path": "농협단위조합\\농협(충남)\\세종연서농협"
+  },
+  {
+   "finance_cd": "0010027455026",
+   "finance_nm": "세종전의농협",
+   "finance_path": "농협단위조합\\농협(충남)\\세종전의농협"
+  },
+  {
+   "finance_cd": "0010027455037",
+   "finance_nm": "세종중앙농협",
+   "finance_path": "농협단위조합\\농협(충남)\\세종중앙농협"
+  },
+  {
+   "finance_cd": "0010027477161",
+   "finance_nm": "소원농협",
+   "finance_path": "농협단위조합\\농협(충남)\\소원농협"
+  },
+  {
+   "finance_cd": "0010027481124",
+   "finance_nm": "송산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\송산농협"
+  },
+  {
+   "finance_cd": "0010027481113",
+   "finance_nm": "송악농협",
+   "finance_path": "농협단위조합\\농협(충남)\\송악농협"
+  },
+  {
+   "finance_cd": "0010027483023",
+   "finance_nm": "송악농협",
+   "finance_path": "농협단위조합\\농협(충남)\\송악농협"
+  },
+  {
+   "finance_cd": "0010027481076",
+   "finance_nm": "순성농협",
+   "finance_path": "농협단위조합\\농협(충남)\\순성농협"
+  },
+  {
+   "finance_cd": "0010027475114",
+   "finance_nm": "신암농협[폐]",
+   "finance_path": "농협단위조합\\농협(충남)\\신암농협[폐]"
+  },
+  {
+   "finance_cd": "0010027475011",
+   "finance_nm": "신양농협",
+   "finance_path": "농협단위조합\\농협(충남)\\신양농협"
+  },
+  {
+   "finance_cd": "0010027481102",
+   "finance_nm": "신평농협",
+   "finance_path": "농협단위조합\\농협(충남)\\신평농협"
+  },
+  {
+   "finance_cd": "0010027457073",
+   "finance_nm": "신풍농협",
+   "finance_path": "농협단위조합\\농협(충남)\\신풍농협"
+  },
+  {
+   "finance_cd": "0010027483816",
+   "finance_nm": "아산원예농협",
+   "finance_path": "농협단위조합\\농협(충남)\\아산원예농협"
+  },
+  {
+   "finance_cd": "0010027174253",
+   "finance_nm": "아산축산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\아산축산농협"
+  },
+  {
+   "finance_cd": "0010027012649",
+   "finance_nm": "아산축산업협동조합[폐]",
+   "finance_path": "농협단위조합\\농협(충남)\\아산축산업협동조합[폐]"
+  },
+  {
+   "finance_cd": "0010027485092",
+   "finance_nm": "아우내농협",
+   "finance_path": "농협단위조합\\농협(충남)\\아우내농협"
+  },
+  {
+   "finance_cd": "0010027477127",
+   "finance_nm": "안면도농협",
+   "finance_path": "농협단위조합\\농협(충남)\\안면도농협"
+  },
+  {
+   "finance_cd": "0010027461106",
+   "finance_nm": "양촌농협",
+   "finance_path": "농협단위조합\\농협(충남)\\양촌농협"
+  },
+  {
+   "finance_cd": "0010027461140",
+   "finance_nm": "연무농협",
+   "finance_path": "농협단위조합\\농협(충남)\\연무농협"
+  },
+  {
+   "finance_cd": "0010027483126",
+   "finance_nm": "염치농협",
+   "finance_path": "농협단위조합\\농협(충남)\\염치농협"
+  },
+  {
+   "finance_cd": "0010027483078",
+   "finance_nm": "영인농협",
+   "finance_path": "농협단위조합\\농협(충남)\\영인농협"
+  },
+  {
+   "finance_cd": "0010027475125",
+   "finance_nm": "예산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\예산농협"
+  },
+  {
+   "finance_cd": "0010027475815",
+   "finance_nm": "예산능금농협",
+   "finance_path": "농협단위조합\\농협(충남)\\예산능금농협"
+  },
+  {
+   "finance_cd": "0010027475022",
+   "finance_nm": "예산중앙농협",
+   "finance_path": "농협단위조합\\농협(충남)\\예산중앙농협"
+  },
+  {
+   "finance_cd": "0010027174075",
+   "finance_nm": "예산축협",
+   "finance_path": "농협단위조합\\농협(충남)\\예산축협"
+  },
+  {
+   "finance_cd": "0010027467054",
+   "finance_nm": "오천농협",
+   "finance_path": "농협단위조합\\농협(충남)\\오천농협"
+  },
+  {
+   "finance_cd": "0010027483012",
+   "finance_nm": "온양농협",
+   "finance_path": "농협단위조합\\농협(충남)\\온양농협"
+  },
+  {
+   "finance_cd": "0010027481098",
+   "finance_nm": "우강농협",
+   "finance_path": "농협단위조합\\농협(충남)\\우강농협"
+  },
+  {
+   "finance_cd": "0010027457109",
+   "finance_nm": "우성농협",
+   "finance_path": "농협단위조합\\농협(충남)\\우성농협"
+  },
+  {
+   "finance_cd": "0010027477091",
+   "finance_nm": "운산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\운산농협"
+  },
+  {
+   "finance_cd": "0010027467087",
+   "finance_nm": "웅천농협",
+   "finance_path": "농협단위조합\\농협(충남)\\웅천농협"
+  },
+  {
+   "finance_cd": "0010027477172",
+   "finance_nm": "원북농협",
+   "finance_path": "농협단위조합\\농협(충남)\\원북농협"
+  },
+  {
+   "finance_cd": "0010027457040",
+   "finance_nm": "유구농협",
+   "finance_path": "농협단위조합\\농협(충남)\\유구농협"
+  },
+  {
+   "finance_cd": "0010027483056",
+   "finance_nm": "음봉농협",
+   "finance_path": "농협단위조합\\농협(충남)\\음봉농협"
+  },
+  {
+   "finance_cd": "0010027477080",
+   "finance_nm": "음암농협",
+   "finance_path": "농협단위조합\\농협(충남)\\음암농협"
+  },
+  {
+   "finance_cd": "0010027457062",
+   "finance_nm": "의당농협",
+   "finance_path": "농협단위조합\\농협(충남)\\의당농협"
+  },
+  {
+   "finance_cd": "0010027457110",
+   "finance_nm": "이인농협",
+   "finance_path": "농협단위조합\\농협(충남)\\이인농협"
+  },
+  {
+   "finance_cd": "0010027483089",
+   "finance_nm": "인주농협",
+   "finance_path": "농협단위조합\\농협(충남)\\인주농협"
+  },
+  {
+   "finance_cd": "0010027485070",
+   "finance_nm": "입장농협",
+   "finance_path": "농협단위조합\\농협(충남)\\입장농협"
+  },
+  {
+   "finance_cd": "0010027473086",
+   "finance_nm": "장곡농협",
+   "finance_path": "농협단위조합\\농협(충남)\\장곡농협"
+  },
+  {
+   "finance_cd": "0010027463038",
+   "finance_nm": "장암농협",
+   "finance_path": "농협단위조합\\농협(충남)\\장암농협"
+  },
+  {
+   "finance_cd": "0010027465122",
+   "finance_nm": "장항농협",
+   "finance_path": "농협단위조합\\농협(충남)\\장항농협"
+  },
+  {
+   "finance_cd": "0010027481054",
+   "finance_nm": "정미농협",
+   "finance_path": "농협단위조합\\농협(충남)\\정미농협"
+  },
+  {
+   "finance_cd": "0010027471040",
+   "finance_nm": "정산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\정산농협"
+  },
+  {
+   "finance_cd": "0010027457051",
+   "finance_nm": "정안농협",
+   "finance_path": "농협단위조합\\농협(충남)\\정안농협"
+  },
+  {
+   "finance_cd": "0010027455041",
+   "finance_nm": "조치원농협",
+   "finance_path": "농협단위조합\\농협(충남)\\조치원농협"
+  },
+  {
+   "finance_cd": "0010027467098",
+   "finance_nm": "주산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\주산농협"
+  },
+  {
+   "finance_cd": "0010027477057",
+   "finance_nm": "지곡농협",
+   "finance_path": "농협단위조합\\농협(충남)\\지곡농협"
+  },
+  {
+   "finance_cd": "0010027485081",
+   "finance_nm": "직산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\직산농협"
+  },
+  {
+   "finance_cd": "0010027451099",
+   "finance_nm": "진산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\진산농협"
+  },
+  {
+   "finance_cd": "0010027467076",
+   "finance_nm": "천북농협",
+   "finance_path": "농협단위조합\\농협(충남)\\천북농협"
+  },
+  {
+   "finance_cd": "0010027174402",
+   "finance_nm": "천안공주낙농농협",
+   "finance_path": "농협단위조합\\농협(충남)\\천안공주낙농농협"
+  },
+  {
+   "finance_cd": "0010027485014",
+   "finance_nm": "천안농협",
+   "finance_path": "농협단위조합\\농협(충남)\\천안농협"
+  },
+  {
+   "finance_cd": "0010027485818",
+   "finance_nm": "천안배농협",
+   "finance_path": "농협단위조합\\농협(충남)\\천안배농협"
+  },
+  {
+   "finance_cd": "0010027174347",
+   "finance_nm": "천안축산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\천안축산농협"
+  },
+  {
+   "finance_cd": "0010027467021",
+   "finance_nm": "청라농협[폐]",
+   "finance_path": "농협단위조합\\농협(충남)\\청라농협[폐]"
+  },
+  {
+   "finance_cd": "0010027467065",
+   "finance_nm": "청소농협",
+   "finance_path": "농협단위조합\\농협(충남)\\청소농협"
+  },
+  {
+   "finance_cd": "0010027471017",
+   "finance_nm": "청양농협",
+   "finance_path": "농협단위조합\\농협(충남)\\청양농협"
+  },
+  {
+   "finance_cd": "0010027173982",
+   "finance_nm": "청양축협",
+   "finance_path": "농협단위조합\\농협(충남)\\청양축협"
+  },
+  {
+   "finance_cd": "0010027477817",
+   "finance_nm": "충서원예농협",
+   "finance_path": "농협단위조합\\농협(충남)\\충서원예농협"
+  },
+  {
+   "finance_cd": "0010027457039",
+   "finance_nm": "탄천농협",
+   "finance_path": "농협단위조합\\농협(충남)\\탄천농협"
+  },
+  {
+   "finance_cd": "0010027483045",
+   "finance_nm": "탕정농협",
+   "finance_path": "농협단위조합\\농협(충남)\\탕정농협"
+  },
+  {
+   "finance_cd": "0010027477149",
+   "finance_nm": "태안농협",
+   "finance_path": "농협단위조합\\농협(충남)\\태안농협"
+  },
+  {
+   "finance_cd": "0010027465041",
+   "finance_nm": "판교농협",
+   "finance_path": "농협단위조합\\농협(충남)\\판교농협"
+  },
+  {
+   "finance_cd": "0010027465085",
+   "finance_nm": "한산농협",
+   "finance_path": "농협단위조합\\농협(충남)\\한산농협"
+  },
+  {
+   "finance_cd": "0010027481087",
+   "finance_nm": "합덕농협",
+   "finance_path": "농협단위조합\\농협(충남)\\합덕농협"
+  },
+  {
+   "finance_cd": "0010027477105",
+   "finance_nm": "해미농협",
+   "finance_path": "농협단위조합\\농협(충남)\\해미농협"
+  },
+  {
+   "finance_cd": "0010027473042",
+   "finance_nm": "홍동농협",
+   "finance_path": "농협단위조합\\농협(충남)\\홍동농협"
+  },
+  {
+   "finance_cd": "0010027473020",
+   "finance_nm": "홍북농협",
+   "finance_path": "농협단위조합\\농협(충남)\\홍북농협"
+  },
+  {
+   "finance_cd": "0010027174619",
+   "finance_nm": "홍성낙농농협",
+   "finance_path": "농협단위조합\\농협(충남)\\홍성낙농농협"
+  },
+  {
+   "finance_cd": "0010027473019",
+   "finance_nm": "홍성농협",
+   "finance_path": "농협단위조합\\농협(충남)\\홍성농협"
+  },
+  {
+   "finance_cd": "0010027174020",
+   "finance_nm": "홍성축협",
+   "finance_path": "농협단위조합\\농협(충남)\\홍성축협"
+  },
+  {
+   "finance_cd": "0010027471095",
+   "finance_nm": "화성농협",
+   "finance_path": "농협단위조합\\농협(충남)\\화성농협"
+  },
+  {
+   "finance_cd": "0010027415091",
+   "finance_nm": "감곡농협",
+   "finance_path": "농협단위조합\\농협(충북)\\감곡농협"
+  },
+  {
+   "finance_cd": "0010027401027",
+   "finance_nm": "강내농협",
+   "finance_path": "농협단위조합\\농협(충북)\\강내농협"
+  },
+  {
+   "finance_cd": "0010027411075",
+   "finance_nm": "광혜원농협",
+   "finance_path": "농협단위조합\\농협(충북)\\광혜원농협"
+  },
+  {
+   "finance_cd": "0010027413015",
+   "finance_nm": "괴산농협",
+   "finance_path": "농협단위조합\\농협(충북)\\괴산농협"
+  },
+  {
+   "finance_cd": "0010027413011",
+   "finance_nm": "괴산농협[폐]",
+   "finance_path": "농협단위조합\\농협(충북)\\괴산농협[폐]"
+  },
+  {
+   "finance_cd": "0010027173241",
+   "finance_nm": "괴산증평축산농협",
+   "finance_path": "농협단위조합\\농협(충북)\\괴산증평축산농협"
+  },
+  {
+   "finance_cd": "0010027405076",
+   "finance_nm": "군서농협[폐]",
+   "finance_path": "농협단위조합\\농협(충북)\\군서농협[폐]"
+  },
+  {
+   "finance_cd": "0010027413044",
+   "finance_nm": "군자농협",
+   "finance_path": "농협단위조합\\농협(충북)\\군자농협"
+  },
+  {
+   "finance_cd": "0010027421056",
+   "finance_nm": "금성농협",
+   "finance_path": "농협단위조합\\농협(충북)\\금성농협"
+  },
+  {
+   "finance_cd": "0010027415079",
+   "finance_nm": "금왕농협",
+   "finance_path": "농협단위조합\\농협(충북)\\금왕농협"
+  },
+  {
+   "finance_cd": "0010027403063",
+   "finance_nm": "남보은농협",
+   "finance_path": "농협단위조합\\농협(충북)\\남보은농협"
+  },
+  {
+   "finance_cd": "0010027421078",
+   "finance_nm": "남제천농협",
+   "finance_path": "농협단위조합\\농협(충북)\\남제천농협"
+  },
+  {
+   "finance_cd": "0010027401094",
+   "finance_nm": "남청주농협",
+   "finance_path": "농협단위조합\\농협(충북)\\남청주농협"
+  },
+  {
+   "finance_cd": "0010027401050",
+   "finance_nm": "내수농협",
+   "finance_path": "농협단위조합\\농협(충북)\\내수농협"
+  },
+  {
+   "finance_cd": "0010027417071",
+   "finance_nm": "노은농협[폐]",
+   "finance_path": "농협단위조합\\농협(충북)\\노은농협[폐]"
+  },
+  {
+   "finance_cd": "0010027423014",
+   "finance_nm": "단양농협",
+   "finance_path": "농협단위조합\\농협(충북)\\단양농협"
+  },
+  {
+   "finance_cd": "0010027423070",
+   "finance_nm": "단양소백농협",
+   "finance_path": "농협단위조합\\농협(충북)\\단양소백농협"
+  },
+  {
+   "finance_cd": "0010027415057",
+   "finance_nm": "대소농협",
+   "finance_path": "농협단위조합\\농협(충북)\\대소농협"
+  },
+  {
+   "finance_cd": "0010027405032",
+   "finance_nm": "대청농협",
+   "finance_path": "농협단위조합\\농협(충북)\\대청농협"
+  },
+  {
+   "finance_cd": "0010027411020",
+   "finance_nm": "덕산농협",
+   "finance_path": "농협단위조합\\농협(충북)\\덕산농협"
+  },
+  {
+   "finance_cd": "0010027401131",
+   "finance_nm": "동청주농협",
+   "finance_path": "농협단위조합\\농협(충북)\\동청주농협"
+  },
+  {
+   "finance_cd": "0010027417130",
+   "finance_nm": "동충주농협",
+   "finance_path": "농협단위조합\\농협(충북)\\동충주농협"
+  },
+  {
+   "finance_cd": "0010027415046",
+   "finance_nm": "맹동농협",
+   "finance_path": "농협단위조합\\농협(충북)\\맹동농협"
+  },
+  {
+   "finance_cd": "0010027411042",
+   "finance_nm": "문백농협",
+   "finance_path": "농협단위조합\\농협(충북)\\문백농협"
+  },
+  {
+   "finance_cd": "0010027421045",
+   "finance_nm": "백운농협",
+   "finance_path": "농협단위조합\\농협(충북)\\백운농협"
+  },
+  {
+   "finance_cd": "0010027403010",
+   "finance_nm": "보은농협",
+   "finance_path": "농협단위조합\\농협(충북)\\보은농협"
+  },
+  {
+   "finance_cd": "0010027173380",
+   "finance_nm": "보은옥천영동축산농협",
+   "finance_path": "농협단위조합\\농협(충북)\\보은옥천영동축산농협"
+  },
+  {
+   "finance_cd": "0010027421034",
+   "finance_nm": "봉양농협",
+   "finance_path": "농협단위조합\\농협(충북)\\봉양농협"
+  },
+  {
+   "finance_cd": "0010027423047",
+   "finance_nm": "북단양농협",
+   "finance_path": "농협단위조합\\농협(충북)\\북단양농협"
+  },
+  {
+   "finance_cd": "0010027417082",
+   "finance_nm": "북충주농협",
+   "finance_path": "농협단위조합\\농협(충북)\\북충주농협"
+  },
+  {
+   "finance_cd": "0010027413077",
+   "finance_nm": "불정농협",
+   "finance_path": "농협단위조합\\농협(충북)\\불정농협"
+  },
+  {
+   "finance_cd": "0010027417129",
+   "finance_nm": "산척농협",
+   "finance_path": "농협단위조합\\농협(충북)\\산척농협"
+  },
+  {
+   "finance_cd": "0010027415068",
+   "finance_nm": "삼성농협",
+   "finance_path": "농협단위조합\\농협(충북)\\삼성농협"
+  },
+  {
+   "finance_cd": "0012936",
+   "finance_nm": "상촌농업협동조합[폐]",
+   "finance_path": "농협단위조합\\농협(충북)\\상촌농업협동조합[폐]"
+  },
+  {
+   "finance_cd": "0010027012936",
+   "finance_nm": "상촌농업협동조합[폐]",
+   "finance_path": "농협단위조합\\농협(충북)\\상촌농업협동조합[폐]"
+  },
+  {
+   "finance_cd": "0010027407115",
+   "finance_nm": "상촌농협[폐]",
+   "finance_path": "농협단위조합\\농협(충북)\\상촌농협[폐]"
+  },
+  {
+   "finance_cd": "0010027415080",
+   "finance_nm": "생극농협",
+   "finance_path": "농협단위조합\\농협(충북)\\생극농협"
+  },
+  {
+   "finance_cd": "0010027401061",
+   "finance_nm": "서청주농협",
+   "finance_path": "농협단위조합\\농협(충북)\\서청주농협"
+  },
+  {
+   "finance_cd": "0010027417048",
+   "finance_nm": "서충주농협",
+   "finance_path": "농협단위조합\\농협(충북)\\서충주농협"
+  },
+  {
+   "finance_cd": "0010027417040",
+   "finance_nm": "서충주농협[폐]",
+   "finance_path": "농협단위조합\\농협(충북)\\서충주농협[폐]"
+  },
+  {
+   "finance_cd": "0010027417141",
+   "finance_nm": "소태농협[폐]",
+   "finance_path": "농협단위조합\\농협(충북)\\소태농협[폐]"
+  },
+  {
+   "finance_cd": "0010027417037",
+   "finance_nm": "수안보농협",
+   "finance_path": "농협단위조합\\농협(충북)\\수안보농협"
+  },
+  {
+   "finance_cd": "0010027407012",
+   "finance_nm": "영동농협",
+   "finance_path": "농협단위조합\\농협(충북)\\영동농협"
+  },
+  {
+   "finance_cd": "0010027401083",
+   "finance_nm": "오송농협",
+   "finance_path": "농협단위조합\\농협(충북)\\오송농협"
+  },
+  {
+   "finance_cd": "0010027401038",
+   "finance_nm": "오창농협",
+   "finance_path": "농협단위조합\\농협(충북)\\오창농협"
+  },
+  {
+   "finance_cd": "0010027401016",
+   "finance_nm": "옥산농협",
+   "finance_path": "농협단위조합\\농협(충북)\\옥산농협"
+  },
+  {
+   "finance_cd": "0010027405010",
+   "finance_nm": "옥천농협",
+   "finance_path": "농협단위조합\\농협(충북)\\옥천농협"
+  },
+  {
+   "finance_cd": "0010027173160",
+   "finance_nm": "옥천영동축산농협[폐]",
+   "finance_path": "농협단위조합\\농협(충북)\\옥천영동축산농협[폐]"
+  },
+  {
+   "finance_cd": "0010027415013",
+   "finance_nm": "음성농협",
+   "finance_path": "농협단위조합\\농협(충북)\\음성농협"
+  },
+  {
+   "finance_cd": "0010027173429",
+   "finance_nm": "음성축산농협",
+   "finance_path": "농협단위조합\\농협(충북)\\음성축산농협"
+  },
+  {
+   "finance_cd": "0010027405065",
+   "finance_nm": "이원농협",
+   "finance_path": "농협단위조합\\농협(충북)\\이원농협"
+  },
+  {
+   "finance_cd": "0010027411064",
+   "finance_nm": "이월농협",
+   "finance_path": "농협단위조합\\농협(충북)\\이월농협"
+  },
+  {
+   "finance_cd": "0010027421012",
+   "finance_nm": "제천농협",
+   "finance_path": "농협단위조합\\농협(충북)\\제천농협"
+  },
+  {
+   "finance_cd": "0010027173319",
+   "finance_nm": "제천단양축산농협",
+   "finance_path": "농협단위조합\\농협(충북)\\제천단양축산농협"
+  },
+  {
+   "finance_cd": "0010027417059",
+   "finance_nm": "주덕농협",
+   "finance_path": "농협단위조합\\농협(충북)\\주덕농협"
+  },
+  {
+   "finance_cd": "0010027417118",
+   "finance_nm": "중원농협",
+   "finance_path": "농협단위조합\\농협(충북)\\중원농협"
+  },
+  {
+   "finance_cd": "0010027413092",
+   "finance_nm": "증평농협",
+   "finance_path": "농협단위조합\\농협(충북)\\증평농협"
+  },
+  {
+   "finance_cd": "0010027411019",
+   "finance_nm": "진천농협",
+   "finance_path": "농협단위조합\\농협(충북)\\진천농협"
+  },
+  {
+   "finance_cd": "0010027173351",
+   "finance_nm": "진천축산농협",
+   "finance_path": "농협단위조합\\농협(충북)\\진천축산농협"
+  },
+  {
+   "finance_cd": "0010027401049",
+   "finance_nm": "청남농협",
+   "finance_path": "농협단위조합\\농협(충북)\\청남농협"
+  },
+  {
+   "finance_cd": "0010027405054",
+   "finance_nm": "청산농협",
+   "finance_path": "농협단위조합\\농협(충북)\\청산농협"
+  },
+  {
+   "finance_cd": "0010027401142",
+   "finance_nm": "청주농협",
+   "finance_path": "농협단위조합\\농협(충북)\\청주농협"
+  },
+  {
+   "finance_cd": "0010027173047",
+   "finance_nm": "청주축산농협",
+   "finance_path": "농협단위조합\\농협(충북)\\청주축산농협"
+  },
+  {
+   "finance_cd": "0010027413066",
+   "finance_nm": "청천농협",
+   "finance_path": "농협단위조합\\농협(충북)\\청천농협"
+  },
+  {
+   "finance_cd": "0010027411031",
+   "finance_nm": "초평농협",
+   "finance_path": "농협단위조합\\농협(충북)\\초평농협"
+  },
+  {
+   "finance_cd": "0010027407090",
+   "finance_nm": "추풍령농협",
+   "finance_path": "농협단위조합\\농협(충북)\\추풍령농협"
+  },
+  {
+   "finance_cd": "0010027174587",
+   "finance_nm": "충북낙농농협",
+   "finance_path": "농협단위조합\\농협(충북)\\충북낙농농협"
+  },
+  {
+   "finance_cd": "0010027401810",
+   "finance_nm": "충북원예농협",
+   "finance_path": "농협단위조합\\농협(충북)\\충북원예농협"
+  },
+  {
+   "finance_cd": "0010027413815",
+   "finance_nm": "충북인삼농협",
+   "finance_path": "농협단위조합\\농협(충북)\\충북인삼농협"
+  },
+  {
+   "finance_cd": "0010027417015",
+   "finance_nm": "충주농협",
+   "finance_path": "농협단위조합\\농협(충북)\\충주농협"
+  },
+  {
+   "finance_cd": "0010027173199",
+   "finance_nm": "충주축산농협",
+   "finance_path": "농협단위조합\\농협(충북)\\충주축산농협"
+  },
+  {
+   "finance_cd": "0010027407056",
+   "finance_nm": "학산농협",
+   "finance_path": "농협단위조합\\농협(충북)\\학산농협"
+  },
+  {
+   "finance_cd": "0010027401119",
+   "finance_nm": "현도농협",
+   "finance_path": "농협단위조합\\농협(충북)\\현도농협"
+  },
+  {
+   "finance_cd": "0010027407089",
+   "finance_nm": "황간농협",
+   "finance_path": "농협단위조합\\농협(충북)\\황간농협"
+  }
+ ]
+}

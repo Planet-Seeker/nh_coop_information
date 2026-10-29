@@ -1,0 +1,1857 @@
+{
+ "sample": {
+  "finance_cd": "0010027485014",
+  "finance_nm": "천안농협",
+  "finance_path": "농협단위조합\\농협(충남)\\천안농협"
+ },
+ "tables": {
+  "SQ001": {
+   "name": "임직원현황",
+   "accounts": [
+    {
+     "list_no": "SQ001",
+     "list_nm": "임직원현황",
+     "account_cd": "A1",
+     "account_nm": "임 원"
+    },
+    {
+     "list_no": "SQ001",
+     "list_nm": "임직원현황",
+     "account_cd": "A11",
+     "account_nm": "임 원_상근 이사 및 감사"
+    },
+    {
+     "list_no": "SQ001",
+     "list_nm": "임직원현황",
+     "account_cd": "A12",
+     "account_nm": "임 원_비상근 이사 및 감사"
+    },
+    {
+     "list_no": "SQ001",
+     "list_nm": "임직원현황",
+     "account_cd": "A13",
+     "account_nm": "임 원_전무 및 상무"
+    },
+    {
+     "list_no": "SQ001",
+     "list_nm": "임직원현황",
+     "account_cd": "A2",
+     "account_nm": "직 원"
+    },
+    {
+     "list_no": "SQ001",
+     "list_nm": "임직원현황",
+     "account_cd": "A24",
+     "account_nm": "직 원_정규직원"
+    },
+    {
+     "list_no": "SQ001",
+     "list_nm": "임직원현황",
+     "account_cd": "A25",
+     "account_nm": "직 원_비정규직원"
+    },
+    {
+     "list_no": "SQ001",
+     "list_nm": "임직원현황",
+     "account_cd": "A",
+     "account_nm": "총임직원"
+    },
+    {
+     "list_no": "SQ001",
+     "list_nm": "임직원현황",
+     "account_cd": "B",
+     "account_nm": "조합원"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ002": {
+   "name": "회원조합수 현황",
+   "accounts": [
+    {
+     "list_no": "SQ002",
+     "list_nm": "회원조합수 현황",
+     "account_cd": "A",
+     "account_nm": "농협"
+    },
+    {
+     "list_no": "SQ002",
+     "list_nm": "회원조합수 현황",
+     "account_cd": "A1",
+     "account_nm": "농협_지역조합"
+    },
+    {
+     "list_no": "SQ002",
+     "list_nm": "회원조합수 현황",
+     "account_cd": "A2",
+     "account_nm": "농협_품목조합"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "financeCd의 부적절한 값"
+   ]
+  },
+  "SQ003": {
+   "name": "요약재무상태표(자산)",
+   "accounts": [
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A1",
+     "account_nm": "현금 및 예치금"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A11",
+     "account_nm": "현금 및 예치금_현금"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A12",
+     "account_nm": "현금 및 예치금_예치금"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A120",
+     "account_nm": "현금 및 예치금_예치금_상환준비금"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A121",
+     "account_nm": "현금 및 예치금_예치금_대내예치금"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A122",
+     "account_nm": "현금 및 예치금_예치금_대외예치금"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A123",
+     "account_nm": "현금 및 예치금_예치금_기타예치금"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A2",
+     "account_nm": "유가증권"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A23",
+     "account_nm": "유가증권_단기매매증권"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A24",
+     "account_nm": "유가증권_매도가능증권"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A25",
+     "account_nm": "유가증권_만기보유증권"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A3",
+     "account_nm": "대출채권"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A32",
+     "account_nm": "대출채권_상호금융대출금"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A320",
+     "account_nm": "대출채권_상호금융대출금_(대손충당금)"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A33",
+     "account_nm": "대출채권_정책자금대출금"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A330",
+     "account_nm": "대출채권_정책자금대출금_(대손충당금)"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A34",
+     "account_nm": "대출채권_기타"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A340",
+     "account_nm": "대출채권_기타_(대손충당금)"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A4",
+     "account_nm": "유형자산"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A42",
+     "account_nm": "유형자산_토지"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A420",
+     "account_nm": "유형자산_토지_(손상차손누계액)"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A43",
+     "account_nm": "유형자산_건물"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A430",
+     "account_nm": "유형자산_건물_(감가상각누계액)"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A431",
+     "account_nm": "유형자산_건물_(손상차손누계액)"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A44",
+     "account_nm": "유형자산_기타"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A440",
+     "account_nm": "유형자산_기타_(감가상각누계액)"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A441",
+     "account_nm": "유형자산_기타_(손상차손누계액)"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A5",
+     "account_nm": "기타자산"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A58",
+     "account_nm": "기타자산_신용카드채권"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A580",
+     "account_nm": "기타자산_신용카드채권_(대손충당금)"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A51",
+     "account_nm": "기타자산_비업무용자산"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A52",
+     "account_nm": "기타자산_보증금"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A53",
+     "account_nm": "기타자산_미수수익"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A54",
+     "account_nm": "기타자산_미수금"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A540",
+     "account_nm": "기타자산_미수금_(대손충당금)"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A55",
+     "account_nm": "기타자산_가지급금"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A550",
+     "account_nm": "기타자산_가지급금_(대손충당금)"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A56",
+     "account_nm": "기타자산_선급비용"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A57",
+     "account_nm": "기타자산_무형자산"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A59",
+     "account_nm": "기타자산_타회계자금수수"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A5A",
+     "account_nm": "기타자산_기타"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A6",
+     "account_nm": "비신용사업계정"
+    },
+    {
+     "list_no": "SQ003",
+     "list_nm": "요약재무상태표(자산)",
+     "account_cd": "A",
+     "account_nm": "자산총계"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ004": {
+   "name": "요약재무상태표(부채 및 자본)",
+   "accounts": [
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A1",
+     "account_nm": "예수부채"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A11",
+     "account_nm": "예수부채_요구불예금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A12",
+     "account_nm": "예수부채_기한부예금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A13",
+     "account_nm": "예수부채_기타예금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A2",
+     "account_nm": "차입부채"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A21",
+     "account_nm": "차입부채_상호금융차입금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A22",
+     "account_nm": "차입부채_정책자금차입금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A23",
+     "account_nm": "차입부채_기타"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A3",
+     "account_nm": "기타부채"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A31",
+     "account_nm": "기타부채_퇴직급여충당부채"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A32",
+     "account_nm": "기타부채_미지급비용"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A33",
+     "account_nm": "기타부채_미지급금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A34",
+     "account_nm": "기타부채_제세예수금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A35",
+     "account_nm": "기타부채_미지급법인세"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A36",
+     "account_nm": "기타부채_대리점미지급금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A37",
+     "account_nm": "기타부채_지로예수금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A38",
+     "account_nm": "기타부채_선수수익"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A39",
+     "account_nm": "기타부채_타회계자금수수"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A3A",
+     "account_nm": "기타부채_기타"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "AB",
+     "account_nm": "비신용사업계정"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A4",
+     "account_nm": "부채총계"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A5",
+     "account_nm": "출자금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A6",
+     "account_nm": "자본잉여금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A61",
+     "account_nm": "자본잉여금_재평가 적립금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A62",
+     "account_nm": "자본잉여금_기타자본잉여금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A7",
+     "account_nm": "자본조정"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A8",
+     "account_nm": "기타포괄손익누계액"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A84",
+     "account_nm": "기타포괄손익누계액_매도가능증권평가이익"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A85",
+     "account_nm": "기타포괄손익누계액_매도가능증권평가손실"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A86",
+     "account_nm": "기타포괄손익누계액_만기보유증권평가이익"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A87",
+     "account_nm": "기타포괄손익누계액_만기보유증권평가손실"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A83",
+     "account_nm": "기타포괄손익누계액_재평가이익"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A9",
+     "account_nm": "이익잉여금(또는 이월결손금)"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A91",
+     "account_nm": "이익잉여금(또는 이월결손금)_법정적립금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A92",
+     "account_nm": "이익잉여금(또는 이월결손금)_임의적립금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A93",
+     "account_nm": "이익잉여금(또는 이월결손금)_기타적립금"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A94",
+     "account_nm": "이익잉여금(또는 이월결손금)_미처분이익잉여금(미처리결손금)"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "AC",
+     "account_nm": "(당기순이익 또는 당기순손실)"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "AA",
+     "account_nm": "자본총계"
+    },
+    {
+     "list_no": "SQ004",
+     "list_nm": "요약재무상태표(부채 및 자본)",
+     "account_cd": "A",
+     "account_nm": "부채 및 자본총계"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ005": {
+   "name": "요약손익계산서",
+   "accounts": [
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A1",
+     "account_nm": "영업수익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A11",
+     "account_nm": "이자수익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A111",
+     "account_nm": "이자수익_예치금이자"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A1111",
+     "account_nm": "이자수익_예치금이자_상환준비금이자"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A1112",
+     "account_nm": "이자수익_예치금이자_대내예치금이자"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A1113",
+     "account_nm": "이자수익_예치금이자_대외예치금이자"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A112",
+     "account_nm": "이자수익_유가증권이자"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A113",
+     "account_nm": "이자수익_대출채권이자"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A114",
+     "account_nm": "이자수익_기타이자수익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A12",
+     "account_nm": "유가증권평가 및 처분이익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A13",
+     "account_nm": "대출채권평가 및 처분이익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A131",
+     "account_nm": "대출채권평가 및 처분이익_제대출금대손충당금환입"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A132",
+     "account_nm": "대출채권평가 및 처분이익_대출채권처분이익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A14",
+     "account_nm": "수수료수익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A141",
+     "account_nm": "수수료수익_수입수수료"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A142",
+     "account_nm": "수수료수익_공제수수료"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A144",
+     "account_nm": "수수료수익_신용카드수탁취급수수료(카드수입수수료)"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A143",
+     "account_nm": "수수료수익_기타수입수수료"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A15",
+     "account_nm": "기타영업수익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A2",
+     "account_nm": "영업비용"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A21",
+     "account_nm": "이자비용"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A211",
+     "account_nm": "이자비용_예수부채이자"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A212",
+     "account_nm": "이자비용_차입부채이자"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A213",
+     "account_nm": "이자비용_기타이자비용"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A22",
+     "account_nm": "유가증권평가 및 처분손실"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A23",
+     "account_nm": "대출채권평가 및 처분손실"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A231",
+     "account_nm": "대출채권평가 및 처분손실_제대출금대손충당금환입"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A232",
+     "account_nm": "대출채권평가 및 처분손실_대출채권처분이익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A24",
+     "account_nm": "수수료비용"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A241",
+     "account_nm": "수수료비용_지급수수료"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A242",
+     "account_nm": "수수료비용_신용카드수탁취급비용(카드지급수수료)"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A243",
+     "account_nm": "수수료비용_기타"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A25",
+     "account_nm": "기타영업비용"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A26",
+     "account_nm": "판매비와 관리비"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A261",
+     "account_nm": "판매비와 관리비_인건비"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A263",
+     "account_nm": "판매비와 관리비_퇴직급여"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A264",
+     "account_nm": "판매비와 관리비_복리후생비"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A265",
+     "account_nm": "판매비와 관리비_임차료"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A266",
+     "account_nm": "판매비와 관리비_접대비"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A267",
+     "account_nm": "판매비와 관리비_감가상각비"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A268",
+     "account_nm": "판매비와 관리비_무형자산상각비"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A269",
+     "account_nm": "판매비와 관리비_세금과공과"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A262",
+     "account_nm": "판매비와 관리비_기타 경비"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A3",
+     "account_nm": "영업이익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A4",
+     "account_nm": "영업외수익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A41",
+     "account_nm": "영업외수익_유형자산처분이익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A42",
+     "account_nm": "영업외수익_유형자산손상차손환입"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A43",
+     "account_nm": "영업외수익_비업무용자산처분이익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A44",
+     "account_nm": "영업외수익_임대료"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A45",
+     "account_nm": "영업외수익_자산수증이익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A46",
+     "account_nm": "영업외수익_내부수익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A47",
+     "account_nm": "영업외수익_전기오류수정이익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A48",
+     "account_nm": "영업외수익_기타"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A5",
+     "account_nm": "영업외비용"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A51",
+     "account_nm": "영업외비용_유형자산처분손실"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A52",
+     "account_nm": "영업외비용_유형자산손상차손"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A53",
+     "account_nm": "영업외비용_비업무용자산처분손실"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A54",
+     "account_nm": "영업외비용_전기오류수정손실"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A55",
+     "account_nm": "영업외비용_기부금"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A56",
+     "account_nm": "영업외비용_내부비용"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A57",
+     "account_nm": "영업외비용_기타"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A6",
+     "account_nm": "법인세비용차감전신용사업손익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A9",
+     "account_nm": "신용사업손익법인세비용"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A7",
+     "account_nm": "신용사업손익"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A8",
+     "account_nm": "비신용사업손익(법인세효과차감후)"
+    },
+    {
+     "list_no": "SQ005",
+     "list_nm": "요약손익계산서",
+     "account_cd": "A",
+     "account_nm": "당기순이익"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ006": {
+   "name": "주요자금조달및운용",
+   "accounts": [
+    {
+     "list_no": "SQ006",
+     "list_nm": "주요자금조달및운용",
+     "account_cd": "A11",
+     "account_nm": "조달_예금"
+    },
+    {
+     "list_no": "SQ006",
+     "list_nm": "주요자금조달및운용",
+     "account_cd": "A12",
+     "account_nm": "조달_차입금"
+    },
+    {
+     "list_no": "SQ006",
+     "list_nm": "주요자금조달및운용",
+     "account_cd": "A13",
+     "account_nm": "조달_출자금"
+    },
+    {
+     "list_no": "SQ006",
+     "list_nm": "주요자금조달및운용",
+     "account_cd": "A14",
+     "account_nm": "조달_기타"
+    },
+    {
+     "list_no": "SQ006",
+     "list_nm": "주요자금조달및운용",
+     "account_cd": "A",
+     "account_nm": "조달(운용)계"
+    },
+    {
+     "list_no": "SQ006",
+     "list_nm": "주요자금조달및운용",
+     "account_cd": "A21",
+     "account_nm": "운용_대출금"
+    },
+    {
+     "list_no": "SQ006",
+     "list_nm": "주요자금조달및운용",
+     "account_cd": "A22",
+     "account_nm": "운용_중앙회예치금"
+    },
+    {
+     "list_no": "SQ006",
+     "list_nm": "주요자금조달및운용",
+     "account_cd": "A23",
+     "account_nm": "운용_유가증권"
+    },
+    {
+     "list_no": "SQ006",
+     "list_nm": "주요자금조달및운용",
+     "account_cd": "A24",
+     "account_nm": "운용_기타"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ014": {
+   "name": "자산현황(대출채권)",
+   "accounts": [
+    {
+     "list_no": "SQ014",
+     "list_nm": "대출채권",
+     "account_cd": "A",
+     "account_nm": "대출채권 계"
+    },
+    {
+     "list_no": "SQ014",
+     "list_nm": "대출채권",
+     "account_cd": "A1",
+     "account_nm": "상호금융대출금"
+    },
+    {
+     "list_no": "SQ014",
+     "list_nm": "대출채권",
+     "account_cd": "A11",
+     "account_nm": "상호금융대출금_(대손충당금)"
+    },
+    {
+     "list_no": "SQ014",
+     "list_nm": "대출채권",
+     "account_cd": "A2",
+     "account_nm": "정책자금대출금"
+    },
+    {
+     "list_no": "SQ014",
+     "list_nm": "대출채권",
+     "account_cd": "A21",
+     "account_nm": "정책자금대출금_(대손충당금)"
+    },
+    {
+     "list_no": "SQ014",
+     "list_nm": "대출채권",
+     "account_cd": "A3",
+     "account_nm": "기타"
+    },
+    {
+     "list_no": "SQ014",
+     "list_nm": "대출채권",
+     "account_cd": "A31",
+     "account_nm": "기타_(대손충당금)"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ015": {
+   "name": "자산현황(유가증권)",
+   "accounts": [
+    {
+     "list_no": "SQ015",
+     "list_nm": "유가증권",
+     "account_cd": "A",
+     "account_nm": "유가증권 계"
+    },
+    {
+     "list_no": "SQ015",
+     "list_nm": "유가증권",
+     "account_cd": "A1",
+     "account_nm": "단기매매증권"
+    },
+    {
+     "list_no": "SQ015",
+     "list_nm": "유가증권",
+     "account_cd": "A2",
+     "account_nm": "매도가능증권"
+    },
+    {
+     "list_no": "SQ015",
+     "list_nm": "유가증권",
+     "account_cd": "A3",
+     "account_nm": "만기보유증권"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ016": {
+   "name": "부채현황(예수부채, 차입부채)",
+   "accounts": [
+    {
+     "list_no": "SQ016",
+     "list_nm": "예수부채, 차입부채",
+     "account_cd": "A",
+     "account_nm": "예수부채 계"
+    },
+    {
+     "list_no": "SQ016",
+     "list_nm": "예수부채, 차입부채",
+     "account_cd": "A1",
+     "account_nm": "요구불예금"
+    },
+    {
+     "list_no": "SQ016",
+     "list_nm": "예수부채, 차입부채",
+     "account_cd": "A2",
+     "account_nm": "기한부예금"
+    },
+    {
+     "list_no": "SQ016",
+     "list_nm": "예수부채, 차입부채",
+     "account_cd": "A3",
+     "account_nm": "기타"
+    },
+    {
+     "list_no": "SQ016",
+     "list_nm": "예수부채, 차입부채",
+     "account_cd": "B",
+     "account_nm": "차입부채 계"
+    },
+    {
+     "list_no": "SQ016",
+     "list_nm": "예수부채, 차입부채",
+     "account_cd": "B1",
+     "account_nm": "상호금융자금차입금"
+    },
+    {
+     "list_no": "SQ016",
+     "list_nm": "예수부채, 차입부채",
+     "account_cd": "B2",
+     "account_nm": "정책자금차입금"
+    },
+    {
+     "list_no": "SQ016",
+     "list_nm": "예수부채, 차입부채",
+     "account_cd": "B3",
+     "account_nm": "기타"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ017": {
+   "name": "유형자산 보유현황",
+   "accounts": [
+    {
+     "list_no": "SQ017",
+     "list_nm": "유형자산 보유현황",
+     "account_cd": "A",
+     "account_nm": "유형자산 계"
+    },
+    {
+     "list_no": "SQ017",
+     "list_nm": "유형자산 보유현황",
+     "account_cd": "A1",
+     "account_nm": "토지"
+    },
+    {
+     "list_no": "SQ017",
+     "list_nm": "유형자산 보유현황",
+     "account_cd": "A11",
+     "account_nm": "토지_(손상차손누계액)"
+    },
+    {
+     "list_no": "SQ017",
+     "list_nm": "유형자산 보유현황",
+     "account_cd": "A2",
+     "account_nm": "건물"
+    },
+    {
+     "list_no": "SQ017",
+     "list_nm": "유형자산 보유현황",
+     "account_cd": "A21",
+     "account_nm": "건물_(감가상각누계액)"
+    },
+    {
+     "list_no": "SQ017",
+     "list_nm": "유형자산 보유현황",
+     "account_cd": "A22",
+     "account_nm": "건물_(손상차손누계액)"
+    },
+    {
+     "list_no": "SQ017",
+     "list_nm": "유형자산 보유현황",
+     "account_cd": "A3",
+     "account_nm": "기타"
+    },
+    {
+     "list_no": "SQ017",
+     "list_nm": "유형자산 보유현황",
+     "account_cd": "A31",
+     "account_nm": "기타_(감가상각누계액)"
+    },
+    {
+     "list_no": "SQ017",
+     "list_nm": "유형자산 보유현황",
+     "account_cd": "A32",
+     "account_nm": "기타_(손상차손누계액)"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ018": {
+   "name": "부문별 손익(수수료)",
+   "accounts": [
+    {
+     "list_no": "SQ018",
+     "list_nm": "수수료",
+     "account_cd": "A",
+     "account_nm": "수수료 손익"
+    },
+    {
+     "list_no": "SQ018",
+     "list_nm": "수수료",
+     "account_cd": "B",
+     "account_nm": "수수료수익"
+    },
+    {
+     "list_no": "SQ018",
+     "list_nm": "수수료",
+     "account_cd": "B1",
+     "account_nm": "수수료수익_수입수수료"
+    },
+    {
+     "list_no": "SQ018",
+     "list_nm": "수수료",
+     "account_cd": "B2",
+     "account_nm": "수수료수익_공제수수료"
+    },
+    {
+     "list_no": "SQ018",
+     "list_nm": "수수료",
+     "account_cd": "B3",
+     "account_nm": "수수료수익_신용카드수탁취급수수료(카드수입수수료)"
+    },
+    {
+     "list_no": "SQ018",
+     "list_nm": "수수료",
+     "account_cd": "B4",
+     "account_nm": "수수료수익_기타수입수수료"
+    },
+    {
+     "list_no": "SQ018",
+     "list_nm": "수수료",
+     "account_cd": "C",
+     "account_nm": "수수료비용"
+    },
+    {
+     "list_no": "SQ018",
+     "list_nm": "수수료",
+     "account_cd": "C1",
+     "account_nm": "수수료비용_지급수수료"
+    },
+    {
+     "list_no": "SQ018",
+     "list_nm": "수수료",
+     "account_cd": "C2",
+     "account_nm": "수수료비용_신용카드수탁취급비용(카드지급수수료)"
+    },
+    {
+     "list_no": "SQ018",
+     "list_nm": "수수료",
+     "account_cd": "C3",
+     "account_nm": "수수료비용_기타"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ019": {
+   "name": "부문별 손익(증권평가 및 처분)",
+   "accounts": [
+    {
+     "list_no": "SQ019",
+     "list_nm": "증권평가 및 처분",
+     "account_cd": "A",
+     "account_nm": "유가증권평가 및 처분손익"
+    },
+    {
+     "list_no": "SQ019",
+     "list_nm": "증권평가 및 처분",
+     "account_cd": "B",
+     "account_nm": "유가증권평가 및 처분이익"
+    },
+    {
+     "list_no": "SQ019",
+     "list_nm": "증권평가 및 처분",
+     "account_cd": "C",
+     "account_nm": "유가증권평가 및 처분손실"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ020": {
+   "name": "부문별 손익(이자, 판매비와 관리비)",
+   "accounts": [
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "A",
+     "account_nm": "이자손익"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "B",
+     "account_nm": "이자수익"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "B1",
+     "account_nm": "이자수익_예치금이자"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "B11",
+     "account_nm": "이자수익_예치금이자_상환준비금이자"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "B12",
+     "account_nm": "이자수익_예치금이자_대내예치금이자"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "B13",
+     "account_nm": "이자수익_예치금이자_대외예치금이자"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "B2",
+     "account_nm": "이자수익_유가증권이자"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "B3",
+     "account_nm": "이자수익_대출채권이자"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "B4",
+     "account_nm": "이자수익_기타이자수익"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "C",
+     "account_nm": "이자비용"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "C1",
+     "account_nm": "이자비용_예수부채이자"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "C2",
+     "account_nm": "이자비용_차입부채이자"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "C3",
+     "account_nm": "이자비용_기타이자비용"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "D",
+     "account_nm": "판매비와 관리비"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "D1",
+     "account_nm": "판매비와 관리비_급여"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "D2",
+     "account_nm": "판매비와 관리비_퇴직급여"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "D3",
+     "account_nm": "판매비와 관리비_복리후생비"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "D4",
+     "account_nm": "판매비와 관리비_임차료"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "D5",
+     "account_nm": "판매비와 관리비_접대비"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "D6",
+     "account_nm": "판매비와 관리비_감가상각비"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "D7",
+     "account_nm": "판매비와 관리비_무형자산상각비"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "D8",
+     "account_nm": "판매비와 관리비_세금과공과"
+    },
+    {
+     "list_no": "SQ020",
+     "list_nm": "이자, 판매비와 관리비",
+     "account_cd": "D9",
+     "account_nm": "판매비와 관리비_기타"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ021": {
+   "name": "유형별 대출채권(조합, 비조합 대출금)",
+   "accounts": [
+    {
+     "list_no": "SQ021",
+     "list_nm": "조합, 비조합 대출금",
+     "account_cd": "A",
+     "account_nm": "총대출"
+    },
+    {
+     "list_no": "SQ021",
+     "list_nm": "조합, 비조합 대출금",
+     "account_cd": "A1",
+     "account_nm": "조합원 대출"
+    },
+    {
+     "list_no": "SQ021",
+     "list_nm": "조합, 비조합 대출금",
+     "account_cd": "A2",
+     "account_nm": "준조합원 대출"
+    },
+    {
+     "list_no": "SQ021",
+     "list_nm": "조합, 비조합 대출금",
+     "account_cd": "A3",
+     "account_nm": "비조합원 대출"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ007": {
+   "name": "여신건전성",
+   "accounts": [
+    {
+     "list_no": "SQ007",
+     "list_nm": "여신건전성",
+     "account_cd": "A",
+     "account_nm": "총여신"
+    },
+    {
+     "list_no": "SQ007",
+     "list_nm": "여신건전성",
+     "account_cd": "B",
+     "account_nm": "고정이하분류여신"
+    },
+    {
+     "list_no": "SQ007",
+     "list_nm": "여신건전성",
+     "account_cd": "B3",
+     "account_nm": "고정이하분류여신_고정"
+    },
+    {
+     "list_no": "SQ007",
+     "list_nm": "여신건전성",
+     "account_cd": "B4",
+     "account_nm": "고정이하분류여신_회수의문"
+    },
+    {
+     "list_no": "SQ007",
+     "list_nm": "여신건전성",
+     "account_cd": "B5",
+     "account_nm": "고정이하분류여신_추정손실"
+    },
+    {
+     "list_no": "SQ007",
+     "list_nm": "여신건전성",
+     "account_cd": "C",
+     "account_nm": "고정이하여신비율"
+    },
+    {
+     "list_no": "SQ007",
+     "list_nm": "여신건전성",
+     "account_cd": "D",
+     "account_nm": "대손충당금 적립비율(요적립액 대비)"
+    },
+    {
+     "list_no": "SQ007",
+     "list_nm": "여신건전성",
+     "account_cd": "D1",
+     "account_nm": "대손충당금 요적립액"
+    },
+    {
+     "list_no": "SQ007",
+     "list_nm": "여신건전성",
+     "account_cd": "D2",
+     "account_nm": "대손충당금 실적립액"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ008": {
+   "name": "수익성",
+   "accounts": [
+    {
+     "list_no": "SQ008",
+     "list_nm": "수익성",
+     "account_cd": "A",
+     "account_nm": "총자산(말잔)"
+    },
+    {
+     "list_no": "SQ008",
+     "list_nm": "수익성",
+     "account_cd": "B",
+     "account_nm": "자기자본(말잔)"
+    },
+    {
+     "list_no": "SQ008",
+     "list_nm": "수익성",
+     "account_cd": "C",
+     "account_nm": "총자산순이익률(ROA)"
+    },
+    {
+     "list_no": "SQ008",
+     "list_nm": "수익성",
+     "account_cd": "C1",
+     "account_nm": "당기순이익"
+    },
+    {
+     "list_no": "SQ008",
+     "list_nm": "수익성",
+     "account_cd": "D",
+     "account_nm": "자기자본순이익률(ROE)"
+    },
+    {
+     "list_no": "SQ008",
+     "list_nm": "수익성",
+     "account_cd": "E",
+     "account_nm": "총자산경비율"
+    },
+    {
+     "list_no": "SQ008",
+     "list_nm": "수익성",
+     "account_cd": "E1",
+     "account_nm": "판매비와 일반관리비"
+    },
+    {
+     "list_no": "SQ008",
+     "list_nm": "수익성",
+     "account_cd": "F",
+     "account_nm": "수지비율"
+    },
+    {
+     "list_no": "SQ008",
+     "list_nm": "수익성",
+     "account_cd": "F1",
+     "account_nm": "영업비용"
+    },
+    {
+     "list_no": "SQ008",
+     "list_nm": "수익성",
+     "account_cd": "F2",
+     "account_nm": "영업수익"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ009": {
+   "name": "유동성",
+   "accounts": [
+    {
+     "list_no": "SQ009",
+     "list_nm": "유동성",
+     "account_cd": "A",
+     "account_nm": "고정자산비율"
+    },
+    {
+     "list_no": "SQ009",
+     "list_nm": "유동성",
+     "account_cd": "A1",
+     "account_nm": "고정자산"
+    },
+    {
+     "list_no": "SQ009",
+     "list_nm": "유동성",
+     "account_cd": "A2",
+     "account_nm": "자기자본"
+    },
+    {
+     "list_no": "SQ009",
+     "list_nm": "유동성",
+     "account_cd": "B",
+     "account_nm": "유동성비율"
+    },
+    {
+     "list_no": "SQ009",
+     "list_nm": "유동성",
+     "account_cd": "B1",
+     "account_nm": "유동성비율_유동성자산"
+    },
+    {
+     "list_no": "SQ009",
+     "list_nm": "유동성",
+     "account_cd": "B2",
+     "account_nm": "유동성비율_유동성부채"
+    },
+    {
+     "list_no": "SQ009",
+     "list_nm": "유동성",
+     "account_cd": "C",
+     "account_nm": "예대율"
+    },
+    {
+     "list_no": "SQ009",
+     "list_nm": "유동성",
+     "account_cd": "C1",
+     "account_nm": "예대율_대출금"
+    },
+    {
+     "list_no": "SQ009",
+     "list_nm": "유동성",
+     "account_cd": "C2",
+     "account_nm": "예대율_예수금"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "term의 부적절한 값"
+   ]
+  },
+  "SQ010": {
+   "name": "총자산현황",
+   "accounts": [
+    {
+     "list_no": "SQ010",
+     "list_nm": "총자산현황",
+     "account_cd": "A",
+     "account_nm": "조합수"
+    },
+    {
+     "list_no": "SQ010",
+     "list_nm": "총자산현황",
+     "account_cd": "B",
+     "account_nm": "총자산"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "financeCd의 부적절한 값"
+   ]
+  },
+  "SQ011": {
+   "name": "여수신현황",
+   "accounts": [
+    {
+     "list_no": "SQ011",
+     "list_nm": "여수신현황",
+     "account_cd": "A",
+     "account_nm": "여신"
+    },
+    {
+     "list_no": "SQ011",
+     "list_nm": "여수신현황",
+     "account_cd": "B",
+     "account_nm": "수신"
+    },
+    {
+     "list_no": "SQ011",
+     "list_nm": "여수신현황",
+     "account_cd": "C",
+     "account_nm": "예대율"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "financeCd의 부적절한 값"
+   ]
+  },
+  "SQ012": {
+   "name": "당기순이익현황",
+   "accounts": [
+    {
+     "list_no": "SQ012",
+     "list_nm": "당기순이익현황",
+     "account_cd": "A",
+     "account_nm": "당기순이익"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "financeCd의 부적절한 값"
+   ]
+  },
+  "SQ013": {
+   "name": "순자본 비율",
+   "accounts": [
+    {
+     "list_no": "SQ013",
+     "list_nm": "순자본 비율",
+     "account_cd": "A",
+     "account_nm": "순자본 비율"
+    }
+   ],
+   "values": [],
+   "err": [
+    "101",
+    "financeCd의 부적절한 값"
+   ]
+  }
+ }
+}
