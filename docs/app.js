@@ -164,7 +164,7 @@
     const loc = [adm1, adm2].filter(Boolean).join(" ");
     let aff = "";
     if (aff2 === "직할") aff = aff1 ? `${aff1}지역본부 직할` : "지역본부 직할";
-    else if (aff1 || aff2) aff = `${[aff1 && `${aff1}지역본부`, aff2 && `${aff2}지부`].filter(Boolean).join(" ")} 소속`;
+    else if (aff1 || aff2) aff = `${[aff1 && `${aff1}지역본부`, aff2 && (/(지부|국)$/.test(aff2) ? aff2 : `${aff2}지부`)].filter(Boolean).join(" ")} 소속`;   // 세종시회원지원국처럼 단위 이름이 있으면 그대로
     return [
       { text: loc ? `${loc} 위치` : "위치 미지정", miss: !loc, est: estOf(cd, "행정구역_광역") || estOf(cd, "행정구역_기초") },
       { text: aff || "소속 미지정", miss: !aff, est },
