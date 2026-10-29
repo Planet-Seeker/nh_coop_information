@@ -562,18 +562,19 @@
     const sel = el("select", { "aria-label": "기준연도", onchange: (e) => { view.ym = e.target.value; setURL(detailURL(), true); renderDetail(); } },
       months.map((m) => el("option", { value: m, selected: m === ym }, yearPick(m))));
 
-    // 조합명 · 유형 · 위치·소속(한 줄) → 주요 지표 → 카드. 이 왼쪽 묶음 높이를 오른쪽 정사각형 지도와 맞춤.
+    // 조합명 · 위치·구분(1행) · 소속(2행) → 주요 지표 → 카드. 이 왼쪽 묶음 높이를 오른쪽 정사각형 지도와 맞춤.
     const title = [
       el("h2", { class: "d-name" }, coop.nm),
-      el("p", { class: "meta" }, (() => {                  // 금융회사코드·법인등록번호는 화면에 표시하지 않음(데이터에는 보관)
+      (() => {                                              // 1행: 위치 · 구분(유형), 2행: 소속. 금융회사코드·법인등록번호는 표시하지 않음
         const c = LIST.find((x) => x.cd === coop.cd);
-        return c ? typeText(c) : "";                        // 권역은 소속 지역본부(원본)로 대체
-      })()),
-      el("p", { class: "rgn-text" }, regionLines(coop.cd).flatMap((r, i) => [   // 위치 · 소속 한 줄(좁으면 소속이 통째로 다음 줄)
-        i ? el("span", { class: "rgn-sep" }, "·") : null,
-        el("span", { class: "rgn-item" }, el("span", { class: "rgn-l" }, r.label),
-          el("span", { class: "rgn-v" + (r.miss ? " miss" : "") }, r.text),
-          r.est ? el("span", { class: "rgn-n" }, "(추정)") : null)])),
+        const [loc, aff] = regionLines(coop.cd);
+        const item = (label, text, miss, est) => el("span", { class: "rgn-item" }, el("span", { class: "rgn-l" }, label),
+          el("span", { class: "rgn-v" + (miss ? " miss" : "") }, text), est ? el("span", { class: "rgn-n" }, "(추정)") : null);
+        return el("div", { class: "rgn-text" },
+          el("p", {}, item("위치", loc.text, loc.miss, loc.est), el("span", { class: "rgn-sep" }, "·"),
+            item("구분", c ? c.type : "미지정", !c, c ? estOf(c.cd, "유형") : false)),
+          el("p", {}, item("소속", aff.text, aff.miss, aff.est)));
+      })(),
     ];
     // 핵심 수치 (누르면 추이 그래프 전환)
     const kpis = el("div", { class: "kpis" }, KPIS.map((k) => {
