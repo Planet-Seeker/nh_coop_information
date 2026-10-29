@@ -232,7 +232,7 @@ tr.on td { background: var(--acc-soft); }
 .credits dt { color: var(--sub); }
 .credits dt::after { content: " :"; white-space: pre; margin-right: 6px; }
 .credits dd { margin: 0; }   /* dt 하나에 dd 하나(두 칸 격자). 여러 줄은 dd 안에 목록으로 */
-.credit-src { list-style: none; margin: 2px 0 0; padding: 0; }
+.credit-src { list-style: none; margin: 0; padding: 0; }
 .credit-src li { margin: 0; }
 /* 출처 꼬리표: 금융위원회가 기준이라 표시 없음, 금감원만 (금감원) 회청색 + 행 배경 옅게, 불일치는 금감원 값 병기 */
 :root { --fss: #4f6d8a; --fss-soft: #eef2f6; }

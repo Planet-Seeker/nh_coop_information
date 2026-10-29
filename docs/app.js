@@ -456,6 +456,7 @@
     const gaps = [];
     for (let y = years[0]; y < years[years.length - 1]; y++) if (!years.includes(y)) gaps.push(`${y}년`);
     if (gaps.length) lines.push([`공시 자료 끊김: ${gaps.join(", ")}`]);
+    lines.push(["기본적으로 데이터는 금융위원회 자료를 기반으로 금융감독원 자료를 보충하는 식으로 산출됩니다. 두 자료가 다르면 금융위원회 자료를 우선하며, 금융위원회 값 옆에 금감원 값을 별도 표기합니다."]);
     lines.push(["(추정)이 붙은 값은 공시 원자료가 아닌 추정값입니다."]);
     lines.push([`금액은 조·억 단위로 반올림해 표시합니다. 데이터 최종갱신일은 ${INDEX.updated || "-"}입니다.`]);
     return el("section", { class: "notes", "aria-label": "참고 사항" }, el("ul", {}, lines.map((l) => el("li", {}, ...l))));
