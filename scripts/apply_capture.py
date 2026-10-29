@@ -18,9 +18,12 @@ META = ROOT / "docs" / "data" / "meta" / "coop_meta.csv"
 UNITS = ROOT / "docs" / "data" / "meta" / "units.csv"
 SIDO = {"서울특별시": "서울", "부산광역시": "부산", "대구광역시": "대구", "인천광역시": "인천", "광주광역시": "광주", "대전광역시": "대전",
         "울산광역시": "울산", "세종특별자치시": "세종", "경기도": "경기", "강원특별자치도": "강원", "강원도": "강원", "충청북도": "충북",
-        "충청남도": "충남", "전북특별자치도": "전북", "전라북도": "전북", "전라남도": "전남", "경상북도": "경북", "경상남도": "경남",
+        "충청남도": "충남", "충남": "충남", "충북": "충북", "전남": "전남", "전북": "전북", "경남": "경남", "경북": "경북", "전북특별자치도": "전북", "전라북도": "전북", "전라남도": "전남", "경상북도": "경북", "경상남도": "경남",
         "제주특별자치도": "제주"}
 NEW_COLS = ["우편번호", "전화번호", "별칭"]
+# 홈페이지 이름 ↔ 금융당국 자료 이름이 규칙으로 안 맞는 경우(개명 등). 공시가 이어지는 같은 조합으로 판단한 것만
+ALIAS = {"예당사과원예농협": "예산능금농협"}
+norm = lambda n: n.replace("축산농협", "축협").replace("원예농협", "농협")   # 예산축산농협=예산축협, 천안배원예농협=천안배농협
 code = lambda v: (v or "").strip().lstrip("=").strip('"')
 
 
@@ -57,11 +60,16 @@ def main():
         pool = [r for r in rows if r["상태"] == "운영" and r["소속구역_광역"] == hq]
         hit = [r for r in pool if r["조합명(참고)"] == nm] or \
               [r for r in pool if nm in [x.strip() for x in (r.get("별칭") or "").split(";")]] or \
-              [r for r in pool if nm.endswith(r["조합명(참고)"]) and len(nm) > len(r["조합명(참고)"])]
+              [r for r in pool if nm.endswith(r["조합명(참고)"]) and len(nm) > len(r["조합명(참고)"])] or \
+              [r for r in pool if r["조합명(참고)"] == ALIAS.get(nm)] or \
+              [r for r in pool if norm(r["조합명(참고)"]) == norm(nm)]
         if not hit:   # 금융당국 자료의 지역본부와 홈페이지 조직도가 다른 조합(과천=서울본부 등) 또는 공시가 끊긴 조합: 전체에서 같은 이름 하나
             alls = [r for r in rows if r["조합명(참고)"] == nm]
             live = [r for r in alls if r["상태"] == "운영"]
             hit = live if len(live) == 1 else alls if len(alls) == 1 else []
+        if len(hit) > 1:   # 같은 본부에 같은 이름(당진·아산 송악농협 등): 주소의 시군과 위치(행정구역 기초)가 같은 쪽
+            a2 = admin_of(x["주소"])[1]
+            hit = [r for r in hit if r["행정구역_기초"] == a2] or [r for r in hit if not r["행정구역_기초"]] or hit
         if len(hit) != 1:
             miss.append(f"{x['_src']}: {nm} (후보 {len(hit)}곳)")
             continue
