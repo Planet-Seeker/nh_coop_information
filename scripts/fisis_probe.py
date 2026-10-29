@@ -13,6 +13,7 @@ BASE = "https://fisis.fss.or.kr/openapi"
 OUT = Path(__file__).resolve().parent.parent / "docs" / "data" / "probe"
 KEY = os.environ.get("FISIS_KEY", "").strip()
 GH = bool(os.environ.get("GITHUB_ACTIONS"))
+AGG = ""
 
 
 def note(msg, level="notice"):
@@ -63,17 +64,27 @@ def main():
     # 표본: 목록에서 이름에 '천안농협'이 있으면 그 조합, 없으면 첫 조합
     sample = next((c for c in comp if "천안농협" == str(c.get("finance_nm", "")).strip()), comp[0])
     fcd = sample.get("finance_cd")
+    global AGG
+    AGG = next((c["finance_cd"] for c in comp if not str(c["finance_cd"]).startswith("0010027")), fcd)
     detail = {"sample": sample, "tables": {}}
     for sml, lst in lists.items():
         for x in lst:
             no = x.get("list_no")
             _, _, acc = body(call("accountListSearch", listNo=no))
-            cd2, msg2, val = body(call("statisticsInfoSearch", financeCd=fcd, listNo=no, term="Q",
-                                       startBaseMm="202412", endBaseMm="202606"))
-            detail["tables"][no] = {"name": x.get("list_nm"), "accounts": acc, "values": val[:60], "err": [cd2, msg2]}
+            fc = fcd if sml != "P" else AGG
+            val, cd2, msg2, used = [], None, None, None
+            for term in ("H", "Y", "Q"):                  # 기간 구분값 확인(반기·연·분기)
+                cd2, msg2, val = body(call("statisticsInfoSearch", financeCd=fc, listNo=no, term=term,
+                                           startBaseMm="202312", endBaseMm="202606"))
+                if cd2 == "000":
+                    used = term
+                    break
+                time.sleep(0.2)
+            detail["tables"][no] = {"name": x.get("list_nm"), "accounts": acc, "values": val[:60], "err": [cd2, msg2], "term": used}
             time.sleep(0.3)
     save("fisis_sample.json", detail)
-    note(f"표본 {sample.get('finance_nm')}({fcd}): 통계표 {len(detail['tables'])}개 조회 완료")
+    ok = {k: (v["term"], len(v["values"])) for k, v in detail["tables"].items()}
+    note(f"표본 {sample.get('finance_nm')}({fcd}), 집계 {AGG}: 통계표별 (기간구분, 값 수) {ok}")
     return 0
 
 
