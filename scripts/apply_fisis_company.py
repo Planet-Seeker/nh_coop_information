@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""금감원 FISIS 금융회사 목록(농업협동조합 Q)의 원본 정보를 meta.csv에 반영.
+"""(공시지역 열: 금융당국 제출 지역분류, 순위 기준. 소속구역은 홈페이지 캡처로 확인된 행이면 보존)
+금감원 FISIS 금융회사 목록(농업협동조합 Q)의 원본 정보를 meta.csv에 반영.
   finance_path '농협단위조합\\농협(서울)\\…' → 소속구역_광역(지역본부, 원본: 추정 표시 제거)
      ※ 행정구역이 아니라 소속 지역본부 기준(과천·광명=서울, 경산=대구, 군위=경북)
   finance_nm '성전농협[폐]' 처럼 원자료 이름과 다르면 → 이전명칭(원본)
@@ -20,6 +21,10 @@ for r in rows:
         continue
     est = [x for x in r["추정"].split(";") if x]
     m = re.search(r"농협\((.+?)\)", c.get("finance_path", ""))
+    if m and "공시지역" in r:
+        r["공시지역"] = m.group(1)            # 금융당국 제출 지역분류(원본, 순위·지역 단위 기준)
+    if m and "캡처(" in (r.get("비고") or ""):
+        m = None                               # 홈페이지 조직도로 확인한 소속은 덮어쓰지 않음
     if m:
         if r["소속구역_광역"] != m.group(1) or "소속구역_광역" in est:
             n_sido += 1

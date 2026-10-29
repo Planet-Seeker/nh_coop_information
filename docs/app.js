@@ -101,6 +101,11 @@
 
   // 순위: 전국 / 소속구역(광역) 내 / 행정구역(기초) 내. 값이 없는 조합은 제외. 동점은 같은 순위.
   // 기초는 소속구역이 아닌 행정구역 기준(소속구역 '직할'은 지역 단위가 아니라 직할끼리만 묶이는 문제)
+  // 순위: 금융당국(금융위원회·금감원)에 제출된 지역분류(meta 공시지역) 기준.
+  // 특별시·광역시는 전국·광역만, 그 밖은 전국·광역·기초(행정구역 시군). 값이 없는 조합은 제외, 동점은 같은 순위.
+  const METRO = new Set(["서울", "부산", "대구", "인천", "광주", "대전", "울산"]);
+  const regionOf = (cd) => (META.get(cd) || {})["공시지역"] || affOf(cd).aff1;
+  const regionLabel = (r) => (METRO.has(r) ? `${r}시` : r);
   function ranksOf(cd, ym, label) {
     const d = METRICS.get(ym);
     if (!d || NO_RANK.has(label)) return null;
@@ -108,17 +113,17 @@
     const mine = d.rows[cd] && d.rows[cd][i];
     if (i < 0 || mine == null) return null;
     const low = LOW_FIRST.has(label);
-    const me = affOf(cd);
-    const adm = (k) => { const m = META.get(k) || {}; return m["행정구역_광역"] && m["행정구역_기초"] ? `${m["행정구역_광역"]} ${m["행정구역_기초"]}` : ""; };
-    const myAdm = adm(cd);
-    const out = [["전국", 0, 0], [me.aff1 ? (me.est1 ? `${me.aff1}(추정)` : me.aff1) : "", 0, 0], [myAdm ? myAdm.split(" ")[1] + (estOf(cd, "행정구역_기초") ? "(추정)" : "") : "", 0, 0]];
+    const myR = regionOf(cd), metro = METRO.has(myR);
+    const basic = (k) => { const m = META.get(k) || {}; return m["행정구역_광역"] && m["행정구역_기초"] ? `${regionOf(k)}|${m["행정구역_광역"]} ${m["행정구역_기초"]}` : ""; };
+    const myB = metro ? "" : basic(cd);
+    const out = [["전국", 0, 0], [myR ? regionLabel(myR) : "", 0, 0]];
+    if (!metro) out.push([myB ? (META.get(cd) || {})["행정구역_기초"] + (estOf(cd, "행정구역_기초") ? "(추정)" : "") : "", 0, 0]);
     for (const [k, vals] of Object.entries(d.rows)) {
       const v = vals[i];
       if (v == null) continue;
       const better = low ? v < mine : v > mine;
-      const a = affOf(k);
-      const groups = [true, me.aff1 && a.aff1 === me.aff1, myAdm && adm(k) === myAdm];
-      groups.forEach((g, j) => { if (g) { out[j][2]++; if (better) out[j][1]++; } });
+      const groups = [true, !!myR && regionOf(k) === myR, !!myB && basic(k) === myB];
+      groups.forEach((g, j) => { if (g && out[j]) { out[j][2]++; if (better) out[j][1]++; } });
     }
     return out.map(([name, b, n]) => (name ? { name, rank: b + 1, n } : { name: "", rank: 0, n: 0 }));
   }                                   // 수기 지정 조합 정보(data/meta/coop_meta.csv), 금융회사코드 → 행
@@ -185,6 +190,7 @@
   }
   const hiddenOld = (cd) => { const s = stOf(cd); return s.st === "코드변경" && !!s.succ; };   // 새 코드 조합에 이어 붙여 보여 줌
   const hwanOf = (cd) => (/^0010027\d{6}$/.test(cd) ? cd.slice(7) : "");   // 환코드: 권역 2자리 + 일련번호 4자리(조합 고유)
+  let MISMATCH = {};                                        // 금감원과 다른 항목(data/fss/mismatch.json) {코드: [[ym, 표, 항목, 금융위, 금감원]]}
   const coopCache = new Map();
   const view = { coop: null, ym: null, months: [], tab: "gen", metric: KPIS[1], range: "5y" };
   const RANGES = [["3y", "최근 3년", 3], ["5y", "최근 5년", 5], ["10y", "최근 10년", 10], ["all", "전체", Infinity]];  // 연도 개수
@@ -451,17 +457,24 @@
   }
 
   // 카드와 그래프 사이 주석(최대 5행 높이, 넘치면 스크롤): 단위·갱신일, 공시 상태·합병 이력, 기준월, 공시 공백, 자료 산출 방식, 추정 안내
+  // 카드와 그래프 사이 주석: 이 조합에만 해당하는 사항(공시 상태·합병 이력·옛 이름·공시 끊김·금감원과 다른 값). 없으면 "별도 주석 없음"
+  // 통상적인 안내(금액 단위, 자료 산출·우선순위, 소속·순위 기준, 표시 뜻)는 ? 도움말 팝업
   function notesBox(coop, ym) {
-    const lines = [[`금액은 조·억 단위로 반올림해 표시합니다. 데이터 최종갱신일은 ${INDEX.updated || "-"}입니다.`], ...historyLines(coop)];
-    if (!isYearEnd(ym)) lines.push([`${yearLabel(ym)} 자료는 ${Number(ym.slice(4))}월 기준이며 손익은 상반기 누적입니다.`]);
+    const lines = historyLines(coop);
     const years = [...new Set(Object.keys(coop.d).map((m) => +m.slice(0, 4)))].sort((a, b) => a - b);
     const gaps = [];
     for (let y = years[0]; y < years[years.length - 1]; y++) if (!years.includes(y)) gaps.push(`${y}년`);
     if (gaps.length) lines.push([`공시 자료 끊김: ${gaps.join(", ")}`]);
-    lines.push(["기본적으로 데이터는 금융위원회 자료를 기반으로 금융감독원 자료를 보충하는 식으로 산출됩니다. 두 자료가 다르면 금융위원회 자료를 우선하며, 금융위원회 값 옆에 금감원 값을 별도 표기합니다."]);
-    lines.push(["소속 구분은 농협중앙회 홈페이지의 조직도 구분(지역본부·시군지부)을 따릅니다."]);
-    lines.push(["(추정)이 붙은 값은 공시 원자료가 아닌 추정값입니다."]);
-    return el("section", { class: "notes", "aria-label": "참고 사항" }, el("ul", {}, lines.map((l) => el("li", {}, ...l))));
+    const mt = META.get(coop.cd) || {};
+    if (mt["공시지역"] && mt["소속구역_광역"] && mt["공시지역"] !== mt["소속구역_광역"])   // 조직도 소속과 금융당국 지역분류가 다른 조합
+      lines.push([`소속은 농협중앙회 조직도상 ${mt["소속구역_광역"]}지역본부이지만, 금융당국 제출 지역분류는 ${mt["공시지역"]}입니다. 순위는 ${regionLabel(mt["공시지역"])} 기준으로 매깁니다.`]);
+    const mm = MISMATCH[coop.cd] || [];
+    if (mm.length) {
+      const ys = [...new Set(mm.map((x) => x[0].slice(0, 4)))].sort();
+      lines.push([`금융감독원 자료와 값이 다른 항목 ${NF0.format(mm.length)}건(${ys.length > 3 ? `${ys[0]}~${ys[ys.length - 1]}년` : ys.map((y) => `${y}년`).join(", ")}). 화면에는 금융위원회 값을 쓰고 금융감독원 값을 옆에 표기합니다.`]);
+    }
+    if (!lines.length) lines.push(["별도 주석 없음"]);
+    return el("section", { class: "notes" + (lines[0][0] === "별도 주석 없음" ? " empty" : ""), "aria-label": "이 조합 주석" }, el("ul", {}, lines.map((l) => el("li", {}, ...l))));
   }
 
   async function openCoop(cd, { push = true, ym = null, tab = null } = {}) {
@@ -505,7 +518,7 @@
     if (!r) return el("span", { class: "rk" }, el("span", { class: "rk-row miss" }, "순위 없음"));
     return el("span", { class: "rk" }, r.map((x, j) => el("span", { class: "rk-row" + (x.name ? "" : " miss") },
       x.name ? [el("span", { class: "rk-g" }, x.name), el("span", { class: "rk-n" }, `${NF0.format(x.rank)}위`, el("small", {}, ` / ${NF0.format(x.n)}`))]
-        : (j === 1 ? "소속 광역 미지정" : "행정 기초 미지정"))));
+        : (j === 1 ? "광역 미지정" : "기초 미지정"))));
   }
 
   // ── 본점 위치 지도(VWorld 배경지도 + Leaflet) ─────────────────
@@ -882,12 +895,26 @@
     rt = setTimeout(() => { if (view.coop && !detEl.hidden && Math.abs(window.innerWidth - lastW) > 40) { lastW = window.innerWidth; renderDetail(); } }, 200);
   });
 
+  // ── 도움말(? 버튼 → 팝업) ───────────────────────────────────
+  function setupHelp() {
+    const dlg = $("help"), btn = $("help-btn");
+    if (!dlg || !btn) return;
+    const latest = INDEX.latest || "";
+    $("help-unit").textContent = isYearEnd(latest)
+      ? "금액은 조·억 단위로 반올림해 표시하며, 6월 기준 자료의 손익은 상반기 누적입니다."
+      : `금액은 조·억 단위로 반올림해 표시하며, ${yearLabel(latest)} 자료는 ${Number(latest.slice(4))}월 기준, 손익은 상반기 누적입니다.`;
+    btn.addEventListener("click", () => (dlg.showModal ? dlg.showModal() : dlg.setAttribute("open", "")));
+    $("help-close").addEventListener("click", () => dlg.close());
+    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });   // 바깥 누르면 닫힘
+  }
+
   // ── 초기화 ─────────────────────────────────────────────────
   (async () => {
     try {
       const [idx, codes, list] = await Promise.all([getJSON("data/index.json"), getJSON("data/codes.json"), getJSON("data/coops.json")]);
       INDEX = idx; CODES = codes;
       try { Object.assign(CODES, await getJSON("data/fss/codes.json")); } catch { /* 금감원 표 없음 */ }
+      try { MISMATCH = await getJSON("data/fss/mismatch.json"); } catch { MISMATCH = {}; }
       try {                                                 // 수기 지정 파일은 없어도 됨
         const r = await fetch("data/meta/coop_meta.csv", { cache: "no-cache" });
         if (r.ok) for (const row of parseCSV(await r.text())) {
@@ -914,7 +941,8 @@
       setStatus("데이터를 준비 중입니다. 잠시 후 다시 방문해 주세요.", true);
       return;
     }
-    // 데이터 최종갱신일은 상세 화면 주석에 표시
+    if (INDEX.updated) $("updated").textContent = INDEX.updated;   // 제목 옆 데이터 최종갱신일
+    setupHelp();
     // 전국 회원조합수 요약 줄은 표시하지 않음(2026-10-28 결정). 데이터(index.json summary)는 비교 기능용으로 보관.
     route();
   })();

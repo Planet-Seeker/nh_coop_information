@@ -187,7 +187,7 @@ def main():
             r["행정구역_광역"], r["행정구역_기초"] = g[0], g[1]
             est += ["행정구역_광역", "행정구역_기초"]
         if re.search(r"자동 추정|^확인:|^정황:", r["비고"] or ""):   # 합병·승계·옛 이름도 원자료가 아닌 추정
-            est += [c for c in ("상태", "승계조합코드", "이전명칭") if code(r.get(c)) and not (c == "상태" and r[c] == "운영")]
+            est += [c for c in ("상태", "승계조합코드") if code(r.get(c)) and not (c == "상태" and r[c] == "운영")]   # 이전명칭은 금감원 원본([폐] 이름)이라 제외
         r["추정"] = ";".join(dict.fromkeys(est))
         stat[(r["유형"], bool(r["소속구역_광역"]), bool(r["소속구역_기초"]))] += 1
 

@@ -250,4 +250,18 @@ tr.on td { background: var(--acc-soft); }
 tr.fss td { background: var(--fss-soft); }
 td .alt { font-size: 10.5px; color: #b45309; white-space: nowrap; margin-left: 6px; }
 .chart.fss .line { stroke: var(--fss); } .chart.fss .area { fill: var(--fss); } .chart.fss .dot { fill: var(--fss); } .chart.fss .dot.partial { fill: var(--card); stroke: var(--fss); }
+/* 제목 옆 데이터 최종갱신일 */
+.top h1 .upd { margin-left: 8px; font-size: 12px; font-weight: 400; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
+/* 도움말 ? 버튼과 팝업 */
+.help-btn { font: inherit; font-size: 17px; font-weight: 700; color: var(--sub); cursor: pointer; }
+dialog.help { border: 1px solid var(--line); border-radius: 14px; padding: 0; max-width: min(560px, calc(100vw - 32px)); width: 100%; background: var(--card); color: var(--ink); box-shadow: 0 10px 40px rgba(0,0,0,.18); }
+dialog.help::backdrop { background: rgba(20, 30, 20, .35); }
+.help-in { padding: 16px 20px 20px; max-height: min(80vh, 640px); overflow-y: auto; font-size: 14px; line-height: 1.65; }
+.help-top { display: flex; align-items: center; justify-content: space-between; position: sticky; top: -16px; background: var(--card); padding-top: 4px; }
+.help-top h2 { margin: 0; font-size: 18px; }
+.help-x { border: 0; background: none; font-size: 24px; line-height: 1; color: var(--sub); cursor: pointer; padding: 4px 8px; }
+.help h3 { margin: 14px 0 4px; font-size: 14px; color: var(--acc); }
+.help p { margin: 0; }
+.help ul { margin: 0; padding-left: 18px; }
+.notes.empty ul { color: var(--muted); list-style: none; padding-left: 0; }
 
