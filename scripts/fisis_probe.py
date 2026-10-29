@@ -46,11 +46,16 @@ def save(name, obj):
 
 
 def span_probe(fcd):
-    """표본 조합 1곳 × 신규 8개 표를 전체 기간으로 조회해 표별 첫·마지막 기준년월 확인(8회 호출)"""
+    """표본 조합 1곳 × 신규 8개 표를 전체 기간(두 구간)으로 조회해 표별 첫·마지막 기준년월 확인(16회 호출)"""
     out = {}
     for no in ["SQ014", "SQ015", "SQ016", "SQ017", "SQ018", "SQ019", "SQ020", "SQ021"]:
-        cd, msg, val = body(call("statisticsInfoSearch", financeCd=fcd, listNo=no, term="H",
-                                 startBaseMm="201106", endBaseMm="202606"))
+        val, cd, msg = [], "000", ""
+        for a, b in (("201106", "201606"), ("201612", "202606")):   # 1회 최대 40분기(10년) → 두 구간
+            c2, m2, v2 = body(call("statisticsInfoSearch", financeCd=fcd, listNo=no, term="H", startBaseMm=a, endBaseMm=b))
+            val += v2
+            if c2 != "000":
+                cd, msg = c2, f"{a}~{b}: {m2}"
+            time.sleep(0.3)
         months = sorted({v.get("base_month") for v in val})
         out[no] = {"err": [cd, msg], "rows": len(val), "months": months, "values": val}
         note(f"{no}: {len(val)}행, {months[0] if months else '-'}~{months[-1] if months else '-'} ({len(months)}개 반기) {'' if cd == '000' else msg}")
